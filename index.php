@@ -35,7 +35,7 @@
             <td align="center"><strong>Timezone</strong></td>
             <td align="center"><strong>UTC Offset</strong></td>
             <td align="center"><strong>Live Date</strong></td>
-            <td>Datacenter</td>
+            <td><strong>Datacenter</strong></td>
             <td><strong>Notes</strong></td>
          </tr>
 
@@ -56,9 +56,31 @@ Dalles, Oregon, USA</a> (near Portland, Oregon)</td>
             </td>
             <td align="center">2016-07-30</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> AWS, US-West-2 region</td>
+               <a href="http://aws.amazon.com">Amazon</a> US-West-2 zone</td>
             <td>&nbsp;</td>
          </tr>
+
+         <tr>
+            <td>stratum2.sjc01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/The+Dalles,+OR+97058/@45.6094596,-121.2439003,12z/data=!3m1!4b1!4m5!3m4!1s0x54961dd9a1974387:0x5d2ec66fffe43aaa!8m2!3d45.5945645!4d-121.1786823">San
+Jose, California, USA</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/usa/san-jose">
+                <?php
+                    date_default_timezone_set( 'US/Pacific' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-07-31</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> US-West-1 zone</td>
+            <td>&nbsp;</td>
+         </tr>
+
 
          <tr>
             <td>stratum2.ord02.publicntp.net</td>
@@ -91,20 +113,84 @@ Virginia, USA</a> (near Washington, DC)</td>
                 <?php
                     date_default_timezone_set( 'US/Eastern' );
                     echo date("T");
-                ?></a>
+                ?></a></td>
             <td align="center"><?php
                 echo date('O'); 
                 ?>
             </td>
             <td align="center">2016-07-30</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> AWS, US-East region</td>
+               <a href="http://aws.amazon.com">Amazon</a> US-East-1 zone</td>
             <td>&nbsp;</td>
          </tr>
 
+         <tr>
+            <td>stratum2.dub01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/Dublin,+Ireland/@53.324443,-6.3857855,11z/data=!3m1!4b1!4m5!3m4!1s0x48670e80ea27ac2f:0xa00c7a9973171a0!8m2!3d53.3498053!4d-6.2603097">Dublin, Ireland</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/ireland/dublin">
+                <?php
+                    date_default_timezone_set( 'Europe/Dublin' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-07-31</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> EU-West-1 zone</td>
+            <td>&nbsp;</td>
+         </tr>
+
+         <tr>
+            <td>stratum2.fra01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/Frankfurt,+Germany/@50.1213479,8.4964821,11z/data=!3m1!4b1!4m5!3m4!1s0x47bd096f477096c5:0x422435029b0c600!8m2!3d50.1109221!4d8.6821267">Frankfurt,
+Germany</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/germany/frankfurt">
+                <?php
+                    date_default_timezone_set( 'Europe/Berlin' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-07-31</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> EU-Central-1 zone</td>
+            <td>&nbsp;</td>
+         </tr>
+
+         <tr>
+            <td>stratum2.syd01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/Sydney+NSW,+Australia/@-33.847404,150.6517953,10z/data=!3m1!4b1!4m5!3m4!1s0x6b129838f39a743f:0x3017d681632a850!8m2!3d-33.8688197!4d151.2092955">Sydney,
+Australia</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/australia/sydney">
+                <?php
+                    date_default_timezone_set( 'Australia/Sydney' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-07-31</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> AP-Southeast-2 zone</td>
+            <td>&nbsp;</td>
+         </tr>
+
+
       </table>
 
-      <p><u>Notes:</u></p>
+      <p style="text-decoration: underline;">Notes:</p>
+      <div>
       <ul>
          <li>All project servers are proud to participate in the
          <a href="http://www.pool.ntp.org/">NTP Pool Project</a>.
@@ -119,14 +205,25 @@ Virginia, USA</a> (near Washington, DC)</td>
             meaning they synchronize across the network to 
             stratum one systems containing high-quality time sources such as GPS 
             or CDMA receivers. It's uncommon for project servers to vary from 
-            UTC by more than 2-3 milliseconds (a millisecond is 0.001 seconds).
-
-      </ul>
+            UTC by more than 2-3 milliseconds (a millisecond is 0.001 seconds).</li>
+      </ul></div>
 
       <h2>News</h2>
 
-         <p><strong>30 July 2016</strong>: two new servers have been deployed: one in the 
-            Washington, DC metro area (IAD01), and one in the Portland, Oregon area (PDX01).</p>
+         <p><strong>31 July 2016</strong>: four new servers deployed!</p>
+            <div><ul style="margin-left: 0.25in;">
+                <li>San Jose, California, USA (SJC01)</li>
+                <li>Dublin, Ireland (DUB01)</li>
+                <li>Frankfurt, Germany (FRA01)</li>
+                <li>Sydney, Australia (SYD01)</li>
+            </ul></div>
+
+         <p><strong>30 July 2016</strong>: two new servers deployed!</p>
+            <div>
+            <ul style="margin-left: 0.25in;">
+                <li>Ashburn, Virginia, USA (IAD01)</li>
+                <li>The Dalles, Oregon, USA (PDX01)</li>
+            </ul></div>
 
          <p><strong>22 May 2013</strong>: the SJC1 server has been delisted.</p>
 
