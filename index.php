@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
    <head>
@@ -13,7 +13,7 @@
 
       <p><em>Last updated</em>: <?php
          date_default_timezone_set( 'US/Eastern' );
-         echo date("Y-m-j, g:ia T ", getlastmod()) .
+         echo date("Y-m-d, g:ia T ", getlastmod()) .
             '(UTC ' . date('O', getlastmod()) . ')';
       ?>
       </p>
@@ -21,11 +21,16 @@
       <h2>Mission</h2>
 
       <p>
-      The PublicNTP Project provides unrestricted access to no-cost sources 
-        of highly-accurate time information as a public good.
+      The PublicNTP Project provides unrestricted access to no-cost, highly-accurate
+        time sources for the public good.
       </p>
 
       <h2>Servers</h2>
+
+      <iframe style="margin-left: 0.50in; margin-bottom: 0.25in;"
+        src="https://www.google.com/maps/d/embed?mid=1aNSiB3qehuSAzUaBZEYlaTVmtJo"
+        width="575" height="400"></iframe>
+
 
       <table style="padding-left: 0.5in;">
 
@@ -56,7 +61,7 @@ Dalles, Oregon, USA</a> (near Portland, Oregon)</td>
             </td>
             <td align="center">2016-07-30</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> US-West-2 zone</td>
+               <a href="http://aws.amazon.com">Amazon</a> US-West-2 region</td>
             <td>&nbsp;</td>
          </tr>
 
@@ -77,7 +82,7 @@ Jose, California, USA</a></td>
             </td>
             <td align="center">2016-07-31</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> US-West-1 zone</td>
+               <a href="http://aws.amazon.com">Amazon</a> US-West-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
@@ -120,7 +125,28 @@ Virginia, USA</a> (near Washington, DC)</td>
             </td>
             <td align="center">2016-07-30</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> US-East-1 zone</td>
+               <a href="http://aws.amazon.com">Amazon</a> US-East-1 region</td>
+            <td>&nbsp;</td>
+         </tr>
+
+         <tr>
+            <td>stratum2.gru01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/S%C3%A3o+Paulo,+State+of+S%C3%A3o+Paulo,+Brazil/@-23.6815315,-46.8754806,10z/data=!3m1!4b1!4m5!3m4!1s0x94ce448183a461d1:0x9ba94b08ff335bae!8m2!3d-23.5505199!4d-46.6333094">S&atilde;o
+Paulo, Brazil</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/brazil/sao-paulo">
+                <?php
+                    date_default_timezone_set( 'America/Sao_Paulo' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-08-03</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> SA-East-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
@@ -140,7 +166,7 @@ Virginia, USA</a> (near Washington, DC)</td>
             </td>
             <td align="center">2016-07-31</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> EU-West-1 zone</td>
+               <a href="http://aws.amazon.com">Amazon</a> EU-West-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
@@ -161,7 +187,69 @@ Germany</a></td>
             </td>
             <td align="center">2016-07-31</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> EU-Central-1 zone</td>
+               <a href="http://aws.amazon.com">Amazon</a> EU-Central-1 region</td>
+            <td>&nbsp;</td>
+         </tr>
+
+         <tr>
+            <td>stratum2.bom01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/Mumbai,+Maharashtra,+India/@19.0830943,72.7411198,11z/data=!3m1!4b1!4m5!3m4!1s0x3be7c6306644edc1:0x5da4ed8f8d648c69!8m2!3d19.0759837!4d72.8776559">Mumbai,
+India</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/india/mumbai">
+                <?php
+                    date_default_timezone_set( 'Asia/Kolkata' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-08-01</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> AP-South-1 region</td>
+            <td>&nbsp;</td>
+         </tr>
+
+         <tr>
+            <td>stratum2.sin01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/Singapore/@1.3149013,103.7769791,12z/data=!3m1!4b1!4m5!3m4!1s0x31da11238a8b9375:0x887869cf52abf5c4!8m2!3d1.352083!4d103.819836">Singapore</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/singapore/singapore">
+                <?php
+                    date_default_timezone_set( 'Asia/Singapore' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-08-03</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> AP-Southeast-1 region</td>
+            <td>&nbsp;</td>
+         </tr>
+
+         <tr>
+            <td>stratum2.hnd01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/Tokyo,+Japan/@35.6735408,139.570305,11z/data=!3m1!4b1!4m5!3m4!1s0x605d1b87f02e57e7:0x2e01618b22571b89!8m2!3d35.6894875!4d139.6917064">Tokyo,
+Japan</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/japan/tokyo">
+                <?php
+                    date_default_timezone_set( 'Asia/Tokyo' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-08-04</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> AP-Northeast-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
@@ -182,7 +270,7 @@ Australia</a></td>
             </td>
             <td align="center">2016-07-31</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> AP-Southeast-2 zone</td>
+               <a href="http://aws.amazon.com">Amazon</a> AP-Southeast-2 region</td>
             <td>&nbsp;</td>
          </tr>
 
@@ -193,22 +281,37 @@ Australia</a></td>
       <div>
       <ul>
          <li>All project servers are proud to participate in the
-         <a href="http://www.pool.ntp.org/">NTP Pool Project</a>.
-         All are
-         members of the <a href="http://www.pool.ntp.org/zone/@">global pool</a>,
-         the <a href="http://www.pool.ntp.org/zone/north-america">North
-         American</a> continent pool and the
-         <a href="http://www.pool.ntp.org/zone/us">United States</a> country
-         zone.</li>
+         <a href="http://www.pool.ntp.org/">NTP Pool Project</a></li>
 
-         <li>All the project servers currently operate at NTP stratum two,
+         <li>All project servers currently operate at NTP stratum two,
             meaning they synchronize across the network to 
             stratum one systems containing high-quality time sources such as GPS 
             or CDMA receivers. It's uncommon for project servers to vary from 
-            UTC by more than 2-3 milliseconds (a millisecond is 0.001 seconds).</li>
+            the <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated
+            Universal Time</a> (UTC) standard by more than 2-3 milliseconds 
+            (one millisecond = 0.001 seconds)</li>
       </ul></div>
 
+      <p style="text-decoration: underline;">Planned Deployments:</p>
+      <div>
+      <ul>
+         <li><a href="https://aws.amazon.com/blogs/aws/in-the-works-aws-region-in-canada/">Montreal</a>,
+         Qu&eacute;bec, Canada (2016)</li>
+      </ul>
+
+      </div>
+
       <h2>News</h2>
+
+         <p><strong>4 August 2016</strong>: <em>another</em> four new servers deployed!</p>
+            <div> 
+               <ul style="margin-left: 0.25in;">
+                  <li>S&atilde;o Paulo, Brazil (GRU01)</li>
+                  <li>Mumbai, India (BOM01)</li>
+                  <li>Singapore (SIN01)</li>
+                  <li>Tokyo, Japan (HND01)</li>
+               </ul>
+            </div>
 
          <p><strong>31 July 2016</strong>: four new servers deployed!</p>
             <div><ul style="margin-left: 0.25in;">
