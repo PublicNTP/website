@@ -138,7 +138,7 @@ Qu&eacute;bec, Canada</a></td>
                 <?php
                     date_default_timezone_set( 'Canada/Eastern' );
                     echo date("T");
-                ?></td>
+                ?></a></td>
             <td align="center"><?php echo date('O');?></td>
             <td align="center">2016-12-20</td>
             <td>
@@ -148,24 +148,42 @@ Qu&eacute;bec, Canada</a></td>
 
          <tr>
             <td>stratum2.gru01.publicntp.net</td>
-            <td><a
+            <td rowspan="3"><a
             href="https://www.google.com/maps/place/S%C3%A3o+Paulo,+State+of+S%C3%A3o+Paulo,+Brazil/@-23.6815315,-46.8754806,10z/data=!3m1!4b1!4m5!3m4!1s0x94ce448183a461d1:0x9ba94b08ff335bae!8m2!3d-23.5505199!4d-46.6333094">S&atilde;o
 Paulo, Brazil</a></td>
-            <td align="center"><a
+            <td rowspan="3" align="center"><a
             href="http://www.timeanddate.com/worldclock/brazil/sao-paulo">
                 <?php
                     date_default_timezone_set( 'America/Sao_Paulo' );
                     echo date("T");
                 ?></a></td>
-            <td align="center"><?php
+            <td rowspan="3" align="center"><?php
                 echo date('O');
                 ?>
             </td>
             <td align="center">2016-08-03</td>
             <td>
-               <a href="http://aws.amazon.com">Amazon</a> SA-East-1 region</td>
+               <a href="http://aws.amazon.com">Amazon</a> SA-East-1a availablility zone</td>
             <td>&nbsp;</td>
          </tr>
+
+         <tr>
+            <td>stratum2-02.gru01.publicntp.net</td>
+            <td align="center">2016-12-28</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> SA-East-1a availablility zone</td>
+            <td>&nbsp;</td>
+         </tr>
+
+         <tr>
+            <td>stratum2.gru02.publicntp.net</td>
+            <td align="center">2016-12-28</td>
+            <td>
+               <a href="http://aws.amazon.com">Amazon</a> SA-East-1c availablility zone</td>
+            <td>&nbsp;</td>
+         </tr>
+
+
 
          <tr>
             <td>stratum2.dub01.publicntp.net</td>
@@ -321,7 +339,7 @@ Australia</a></td>
 
       <h2>News</h2>
 
-         <p><strong>20 December 2016</strong>: new server in Montreal, Qu&eacute;bec, Canada (YUL01) deployed!<p>
+         <p><strong>20 December 2016</strong>: new server in Montreal, Qu&eacute;bec, Canada (YUL01) deployed!</p>
 
          <p><strong>4 August 2016</strong>: <em>another</em> four new servers deployed!</p>
             <div> 
