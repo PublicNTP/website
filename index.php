@@ -130,6 +130,23 @@ Virginia, USA</a> (near Washington, DC)</td>
          </tr>
 
          <tr>
+            <td>stratum2.yul01.publicntp.net</td>
+            <td><a
+href="https://www.google.com/maps/place/Montreal,+QC,+Canada/@45.5579564,-73.9917197,10z/data=!4m5!3m4!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5016889!4d-73.567256">Montreal,
+Qu&eacute;bec, Canada</a></td>
+            <td align="center"><a href="https://www.timeanddate.com/worldclock/canada/montreal">
+                <?php
+                    date_default_timezone_set( 'Canada/Eastern' );
+                    echo date("T");
+                ?></td>
+            <td align="center"><?php echo date('O');?></td>
+            <td align="center">2016-12-20</td>
+            <td>
+                <a href="http://aws.amazon.com">Amazon</a> CA-Central-1 region</td>
+            <td>&nbsp;</td>
+         </tr>
+
+         <tr>
             <td>stratum2.gru01.publicntp.net</td>
             <td><a
             href="https://www.google.com/maps/place/S%C3%A3o+Paulo,+State+of+S%C3%A3o+Paulo,+Brazil/@-23.6815315,-46.8754806,10z/data=!3m1!4b1!4m5!3m4!1s0x94ce448183a461d1:0x9ba94b08ff335bae!8m2!3d-23.5505199!4d-46.6333094">S&atilde;o
@@ -292,16 +309,19 @@ Australia</a></td>
             (one millisecond = 0.001 seconds)</li>
       </ul></div>
 
+      <!--
       <p style="text-decoration: underline;">Planned Deployments:</p>
       <div>
       <ul>
          <li><a href="https://aws.amazon.com/blogs/aws/in-the-works-aws-region-in-canada/">Montreal</a>,
          Qu&eacute;bec, Canada (2016)</li>
       </ul>
-
       </div>
+      -->
 
       <h2>News</h2>
+
+         <p><strong>20 December 2016</strong>: new server in Montreal, Qu&eacute;bec, Canada (YUL01) deployed!<p>
 
          <p><strong>4 August 2016</strong>: <em>another</em> four new servers deployed!</p>
             <div> 
