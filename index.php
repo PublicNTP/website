@@ -86,6 +86,25 @@ Jose, California, USA</a></td>
             <td>&nbsp;</td>
          </tr>
 
+         <tr>
+            <td>stratum1.slc01.publicntp.net</td>
+            <td><a
+            href="https://www.google.com/maps/place/Salt+Lake+City,+UT/@40.7765868,-111.9905246,12z/data=!3m1!4b1!4m5!3m4!1s0x87523d9488d131ed:0x5b53b7a0484d31ca!8m2!3d40.7607793!4d-111.8910474">Salt
+Lake City, Utah, USA</a></td>
+            <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/usa/salt-lake-city">
+                <?php
+                    date_default_timezone_set( 'US/Mountain' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2016-12-30</td>
+            <td>Triad Center</td>
+            <td>&nbsp;</td>
+         </tr>
 
          <tr>
             <td>stratum2.ord02.publicntp.net</td>
@@ -318,13 +337,15 @@ Australia</a></td>
          <li>All project servers are proud to participate in the
          <a href="http://www.pool.ntp.org/">NTP Pool Project</a></li>
 
-         <li>All project servers currently operate at NTP stratum two,
-            meaning they synchronize across the network to 
-            stratum one systems containing high-quality time sources such as GPS 
-            or CDMA receivers. It's uncommon for project servers to vary from 
-            the <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated
+         <li>All project servers operate at NTP stratum one or stratum two. 
+            Stratum one servers directly access high-quality time sources, such as GPS 
+            or CDMA signals. Stratum two servers synchronize across 
+            the network to stratum one servers.  It's uncommon for stratum two
+            servers to vary from the 
+            <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated
             Universal Time</a> (UTC) standard by more than 2-3 milliseconds 
-            (one millisecond = 0.001 seconds)</li>
+            (one millisecond = 0.001 seconds). Stratum one servers can achieve microsecond
+            (0.000001 seconds) or better accuracy</li></ul>
       </ul></div>
 
       <!--
@@ -338,6 +359,10 @@ Australia</a></td>
       -->
 
       <h2>News</h2>
+
+         <p><strong>30 December 2016</strong>: Three new servers deployed! Two new stratum two servers 
+            in S&atilde;o Paulo, Brazil (GRU01/02), and the project's first stratum one server in 
+            Salt Lake City, Utah, USA (SLC01)!</p>
 
          <p><strong>20 December 2016</strong>: new server in Montreal, Qu&eacute;bec, Canada (YUL01) deployed!</p>
 
