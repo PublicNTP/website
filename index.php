@@ -391,6 +391,9 @@ Australia</a></td>
 
       <h2>News</h2>
 
+         <p><strong>3 March 2017</strong>: two new stratum two servers deployed, one in Bangalore, India (BLR01) and
+            a second in Singapore (SIN02). Both servers support IPv6 clients.</p>
+
          <p><strong>30 December 2016</strong>: Three new servers deployed! Two new stratum two servers 
             in S&atilde;o Paulo, Brazil (GRU01/02), and the project's first stratum one server in 
             Salt Lake City, Utah, USA (SLC01)!</p>
