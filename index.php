@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
    <head>
       <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+      <meta name="google-site-verification" content="aX2V6fmn7mulZ2FOGedPuixNgWvSEvT5fAfa965tLKs" />
       <title>PublicNTP</title>
       <link rel="stylesheet" type="text/css" title="CSS" href="style.css" />
    </head>
@@ -267,16 +268,37 @@ India</a></td>
          </tr>
 
          <tr>
-            <td>stratum2.sin01.publicntp.net</td>
+            <td>stratum2-01.blr01.publicntp.net</td>
             <td><a
-            href="https://www.google.com/maps/place/Singapore/@1.3149013,103.7769791,12z/data=!3m1!4b1!4m5!3m4!1s0x31da11238a8b9375:0x887869cf52abf5c4!8m2!3d1.352083!4d103.819836">Singapore</a></td>
+            href="https://www.google.com/maps/place/Bengaluru,+Karnataka,+India/@12.95396,77.4908555,11z/data=!3m1!4b1!4m5!3m4!1s0x3bae1670c9b44e6d:0xf8dfc3e8517e4fe0!8m2!3d12.9715987!4d77.5945627">Bangalore,
+India</a></td>
             <td align="center"><a
+            href="http://www.timeanddate.com/worldclock/india/bangalore">
+                <?php
+                    date_default_timezone_set( 'Asia/Kolkata' );
+                    echo date("T");
+                ?></a></td>
+            <td align="center"><?php
+                echo date('O');
+                ?>
+            </td>
+            <td align="center">2017-01-09</td>
+            <td>
+               <a href="http://digitalocean.com">DigitalOcean</a> BLR1 datacenter</td>
+            <td>Supports IPv4 &amp; IPv6</td>
+         </tr>
+
+         <tr>
+            <td>stratum2.sin01.publicntp.net</td>
+            <td rowspan="2"><a
+            href="https://www.google.com/maps/place/Singapore/@1.3149013,103.7769791,12z/data=!3m1!4b1!4m5!3m4!1s0x31da11238a8b9375:0x887869cf52abf5c4!8m2!3d1.352083!4d103.819836">Singapore</a></td>
+            <td align="center" rowspan="2"><a
             href="http://www.timeanddate.com/worldclock/singapore/singapore">
                 <?php
                     date_default_timezone_set( 'Asia/Singapore' );
                     echo date("T");
                 ?></a></td>
-            <td align="center"><?php
+            <td align="center" rowspan="2"><?php
                 echo date('O');
                 ?>
             </td>
@@ -285,6 +307,15 @@ India</a></td>
                <a href="http://aws.amazon.com">Amazon</a> AP-Southeast-1 region</td>
             <td>&nbsp;</td>
          </tr>
+
+         <tr>
+            <td>stratum2-01.sin02.publicntp.net</td>
+            <td align="center">2017-02-26</td>
+            <td>
+               <a href="http://digitalocean.com">DigitalOcean</a> SGP1 datacenter</td>
+            <td>Supports IPv4 &amp; IPv6</td>
+         </tr>
+
 
          <tr>
             <td>stratum2.hnd01.publicntp.net</td>
