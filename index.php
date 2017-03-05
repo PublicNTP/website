@@ -11,6 +11,7 @@
 
    <body> 
       <h1>PublicNTP Project</h1>
+    
 
       <p><em>Last updated</em>: <?php
          date_default_timezone_set( 'US/Eastern' );
@@ -21,363 +22,206 @@
 
       <h2>Mission</h2>
 
+      <div style="margin-left: 0.5in;">
       <p>
       The PublicNTP Project provides unrestricted access to no-cost, highly-accurate
         time sources for the public good.
       </p>
+      </div>
 
       <h2>Servers</h2>
 
-      <iframe style="margin-left: 0.50in; margin-bottom: 0.25in;"
+      <div style="margin-left: 0.5in;">
+
+      <iframe style="margin-bottom: 0.25in;"
         src="https://www.google.com/maps/d/embed?mid=1aNSiB3qehuSAzUaBZEYlaTVmtJo"
         width="575" height="400"></iframe>
 
 
-      <table style="padding-left: 0.5in;">
+      <table> 
 
-         <tr>
+         <tr class="header"> 
+            <td style="text-align: center;"><strong>Country</strong></td>
+            <td><strong>City/State</strong></td>
             <td><strong>Hostname</strong></td>
-            <td><strong>Geographic Location</strong></td>
-            <td align="center"><strong>Timezone</strong></td>
-            <td align="center"><strong>UTC Offset</strong></td>
-            <td align="center"><strong>Live Date</strong></td>
-            <td><strong>Datacenter</strong></td>
-            <td><strong>Notes</strong></td>
+            <td style="text-align: center;"><strong>Live Date</strong></td>
+            <td style="text-align: center;"><strong>IPv6</strong></td>
          </tr>
 
-         <tr>
-            <td>stratum2.pdx01.publicntp.net</td>
+         <tr> 
+            <td style="text-align: center;">US</td>
             <td><a
             href="https://www.google.com/maps/place/The+Dalles,+OR+97058/@45.6094596,-121.2439003,12z/data=!3m1!4b1!4m5!3m4!1s0x54961dd9a1974387:0x5d2ec66fffe43aaa!8m2!3d45.5945645!4d-121.1786823">The
-Dalles, Oregon, USA</a> (near Portland, Oregon)</td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/usa/portland-or">
-                <?php
-                    date_default_timezone_set( 'US/Pacific' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+Dalles, Oregon</a></td>
+            <td>stratum2.pdx01.publicntp.org</td>
             <td align="center">2016-07-30</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> US-West-2 region</td>
             <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum2.sjc01.publicntp.net</td>
+            <td style="text-align: center;">US</td>
             <td><a
             href="https://www.google.com/maps/place/The+Dalles,+OR+97058/@45.6094596,-121.2439003,12z/data=!3m1!4b1!4m5!3m4!1s0x54961dd9a1974387:0x5d2ec66fffe43aaa!8m2!3d45.5945645!4d-121.1786823">San
-Jose, California, USA</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/usa/san-jose">
-                <?php
-                    date_default_timezone_set( 'US/Pacific' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+Jose, California</a></td>
+            <td>stratum2.sjc01.publicntp.org</td>
             <td align="center">2016-07-31</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> US-West-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum1.slc01.publicntp.net</td>
+            <td style="text-align: center;">US</td>
             <td><a
             href="https://www.google.com/maps/place/Salt+Lake+City,+UT/@40.7765868,-111.9905246,12z/data=!3m1!4b1!4m5!3m4!1s0x87523d9488d131ed:0x5b53b7a0484d31ca!8m2!3d40.7607793!4d-111.8910474">Salt
-Lake City, Utah, USA</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/usa/salt-lake-city">
-                <?php
-                    date_default_timezone_set( 'US/Mountain' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+Lake City, Utah</a></td>
+            <td>stratum1.slc01.publicntp.org</td>
             <td align="center">2016-12-30</td>
-            <td>Triad Center</td>
             <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum2.ord02.publicntp.net</td>
+            <td style="text-align: center;">US</td>
             <td><a
             href="https://maps.google.com/maps?q=725+s+wells+st,+60607&amp;hl=en&amp;hnear=725+S+Wells+St,+Chicago,+Cook,+Illinois+60607&amp;gl=us&amp;t=m&amp;z=13">
-Chicago, Illinois, USA</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/city.html?n=64">
-                <?php
-                    date_default_timezone_set( 'US/Central' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+Chicago, Illinois</a></td>
+            <td>stratum2.ord2.publicntp.org</td>
             <td align="center">2008-02-13</td>
-            <td>
-               <a href="http://steadfast.net">Steadfast</a></td>
-            <td>IP address changed on 2012-05-10, see News section</td>
+            <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum2.iad01.publicntp.net</td>
+            <td style="text-align: center;">US</td>
             <td><a
             href="https://www.google.com/maps/place/Ashburn,+VA/@39.0300219,-77.5121424,13z/data=!3m1!4b1!4m5!3m4!1s0x89b615f166fcc957:0x9da316eb11e3d5b!8m2!3d39.0437567!4d-77.4874416?hl=en">Ashburn,
-Virginia, USA</a> (near Washington, DC)</td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/usa/reston">
-                <?php
-                    date_default_timezone_set( 'US/Eastern' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O'); 
-                ?>
-            </td>
+Virginia</a></td>
+            <td>stratum2.iad01.publicntp.org</td>
             <td align="center">2016-07-30</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> US-East-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum2.yul01.publicntp.net</td>
+            <td style="text-align: center;">Canada</td>
             <td><a
 href="https://www.google.com/maps/place/Montreal,+QC,+Canada/@45.5579564,-73.9917197,10z/data=!4m5!3m4!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5016889!4d-73.567256">Montreal,
-Qu&eacute;bec, Canada</a></td>
-            <td align="center"><a href="https://www.timeanddate.com/worldclock/canada/montreal">
-                <?php
-                    date_default_timezone_set( 'Canada/Eastern' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php echo date('O');?></td>
+Qu&eacute;bec</a></td>
+            <td>stratum2.yul01.publicntp.org</td>
             <td align="center">2016-12-20</td>
-            <td>
-                <a href="http://aws.amazon.com">Amazon</a> CA-Central-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum2.gru01.publicntp.net</td>
+            <td style="text-align: center;" rowspan="3">Brazil</td>
             <td rowspan="3"><a
             href="https://www.google.com/maps/place/S%C3%A3o+Paulo,+State+of+S%C3%A3o+Paulo,+Brazil/@-23.6815315,-46.8754806,10z/data=!3m1!4b1!4m5!3m4!1s0x94ce448183a461d1:0x9ba94b08ff335bae!8m2!3d-23.5505199!4d-46.6333094">S&atilde;o
-Paulo, Brazil</a></td>
-            <td rowspan="3" align="center"><a
-            href="http://www.timeanddate.com/worldclock/brazil/sao-paulo">
-                <?php
-                    date_default_timezone_set( 'America/Sao_Paulo' );
-                    echo date("T");
-                ?></a></td>
-            <td rowspan="3" align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+Paulo</a></td>
+            <td>stratum2.gru01.publicntp.org</td>
             <td align="center">2016-08-03</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> SA-East-1a availablility zone</td>
             <td>&nbsp;</td>
          </tr>
 
-         <tr>
-            <td>stratum2-02.gru01.publicntp.net</td>
+         <tr style="background: #ffffff;">
+            <td>stratum2-02.gru01.publicntp.org</td>
             <td align="center">2016-12-28</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> SA-East-1a availablility zone</td>
             <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum2.gru02.publicntp.net</td>
+            <td>stratum2.gru02.publicntp.org</td>
             <td align="center">2016-12-28</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> SA-East-1c availablility zone</td>
             <td>&nbsp;</td>
          </tr>
 
 
-
          <tr>
-            <td>stratum2.dub01.publicntp.net</td>
+            <td style="text-align: center;">Ireland</td>
             <td><a
-            href="https://www.google.com/maps/place/Dublin,+Ireland/@53.324443,-6.3857855,11z/data=!3m1!4b1!4m5!3m4!1s0x48670e80ea27ac2f:0xa00c7a9973171a0!8m2!3d53.3498053!4d-6.2603097">Dublin, Ireland</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/ireland/dublin">
-                <?php
-                    date_default_timezone_set( 'Europe/Dublin' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+            href="https://www.google.com/maps/place/Dublin,+Ireland/@53.324443,-6.3857855,11z/data=!3m1!4b1!4m5!3m4!1s0x48670e80ea27ac2f:0xa00c7a9973171a0!8m2!3d53.3498053!4d-6.2603097">Dublin</a></td>
+            <td>stratum2.dub01.publicntp.org</td>
             <td align="center">2016-07-31</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> EU-West-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
+
          <tr>
-            <td>stratum2.fra01.publicntp.net</td>
+            <td style="text-align: center;">Germany</td>
             <td><a
-            href="https://www.google.com/maps/place/Frankfurt,+Germany/@50.1213479,8.4964821,11z/data=!3m1!4b1!4m5!3m4!1s0x47bd096f477096c5:0x422435029b0c600!8m2!3d50.1109221!4d8.6821267">Frankfurt,
-Germany</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/germany/frankfurt">
-                <?php
-                    date_default_timezone_set( 'Europe/Berlin' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+            href="https://www.google.com/maps/place/Frankfurt,+Germany/@50.1213479,8.4964821,11z/data=!3m1!4b1!4m5!3m4!1s0x47bd096f477096c5:0x422435029b0c600!8m2!3d50.1109221!4d8.6821267">Frankfurt</a></td>
+            <td>stratum2.fra01.publicntp.org</td>
             <td align="center">2016-07-31</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> EU-Central-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum2.bom01.publicntp.net</td>
+            <td style="text-align: center;">India</td>
             <td><a
-            href="https://www.google.com/maps/place/Mumbai,+Maharashtra,+India/@19.0830943,72.7411198,11z/data=!3m1!4b1!4m5!3m4!1s0x3be7c6306644edc1:0x5da4ed8f8d648c69!8m2!3d19.0759837!4d72.8776559">Mumbai,
-India</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/india/mumbai">
-                <?php
-                    date_default_timezone_set( 'Asia/Kolkata' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+            href="https://www.google.com/maps/place/Mumbai,+Maharashtra,+India/@19.0830943,72.7411198,11z/data=!3m1!4b1!4m5!3m4!1s0x3be7c6306644edc1:0x5da4ed8f8d648c69!8m2!3d19.0759837!4d72.8776559">Mumbai</a></td>
+            <td>stratum2.bom01.publicntp.org</td>
             <td align="center">2016-08-01</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> AP-South-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
          <tr>
-            <td>stratum2-01.blr01.publicntp.net</td>
+            <td style="text-align: center;">India</td>
             <td><a
-            href="https://www.google.com/maps/place/Bengaluru,+Karnataka,+India/@12.95396,77.4908555,11z/data=!3m1!4b1!4m5!3m4!1s0x3bae1670c9b44e6d:0xf8dfc3e8517e4fe0!8m2!3d12.9715987!4d77.5945627">Bangalore,
-India</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/india/bangalore">
-                <?php
-                    date_default_timezone_set( 'Asia/Kolkata' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+            href="https://www.google.com/maps/place/Bengaluru,+Karnataka,+India/@12.95396,77.4908555,11z/data=!3m1!4b1!4m5!3m4!1s0x3bae1670c9b44e6d:0xf8dfc3e8517e4fe0!8m2!3d12.9715987!4d77.5945627">Bangalore</a></td>
+            <td>stratum2-01.blr01.publicntp.org</td>
             <td align="center">2017-01-09</td>
-            <td>
-               <a href="http://digitalocean.com">DigitalOcean</a> BLR1 datacenter</td>
-            <td>Supports IPv4 &amp; IPv6</td>
+            <td style="text-align: center;">X</td>
          </tr>
 
          <tr>
-            <td>stratum2.sin01.publicntp.net</td>
+            <td rowspan="2" style="text-align: center;">Singapore</td>
             <td rowspan="2"><a
             href="https://www.google.com/maps/place/Singapore/@1.3149013,103.7769791,12z/data=!3m1!4b1!4m5!3m4!1s0x31da11238a8b9375:0x887869cf52abf5c4!8m2!3d1.352083!4d103.819836">Singapore</a></td>
-            <td align="center" rowspan="2"><a
-            href="http://www.timeanddate.com/worldclock/singapore/singapore">
-                <?php
-                    date_default_timezone_set( 'Asia/Singapore' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center" rowspan="2"><?php
-                echo date('O');
-                ?>
-            </td>
+            <td>stratum2.sin01.publicntp.org</td>
             <td align="center">2016-08-03</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> AP-Southeast-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
-         <tr>
-            <td>stratum2-01.sin02.publicntp.net</td>
+         <tr style="background: #cfcfcf;">
+            <td>stratum2-01.sin02.publicntp.org</td>
             <td align="center">2017-02-26</td>
-            <td>
-               <a href="http://digitalocean.com">DigitalOcean</a> SGP1 datacenter</td>
-            <td>Supports IPv4 &amp; IPv6</td>
+            <td style="text-align: center;">X</td>
+
          </tr>
 
-
-         <tr>
-            <td>stratum2.hnd01.publicntp.net</td>
+         <tr style="background: #ffffff;">
+            <td style="text-align: center;">Japan</td>
             <td><a
-            href="https://www.google.com/maps/place/Tokyo,+Japan/@35.6735408,139.570305,11z/data=!3m1!4b1!4m5!3m4!1s0x605d1b87f02e57e7:0x2e01618b22571b89!8m2!3d35.6894875!4d139.6917064">Tokyo,
-Japan</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/japan/tokyo">
-                <?php
-                    date_default_timezone_set( 'Asia/Tokyo' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+            href="https://www.google.com/maps/place/Tokyo,+Japan/@35.6735408,139.570305,11z/data=!3m1!4b1!4m5!3m4!1s0x605d1b87f02e57e7:0x2e01618b22571b89!8m2!3d35.6894875!4d139.6917064">Tokyo</a></td>
+            <td>stratum2.hnd01.publicntp.org</td>
             <td align="center">2016-08-04</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> AP-Northeast-1 region</td>
             <td>&nbsp;</td>
          </tr>
 
-         <tr>
-            <td>stratum2.syd01.publicntp.net</td>
+         <tr style="background: #cfcfcf;">
+            <td style="text-align: center;">Australia</td>
             <td><a
-            href="https://www.google.com/maps/place/Sydney+NSW,+Australia/@-33.847404,150.6517953,10z/data=!3m1!4b1!4m5!3m4!1s0x6b129838f39a743f:0x3017d681632a850!8m2!3d-33.8688197!4d151.2092955">Sydney,
-Australia</a></td>
-            <td align="center"><a
-            href="http://www.timeanddate.com/worldclock/australia/sydney">
-                <?php
-                    date_default_timezone_set( 'Australia/Sydney' );
-                    echo date("T");
-                ?></a></td>
-            <td align="center"><?php
-                echo date('O');
-                ?>
-            </td>
+            href="https://www.google.com/maps/place/Sydney+NSW,+Australia/@-33.847404,150.6517953,10z/data=!3m1!4b1!4m5!3m4!1s0x6b129838f39a743f:0x3017d681632a850!8m2!3d-33.8688197!4d151.2092955">Sydney</a></td>
+            <td>stratum2.syd01.publicntp.org</td>
             <td align="center">2016-07-31</td>
-            <td>
-               <a href="http://aws.amazon.com">Amazon</a> AP-Southeast-2 region</td>
             <td>&nbsp;</td>
          </tr>
 
 
       </table>
 
-      <p style="text-decoration: underline;">Notes:</p>
+      <p><strong>Notes</strong>:</p>
       <div>
       <ul>
+         <li>All project servers operate at NTP stratum one or stratum two
+            <ul>
+                <li>Stratum one servers directly access high-quality time sources, such as GPS
+            or CDMA signals, and can achieve microsecond (0.000001 seconds) or better accuracy</li>
+                <li> Stratum two servers synchronize across the network to stratum one servers,
+                    achieviving millisecond (0.001 seconds) accuracy</li></ul>
          <li>All project servers are proud to participate in the
          <a href="http://www.pool.ntp.org/">NTP Pool Project</a></li>
+         <li>Rate-limiting has been configured on the servers; abusive clients will be ignored</li>
 
-         <li>All project servers operate at NTP stratum one or stratum two. 
-            Stratum one servers directly access high-quality time sources, such as GPS 
-            or CDMA signals. Stratum two servers synchronize across 
-            the network to stratum one servers.  It's uncommon for stratum two
-            servers to vary from the 
-            <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated
-            Universal Time</a> (UTC) standard by more than 2-3 milliseconds 
-            (one millisecond = 0.001 seconds). Stratum one servers can achieve microsecond
-            (0.000001 seconds) or better accuracy</li></ul>
-      </ul></div>
+      </div>
+
+      </div>
+
 
       <!--
       <p style="text-decoration: underline;">Planned Deployments:</p>
@@ -391,6 +235,8 @@ Australia</a></td>
 
       <h2>News</h2>
 
+        <div style="margin-left: 0.5in;">
+
          <p><strong>3 March 2017</strong>: two new stratum two servers deployed, one in Bangalore, India (BLR01) and
             a second in Singapore (SIN02). Both servers support IPv6 clients.</p>
 
@@ -401,29 +247,26 @@ Australia</a></td>
          <p><strong>20 December 2016</strong>: new server in Montreal, Qu&eacute;bec, Canada (YUL01) deployed!</p>
 
          <p><strong>4 August 2016</strong>: <em>another</em> four new servers deployed!</p>
-            <div> 
-               <ul style="margin-left: 0.25in;">
+               <ul> 
                   <li>S&atilde;o Paulo, Brazil (GRU01)</li>
                   <li>Mumbai, India (BOM01)</li>
                   <li>Singapore (SIN01)</li>
                   <li>Tokyo, Japan (HND01)</li>
                </ul>
-            </div>
 
          <p><strong>31 July 2016</strong>: four new servers deployed!</p>
-            <div><ul style="margin-left: 0.25in;">
+            <ul>
                 <li>San Jose, California, USA (SJC01)</li>
                 <li>Dublin, Ireland (DUB01)</li>
                 <li>Frankfurt, Germany (FRA01)</li>
                 <li>Sydney, Australia (SYD01)</li>
-            </ul></div>
+            </ul>
 
          <p><strong>30 July 2016</strong>: two new servers deployed!</p>
-            <div>
-            <ul style="margin-left: 0.25in;">
+            <ul>
                 <li>Ashburn, Virginia, USA (IAD01)</li>
                 <li>The Dalles, Oregon, USA (PDX01)</li>
-            </ul></div>
+            </ul>
 
          <p><strong>22 May 2013</strong>: the SJC1 server has been delisted.</p>
 
@@ -444,8 +287,8 @@ Australia</a></td>
             </p>
 
          <p><strong>14 May 2011</strong>: NTP via IPv6 should now be available for 
-            the Chicago server (ORD2). Please contact <a href="mailto:timekeeper@publicntp.net">
-            timekeeper@publicntp.net</a> if any issues are encountered.</p>
+            the Chicago server (ORD2). Please contact <a href="mailto:timekeeper@publicntp.org">
+            timekeeper@publicntp.org</a> if any issues are encountered.</p>
 
          <p><strong>29 January 2011</strong>: the <a href="stats/">statistics</a> 
             page has been neglected for quite some time. The error graphs have 
@@ -484,7 +327,11 @@ Australia</a></td>
             with one server in the San Francisco, California area and two
             servers in Chicago, Illinois.</p> 
 
+         </div>
+
       <h2>Inspirations</h2>
+
+      <div style="margin-left: 0.5in;">
 
       <p>Open-access information systems designed/operated primarily for the 
             common good, such as the
@@ -493,6 +340,7 @@ Australia</a></td>
       <a href="http://www.root-servers.org/">root servers</a> for the
       <a href="http://en.wikipedia.org/wiki/Domain_name_system">Domain Name
       System</a>.</p>
+      </div>
 
 
       <!--
@@ -501,22 +349,6 @@ Australia</a></td>
          <p>Various <a href="stats/index.php">statistics</a> from the Project 
             servers, including usage and accuracy information.</p> 
       -->
-
-      <h2>Delivery Mechanism</h2>
-
-         <p>The project servers all support version 4 of the 
-         <a href="http://en.wikipedia.org/wiki/Network_Time_Protocol">Network
-         Time Protocol</a> served up by a version of the 
-         <a href="http://ntp.isc.org">NTP daemon</a>, an open-source project
-         hosted by the <a href="http://www.isc.org">Internet Systems
-         Consortium</a>.</p> 
-
-      <h2>Access Policy</h2>
-
-         <p>There are no restrictions on using project servers. The only
-            caveat is rate-limiting has been configured, so clients who
-            query too often will be ignored until they back off some.</p>
-
 
       <div style="padding-top: 0.25in; text-align: center;">
          <hr style="width: 80%" />
