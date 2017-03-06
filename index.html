@@ -12,8 +12,8 @@
       <h1>PublicNTP Project</h1>
     
       <p><em>Last updated</em>: 
-        <script src="/moment.min.js"></script>
-        <script>
+        <script src="/moment.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
           document.write( moment(document.lastModified).utc().format("YYYY-MM-DD, h:mma") );
         </script> UTC
       </p>
@@ -223,13 +223,18 @@ Paulo</a></td>
       <ul>
          <li>All project servers operate at NTP stratum one or stratum two
             <ul>
-                <li>Stratum one servers directly access high-quality time sources, such as GPS
-            or CDMA signals, and can achieve microsecond (0.000001 seconds) or better accuracy</li>
-                <li> Stratum two servers synchronize across the network to stratum one servers,
-                    achieving millisecond (0.001 seconds) accuracy</li></ul>
+               <li>Stratum one servers directly access high-quality time sources, such as GPS
+                  or CDMA signals, and can achieve microsecond (0.000001 seconds) or better accuracy</li>
+               <li> Stratum two servers synchronize across the network to stratum one servers,
+                  achieving millisecond (0.001 seconds) accuracy</li>
+           </ul>
+         </li>
+
          <li>All project servers are proud to participate in the
-         <a href="http://www.pool.ntp.org/">NTP Pool Project</a></li>
+            <a href="http://www.pool.ntp.org/">NTP Pool Project</a></li>
          <li>Rate-limiting has been configured on the servers; abusive clients will be ignored</li>
+     </ul>
+          
 
       </div>
 
@@ -366,7 +371,8 @@ Paulo</a></td>
       <div style="padding-top: 0.25in; text-align: center;">
          <hr style="width: 80%" />
          <div id="copyright"><p style="margin-bottom: 0.25in; font-size: 14px;">Copyright &copy; 
-            2008-<script>document.write(new Date().getFullYear())</script> PublicNTP Project</p></div>
+            2008-<script type="text/javascript">document.write(new Date().getFullYear())</script> 
+            PublicNTP Project</p></div>
       
          <p>
             <a href="http://validator.w3.org/check?uri=referer"><img
