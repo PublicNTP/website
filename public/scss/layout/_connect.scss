@@ -1,0 +1,73 @@
+.connect {
+
+	&__input {
+		width: 100%;
+		float: left;
+		color: color(textColor);
+		padding: 5px;
+		font-size: 13px;
+		border: none;
+		border-bottom: 1px solid color(textColor);
+		margin-bottom: 20px;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: color(link);
+	}		
+
+
+	&__paragraph {
+		width: 100%;
+		float: left;
+		margin-bottom: 30px;
+		font-size: 12px;
+		color: color(footer);
+		line-height: 1.8;
+	}
+
+	&__section {
+		width: 50%;
+		float: left;
+		padding-right: 80px;
+
+		&:nth-child(2) {
+			border-left: 2px solid color(footer);	
+			padding-left: 80px;
+			padding-right: 0px;
+		}
+	}
+
+	&__submit {
+		float: left;
+		padding: 10px 20px;
+		border: 1px solid color(textColor);
+		color: color(textColor);
+		margin-top: 10px;
+		border-radius: 2px;
+		text-transform: uppercase;
+		transition: .3s;
+		cursor: pointer;
+
+		&:hover {
+			color: white;
+			background: color(textColor);
+		}
+	}
+
+	&__title {
+		width: 100%;
+		float: left;
+		color: color(footer);
+		margin-bottom: 25px;
+		font-size: 28px;
+	}
+
+	&__ul {
+		list-style: none;
+		margin-bottom: 30px;
+		color: color(footer);
+		line-height: 1.8;
+		font-size: 12px;
+	}
+}

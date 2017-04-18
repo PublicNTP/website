@@ -1,0 +1,35 @@
+.header {
+	width: 100%;
+	float: left;
+	padding: 20px 40px;
+
+	&__connect {
+		border: 1px solid color(textColor);
+		border-radius: 2px;
+		margin-left: 10px;
+
+		&:hover {
+			background: color(textColor);
+			color: white;
+		}
+	}
+
+	&__item {
+		margin-top: 20px;
+		display: block;
+		float: right;
+		font-size: 13px;
+		padding: 10px 15px;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: color(textColor);
+		transition: .3s;
+	}
+
+	&__logo {
+		display: block;
+		width: 200px;
+		height: auto;
+		float: left;
+	}
+}

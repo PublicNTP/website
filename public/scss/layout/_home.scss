@@ -1,0 +1,26 @@
+.home {
+
+	&__section {
+		width: 100%;
+		float: left;
+		padding: 40px;
+	}
+	
+	&__sub-title {
+		width: 100%;
+		float: left;
+		color: color(textColor);
+		font-size: 12px;
+	}
+
+	&__title {
+		width: 100%;
+		font-size: 60px;
+		margin-bottom: 20px;
+		float: left;
+
+		&--right {
+			text-align: right;
+		}
+	}
+}
