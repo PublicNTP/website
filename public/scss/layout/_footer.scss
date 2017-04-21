@@ -52,6 +52,11 @@
 	&__right {
 		width: calc(100% - 200px);
 		float: right;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: 100%;
+			margin-top: 10px;
+		}
 	}
 
 	&__right-link {
@@ -68,6 +73,11 @@
 	&__sites {
 		width: 200px;
 		float: left;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: 100%;
+			text-align: right
+		}
 	}
 
 	&__title {

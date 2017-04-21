@@ -18,7 +18,7 @@
 		text-decoration: none;
 		display: block;
 		font-size: 11px;
-		margin-bottom: 100px;
+		margin-bottom: 30px;
 		transition: .3s;
 	
 		&:hover {
@@ -39,6 +39,11 @@
 		width: 60%;
 		float: left;
 		padding-right: 60px;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: 100%;
+			padding: 0;
+		}
 	}
 	
 	&__hero {
@@ -49,7 +54,11 @@
 
 	&__side {
 		width: 40%;
-		float: left;
+		float: right;
+		
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: 100%;
+		}
 	}
 
 	&__time {
@@ -65,5 +74,9 @@
 		float: left;
 		font-size: 60px;
 		font-weight: 500;
+	
+		@media screen and (max-width: breakpoint(tablet)) {
+			font-size: 40px;
+		}
 	}
 }

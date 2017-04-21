@@ -18,6 +18,10 @@
 		font-size: 10px;
 		margin-bottom: 25px;
 		float: left;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			margin-bottom: 15px;
+		}
 	}
 	
 
@@ -42,6 +46,12 @@
 		
 		&:nth-child(3) {
 			padding-right: 0px;
+		}
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: 100%;
+			padding-right: 0;
+			margin-bottom: 20px;
 		}
 	}
 
