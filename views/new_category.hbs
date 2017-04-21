@@ -1,11 +1,10 @@
+<h1>New Category</h1>
 {{#each categories}}
 	<p>{{this.name}}</p>
 {{/each}}
 
 <form action='/blog/new_category' method='POST'>
 	<input name='category' placeholder='Category'>
-	<br>
-	<input name='permalink' placeholder='Permalink'>
 	<br>
 	<input type='submit' value='Submit'>
 </form>

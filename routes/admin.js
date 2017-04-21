@@ -125,9 +125,13 @@ router.get('/categories/new', function(req, res) {
 router.post('/categories/new', function(req, res) {
 	if (isAuthenticated(req, res)) {
 		console.log('req', req.body)
+		var permalink = req.body.category;
+		permalink = permalink.toLowerCase();
+		permalink = permalink.replace(/ /g, '-');
+
 		models.Category.create({
 			name: req.body.category,
-			permalink: '/blog/' + req.body.permalink,
+			permalink: '/blog/categories/' + permalink,
 		}).then(function() {
 			models.Category.findAll()
 			.then(function(categories) {
