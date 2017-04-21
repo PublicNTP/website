@@ -19,7 +19,11 @@ var is_production = true;
 
 if (ENV === 'development') {
   is_production = false;
+} else {
+	process.env.NODE_ENV = 'production';
+	ENV = 'production';
 }
+
 app.locals.is_production = ENV !== 'development';
 
 app.use(express.static(path.join(__dirname, 'public')));
