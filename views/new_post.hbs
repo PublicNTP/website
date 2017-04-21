@@ -1,5 +1,4 @@
-
-<form action='/blog/new_post' method='POST'>
+<form action='/admin/posts/new' method='POST' enctype="multipart/form-data">
 	<select name='category'>
 		{{#each categories}}
 			<option value="{{this.name}}">{{this.name}}</option>
@@ -8,9 +7,7 @@
 	<br>
 	<input name='title' placeholder='Title'>
 	<br>
-	<input name='image_url' placeholder='Image Url'>
-	<br>
-	<input name='permalink' placeholder='Permalink'>
+	<input type="file" name='image_upload' placeholder='Image Upload'>
 	<br>
 	<textarea name='excerpt' placeholder='Excerpt'></textarea>
 	<br>

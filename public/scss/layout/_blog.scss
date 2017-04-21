@@ -1,6 +1,7 @@
 .blog {
 	width: 100%;
 	float: left;
+	margin-bottom: 60px;
 
 	&__bar {
 		width: 2px;
@@ -19,18 +20,72 @@
 		color: color(textColor);
 		padding: 0 40px;
 		font-size: 10px;
+		display: block;
+		text-decoration: none;
 	}
 
 	&__image {
 		width: 200px;
 		height: 200px;
-		object-fit: contain;
+		object-fit: cover;
 		float: right;
 	}
 	
 	&__left-wrap {
+		display: block;
+		text-decoration: none;
 		width: 34%;
 		float: left;
+	}
+
+	&__sidebar {
+		width: 200px;
+		float: right;
+	}
+
+	&__search {
+		float: right;
+		padding: 8px 40px;
+		background: color(footer);
+		text-transform: uppercase;
+		color: white;
+		cursor: pointer;
+		margin-bottom: 10px;
+		font-size: 11px;
+		font-weight: 600;
+		transition: .3s;
+		border: 1px solid color(footer);
+
+		&:hover {
+			background: white;
+			color: color(footer);
+		}			
+	}
+
+	&__search-bar-wrap {
+		width: 100%;
+		float: left;
+		position: relative;
+		margin-bottom: 20px;
+		overflow: hidden;
+	}
+
+	&__search-input-hide {
+		max-height: 0;
+		padding: 0 !important;
+		border: none !important;
+	}
+
+	&__search-input {
+		width: 100%;
+		float: left;
+		border: none;
+		font-size: 16px;
+		border-bottom: 1px solid color(footer);
+		color: color(footer);
+		padding: 5px;
+		outline: none;
+		transition: .3s;
 	}
 	
 	&__time {
@@ -51,6 +106,17 @@
 		width: calc(100% - 200px);
 		float: left;
 		position: relative;
+	}
+
+	&__x {
+		display: block;
+		position: absolute;
+		top: 9px;
+		cursor: pointer;
+		right: 0;
+		width: 12px;
+		height: 12px;
+		object-fit: contain;
 	}
 
 }

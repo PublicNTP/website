@@ -6,24 +6,36 @@
 </div>
 
 <div class="home__section">
+	<div class="blog__search-bar-wrap">
+		<input id="search-input" class="blog__search-input blog__search-input-hide" placeholder="Search">
+		<img class="blog__x" src="/images/x.svg">
+	</div>
+</div>
+
+<div class="home__section">
 	<div class="blog__wrap">
 		<div class="blog__bar"></div>
 		{{#each posts}}
 			<div class="blog">
-				<div class="blog__left-wrap">
+				<a href='/blog/posts/{{this.permalink}}' class="blog__left-wrap">
 					<h2 class="blog__title">
 						{{this.title}}
 					</h2>
 					<p class="blog__time">
 						{{this.time}}
 					</p>
-				</div>	
-				<p class="blog__excerpt">
+				</a>	
+				<a href='/blog/posts/{{this.permalink}}' class="blog__excerpt">
 					{{this.excerpt}}
-				</p>
-				<img class="blog__image" src="{{this.image_url}}">
+				</a>
+				<a href='/blog/posts/{{this.permalink}}'>
+					<img class="blog__image" src="{{this.image_url}}">
+				</a> 
 			</div>
 		{{/each}}
+	</div>
+	<div class="blog__sidebar">
+		<p class="blog__search">Search</p>
 	</div>
 </div>
 

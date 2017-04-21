@@ -1,9 +1,16 @@
 var express = require('express');
+var path = require('path');
 var router = express.Router();
-var models = require('../models');
+var multer = require('multer');
 var moment = require('moment');
-var authConfig = require('../authConfig')
+var models = require('../models');
+var authConfig = require('../authConfig');
 
+
+var uploading = multer({
+    dest: path.dirname(require.main.filename) + '/public/uploads/',
+    limits: { fileSize: 10000000, files:1 },
+});
 
 var isAuthenticated = function(req, res) {
 	if (req.session.permission) {
@@ -12,6 +19,20 @@ var isAuthenticated = function(req, res) {
 		res.redirect('/admin/login')		
 	}
 }
+
+router.get('/login', function(req, res) {
+	res.render('login', {})
+})
+
+router.post('/login', function(req, res) {
+	if (req.body.username === authConfig.username && req.body.password === authConfig.password) {
+		req.session.permission = true;
+		console.log('re', req.session)
+		res.redirect('/admin')
+	} else {
+		res.redirect('login')
+	}
+})
 
 router.get('/', function(req, res) {
 	if (isAuthenticated(req, res)) {
@@ -29,22 +50,7 @@ router.get('/', function(req, res) {
 					posts: posts
 				})
 			})
-		})	
-	} 
-})
-
-router.get('/login', function(req, res) {
-	res.render('login', {})
-})
-
-router.post('/login', function(req, res) {
-	if (req.body.username === authConfig.username && req.body.password === authConfig.password) {
-		req.session.permission = true;
-		console.log('re', req.session)
-		res.redirect('/admin')
-	} else {
-		res.redirect('login')
-	}
+		})	} 
 })
 
 router.get('/posts/:id/destroy', function(req, res) {
@@ -61,35 +67,23 @@ router.get('/posts/:id/destroy', function(req, res) {
 
 router.get('/posts/new', function(req, res) {
 	if (isAuthenticated(req, res)) {
-		models.post.findall()
+		models.Post.findAll()
 		.then(function(posts) {
-			models.category.findall()
+			models.Category.findAll()
 			.then(function(categories) {
 				res.render('new_post',{
-					categories: json.parse(json.stringify(categories)),
-					posts: json.parse(json.stringify(posts))
+					categories: JSON.parse(JSON.stringify(categories)),
+					posts: JSON.parse(JSON.stringify(posts))
 				})
 			})
 		})
 	}
 })
 
-router.get('/posts/new', function(req, res) {
-	if (isAuthenticated(req, res)) {
-		models.post.findall()
-		.then(function(posts) {
-			models.category.findall()
-			.then(function(categories) {
-				res.render('new_post',{
-					categories: json.parse(json.stringify(categories)),
-					posts: json.parse(json.stringify(posts))
-				})
-			})
-		})
-	}
-})
 
-router.post('/posts/new', function(req, res) {
+router.post('/posts/new', uploading.single('image_upload'), function(req, res) {
+	console.log('here', req.file)
+	
 	if (isAuthenticated(req, res)) {
 		models.Category.findOne({
 			where: {
@@ -98,21 +92,26 @@ router.post('/posts/new', function(req, res) {
 		}).then(function(category) {
 			category = JSON.parse(JSON.stringify(category))
 			console.log('cat', category)
+			var permalink = req.body.title;
+			permalink = permalink.toLowerCase();
+			permalink = permalink.replace(/ /g, '-');
+			
 			models.Post.create({
 				CategoryId: category.id,
 				title: req.body.title,
-				image_url: req.body.image_url,
-				permalink: req.body.permalink,
+				image_url: '/uploads/' + req.file.filename, 
+				permalink: permalink,
 				excerpt: req.body.excerpt,
 				content: req.body.content
 			}).then(function(post) {
 				console.log('post', post)	
+				res.redirect('/admin')
 			})
 		})
 	}
 })
 
-router.get('/new_category', function(req, res) {
+router.get('/categories/new', function(req, res) {
 	if (isAuthenticated(req, res)) {
 		models.Category.findAll()
 		.then(function(categories) {
@@ -123,7 +122,7 @@ router.get('/new_category', function(req, res) {
 	}
 })
 
-router.post('/new_category', function(req, res) {
+router.post('/categories/new', function(req, res) {
 	if (isAuthenticated(req, res)) {
 		console.log('req', req.body)
 		models.Category.create({
