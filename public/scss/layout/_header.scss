@@ -97,6 +97,7 @@
 		padding: 60px 10px 0 10px;
 		height: 100vh;
 		background: color(footer);
+		z-index: 200;
 		transition: .3s;
 		
 		@media screen and (max-width: breakpoint(tablet)) {

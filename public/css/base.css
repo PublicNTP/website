@@ -47,6 +47,12 @@
   font-weight: 500;
   font-family: sans-serif; }
 
+.wrap {
+  width: 100%;
+  float: left;
+  position: relative;
+  overflow: hidden; }
+
 .blog {
   width: 100%;
   float: left;
@@ -575,6 +581,7 @@
     padding: 60px 10px 0 10px;
     height: 100vh;
     background: #2a2a2a;
+    z-index: 200;
     -webkit-transition: .3s;
     transition: .3s; }
     @media screen and (max-width: 767px) {
