@@ -1,0 +1,8 @@
+<h1>Blog Admin</h1>
+{{#each posts}}
+	<div class="">
+		<p>{{this.title}}<p>
+		<p>{{this.time}}<p>
+		<a href="/admin/posts/{{this.id}}/destroy">Delete Post<a>
+	</div>
+{{/each}}

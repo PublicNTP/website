@@ -1,0 +1,56 @@
+.blog {
+	width: 100%;
+	float: left;
+
+	&__bar {
+		width: 2px;
+		height: 100%;
+		background: black;
+		position: absolute;
+		top: 0;
+		left: 34%;
+		background: linear-gradient(white, black, white);
+	}
+	
+	&__excerpt {
+		width: calc(66% - 200px);
+		float: left;
+		line-height: 2;
+		color: color(textColor);
+		padding: 0 40px;
+		font-size: 10px;
+	}
+
+	&__image {
+		width: 200px;
+		height: 200px;
+		object-fit: contain;
+		float: right;
+	}
+	
+	&__left-wrap {
+		width: 34%;
+		float: left;
+	}
+	
+	&__time {
+		width: 100%;
+		float: left;
+		color: color(textColor);
+	}
+
+	&__title {
+		width: 100%;
+		font-size: 20px;
+		float: left;
+		margin-bottom: 10px;
+		color: color(footer);
+	}
+
+	&__wrap {
+		width: calc(100% - 200px);
+		float: left;
+		position: relative;
+	}
+
+}

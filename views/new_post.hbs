@@ -1,0 +1,22 @@
+
+<form action='/blog/new_post' method='POST'>
+	<select name='category'>
+		{{#each categories}}
+			<option value="{{this.name}}">{{this.name}}</option>
+		{{/each}}
+	</select>
+	<br>
+	<input name='title' placeholder='Title'>
+	<br>
+	<input name='image_url' placeholder='Image Url'>
+	<br>
+	<input name='permalink' placeholder='Permalink'>
+	<br>
+	<textarea name='excerpt' placeholder='Excerpt'></textarea>
+	<br>
+	<textarea name="content" placeholder="content"></textarea>
+	<br>
+	<textarea name="tags" placeholder="Tags"></textarea>
+	<br>
+	<input type='submit' value='Submit'>
+</form>

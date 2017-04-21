@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "bryantoblad",
+    "password": null,
+    "database": "publicntpblog",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "publicntpblog",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "publicntpuser",
+    "password": "publicntpadmin",
+    "database": "publicntpblog",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

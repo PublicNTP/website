@@ -1,9 +1,94 @@
 .home {
+	width: 100%;
+	float: left;
+	padding: 150px 0;
+
+	&__emph {
+		color: color(footer);
+	}
+
+	&__info {
+		width: 100%;
+		float: left;
+		padding-bottom: 10px;
+		font-size: 13px;
+		color: color(textColor);
+	}
 
 	&__section {
 		width: 100%;
 		float: left;
-		padding: 40px;
+		padding: 40px 70px;
+	}
+
+	&__sidebar {
+		width: 350px;
+		float: right;
+	}
+
+	&__sidebar-title {
+		width: 100%;
+		float: left;
+		margin-bottom: 60px;
+		font-size: 70px;
+	}
+
+	&__sidebar-sub-title {
+		width: 100%;
+		float: left;
+		color: color(footer);
+		margin-bottom: 40px;
+		font-size: 24px;
+	}
+
+	&__signal {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		left: 0px; 
+		top: 0px;
+		border-radius: 20px;
+		border: 1px solid color(textColor);
+		animation: signal 1.5s infinite linear;
+	}
+
+	&__signal-bar {
+		width: 2px;
+		height: 120px;
+		bottom: 0;
+		position: absolute;
+		left: calc(50% - 1px);
+		background: linear-gradient(black, white);
+	}
+
+	&__signal-ball {
+		width: 15px;
+		height: 15px;
+		position: absolute;
+		left: calc(50% - 7.5px);
+		background: black;
+		border-radius: 7.5px;
+		top: 12.5px;
+	}
+
+	&__signal-wrap {
+		width: 40px;
+		height: 140px;
+		position: absolute;
+		left: 30%; 
+		top: -150px;
+	}
+
+	&__signal-flip {
+		transform: rotate(180deg);
+		top: auto;
+		bottom: -150px;
+	}
+
+	&__spacer {
+		width: 100%;
+		float: left;
+		margin-bottom: 20px;
 	}
 	
 	&__sub-title {
@@ -23,4 +108,25 @@
 			text-align: right;
 		}
 	}
+
+	&__world {
+		width: calc(100% - 350px);
+		float: left;
+		position: relative;
+		padding-right: 50px;
+	}
+
+	&__world-image {
+		width: 100%;
+		float: left;
+		height: auto;
+	}
+		
+}
+
+
+@keyframes signal {
+	0% { border: 1px solid black; }
+	50% { border: 1px solid white; }
+	100% { border: 1px solid black; }
 }
