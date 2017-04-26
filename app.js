@@ -5,6 +5,7 @@ var hbs = require('hbs');
 var moment = require('moment');
 var session = require('cookie-session');
 
+var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
 var adminRoutes = require('./routes/admin');
 var models = require('./models');
@@ -78,12 +79,7 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-
-app.get('/', function(req, res) {
-  res.render('home', {
-    is_production: is_production
-  })
-})
+app.use('/', indexRoutes)
 
 app.use('/blog', blogRoutes);
 app.use('/admin', adminRoutes);

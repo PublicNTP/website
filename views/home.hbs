@@ -18,31 +18,50 @@
 				<div class="home__signal-bar"></div>		
 				<div class="home__signal-ball"></div>		
 			</div>
-			<img class="home__world-image" src="/images/world.png">
+			<img class="home__world-image" src="/images/globe.png">
+			{{#each locations}}
+				<div class="home__location" id="location-{{@index}}" style="left: {{this.geoX}}; top: {{this.geoY}};">
+					<div class="home__location-ball"></div>
+				</div>
+			{{/each}}
 		</div>
 		<div class="home__sidebar">
 			<h2 class="home__sidebar-title">Servers</h2>
-			<h4 class="home__sidebar-sub-title">Bangalore</h4>
-			<p class="home__info">
-				Continent: <span class="home__emph">Asia</span>
-			</p>
-			<p class="home__info">
-				Country: <span class="home__emph">India</span>
-			</p>
-			<div class="home__spacer"></div>
-			<p class="home__info">
-				Live Date: <span class="home__emph">2017-01-09</span>
-			</p>
-			<div class="home__spacer"></div>
-			<p class="home__info">
-				Hostname (IPv6):
-				<span class="home__emph"> stratum2-01.bir01.publicntp.org</span>
-			</p>
+			{{#each locations}}
+				<div class="home__sidebar-wrap" id="side-location-{{@index}}">
+					<h4 class="home__sidebar-sub-title">{{this.city}}</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">{{this.continent}}</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">{{this.country}}</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">{{this.liveDate}}</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> {{this.hostname}}</span>
+					</p>
+				</div>
+			{{/each}}
 		</div>
 	</div>
 </div>
 
 <div class="home__section">
 	<h1 class="home__title home__title--right">PublicNTP Experience</h1>
+	<div class="home__blog">
+		<a href="/blog/posts/{{post.permalink}}">
+			<h4 class="home__blog-title">{{post.title}}</h4>
+		</a>
+		<a href="/blog/posts/{{post.permalink}}">
+			<img class="home__blog-image" src="{{post.image_url}}">
+		</a>
+		<p class="home__blog-p">{{post.excerpt}}</p>
+	</div>
 </div>
 
+<script src="/js/home.js"></script>
