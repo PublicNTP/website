@@ -74,7 +74,7 @@
 		cursor: pointer;
 
 		&:hover {
-			border: 1px solid color(textColor);
+			animation: signal 1.5s infinite linear;
 		}
 	}
 

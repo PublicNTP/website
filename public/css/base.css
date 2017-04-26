@@ -699,7 +699,8 @@
     border: 1px solid transparent;
     cursor: pointer; }
     .home__location:hover {
-      border: 1px solid #9b9b9b; }
+      -webkit-animation: signal 1.5s infinite linear;
+              animation: signal 1.5s infinite linear; }
   .home__location-ball {
     width: 8px;
     height: 8px;
