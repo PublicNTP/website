@@ -6,9 +6,8 @@ var locations = require('../data/locations');
 router.get('/', function(req, res) {
 	models.Post.findAll().then(function(posts) {
 		models.Post.findOne({
+			raw: true
 		}).then(function(post) {
-			post = JSON.parse(JSON.stringify(post))
-			console.log('posts', post)
 			res.render('home', {
 				locations: locations,
 				post: post

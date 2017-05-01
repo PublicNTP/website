@@ -15,9 +15,7 @@ module.exports = function(sequelize, DataTypes) {
 				allowNull: false
 			}
 		})
-		Post.belongsToMany(models.Tag, {
-			through: 'post_tags'			
-		})
+		Post.hasMany(models.Tag)
       }
     }
   });

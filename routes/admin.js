@@ -27,7 +27,6 @@ router.get('/login', function(req, res) {
 router.post('/login', function(req, res) {
 	if (req.body.username === authConfig.username && req.body.password === authConfig.password) {
 		req.session.permission = true;
-		console.log('re', req.session)
 		res.redirect('/admin')
 	} else {
 		res.redirect('login')
@@ -39,9 +38,9 @@ router.get('/', function(req, res) {
 		models.Post.findAll().then(function(posts) {
 			console.log('posts', posts)
 			models.Post.findAndCountAll({
-				limit: 10
+				limit: 10,
+				raw: true
 			}).then(function(posts) {
-				posts = JSON.parse(JSON.stringify(posts))
 				posts = posts.rows.map(function(post, index) {
 					post.time = moment(post.createdAt).format("MMM Do YYYY")
 					return post
@@ -85,29 +84,51 @@ router.post('/posts/new', uploading.single('image_upload'), function(req, res) {
 	console.log('here', req.file)
 	
 	if (isAuthenticated(req, res)) {
-		models.Category.findOne({
-			where: {
-				name: req.body.category
-			}
-		}).then(function(category) {
-			category = JSON.parse(JSON.stringify(category))
-			console.log('cat', category)
-			var permalink = req.body.title;
-			permalink = permalink.toLowerCase();
-			permalink = permalink.replace(/ /g, '-');
+		//models.Category.findOne({
+		//	where: {
+		//		name: req.body.category
+		//	}
+		//}).then(function(category) {
+		//	category = JSON.parse(JSON.stringify(category))
+		//	console.log('cat', category)
+		//	var permalink = req.body.title;
+		//	permalink = permalink.toLowerCase();
+		//	permalink = permalink.replace(/ /g, '-');
+		//	
+		//	models.Post.create({
+		//		CategoryId: category.id,
+		//		title: req.body.title,
+		//		image_url: '/uploads/' + req.file.filename, 
+		//		permalink: permalink,
+		//		excerpt: req.body.excerpt,
+		//		content: req.body.content
+		//	}).then(function(post) {
+		//		console.log('post', post)	
+		//		res.redirect('/admin')
+		//	})
+		//})
+
+		var tags = req.body.tags.split(',')
+		models.Post.findOne({
+		}).then(function(post) {
+			post = JSON.parse(JSON.stringify(post))
 			
-			models.Post.create({
-				CategoryId: category.id,
-				title: req.body.title,
-				image_url: '/uploads/' + req.file.filename, 
-				permalink: permalink,
-				excerpt: req.body.excerpt,
-				content: req.body.content
-			}).then(function(post) {
-				console.log('post', post)	
-				res.redirect('/admin')
-			})
+			
+			for (var i in tags) {
+				if (tags[i] != ' ') {
+					models.Tag.create({
+						name: tags[i],
+						PostId: post.id
+					}).then(function(tag) {
+						tag.belongsTo(post)
+						console.log('asdfadfdfdf', tag)	
+					})
+				}
+			}
+			res.redirect('/admin')
 		})
+		
+		
 	}
 })
 

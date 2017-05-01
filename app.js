@@ -8,6 +8,7 @@ var session = require('cookie-session');
 var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
 var adminRoutes = require('./routes/admin');
+var timelineRoutes = require('./routes/timeline');
 var models = require('./models');
 var authConfig = require('./authConfig');
 var port = 3020;
@@ -83,6 +84,7 @@ app.use('/', indexRoutes)
 
 app.use('/blog', blogRoutes);
 app.use('/admin', adminRoutes);
+app.use('/timeline', timelineRoutes);
 
 app.get('/connect/', function(req, res) {
   res.render('connect', {

@@ -5,8 +5,9 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-		Tag.belongsToMany(models.Post, {
-			through: 'post_tags'			
+		Tag.belongsTo(models.Post, {
+          onDelete: "CASCADE",
+          foreignKey: 'PostId'
 		})
       }
     }
