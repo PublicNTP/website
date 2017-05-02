@@ -12,7 +12,6 @@ router.get('/', function(req, res) {
 			}]	
 		}).then(function(post) {
 			post = JSON.parse(JSON.stringify(post))
-			console.log('post', post)
 			res.render('home', {
 				locations: locations,
 				post: post

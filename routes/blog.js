@@ -69,7 +69,6 @@ router.get('/tags', function(req, res) {
 	models.Tag.findAll({
 	}).then(function(tags) {
 		tags = JSON.parse(JSON.stringify(tags))
-		console.log(tags)
 	})
 })
 

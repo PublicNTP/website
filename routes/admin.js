@@ -44,7 +44,6 @@ router.post('/login', function(req, res) {
 router.get('/', function(req, res) {
 	if (isAuthenticated(req, res)) {
 		models.Post.findAll().then(function(posts) {
-			console.log('posts', posts)
 			models.Post.findAndCountAll({
 				limit: 10,
 				raw: true
@@ -90,7 +89,6 @@ router.get('/posts/new', function(req, res) {
 
 
 router.post('/posts/new', uploading.array('image_upload', 12), function(req, res) {
-	console.log('here', req)
 	
 	if (isAuthenticated(req, res)) {
 		models.Category.findOne({
@@ -149,7 +147,6 @@ router.get('/categories/new', function(req, res) {
 
 router.post('/categories/new', function(req, res) {
 	if (isAuthenticated(req, res)) {
-		console.log('req', req.body)
 		var permalink = req.body.category;
 		permalink = permalink.toLowerCase();
 		permalink = permalink.replace(/ /g, '-');
