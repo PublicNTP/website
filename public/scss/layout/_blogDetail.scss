@@ -46,10 +46,23 @@
 		}
 	}
 	
-	&__hero {
-		width: 100%;
+	&__image {
+		width: 200px;
+		float: right;
 		height: auto;
 		margin-bottom: 30px;
+
+		&:nth-child(1) {
+			width: 100%;
+		}
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			display: none;
+		}
+	}
+
+	&__simage {
+
 	}
 
 	&__side {
@@ -58,6 +71,17 @@
 		
 		@media screen and (max-width: breakpoint(tablet)) {
 			width: 100%;
+		}
+	}
+
+	&__swiper {
+		display: none;
+		width: 100%;
+		float: left;
+		margin-bottom: 30px !important;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			display: block;
 		}
 	}
 

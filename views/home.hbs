@@ -58,7 +58,9 @@
 			<h4 class="home__blog-title">{{post.title}}</h4>
 		</a>
 		<a href="/blog/posts/{{post.permalink}}">
-			<img class="home__blog-image" src="{{post.image_url}}">
+			{{#if post.Images.0.file_name}}
+				<img class="home__blog-image" src="{{post.Images.0.file_name}}">
+			{{/if}}
 		</a>
 		<p class="home__blog-p">{{post.excerpt}}</p>
 	</div>

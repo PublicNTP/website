@@ -6,8 +6,13 @@ var locations = require('../data/locations');
 router.get('/', function(req, res) {
 	models.Post.findAll().then(function(posts) {
 		models.Post.findOne({
-			raw: true
+			include: [{
+				model: models.Image,
+				as: 'Images'
+			}]	
 		}).then(function(post) {
+			post = JSON.parse(JSON.stringify(post))
+			console.log('post', post)
 			res.render('home', {
 				locations: locations,
 				post: post

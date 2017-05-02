@@ -227,10 +227,16 @@
       width: 100%;
       padding: 0; } }
 
-.blog-detail__hero {
-  width: 100%;
+.blog-detail__image {
+  width: 200px;
+  float: right;
   height: auto;
   margin-bottom: 30px; }
+  .blog-detail__image:nth-child(1) {
+    width: 100%; }
+  @media screen and (max-width: 767px) {
+    .blog-detail__image {
+      display: none; } }
 
 .blog-detail__side {
   width: 40%;
@@ -238,6 +244,15 @@
   @media screen and (max-width: 767px) {
     .blog-detail__side {
       width: 100%; } }
+
+.blog-detail__swiper {
+  display: none;
+  width: 100%;
+  float: left;
+  margin-bottom: 30px !important; }
+  @media screen and (max-width: 767px) {
+    .blog-detail__swiper {
+      display: block; } }
 
 .blog-detail__time {
   width: 100%;

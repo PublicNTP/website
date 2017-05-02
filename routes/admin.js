@@ -7,9 +7,17 @@ var models = require('../models');
 var authConfig = require('../authConfig');
 
 
+
+
 var uploading = multer({
-    dest: path.dirname(require.main.filename) + '/public/uploads/',
-    limits: { fileSize: 10000000, files:1 },
+	storage: multer.diskStorage({
+		destination: function (req, file, cb) {
+			cb(null, path.dirname(require.main.filename) + '/public/uploads')
+		},
+		filename: function (req, file, cb) {
+			cb(null, file.fieldname + '-' + Date.now())
+	  	}
+	})
 });
 
 var isAuthenticated = function(req, res) {
@@ -81,8 +89,8 @@ router.get('/posts/new', function(req, res) {
 })
 
 
-router.post('/posts/new', uploading.single('image_upload'), function(req, res) {
-	console.log('here', req.file)
+router.post('/posts/new', uploading.array('image_upload', 12), function(req, res) {
+	console.log('here', req)
 	
 	if (isAuthenticated(req, res)) {
 		models.Category.findOne({
@@ -91,7 +99,6 @@ router.post('/posts/new', uploading.single('image_upload'), function(req, res) {
 			}
 		}).then(function(category) {
 			category = JSON.parse(JSON.stringify(category))
-			console.log('cat', category)
 			var permalink = req.body.title;
 			permalink = permalink.toLowerCase();
 			permalink = permalink.replace(/ /g, '-');
@@ -99,13 +106,20 @@ router.post('/posts/new', uploading.single('image_upload'), function(req, res) {
 			models.Post.create({
 				CategoryId: category.id,
 				title: req.body.title,
-				image_url: '/uploads/' + req.file.filename, 
 				permalink: permalink,
 				excerpt: req.body.excerpt,
 				content: req.body.content
 			}).then(function(post) {
 				var tags = req.body.tags.split(',')
 				post = JSON.parse(JSON.stringify(post))
+				var images = req.files;
+				for (var i in images) {
+					models.Image.create({
+						file_name: '/uploads/' + images[i].filename,
+						PostId: post.id
+					}).then(function(img) {
+					})
+				}
 				
 				for (var i in tags) {
 					if (tags[i] != ' ') {

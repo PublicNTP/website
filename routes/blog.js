@@ -10,6 +10,9 @@ router.get('/', function(req, res) {
 		include: [{
 			model: models.Tag,
 			as: 'Tags'
+		}, {
+			model: models.Image,
+			as: 'Images'
 		}]
 	}).then(function(posts) {
 		posts = JSON.parse(JSON.stringify(posts))
@@ -49,8 +52,12 @@ router.get('/posts/:permalink', function(req, res) {
 		where: {
 			permalink: req.params.permalink
 		},
-		raw: true
+		include: [{
+			model: models.Image,
+			as: 'Images'
+		}]	
 	}).then(function(post) {
+		post = JSON.parse(JSON.stringify(post))
 		post.time = moment(post.createAt).format("MMMM Do, YYYY");
 		res.render('blog_detail', {
 			post: post

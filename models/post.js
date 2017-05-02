@@ -4,7 +4,6 @@ module.exports = function(sequelize, DataTypes) {
     content: DataTypes.TEXT,
     title: DataTypes.STRING,
     permalink: DataTypes.STRING,
-	image_url: DataTypes.STRING,
 	excerpt: DataTypes.TEXT
   }, {
     classMethods: {
@@ -17,6 +16,7 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		})
 		Post.hasMany(models.Tag)
+		Post.hasMany(models.Image)
       }
     }
   });
