@@ -134,12 +134,33 @@
     float: left;
     border: none;
     font-size: 16px;
-    border-bottom: 1px solid #2a2a2a;
     color: #2a2a2a;
     padding: 5px;
     outline: none;
     -webkit-transition: .3s;
     transition: .3s; }
+  .blog__search-item {
+    width: 100%;
+    float: left;
+    padding: 10px 20px;
+    display: block;
+    color: #9b9b9b;
+    -webkit-transition: .3s;
+    transition: .3s;
+    font-weight: 600;
+    text-decoration: none; }
+    .blog__search-item:hover {
+      color: #2a2a2a; }
+  .blog__search-item-wrap {
+    border: 1px solid #2a2a2a;
+    border-radius: 3px;
+    max-height: 300px;
+    width: 100%;
+    float: left;
+    -webkit-transition: .3s;
+    transition: .3s; }
+  .blog__submit {
+    display: none; }
   .blog__time {
     width: 100%;
     float: left;
