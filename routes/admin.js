@@ -134,6 +134,90 @@ router.post('/posts/new', uploading.array('image_upload', 12), function(req, res
 	}
 })
 
+router.get('/posts/:id/edit', function(req, res) {
+	if (isAuthenticated(req, res)) {
+		models.Post.findOne({
+			where: {
+				id: req.params.id
+			},
+			include: [{
+				model: models.Category,
+				as: 'Category'
+			}, {
+				model: models.Tag,
+				as: 'Tags'
+			}, {
+				model: models.Image,
+				as: 'Images'
+			}]
+		})
+		.then(function(post) {
+			models.Category.findAll()
+			.then(function(categories) {
+				res.render('edit_post',{
+					categories: JSON.parse(JSON.stringify(categories)),
+					post: JSON.parse(JSON.stringify(post))
+				})
+			})
+		})
+	}
+})
+
+router.post('/posts/:id/update', uploading.array('image_upload', 12), function(req, res) {
+	
+	if (isAuthenticated(req, res)) {
+		models.Category.findOne({
+			where: {
+				name: req.body.category
+			}
+		}).then(function(category) {
+			category = JSON.parse(JSON.stringify(category))
+			var permalink = req.body.title;
+			permalink = permalink.toLowerCase();
+			permalink = permalink.replace(/ /g, '-');
+
+			models.Post.findOne({
+				where: {
+					id: req.params.id
+				}
+			}).then(function(post) {
+				console.log('here')
+				post.updateAttributes({
+					CategoryId: category.id,
+					title: req.body.title,
+					permalink: permalink,
+					excerpt: req.body.excerpt,
+					content: req.body.content
+				}).then(function(post) {
+					var tags = req.body.tags.split(',')
+					post = JSON.parse(JSON.stringify(post))
+					var images = req.files;
+					for (var i in images) {
+						models.Image.create({
+							file_name: '/uploads/' + images[i].filename,
+							PostId: post.id
+						}).then(function(img) {
+						})
+					}
+					
+					for (var i in tags) {
+						if (tags[i] != ' ') {
+							models.Tag.create({
+								name: tags[i],
+								PostId: post.id
+							}).then(function(tag) {
+							})
+						}
+					}
+					res.redirect('/admin')
+				})
+			})
+			
+		})
+	}
+})
+
+
 router.get('/categories/new', function(req, res) {
 	if (isAuthenticated(req, res)) {
 		models.Category.findAll()
@@ -161,6 +245,18 @@ router.post('/categories/new', function(req, res) {
 					categories: JSON.parse(JSON.stringify(categories))
 				})
 			})
+		})
+	}
+})
+
+router.get('/tags/:id/destroy', function(req, res) {
+	if (isAuthenticated(req, res)) {
+		models.Tag.destroy({
+			where: {
+				id: req.params.id
+			}
+		}).then(function() {
+			res.redirect('/admin')
 		})
 	}
 })
