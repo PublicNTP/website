@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataTypes) {
 		Post.belongsTo(models.Category, {
 			onDelete: "CASCADE",
 			foreignKey: {
-				allowNull: false
+				allowNull: false,
+				as: 'CategoryId'
 			}
 		})
 		Post.hasMany(models.Tag)
