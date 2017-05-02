@@ -249,6 +249,18 @@ router.post('/categories/new', function(req, res) {
 	}
 })
 
+router.get('/image/:id/destroy', function(req, res) {
+	if (isAuthenticated(req, res)) {
+		models.Image.destroy({
+			where: {
+				id: req.params.id
+			}
+		}).then(function() {
+			res.redirect('/admin')
+		})
+	}
+})
+
 router.get('/tags/:id/destroy', function(req, res) {
 	if (isAuthenticated(req, res)) {
 		models.Tag.destroy({
