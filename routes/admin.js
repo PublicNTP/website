@@ -49,7 +49,8 @@ router.get('/', function(req, res) {
 					posts: posts
 				})
 			})
-		})	} 
+		})
+	} 
 })
 
 router.get('/posts/:id/destroy', function(req, res) {
@@ -84,51 +85,40 @@ router.post('/posts/new', uploading.single('image_upload'), function(req, res) {
 	console.log('here', req.file)
 	
 	if (isAuthenticated(req, res)) {
-		//models.Category.findOne({
-		//	where: {
-		//		name: req.body.category
-		//	}
-		//}).then(function(category) {
-		//	category = JSON.parse(JSON.stringify(category))
-		//	console.log('cat', category)
-		//	var permalink = req.body.title;
-		//	permalink = permalink.toLowerCase();
-		//	permalink = permalink.replace(/ /g, '-');
-		//	
-		//	models.Post.create({
-		//		CategoryId: category.id,
-		//		title: req.body.title,
-		//		image_url: '/uploads/' + req.file.filename, 
-		//		permalink: permalink,
-		//		excerpt: req.body.excerpt,
-		//		content: req.body.content
-		//	}).then(function(post) {
-		//		console.log('post', post)	
-		//		res.redirect('/admin')
-		//	})
-		//})
-
-		var tags = req.body.tags.split(',')
-		models.Post.findOne({
-		}).then(function(post) {
-			post = JSON.parse(JSON.stringify(post))
-			
-			
-			for (var i in tags) {
-				if (tags[i] != ' ') {
-					models.Tag.create({
-						name: tags[i],
-						PostId: post.id
-					}).then(function(tag) {
-						tag.belongsTo(post)
-						console.log('asdfadfdfdf', tag)	
-					})
-				}
+		models.Category.findOne({
+			where: {
+				name: req.body.category
 			}
-			res.redirect('/admin')
+		}).then(function(category) {
+			category = JSON.parse(JSON.stringify(category))
+			console.log('cat', category)
+			var permalink = req.body.title;
+			permalink = permalink.toLowerCase();
+			permalink = permalink.replace(/ /g, '-');
+			
+			models.Post.create({
+				CategoryId: category.id,
+				title: req.body.title,
+				image_url: '/uploads/' + req.file.filename, 
+				permalink: permalink,
+				excerpt: req.body.excerpt,
+				content: req.body.content
+			}).then(function(post) {
+				var tags = req.body.tags.split(',')
+				post = JSON.parse(JSON.stringify(post))
+				
+				for (var i in tags) {
+					if (tags[i] != ' ') {
+						models.Tag.create({
+							name: tags[i],
+							PostId: post.id
+						}).then(function(tag) {
+						})
+					}
+				}
+				res.redirect('/admin')
+			})
 		})
-		
-		
 	}
 })
 
