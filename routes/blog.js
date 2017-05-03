@@ -53,27 +53,6 @@ router.get('/', function(req, res) {
 	})
 })
 
-router.post('/search', function(req, res) {
-	var search = req.body.search;
-	models.Post.findAll({
-		where: {
-			$or: [
-				{ 'title': { $iLike: '%' + search + '%' } },
-				{ '$Tags.name$': { $iLike: '%' + search + '%' } }
-			]
-		},
-		include: [{
-			model: models.Tag,
-			as: 'Tags'
-		}]
-	}).then(function(posts) {
-		res.render('partials/searchItem', {
-			layout: false,
-			searchPosts: posts
-		})
-	})
-})
-
 router.get('/posts/:permalink', function(req, res) {
 	models.Post.findOne({
 		where: {
@@ -91,13 +70,5 @@ router.get('/posts/:permalink', function(req, res) {
 		})
 	})
 })
-
-router.get('/tags', function(req, res) {
-	models.Tag.findAll({
-	}).then(function(tags) {
-		tags = JSON.parse(JSON.stringify(tags))
-	})
-})
-
 
 module.exports = router;

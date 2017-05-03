@@ -8,7 +8,7 @@ var session = require('cookie-session');
 var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
 var adminRoutes = require('./routes/admin');
-var timelineRoutes = require('./routes/timeline');
+var learnRoutes = require('./routes/learn');
 var models = require('./models');
 var authConfig = require('./authConfig');
 var port = 3020;
@@ -84,27 +84,21 @@ app.use('/', indexRoutes)
 
 app.use('/blog', blogRoutes);
 app.use('/admin', adminRoutes);
-app.use('/timeline', timelineRoutes);
+app.use('/learn', learnRoutes);
 
-app.get('/connect/', function(req, res) {
+app.get('/connect', function(req, res) {
   res.render('connect', {
     is_production: is_production
   })
 })
-
-app.get('/learn/', function(req, res) {
-  res.render('learn', {
-    is_production: is_production
-  })
-})
 	
-app.get('/history/', function(req, res) {
+app.get('/history', function(req, res) {
   res.render('history', {
     is_production: is_production
   })
 })
 
-app.get('/stats/', function(req, res) {
+app.get('/stats', function(req, res) {
 	var rows = [];
 	var points = []
 	for (var i = 200; i > 0; i = i - 20) {
