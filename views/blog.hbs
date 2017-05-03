@@ -13,6 +13,19 @@
 	</div>
 	<div class="blog__sidebar">
 		<p class="blog__search">Search</p>
+		<div class="time">
+			{{#each timeline}}
+				<p class="time__year time__closed">{{@key}}<p>
+				{{#each this}}
+					<p class="time__year">{{this}}<p>
+					{{#each this}}
+						<a href="/blog/posts/{{this.permalink}}" class="time__post">
+							{{this.title}}
+						</a>
+					{{/each}} 
+				{{/each}} 
+			{{/each}} 
+		</div>
 	</div>
 	<div class="blog__wrap">
 		<div class="blog__bar"></div>
@@ -38,5 +51,8 @@
 		{{/each}}
 	</div>
 </div>
+<p id="deserializedPosts" style="display: none;">{{deserializedPosts}}</p>
 
 <script src="/js/search.js"></script>
+<script src="/js/time.js"></script>
+<script src="/js/blog.js"></script>

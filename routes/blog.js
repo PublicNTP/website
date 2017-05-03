@@ -20,8 +20,35 @@ router.get('/', function(req, res) {
 			post.time = moment(post.createdAt).format("MMM Do YYYY")
 			return post
 		})
-		res.render('blog', {
-			posts: posts
+		models.Post.findAll({
+			attributes: [ 'id', 'createdAt', 'title', 'permalink' ],
+			include: [{
+				model: models.Tag,
+				as: 'Tags'
+			}]
+		}).then(function(timelinePosts) {
+			timelinePosts = JSON.parse(JSON.stringify(timelinePosts))
+			var tlp = {} 
+			var years = []
+			for (var i in timelinePosts) {
+				var year = moment(timelinePosts[i].createdAt).format('Y')
+				var month = parseInt(moment(timelinePosts[i].createdAt).format('M'))
+				if (tlp[year] && tlp[year][month]) {
+					tlp[year][month].push(timelinePosts[i])
+				} else if (tlp[year] && !tlp[year][month]) {
+					tlp[year][month] = []
+					tlp[year][month].push(timelinePosts[i])
+				} else {
+					tlp[year] = [] 
+					tlp[year][month] = []
+					tlp[year][month].push(timelinePosts[i])
+				}
+			}
+			console.log('tlp2', tlp)
+			res.render('blog', {
+				posts: posts,
+				deserializedPosts: JSON.stringify(timelinePosts)
+			})
 		})
 	})
 })
