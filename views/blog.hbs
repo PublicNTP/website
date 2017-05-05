@@ -15,15 +15,22 @@
 		<p class="blog__search">Search</p>
 		<div class="time">
 			{{#each timeline}}
-				<p class="time__year time__closed">{{@key}}<p>
-				{{#each this}}
-					<p class="time__year">{{this}}<p>
-					{{#each this}}
-						<a href="/blog/posts/{{this.permalink}}" class="time__post">
-							{{this.title}}
-						</a>
-					{{/each}} 
+			<div>
+				<p class="time__year">
+					{{this.year}}
+					<img src="/images/down.png" class="time__icon">
+				</p>
+				{{#each this.months}}
+					<div class="time__wrap time__closed">
+						<p class="time__month">{{this.month}}<p>
+						{{#each this.posts}}
+							<a href="/blog/posts/{{this.permalink}}" class="time__post">
+								{{this.title}}
+							</a>
+						{{/each}} 
+					</div>
 				{{/each}} 
+				</div>
 			{{/each}} 
 		</div>
 	</div>
@@ -49,10 +56,19 @@
 				</a> 
 			</div>
 		{{/each}}
+		<div class="blog__page-prev">
+			{{#if prev}}
+				<a href="{{prev}}" class="blog__page">Newer Posts</a>
+			{{/if}}
+		</div>
+		<div class="blog__page-next">
+			{{#if next}}
+				<a href="{{next}}" class="blog__page">Older Posts</a>
+			{{/if}}
+		</div>
 	</div>
 </div>
 <p id="deserializedPosts" style="display: none;">{{deserializedPosts}}</p>
 
 <script src="/js/search.js"></script>
-<script src="/js/time.js"></script>
 <script src="/js/blog.js"></script>

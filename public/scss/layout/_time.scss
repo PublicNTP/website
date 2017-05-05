@@ -1,6 +1,77 @@
 .time {
-	
-	@media screen and (max-width: breakpoint(tablet)) {
+	width: 100%;
+	margin-top: 20px;
+	float: left;
+
+	&__closed {
+		margin-bottom: 0px !important;
+		max-height: 0px !important;
+		padding-bottom: 0 !important;
+	}
+
+	&__icon {
+		width: 8px;
+		height: 8px;
+		object-fit: contain;
+		transform: rotate(90deg);
+		transition: .3s;
+
+		&.unrotate {
+			transform: rotate(0deg);
+		}
+	}
+
+	&__month {
+		width: 100%;
+		float: left;
+		font-size: 12px;
+		padding: 0 10px 3px 0;
+		text-align: right;
+		color: color(textColor);
+		margin-top: 10px;
+	}
+
+	&__post {
+		width: 100%;
+		float: left;
+		font-size: 12px;
+		padding: 0 10px 3px 0;
+		text-align: right;
+		color: color(textColor);
+		text-decoration: none;
+		transition: .3s;
+
+		&:hover {
+			font-weight: 600;
+		}
+	}
+
+	&__year {
+		width: 100%;
+		float: left;
+		padding: 0 10px 3px 0;
+		position: relative;
+		font-size: 14px;
+		text-align: right;
+		color: color(textColor);
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline; 
+		}
+	}
+
+	&__wrap {
+		width: 100%;
+		float: left;
+		transition: .3s;
+		overflow: hidden;
+		padding-bottom: 10px;
+		max-height: 3000px;
+	}
+
+	@media screen and (max-width: breakpoint(tablet-lg)) {
 		display: none
 	}
 }

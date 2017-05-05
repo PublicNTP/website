@@ -100,6 +100,32 @@
     @media screen and (max-width: 767px) {
       .blog__left-wrap {
         width: 100%; } }
+  .blog__page {
+    color: #9b9b9b;
+    -webkit-transition: .3s;
+    transition: .3s;
+    text-decoration: none; }
+    .blog__page:hover {
+      color: #2a2a2a; }
+  .blog__page-prev {
+    width: 34%;
+    display: block;
+    float: left;
+    padding: 5px 0; }
+    @media screen and (max-width: 767px) {
+      .blog__page-prev {
+        width: 50%;
+        text-align: left; } }
+  .blog__page-next {
+    width: 66%;
+    display: block;
+    float: left;
+    text-align: center;
+    padding: 5px 0; }
+    @media screen and (max-width: 767px) {
+      .blog__page-next {
+        width: 50%;
+        text-align: right; } }
   .blog__sidebar {
     width: 200px;
     float: right; }
@@ -530,6 +556,7 @@
         text-align: right; } }
   .footer__title {
     width: 100%;
+    line-height: 1.5;
     float: left;
     margin-bottom: 25px;
     color: #dbdbdb;
@@ -950,6 +977,66 @@
       width: 100%;
       margin-bottom: 25px; } }
 
-@media screen and (max-width: 767px) {
-  .time {
-    display: none; } }
+.time {
+  width: 100%;
+  margin-top: 20px;
+  float: left; }
+  .time__closed {
+    margin-bottom: 0px !important;
+    max-height: 0px !important;
+    padding-bottom: 0 !important; }
+  .time__icon {
+    width: 8px;
+    height: 8px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transition: .3s;
+    transition: .3s; }
+    .time__icon.unrotate {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg); }
+  .time__month {
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    padding: 0 10px 3px 0;
+    text-align: right;
+    color: #9b9b9b;
+    margin-top: 10px; }
+  .time__post {
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    padding: 0 10px 3px 0;
+    text-align: right;
+    color: #9b9b9b;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    transition: .3s; }
+    .time__post:hover {
+      font-weight: 600; }
+  .time__year {
+    width: 100%;
+    float: left;
+    padding: 0 10px 3px 0;
+    position: relative;
+    font-size: 14px;
+    text-align: right;
+    color: #9b9b9b;
+    font-weight: 600;
+    cursor: pointer; }
+    .time__year:hover {
+      text-decoration: underline; }
+  .time__wrap {
+    width: 100%;
+    float: left;
+    -webkit-transition: .3s;
+    transition: .3s;
+    overflow: hidden;
+    padding-bottom: 10px;
+    max-height: 3000px; }
+  @media screen and (max-width: 991px) {
+    .time {
+      display: none; } }

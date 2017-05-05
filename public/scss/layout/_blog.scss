@@ -56,6 +56,41 @@
 		}
 	}
 
+	&__page {
+		color: color(textColor);
+		transition: .3s;
+		text-decoration: none;
+		
+		&:hover {
+			color: color(footer);
+		}
+	}
+
+	&__page-prev {
+		width: 34%;
+		display: block;
+		float: left;
+		padding: 5px 0;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: 50%;
+			text-align: left;
+		}
+	}
+
+	&__page-next {
+		width: 66%;
+		display: block;
+		float: left;
+		text-align: center;
+		padding: 5px 0;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: 50%;
+			text-align: right;
+		}
+	}
+
 	&__sidebar {
 		width: 200px;
 		float: right;
