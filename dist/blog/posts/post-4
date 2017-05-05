@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PublicNTP</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+  </head>
+  <body>
+	<div class="wrap">
+		<div class="header__mobile-wrap">
+			<img class="header__mobile-x" id="mobile-close" src="/images/x-light.svg">
+			<a href="/history/" class="header__item-mobile">History</a>
+			<a href="/blog/" class="header__item-mobile">blog</a>
+			<a href="/stats/" class="header__item-mobile">stats</a>
+			<a href="/learn/" class="header__item-mobile">Learn</a>
+			<a href="/connect/" class="header__item-mobile header__connect">Connect</a>
+		</div>
+		<header class="header">
+			<a href="/">
+				<img class="header__logo" src="/images/publicNTPLogo.png">
+			</a>
+			<a href="/connect/" class="header__item header__connect">Connect</a>
+			<a href="/learn/" class="header__item">Learn</a>
+			<a href="/stats/" class="header__item">stats</a>
+			<a href="/blog/" class="header__item">blog</a>
+			<a href="/history/" class="header__item">History</a>
+			<img class="header__mobile-icon" id="mobile-icon" src="/images/list-menu.svg">
+		</header>
+		<div class="home__section">
+	<a href="/blog" class="blog-detail__back">
+		Back
+		<img class="blog-detail__back-icon" src="/images/back.svg">
+	</a>
+</div>
+<div class="home__section">
+	<h1 class="blog-detail__title">Post 4</h1>
+</div>
+<div class="home__section">
+	<p class="blog-detail__time">
+		May 5th, 2017
+	</p>
+	<div class="blog-detail__side">
+			<img class="blog-detail__image" src="/uploads/image_upload-1493847710098">
+			<div class="node-clear"></div>
+	</div>
+	<div class="blog-detail__swiper swiper-container">
+		<div class="swiper-wrapper">
+			<img class="blog-detail__simage swiper-slide" src="/uploads/image_upload-1493847710098">
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<div class="blog-detail__content">
+		<div class="blog-detail__article">
+			kjlkj
+		</div>
+	</div>
+</div>
+
+<div class="home__section"></div>
+<div class="home__section"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<script src="/js/swipe.js"></script>
+
+		<footer class="footer">
+			<div class="footer__sites">
+				<h3 class="footer__other-title">
+					Other Great NPT Sites
+				</h3>
+				<a href="/" class="footer__other-link">NPT Pool</a>
+				<a href="/" class="footer__other-link">Website 2</a>
+				<a href="/" class="footer__other-link">Yet Another Site</a>
+				<a href="/" class="footer__other-link">Fourth Link</a>
+			</div>
+			<div class="footer__right">
+				<h3 class="footer__title">
+					Learn how you can connect and help, or foolow us on LinkedIn.
+				</h3>
+				<a href="/">
+					<img class="footer__linkedin" src="/images/linkedin.png">
+				</a>
+				<a href="/connect" class="footer__connect">Connect</a>
+				<a href="/terms-of-use" class="footer__right-link">Terms of Use</a>
+				<a href="/privacy" class="footer__right-link">Privacy Policy</a>
+				<p class="footer__right-link">Copyright 2017</p>
+			</div>
+		</footer>
+	</div>
+  </body>
+  <script src="/js/dropdown.js"></script>
+  <script src="/js/main.js"></script>
+</html>

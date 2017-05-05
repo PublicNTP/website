@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PublicNTP</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+  </head>
+  <body>
+	<div class="wrap">
+		<div class="header__mobile-wrap">
+			<img class="header__mobile-x" id="mobile-close" src="/images/x-light.svg">
+			<a href="/history/" class="header__item-mobile">History</a>
+			<a href="/blog/" class="header__item-mobile">blog</a>
+			<a href="/stats/" class="header__item-mobile">stats</a>
+			<a href="/learn/" class="header__item-mobile">Learn</a>
+			<a href="/connect/" class="header__item-mobile header__connect">Connect</a>
+		</div>
+		<header class="header">
+			<a href="/">
+				<img class="header__logo" src="/images/publicNTPLogo.png">
+			</a>
+			<a href="/connect/" class="header__item header__connect">Connect</a>
+			<a href="/learn/" class="header__item">Learn</a>
+			<a href="/stats/" class="header__item">stats</a>
+			<a href="/blog/" class="header__item">blog</a>
+			<a href="/history/" class="header__item">History</a>
+			<img class="header__mobile-icon" id="mobile-icon" src="/images/list-menu.svg">
+		</header>
+		<div class="home__section">
+	<h1 class="home__title">The PublicNTP Project</h1>
+	<p class="home__sub-title">
+		The PublicNTP Project provides unrestricted access to no-cost, highly-accurate time sources for the public good.
+	</p>
+</div>
+
+<div class="home__section">
+	<div class="home">
+		<div class="home__world">
+			<div class="home__signal-wrap">
+				<div class="home__signal"></div>		
+				<div class="home__signal-bar"></div>		
+				<div class="home__signal-ball"></div>		
+			</div>
+			<div class="home__signal-wrap home__signal-flip">
+				<div class="home__signal"></div>		
+				<div class="home__signal-bar"></div>		
+				<div class="home__signal-ball"></div>		
+			</div>
+			<img class="home__world-image" src="/images/globe.png">
+				<div class="home__location" id="location-0" style="left: calc(12.5% - 15px); top: calc(35% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-1" style="left: calc(12.5% - 15px); top: calc(40% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-2" style="left: calc(15% - 15px); top: calc(38% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-3" style="left: calc(23% - 15px); top: calc(37% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-4" style="left: calc(25% - 15px); top: calc(39% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-5" style="left: calc(26% - 15px); top: calc(33% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-6" style="left: calc(32% - 15px); top: calc(79% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-7" style="left: calc(44% - 15px); top: calc(28% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-8" style="left: calc(48.5% - 15px); top: calc(31% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-9" style="left: calc(67.3% - 15px); top: calc(51% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-10" style="left: calc(68.5% - 15px); top: calc(56.5% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-11" style="left: calc(76.2% - 15px); top: calc(63% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-12" style="left: calc(86% - 15px); top: calc(41% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+				<div class="home__location" id="location-13" style="left: calc(88.5% - 15px); top: calc(85% - 15px);">
+					<div class="home__location-ball"></div>
+				</div>
+		</div>
+		<div class="home__sidebar">
+			<h2 class="home__sidebar-title">Servers</h2>
+				<div class="home__sidebar-wrap" id="side-location-0">
+					<h4 class="home__sidebar-sub-title">The Dalles, Oregon</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">North America</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">US</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-07-30</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.pdx01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-1">
+					<h4 class="home__sidebar-sub-title">San Jose, California</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">North America</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">US</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-07-31</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.sjc01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-2">
+					<h4 class="home__sidebar-sub-title">Salt Lake City, Utah</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">North America</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">US</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-12-30</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum1.slc01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-3">
+					<h4 class="home__sidebar-sub-title">Chicago, Illinois</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">North America</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">US</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2008-02-13</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.ord2.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-4">
+					<h4 class="home__sidebar-sub-title">Ashburn, Virginia</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">North America</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">US</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-07-30</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.iad01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-5">
+					<h4 class="home__sidebar-sub-title">Montreal, Québec</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">North America</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">US</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-12-20</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.yul01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-6">
+					<h4 class="home__sidebar-sub-title">São Paulo</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">South America</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">Brazil</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-08-03</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.gru01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-7">
+					<h4 class="home__sidebar-sub-title">Dublin</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">Europe</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">Ireland</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-07-31</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.dub01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-8">
+					<h4 class="home__sidebar-sub-title">Frankfurt</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">Europe</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">Germany</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-07-31</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.fra01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-9">
+					<h4 class="home__sidebar-sub-title">Mumbai</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">Asia</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">India</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-08-01</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.bom01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-10">
+					<h4 class="home__sidebar-sub-title">Bangalore</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">Asia</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">India</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2017-01-09</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2-01.bir01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-11">
+					<h4 class="home__sidebar-sub-title">Singapore</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">Asia</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">Singapore</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-08-03</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.sin01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-12">
+					<h4 class="home__sidebar-sub-title">Tokyo</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">Asia</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">Japan</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-08-04</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.hnd01.publicntp.org</span>
+					</p>
+				</div>
+				<div class="home__sidebar-wrap" id="side-location-13">
+					<h4 class="home__sidebar-sub-title">Sydney</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">Oceania</span>
+					</p>
+					<p class="home__info">
+						Country: <span class="home__emph">Australia</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date: <span class="home__emph">2016-07-31</span>
+					</p>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname (IPv6):
+						<span class="home__emph"> stratum2.syd01.publicntp.org</span>
+					</p>
+				</div>
+		</div>
+	</div>
+</div>
+
+<div class="home__section">
+	<h1 class="home__title home__title--right">PublicNTP Experience</h1>
+	<div class="home__blog">
+		<a href="/blog/posts/guam-2">
+			<h4 class="home__blog-title">Guam 2</h4>
+		</a>
+		<a href="/blog/posts/guam-2">
+				<img class="home__blog-image" src="/uploads/image_upload-1493756987500">
+		</a>
+		<p class="home__blog-p">This is the excerpt</p>
+	</div>
+</div>
+
+<script src="/js/home.js"></script>
+
+		<footer class="footer">
+			<div class="footer__sites">
+				<h3 class="footer__other-title">
+					Other Great NPT Sites
+				</h3>
+				<a href="/" class="footer__other-link">NPT Pool</a>
+				<a href="/" class="footer__other-link">Website 2</a>
+				<a href="/" class="footer__other-link">Yet Another Site</a>
+				<a href="/" class="footer__other-link">Fourth Link</a>
+			</div>
+			<div class="footer__right">
+				<h3 class="footer__title">
+					Learn how you can connect and help, or foolow us on LinkedIn.
+				</h3>
+				<a href="/">
+					<img class="footer__linkedin" src="/images/linkedin.png">
+				</a>
+				<a href="/connect" class="footer__connect">Connect</a>
+				<a href="/terms-of-use" class="footer__right-link">Terms of Use</a>
+				<a href="/privacy" class="footer__right-link">Privacy Policy</a>
+				<p class="footer__right-link">Copyright 2017</p>
+			</div>
+		</footer>
+	</div>
+  </body>
+  <script src="/js/dropdown.js"></script>
+  <script src="/js/main.js"></script>
+</html>

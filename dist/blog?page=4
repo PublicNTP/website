@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PublicNTP</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+  </head>
+  <body>
+	<div class="wrap">
+		<div class="header__mobile-wrap">
+			<img class="header__mobile-x" id="mobile-close" src="/images/x-light.svg">
+			<a href="/history/" class="header__item-mobile">History</a>
+			<a href="/blog/" class="header__item-mobile">blog</a>
+			<a href="/stats/" class="header__item-mobile">stats</a>
+			<a href="/learn/" class="header__item-mobile">Learn</a>
+			<a href="/connect/" class="header__item-mobile header__connect">Connect</a>
+		</div>
+		<header class="header">
+			<a href="/">
+				<img class="header__logo" src="/images/publicNTPLogo.png">
+			</a>
+			<a href="/connect/" class="header__item header__connect">Connect</a>
+			<a href="/learn/" class="header__item">Learn</a>
+			<a href="/stats/" class="header__item">stats</a>
+			<a href="/blog/" class="header__item">blog</a>
+			<a href="/history/" class="header__item">History</a>
+			<img class="header__mobile-icon" id="mobile-icon" src="/images/list-menu.svg">
+		</header>
+		<div class="home__section">
+	<h1 class="home__title">The PublicNTP Blog</h1>
+	<p class="home__sub-title">
+		Follow our journey to bring accurate time to the world
+	</p>
+</div>
+<div class="home__section">
+	<div class="blog__search-bar-wrap">
+		<input id="search-input" class="blog__search-input blog__search-input-hide" placeholder="Search" autocomplete="off">
+		<img class="blog__x" src="/images/x.svg">
+		<div class="blog__search-item-wrap blog__search-input-hide">
+		</div>	
+	</div>
+	<div class="blog__sidebar">
+		<p class="blog__search">Search</p>
+		<div class="time">
+			<div>
+				<p class="time__year">
+					2017
+					<img src="/images/down.png" class="time__icon">
+				</p>
+					<div class="time__wrap time__closed">
+						<p class="time__month">May<p>
+							<a href="/blog/posts/guam" class="time__post">
+								Guam
+							</a>
+							<a href="/blog/posts/guam-2" class="time__post">
+								Guam 2
+							</a>
+							<a href="/blog/posts/post-3" class="time__post">
+								Post 3
+							</a>
+							<a href="/blog/posts/post-4" class="time__post">
+								Post 4
+							</a>
+							<a href="/blog/posts/post-5" class="time__post">
+								Post 5
+							</a>
+							<a href="/blog/posts/post-6" class="time__post">
+								Post 6
+							</a>
+							<a href="/blog/posts/post-7" class="time__post">
+								Post 7
+							</a>
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="blog__wrap">
+		<div class="blog__bar"></div>
+		<div class="blog__page-prev">
+				<a href="/blog?page&#x3D;3" class="blog__page">Newer Posts</a>
+		</div>
+		<div class="blog__page-next">
+		</div>
+	</div>
+</div>
+<p id="deserializedPosts" style="display: none;">[{&quot;id&quot;:1,&quot;createdAt&quot;:&quot;2017-05-02T02:03:39.544Z&quot;,&quot;title&quot;:&quot;Guam&quot;,&quot;permalink&quot;:&quot;guam&quot;,&quot;Tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;tag 1&quot;,&quot;createdAt&quot;:&quot;2017-05-02T02:03:39.590Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-02T02:03:39.590Z&quot;,&quot;PostId&quot;:1},{&quot;id&quot;:2,&quot;name&quot;:&quot;tag 2&quot;,&quot;createdAt&quot;:&quot;2017-05-02T02:03:39.592Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-02T02:03:39.592Z&quot;,&quot;PostId&quot;:1},{&quot;id&quot;:3,&quot;name&quot;:&quot;tag 3&quot;,&quot;createdAt&quot;:&quot;2017-05-02T02:03:39.593Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-02T02:03:39.593Z&quot;,&quot;PostId&quot;:1}]},{&quot;id&quot;:2,&quot;createdAt&quot;:&quot;2017-05-02T20:29:47.622Z&quot;,&quot;title&quot;:&quot;Guam 2&quot;,&quot;permalink&quot;:&quot;guam-2&quot;,&quot;Tags&quot;:[{&quot;id&quot;:4,&quot;name&quot;:&quot;tag 1&quot;,&quot;createdAt&quot;:&quot;2017-05-02T20:29:47.675Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-02T20:29:47.675Z&quot;,&quot;PostId&quot;:2},{&quot;id&quot;:5,&quot;name&quot;:&quot;tag 3&quot;,&quot;createdAt&quot;:&quot;2017-05-02T20:29:47.677Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-02T20:29:47.677Z&quot;,&quot;PostId&quot;:2},{&quot;id&quot;:6,&quot;name&quot;:&quot;tag 2&quot;,&quot;createdAt&quot;:&quot;2017-05-02T20:29:47.679Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-02T20:29:47.679Z&quot;,&quot;PostId&quot;:2}]},{&quot;id&quot;:3,&quot;createdAt&quot;:&quot;2017-05-03T21:40:18.321Z&quot;,&quot;title&quot;:&quot;Post 3&quot;,&quot;permalink&quot;:&quot;post-3&quot;,&quot;Tags&quot;:[{&quot;id&quot;:8,&quot;name&quot;:&quot;tag 1&quot;,&quot;createdAt&quot;:&quot;2017-05-03T21:40:18.379Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-03T21:40:18.379Z&quot;,&quot;PostId&quot;:3}]},{&quot;id&quot;:4,&quot;createdAt&quot;:&quot;2017-05-03T21:41:50.144Z&quot;,&quot;title&quot;:&quot;Post 4&quot;,&quot;permalink&quot;:&quot;post-4&quot;,&quot;Tags&quot;:[{&quot;id&quot;:9,&quot;name&quot;:&quot;tag 2&quot;,&quot;createdAt&quot;:&quot;2017-05-03T21:41:50.167Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-03T21:41:50.167Z&quot;,&quot;PostId&quot;:4}]},{&quot;id&quot;:5,&quot;createdAt&quot;:&quot;2017-05-03T21:42:08.800Z&quot;,&quot;title&quot;:&quot;Post 5&quot;,&quot;permalink&quot;:&quot;post-5&quot;,&quot;Tags&quot;:[{&quot;id&quot;:10,&quot;name&quot;:&quot;asdf&quot;,&quot;createdAt&quot;:&quot;2017-05-03T21:42:08.821Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-03T21:42:08.821Z&quot;,&quot;PostId&quot;:5}]},{&quot;id&quot;:6,&quot;createdAt&quot;:&quot;2017-05-03T21:42:33.969Z&quot;,&quot;title&quot;:&quot;Post 6&quot;,&quot;permalink&quot;:&quot;post-6&quot;,&quot;Tags&quot;:[{&quot;id&quot;:11,&quot;name&quot;:&quot;asdf&quot;,&quot;createdAt&quot;:&quot;2017-05-03T21:42:33.994Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-03T21:42:33.994Z&quot;,&quot;PostId&quot;:6}]},{&quot;id&quot;:7,&quot;createdAt&quot;:&quot;2017-05-03T21:43:13.946Z&quot;,&quot;title&quot;:&quot;Post 7&quot;,&quot;permalink&quot;:&quot;post-7&quot;,&quot;Tags&quot;:[{&quot;id&quot;:12,&quot;name&quot;:&quot;asdf&quot;,&quot;createdAt&quot;:&quot;2017-05-03T21:43:13.965Z&quot;,&quot;updatedAt&quot;:&quot;2017-05-03T21:43:13.965Z&quot;,&quot;PostId&quot;:7}]}]</p>
+
+<script src="/js/search.js"></script>
+<script src="/js/blog.js"></script>
+
+		<footer class="footer">
+			<div class="footer__sites">
+				<h3 class="footer__other-title">
+					Other Great NPT Sites
+				</h3>
+				<a href="/" class="footer__other-link">NPT Pool</a>
+				<a href="/" class="footer__other-link">Website 2</a>
+				<a href="/" class="footer__other-link">Yet Another Site</a>
+				<a href="/" class="footer__other-link">Fourth Link</a>
+			</div>
+			<div class="footer__right">
+				<h3 class="footer__title">
+					Learn how you can connect and help, or foolow us on LinkedIn.
+				</h3>
+				<a href="/">
+					<img class="footer__linkedin" src="/images/linkedin.png">
+				</a>
+				<a href="/connect" class="footer__connect">Connect</a>
+				<a href="/terms-of-use" class="footer__right-link">Terms of Use</a>
+				<a href="/privacy" class="footer__right-link">Privacy Policy</a>
+				<p class="footer__right-link">Copyright 2017</p>
+			</div>
+		</footer>
+	</div>
+  </body>
+  <script src="/js/dropdown.js"></script>
+  <script src="/js/main.js"></script>
+</html>

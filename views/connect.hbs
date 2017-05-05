@@ -8,10 +8,11 @@
 <div class="home__section">
 	<div class="connect__section">
 		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-		<form class="connect__form" method="post" action="https://docs.google.com/spreadsheets/d/1mliMwCOZ9fjEg7UrJ3uli-N62yFRbmooUe8NtydZjRI/edit#gid=0" name="theForm" target="hidden_iframe" id="connect-form">
-			<input id="connect-name" name="Name" placeholder="Name" class="connect__input">
-			<input id="connect-email" name="Email" placeholder="Email" class="connect__input">
-			<input type="submit" class="connect__submit" id="connect-submit" value="Sign Up">
+		<form id="contact-form" method="POST" action="URL" target="hidden_iframe">
+		<form class="connect__form">
+			<input name="name" placeholder="Name" class="connect__input">
+			<input name="email" placeholder="Email" class="connect__input">
+			<p class="connect__submit" id="connect-submit">Sign Up</p>
 		</form>
 	</div>
 	<div class="connect__section">
@@ -83,5 +84,3 @@
 		</p>
 	</div>
 </div>
-
-<script src="/js/connect.js"></script>
