@@ -97,7 +97,8 @@ gulp.task('dev', function () {
 })
 
 var createFile = function(place, content) {
-	fs.writeFile(place, content, function(err) {
+	console.log('place', place)
+	fs.writeFile('dist' + place, content, function(err) {
 		if (err) console.log(err);
 	})
 }
@@ -126,11 +127,11 @@ gulp.task('routes', function () {
 				console.log('pops', posts)
 				var index = 2;
 				for (var i = 2; i < posts.length; i+=2) {
-					routes.push('/blog?page=' + index);
+					routes.push('/blog.html?page=' + index);
 					index++;
 				}
 				for (var i in posts) {
-					routes.push('/blog/posts/' + posts[i].permalink)
+					routes.push('/blog/posts/' + posts[i].permalink + '.html')
 				}
 				console.log('routes', routes)
 				let rpRoutes = routes.map(function(r, index) {
@@ -139,11 +140,12 @@ gulp.task('routes', function () {
 
 				Promise.all(rpRoutes).then(function(pages) {
 					console.log('pages', pages)
+					let tempPath = path.join(__dirname, 'dist');
 					for (let i = 0; i < pages.length; i++) {
 						let route = routes[i]
-						if (route == '/') route = 'index.html';
-						else route = relPath + route + '.html'; 
-						var routeDir = route.substring(0, route.lastIndexOf('/'))
+						console.log('route', route);
+						if (route == '/') route = '/index.html';
+						var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'))
 						if (fs.existsSync(routeDir)) {
 							createFile(route, pages[i]);
 						} else {
@@ -160,6 +162,16 @@ gulp.task('routes', function () {
 			}, 4000)
 		})
 	});
+})
+
+gulp.task('gather', function() {
+	gulp.start('clean:dist');	
+	setTimeout(function() {
+		gulp.start('routes');
+		gulp.start('minify:css');
+		gulp.start('copy:uploads');
+		gulp.start('copy:images');
+	}, 500)
 })
 
 

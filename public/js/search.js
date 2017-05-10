@@ -7,7 +7,7 @@
 	
 	var buildSearchItem = function(results, post) {
 		return results +
-			'<a href="/blog/posts/' + post.permalink + '" ' + 'class="blog__search-item">' +
+			'<a href="/blog/posts/' + post.permalink + '.html" ' + 'class="blog__search-item">' +
 				post.title +
 			'</a>';
 	}

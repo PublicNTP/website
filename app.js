@@ -83,22 +83,24 @@ function onError(error) {
 app.use('/', indexRoutes)
 
 app.use('/blog', blogRoutes);
+app.use('/blog.html', blogRoutes);
 app.use('/admin', adminRoutes);
 app.use('/learn', learnRoutes);
+app.use('/learn.html', learnRoutes);
 
-app.get('/connect', function(req, res) {
+app.get('/connect.html', function(req, res) {
   res.render('connect', {
     is_production: is_production
   })
 })
 	
-app.get('/history', function(req, res) {
+app.get('/history.html', function(req, res) {
   res.render('history', {
     is_production: is_production
   })
 })
 
-app.get('/stats', function(req, res) {
+app.get('/stats.html', function(req, res) {
 	var rows = [];
 	var points = []
 	for (var i = 200; i > 0; i = i - 20) {

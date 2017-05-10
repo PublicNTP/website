@@ -24,7 +24,7 @@
 					<div class="time__wrap time__closed">
 						<p class="time__month">{{this.month}}<p>
 						{{#each this.posts}}
-							<a href="/blog/posts/{{this.permalink}}" class="time__post">
+							<a href="/blog/posts/{{this.permalink}}.html" class="time__post">
 								{{this.title}}
 							</a>
 						{{/each}} 
@@ -38,7 +38,7 @@
 		<div class="blog__bar"></div>
 		{{#each posts}}
 			<div class="blog">
-				<a href='/blog/posts/{{this.permalink}}' class="blog__left-wrap">
+				<a href='/blog/posts/{{this.permalink}}.html' class="blog__left-wrap">
 					<h2 class="blog__title">
 						{{this.title}}
 					</h2>
@@ -46,10 +46,10 @@
 						{{this.time}}
 					</p>
 				</a>	
-				<a href='/blog/posts/{{this.permalink}}' class="blog__excerpt">
+				<a href='/blog/posts/{{this.permalink}}.html' class="blog__excerpt">
 					{{this.excerpt}}
 				</a>
-				<a href='/blog/posts/{{this.permalink}}'>
+				<a href='/blog/posts/{{this.permalink}}.html'>
 					{{#if this.Images.0.file_name}}
 						<img class="blog__image" src="{{this.Images.0.file_name}}">
 					{{/if}}

@@ -7,18 +7,6 @@ app = express();
 
 var publicdir = __dirname + '/dist';
 
-app.use(function(req, res, next) {
-  if (req.path.indexOf('.') === -1) {
-    var file = publicdir + req.path + '.html';
-    fs.exists(file, function(exists) {
-      if (exists)
-        req.url += '.html';
-      next();
-    });
-  }
-  else next();
-});
-
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.listen(port, function() {

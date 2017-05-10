@@ -1,9 +1,9 @@
 module.exports = [
 	'/',
-	'/history',
-	'/blog',
-	'/stats',
-	'/learn',
-	'/learn/atomic_clock',
-	'/connect'
+	'/history.html',
+	'/blog.html',
+	'/stats.html',
+	'/learn.html',
+	'/learn/atomic_clock.html',
+	'/connect.html'
 ]

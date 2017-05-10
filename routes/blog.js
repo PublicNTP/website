@@ -26,9 +26,9 @@ router.get('/', function(req, res) {
 		posts = JSON.parse(JSON.stringify(posts))
 		var next = null;
 		var prev = null;
-		if (limit * (page + 1) < posts.count) next = '/blog?page=' + (page + 2);
-		if (page != 0 && page != 1) prev = '/blog?page=' + page;
-		else if (page != 0) prev = '/blog';
+		if (limit * (page + 1) < posts.count) next = '/blog.html?page=' + (page + 2);
+		if (page != 0 && page != 1) prev = '/blog.html?page=' + page;
+		else if (page != 0) prev = '/blog.html';
 		posts = posts.rows.map(function(post, index) {
 			post.time = moment(post.createdAt).format("MMM Do YYYY")
 			return post
@@ -55,7 +55,7 @@ router.get('/', function(req, res) {
 	})
 })
 
-router.get('/posts/:permalink', function(req, res) {
+router.get('/posts/:permalink.html', function(req, res) {
 	models.Post.findOne({
 		where: {
 			permalink: req.params.permalink
@@ -66,7 +66,7 @@ router.get('/posts/:permalink', function(req, res) {
 		}]	
 	}).then(function(post) {
 		post = JSON.parse(JSON.stringify(post))
-		post.time = moment(post.createAt).format("MMMM Do, YYYY");
+		post.time = moment(post.createdAt).format("MMMM Do, YYYY");
 		res.render('blog_detail', {
 			post: post
 		})
