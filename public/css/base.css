@@ -1040,3 +1040,48 @@
   @media screen and (max-width: 991px) {
     .time {
       display: none; } }
+
+.video {
+  width: 100%;
+  float: left; }
+  .video__additional {
+    width: 300px;
+    float: left; }
+  .video__content {
+    width: calc(100% - 300px);
+    float: left;
+    padding-right: 30px; }
+  .video__item {
+    width: 100%;
+    float: left;
+    color: #2a2a2a;
+    font-size: 12px; }
+  .video__frame {
+    width: 100%;
+    float: left; }
+  .video__paragraph {
+    width: 100%;
+    float: left;
+    line-height: 1.5;
+    color: #2a2a2a;
+    font-size: 12px;
+    margin-bottom: 15px; }
+  .video__section {
+    width: 100%;
+    float: left;
+    margin-top: 25px;
+    border-top: 1px solid #2a2a2a;
+    padding: 10px 0; }
+  .video__sub-title {
+    width: 100%;
+    float: left;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px; }
+  .video__title {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2a2a2a; }

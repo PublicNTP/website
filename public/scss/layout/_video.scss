@@ -1,0 +1,61 @@
+.video {
+	width: 100%;
+	float: left;
+
+	&__additional {
+		width: 300px;
+		float: left;
+	}
+
+	&__content {
+		width: calc(100% - 300px);
+		float: left;
+		padding-right: 30px;
+	}
+
+	&__item {
+		width: 100%;
+		float: left;
+		color: color(footer);
+		font-size: 12px;
+	}
+
+	&__frame {
+		width: 100%;
+		float: left;
+	}
+
+	&__paragraph {
+		width: 100%;
+		float: left;
+		line-height: 1.5;
+		color: color(footer);
+		font-size: 12px;
+		margin-bottom: 15px;
+	}
+
+	&__section {
+		width: 100%;
+		float: left;
+		margin-top: 25px;
+		border-top: 1px solid color(footer);
+		padding: 10px 0;
+	}
+
+	&__sub-title {
+		width: 100%;
+		float: left;
+		font-size: 12px;
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		width: 100%;
+		float: left;
+		font-size: 16px;
+		font-weight: 600;
+		margin-bottom: 20px;
+		color: color(footer);
+	}
+}
