@@ -14,7 +14,8 @@ router.get('/', function(req, res) {
 			post = JSON.parse(JSON.stringify(post))
 			res.render('home', {
 				locations: locations,
-				post: post
+				post: post,
+				the_title: 'PublicNTP'
 			})
 		})
 	})	

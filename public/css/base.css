@@ -336,6 +336,12 @@
       padding: 0;
       margin-bottom: 30px; } }
 
+.connect__success {
+  float: left;
+  width: 100%;
+  color: #2a2a2a;
+  margin-top: 10px; }
+
 .connect__submit {
   float: left;
   padding: 10px 20px;

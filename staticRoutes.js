@@ -4,6 +4,6 @@ module.exports = [
 	'/blog.html',
 	'/stats.html',
 	'/learn.html',
-	'/learn/atomic_clock.html',
+	'/learn/atomic-clock.html',
 	'/connect.html'
 ]

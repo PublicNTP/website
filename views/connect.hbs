@@ -7,10 +7,12 @@
 </div>
 <div class="home__section">
 	<div class="connect__section">
-		<form class="connect__form">
-			<input name="name" placeholder="Name" class="connect__input">
-			<input name="email" placeholder="Email" class="connect__input">
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+		<form class="connect__form" id="connect-form" method="post" action="https://script.google.com/macros/s/AKfycbzRPH2Lr5pfra_y0wFGyNnJBu1t6-HjMcx3ftI8XDNSYo9T5Uft/exec" target="hidden_iframe">
+			<input name="Name" placeholder="Name" class="connect__input">
+			<input name="Email" placeholder="Email" class="connect__input">
 			<p class="connect__submit" id="connect-submit">Sign Up</p>
+			<p class="connect__success hide">Thanks for subscribing!</p>
 		</form>
 	</div>
 	<div class="connect__section">
@@ -82,3 +84,4 @@
 		</p>
 	</div>
 </div>
+<script src="/js/connect.js"></script>

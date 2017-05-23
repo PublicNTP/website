@@ -49,6 +49,13 @@
 		}
 	}
 
+	&__success {
+		float: left;
+		width: 100%;
+		color: color(footer);
+		margin-top: 10px;
+	}
+
 	&__submit {
 		float: left;
 		padding: 10px 20px;

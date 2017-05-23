@@ -6,7 +6,7 @@ var timelineHelpers = require('../helpers/timelineHelpers');
 
 
 router.get('/', function(req, res) {
-	var limit = 10;
+	var limit = 10; 
 	var page = 0;
 	if (req.query.page) {
 		page = parseInt(req.query.page) - 1;
@@ -49,7 +49,8 @@ router.get('/', function(req, res) {
 				deserializedPosts: JSON.stringify(timelinePosts),
 				next: next,
 				prev: prev,
-				timeline: timeline
+				timeline: timeline,
+				the_title: 'Blog | PublicNTP'
 			})
 		})
 	})
@@ -68,7 +69,8 @@ router.get('/posts/:permalink.html', function(req, res) {
 		post = JSON.parse(JSON.stringify(post))
 		post.time = moment(post.createdAt).format("MMMM Do, YYYY");
 		res.render('blog_detail', {
-			post: post
+			post: post,
+			the_title: post.title + ' - Blog | PublicNTP'
 		})
 	})
 })

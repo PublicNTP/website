@@ -2,12 +2,12 @@
     $(function() {
      
 		console.log('callllll')	
-
-		$('#connect-form').submit(function(e) {
-			e.preventDefault();
-			
-		})
 		
-		 
+		$('#connect-submit').click(function() {
+			$('#connect-form').submit();
+			$('.connect__success').removeClass('hide');
+		})
+
+
     });
 })(jQuery);
