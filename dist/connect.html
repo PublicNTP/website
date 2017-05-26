@@ -3,7 +3,7 @@
  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PublicNTP</title>
+    <title></title>
     <link rel="stylesheet" href="/css/base.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
@@ -39,10 +39,12 @@
 </div>
 <div class="home__section">
 	<div class="connect__section">
-		<form class="connect__form">
-			<input name="name" placeholder="Name" class="connect__input">
-			<input name="email" placeholder="Email" class="connect__input">
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+		<form class="connect__form" id="connect-form" method="post" action="https://script.google.com/macros/s/AKfycbzRPH2Lr5pfra_y0wFGyNnJBu1t6-HjMcx3ftI8XDNSYo9T5Uft/exec" target="hidden_iframe">
+			<input name="Name" placeholder="Name" class="connect__input">
+			<input name="Email" placeholder="Email" class="connect__input">
 			<p class="connect__submit" id="connect-submit">Sign Up</p>
+			<p class="connect__success hide">Thanks for subscribing!</p>
 		</form>
 	</div>
 	<div class="connect__section">
@@ -114,6 +116,7 @@
 		</p>
 	</div>
 </div>
+<script src="/js/connect.js"></script>
 
 		<footer class="footer">
 			<div class="footer__sites">

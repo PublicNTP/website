@@ -3,7 +3,7 @@
 	
 	$('#side-location-0').addClass('show')
 
-	$('.home__location').hover(function() {
+	$('.home__location').click(function() {
 		for (var i = 0; i < $('.home__sidebar-wrap').length; i++) {
 			$($('.home__sidebar-wrap')[i]).removeClass('show')
 		}
