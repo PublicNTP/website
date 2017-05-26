@@ -9,6 +9,8 @@ var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
 var adminRoutes = require('./routes/admin');
 var learnRoutes = require('./routes/learn');
+var connectRoutes = require('./routes/connect');
+var historyRoutes = require('./routes/history');
 var statsRoutes = require('./routes/stats');
 var models = require('./models');
 var authConfig = require('./authConfig');
@@ -88,18 +90,12 @@ app.use('/blog.html', blogRoutes);
 app.use('/admin', adminRoutes);
 app.use('/learn', learnRoutes);
 app.use('/learn.html', learnRoutes);
+app.use('/connect.html', connectRoutes);
+app.use('/history.html', historyRoutes);
 app.use('/stats.html', statsRoutes);
 
-app.get('/connect.html', function(req, res) {
-  res.render('connect', {
-    is_production: is_production
-  })
-})
-	
 app.get('/history.html', function(req, res) {
-  res.render('history', {
-    is_production: is_production
-  })
+  res.render('history', {})
 })
 
 app.listen(port, function() {

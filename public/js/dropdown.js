@@ -1,5 +1,10 @@
 ;(function ($){
     $(function() {
+
+		var firstHalfUrl = 'https://s3.amazonaws.com/stats.publicntp.org/png/stratum2'
+		var secondHalfUrl = '-packets.png';
+		var timeValue  = '0007d';
+		var locationValue = '.pdx01';
      
 		$('.dropdown__input').blur(function() {
 			$($(this).siblings('.dropdown')[0]).removeClass('dropdown__show')
@@ -8,9 +13,28 @@
 			$(dd_close.children()[1]).addClass('dropdown__arrow')
 		})
 
+		$('.report__image').load(function() {
+				$('.report__curtain').removeClass('active');
+		})
+
+
 		$('.dropdown__item').click(function() {
-			var value = $(this).text()
-			$($($(this).parent()).siblings('.dropdown__input')[0]).val(value)
+			var name = $(this).text()
+			var value = $(this).attr('value');
+			var clickedItem = this;
+			$('.report__curtain').addClass('active');
+			window.setTimeout(function() {
+				if ($(clickedItem).hasClass('dropdown__time')) {
+					timeValue = value;	
+					$('.report__time').text(name);
+				} else {
+					locationValue = value;	
+				}
+				$($($(clickedItem).parent()).siblings('.dropdown__input')[0]).val(name);
+				$('.report__image').attr('src', firstHalfUrl + locationValue + '-' + timeValue + secondHalfUrl);
+			
+			}, 300)
+
 		})
 		
 		$('.dropdown__input').click(function() {

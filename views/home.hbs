@@ -22,6 +22,11 @@
 			{{#each locations}}
 				<div class="home__location" id="location-{{@index}}" style="left: {{this.geoX}}; top: {{this.geoY}};">
 					<div class="home__location-ball"></div>
+					{{#if this.multiple}}
+						<div class="home__location--outer">
+							<div class="home__location--multiple"></div>
+						</div>
+					{{/if}}
 				</div>
 			{{/each}}
 		</div>
@@ -33,18 +38,23 @@
 					<p class="home__info">
 						Continent: <span class="home__emph">{{this.continent}}</span>
 					</p>
+					<div class="node-clear"></div>
 					<p class="home__info">
 						Country: <span class="home__emph">{{this.country}}</span>
 					</p>
+					<div class="node-clear"></div>
 					<div class="home__spacer"></div>
 					<p class="home__info">
-						Live Date: <span class="home__emph">{{this.liveDate}}</span>
+						Live Date: 
 					</p>
+					<p class="home__item">{{{this.liveDate}}}</span>
+					<div class="node-clear"></div>
 					<div class="home__spacer"></div>
 					<p class="home__info">
-						Hostname (IPv6):
-						<span class="home__emph"> {{this.hostname}}</span>
+						Hostname{{#if this.IPv6}} (IPv6){{/if}}:
 					</p>
+					<p class="home__item"> {{{this.hostname}}}</span>
+					<div class="node-clear"></div>
 				</div>
 			{{/each}}
 		</div>

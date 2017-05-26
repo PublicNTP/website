@@ -1,20 +1,15 @@
 <div class="report__section">
 	<div class="report__section-half">
 		<div class="dropdown__wrap">
-			<input class="dropdown__input" value="Portland, or USA" readonly>
+			<input class="dropdown__input" value="{{graphs.0.city}}, {{graphs.0.country}}" readonly>
 			<div class="dropdown__close">
 				<div class="dropdown__close-left dropdown__arrow"></div>
 				<div class="dropdown__close-right dropdown__arrow"></div>
 			</div>
 			<ul class="dropdown">
-				<li class="dropdown__item" value="portland/usa">Portland, or USA</li>
-				<li class="dropdown__item" value="guam">Guam</li>
-				<li class="dropdown__item" value="new_canada">New Canadia</li>
-				<li class="dropdown__item" value="billings">Billings, MT USA</li>
-				<li class="dropdown__item" value="portland/usa">Portland, or USA</li>
-				<li class="dropdown__item" value="guam">Guam</li>
-				<li class="dropdown__item" value="new_canada">New Canadia</li>
-				<li class="dropdown__item" value="billings">Billings, MT USA</li>
+			{{#each graphs}}
+				<li class="dropdown__item dropdown__place" value="{{this.prefix}}">{{this.city}}, {{this.country}}</li>
+			{{/each}}
 			</ul>
 		</div>
 	</div>
@@ -26,44 +21,20 @@
 				<div class="dropdown__close-right dropdown__arrow"></div>
 			</div>
 			<ul class="dropdown">
-				<li class="dropdown__item" value="hourly">Hourly</li>
-				<li class="dropdown__item" value="daily">Daily</li>
-				<li class="dropdown__item" value="weekly">Weekly</li>
-				<li class="dropdown__item" value="monthly">Monthly</li>
-				<li class="dropdown__item" value="yearly">Yearly</li>
+				<li class="dropdown__item dropdown__time" value="0001d">Daily</li>
+				<li class="dropdown__item dropdown__time" value="0007d">Weekly</li>
+				<li class="dropdown__item dropdown__time" value="0030d">Monthly</li>
+				<li class="dropdown__item dropdown__time" value="0364d">Yearly</li>
 			</ul>
 		</div>
 	</div>
 </div>
 <div class="report__section">
 	<div class="report__graph" id="report-graph">
-		{{#each rows}}
-			<div class="report__row">
-				<p class="report__row-label">{{this}}</p>
-			</div>
-		{{/each}}
-
-		{{#each points}}
-			<div class="report__bar-green report__bar-init" style="height: {{this.g}}%;">
-				<div class="report__bar-purple report__bar-init" style="height: {{this.p}}%;"></div>
-			</div>
-		{{/each}}
-		<p class="report__graph-y">
-			Packets/sec		
-		</p>
+		<img class="report__image" src="https://s3.amazonaws.com/stats.publicntp.org/png/stratum2{{graphs.0.prefix}}-0007d-packets.png">
+		<div class="report__curtain"></div>
 	</div>
-	<div class="report__graph">
-		<div class="report__graph-x">
-			<p class="report__graph-column">Monday</p>	
-			<p class="report__graph-column">Tuesday</p>	
-			<p class="report__graph-column">Wednesday</p>	
-			<p class="report__graph-column">Thursday</p>	
-			<p class="report__graph-column">Friday</p>	
-			<p class="report__graph-column">Saturday</p>	
-			<p class="report__graph-column">Sunday</p>	
-		</div>
-		<p class="report__graph-x report__graph-x--center">
-			Week	
-		</p>
-	</div>
+	<p class="report__time">
+		Weekly
+	</p>
 </div>

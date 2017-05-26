@@ -7,6 +7,7 @@ module.exports = [
 		geoY: 'calc(35% - 15px)',
 		hostname: 'stratum2.pdx01.publicntp.org',
 		liveDate: '2016-07-30',
+		multiple: false,
 		IPv6: false
 	},
 	{
@@ -17,6 +18,7 @@ module.exports = [
 		geoY: 'calc(40% - 15px)',
 		hostname: 'stratum2.sjc01.publicntp.org',
 		liveDate: '2016-07-31',
+		multiple: false,
 		IPv6: false
 	},
 	{
@@ -27,6 +29,7 @@ module.exports = [
 		geoY: 'calc(38% - 15px)',
 		hostname: 'stratum1.slc01.publicntp.org',
 		liveDate: '2016-12-30',
+		multiple: false,
 		IPv6: false
 	},
 	{
@@ -37,6 +40,7 @@ module.exports = [
 		geoY: 'calc(37% - 15px)',
 		hostname: 'stratum2.ord2.publicntp.org',
 		liveDate: '2008-02-13',
+		multiple: false,
 		IPv6: false
 	},
 	{
@@ -47,6 +51,7 @@ module.exports = [
 		geoY: 'calc(39% - 15px)',
 		hostname: 'stratum2.iad01.publicntp.org',
 		liveDate: '2016-07-30',
+		multiple: false,
 		IPv6: false
 	},
 	{
@@ -57,6 +62,7 @@ module.exports = [
 		geoY: 'calc(33% - 15px)',
 		hostname: 'stratum2.yul01.publicntp.org',
 		liveDate: '2016-12-20',
+		multiple: false,
 		IPv6: false
 	},
 	{
@@ -65,9 +71,10 @@ module.exports = [
 		city: 'São Paulo',
 		geoX: 'calc(32% - 15px)',
 		geoY: 'calc(79% - 15px)',
-		hostname: 'stratum2.gru01.publicntp.org',
-		liveDate: '2016-08-03',
-		IPv6: false
+		hostname: 'stratum2.gru01.publicntp.org<br/>stratum2-02.gru01.publicntp.org<br>stratum2.gru02.publicntp.org',
+		liveDate: '2016-08-03<br>2016-12-28<br>2016-12-28',
+		IPv6: false,
+		multiple: true 
 	},
 	{
 		continent: 'Europe',
@@ -77,7 +84,8 @@ module.exports = [
 		geoY: 'calc(28% - 15px)',
 		hostname: 'stratum2.dub01.publicntp.org',
 		liveDate: '2016-07-31',
-		IPv6: false
+		IPv6: false,
+		multiple: false 
 	},
 	{
 		continent: 'Europe',
@@ -87,7 +95,8 @@ module.exports = [
 		geoY: 'calc(31% - 15px)',
 		hostname: 'stratum2.fra01.publicntp.org',
 		liveDate: '2016-07-31',
-		IPv6: false
+		IPv6: false,
+		multiple: false 
 	},
 	{
 		continent: 'Asia',
@@ -97,7 +106,8 @@ module.exports = [
 		geoY: 'calc(51% - 15px)',
 		hostname: 'stratum2.bom01.publicntp.org',
 		liveDate: '2016-08-01',
-		IPv6: false
+		IPv6: false,
+		multiple: false 
 	},
 	{
 		continent: 'Asia',
@@ -107,7 +117,8 @@ module.exports = [
 		geoY: 'calc(56.5% - 15px)',
 		hostname: 'stratum2-01.bir01.publicntp.org',
 		liveDate: '2017-01-09',
-		IPv6: true
+		IPv6: true,
+		multiple: false 
 	},
 	{
 		continent: 'Asia',
@@ -115,9 +126,10 @@ module.exports = [
 		city: 'Singapore',
 		geoX: 'calc(76.2% - 15px)',
 		geoY: 'calc(63% - 15px)',
-		hostname: 'stratum2.sin01.publicntp.org',
-		liveDate: '2016-08-03',
-		IPv6: false
+		hostname: 'stratum2.sin01.publicntp.org<br>stratum2-01.sin02.publicntp.org',
+		liveDate: '2016-08-03<br>2017-02-26',
+		IPv6: false,
+		multiple: true 
 	},
 	{
 		continent: 'Asia',
@@ -127,7 +139,8 @@ module.exports = [
 		geoY: 'calc(41% - 15px)',
 		hostname: 'stratum2.hnd01.publicntp.org',
 		liveDate: '2016-08-04',
-		IPv6: false
+		IPv6: false,
+		multiple: false
 	},
 	{
 		continent: 'Oceania',

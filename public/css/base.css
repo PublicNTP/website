@@ -429,7 +429,7 @@
   width: 100%;
   float: left;
   max-height: 0;
-  overflow: hidden;
+  overflow: scroll;
   -webkit-transition: .3s;
   transition: .3s;
   background: white;
@@ -752,12 +752,17 @@
         text-align: right; } }
   .home__emph {
     color: #2a2a2a; }
+  .home__item {
+    color: #2a2a2a;
+    float: left;
+    padding-bottom: 10px;
+    font-size: 13px; }
   .home__info {
-    width: 100%;
     float: left;
     padding-bottom: 10px;
     font-size: 13px;
-    color: #9b9b9b; }
+    color: #9b9b9b;
+    padding-right: 5px; }
   .home__location {
     width: 30px;
     height: 30px;
@@ -770,6 +775,33 @@
     .home__location.active {
       -webkit-animation: signal 1.5s infinite linear;
               animation: signal 1.5s infinite linear; }
+    .home__location.slow-active {
+      -webkit-animation: signalSmall 1.5s infinite linear;
+              animation: signalSmall 1.5s infinite linear; }
+    .home__location--multiple {
+      left: -6px;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      position: absolute;
+      top: -6px;
+      border: 1px solid transparent;
+      cursor: pointer; }
+      .home__location--multiple.active {
+        -webkit-animation: signalLarge 1.5s infinite linear;
+                animation: signalLarge 1.5s infinite linear; }
+    .home__location--outer {
+      left: -6px;
+      position: absolute;
+      width: 40px;
+      border-radius: 20px;
+      height: 40px;
+      top: -6px;
+      border: 1px solid transparent;
+      cursor: pointer; }
+      .home__location--outer.active {
+        -webkit-animation: signalMed 1.5s infinite linear;
+                animation: signalMed 1.5s infinite linear; }
   .home__location-ball {
     width: 8px;
     height: 8px;
@@ -890,23 +922,119 @@
 
 @-webkit-keyframes signal {
   0% {
-    border: 1px solid black; }
+    border: 1px solid transparent; }
   50% {
-    border: 1px solid white; }
+    border: 1px solid black; }
   100% {
-    border: 1px solid black; } }
+    border: 1px solid transparent; } }
 
 @keyframes signal {
   0% {
-    border: 1px solid black; }
+    border: 1px solid transparent; }
   50% {
-    border: 1px solid white; }
+    border: 1px solid black; }
   100% {
-    border: 1px solid black; } }
+    border: 1px solid transparent; } }
+
+@-webkit-keyframes signalSmall {
+  0% {
+    border: 1px solid transparent; }
+  30% {
+    border: 1px solid transparent; }
+  50% {
+    border: 1px solid black; }
+  70% {
+    border: 1px solid transparent; }
+  100% {
+    border: 1px solid transparent; } }
+
+@keyframes signalSmall {
+  0% {
+    border: 1px solid transparent; }
+  30% {
+    border: 1px solid transparent; }
+  50% {
+    border: 1px solid black; }
+  70% {
+    border: 1px solid transparent; }
+  100% {
+    border: 1px solid transparent; } }
+
+@-webkit-keyframes signalMed {
+  0% {
+    border: 1px solid transparent; }
+  40% {
+    border: 1px solid transparent; }
+  60% {
+    border: 1px solid black; }
+  90% {
+    border: 1px solid transparent; } }
+
+@keyframes signalMed {
+  0% {
+    border: 1px solid transparent; }
+  40% {
+    border: 1px solid transparent; }
+  60% {
+    border: 1px solid black; }
+  90% {
+    border: 1px solid transparent; } }
+
+@-webkit-keyframes signalLarge {
+  0% {
+    border: 1px solid transparent; }
+  50% {
+    border: 1px solid transparent; }
+  70% {
+    border: 1px solid black; }
+  100% {
+    border: 1px solid transparent; } }
+
+@keyframes signalLarge {
+  0% {
+    border: 1px solid transparent; }
+  50% {
+    border: 1px solid transparent; }
+  70% {
+    border: 1px solid black; }
+  100% {
+    border: 1px solid transparent; } }
+
+.report__bar-init {
+  height: 0 !important; }
+
+.report__bar-green {
+  background: #6eae7d;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in; }
+
+.report__bar-purple {
+  background: #8d67a5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+  z-index: 2; }
+
+.report__curtain {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  background: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  border: 1px solid #2a2a2a;
+  border-bottom: 0px; }
+  .report__curtain.active {
+    height: 100%; }
 
 .report__graph {
-  width: calc(100% - 100px);
-  float: right;
+  width: 100%;
+  float: left;
   position: relative; }
 
 .report__graph-x {
@@ -932,24 +1060,9 @@
   -webkit-transform: rotateZ(-90deg);
           transform: rotateZ(-90deg); }
 
-.report__bar-init {
-  height: 0 !important; }
-
-.report__bar-green {
-  background: #6eae7d;
-  position: absolute;
-  bottom: 0;
-  -webkit-transition: .3s ease-in;
-  transition: .3s ease-in; }
-
-.report__bar-purple {
-  background: #8d67a5;
-  position: absolute;
-  bottom: 0;
+.report__image {
   width: 100%;
-  -webkit-transition: .3s ease-in;
-  transition: .3s ease-in;
-  z-index: 2; }
+  float: left; }
 
 .report__row {
   width: calc(100% + 50px);
@@ -982,6 +1095,15 @@
     .report__section-half {
       width: 100%;
       margin-bottom: 25px; } }
+
+.report__time {
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 22px;
+  color: #9b9b9b; }
 
 .time {
   width: 100%;

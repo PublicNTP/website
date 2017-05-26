@@ -56,12 +56,19 @@
 		color: color(footer);
 	}
 
+	&__item {
+		color: color(footer);
+		float: left;
+		padding-bottom: 10px;
+		font-size: 13px;
+	}
+
 	&__info {
-		width: 100%;
 		float: left;
 		padding-bottom: 10px;
 		font-size: 13px;
 		color: color(textColor);
+		padding-right: 5px;
 	}
 
 	&__location {
@@ -75,6 +82,40 @@
 
 		&.active {
 			animation: signal 1.5s infinite linear;
+		}
+
+		&.slow-active {
+			animation: signalSmall 1.5s infinite linear;
+		}
+
+		&--multiple {
+			left: -6px;
+			width: 50px;
+			height: 50px;
+			border-radius: 25px;
+			position: absolute;
+			top: -6px;
+			border: 1px solid rgba(0,0,0,0);
+			cursor: pointer;
+
+			&.active {
+				animation: signalLarge 1.5s infinite linear;
+			}
+		}
+
+		&--outer {
+			left: -6px;
+			position: absolute;
+			width: 40px;
+			border-radius: 20px;
+			height: 40px;
+			top: -6px;
+			border: 1px solid rgba(0,0,0,0);
+			cursor: pointer;
+
+			&.active {
+				animation: signalMed 1.5s infinite linear;
+			}
 		}
 	}
 
@@ -237,7 +278,30 @@
 
 
 @keyframes signal {
-	0% { border: 1px solid black; }
-	50% { border: 1px solid white; }
-	100% { border: 1px solid black; }
+	0% { border: 1px solid rgba(0,0,0,0); }
+	50% { border: 1px solid black; }
+	100% { border: 1px solid rgba(0,0,0,0); }
 }
+
+@keyframes signalSmall {
+	0% { border: 1px solid rgba(0,0,0,0); }
+	30% { border: 1px solid rgba(0,0,0,0); }
+	50% { border: 1px solid black; }
+	70% { border: 1px solid rgba(0,0,0,0); }
+	100% { border: 1px solid rgba(0,0,0,0); }
+}
+
+@keyframes signalMed {
+	0% { border: 1px solid rgba(0,0,0,0); }
+	40% { border: 1px solid rgba(0,0,0,0); }
+	60% { border: 1px solid black; }
+	90% { border: 1px solid rgba(0,0,0,0); }
+}
+
+@keyframes signalLarge {
+	0% { border: 1px solid rgba(0,0,0,0); }
+	50% { border: 1px solid rgba(0,0,0,0); }
+	70% { border: 1px solid black; }
+	100% { border: 1px solid rgba(0,0,0,0); }
+}
+
