@@ -36,20 +36,21 @@
 
 			$('.home__location').click(function() {
 				active = getIndexFromId(this);
+				var thisLocation = this;
 				$('.home__sidebar-wrap').removeClass('show')
 				$('.home__location').removeClass('active')
 				$('.home__location--outer').removeClass('active')
-				$('.home__location--mulitple').removeClass('active')
+				$('.home__location--multiple').removeClass('active')
 				$('.home__location').removeClass('slow-active')
 
-				$('#side-' + $(this).attr('id')).addClass('show')
-				var outer = $(this).find('.home__location--outer');
+				$('#side-' + $(thisLocation).attr('id')).addClass('show')
+				var outer = $(thisLocation).find('.home__location--outer');
 				if (outer.length !== 0) {
-					$('#' + $(this).attr('id')).addClass('slow-active')
+					$('#' + $(thisLocation).attr('id')).addClass('slow-active')
 					$(outer[0]).addClass('active');
 					$(outer[0]).children('.home__location--multiple').addClass('active');
 				} else {
-					$('#' + $(this).attr('id')).addClass('active')
+					$('#' + $(thisLocation).attr('id')).addClass('active')
 				}
 			})
 
