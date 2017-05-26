@@ -9,6 +9,7 @@ var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
 var adminRoutes = require('./routes/admin');
 var learnRoutes = require('./routes/learn');
+var statsRoutes = require('./routes/stats');
 var models = require('./models');
 var authConfig = require('./authConfig');
 var port = 3020;
@@ -87,6 +88,7 @@ app.use('/blog.html', blogRoutes);
 app.use('/admin', adminRoutes);
 app.use('/learn', learnRoutes);
 app.use('/learn.html', learnRoutes);
+app.use('/stats.html', statsRoutes);
 
 app.get('/connect.html', function(req, res) {
   res.render('connect', {
@@ -98,32 +100,6 @@ app.get('/history.html', function(req, res) {
   res.render('history', {
     is_production: is_production
   })
-})
-
-app.get('/stats.html', function(req, res) {
-	var rows = [];
-	var points = []
-	for (var i = 200; i > 0; i = i - 20) {
-		rows.push(i);
-	}
-	
-	for (var i = 0; i < 150; i++) {
-		var randGreen = 0;
-		var randPurple = 0;
-		if (i % 10 == 0) {
-			randGreen = Math.floor((Math.random() * 80) + 1) + 20;
-		} else {
-			randGreen = Math.floor((Math.random() * 30) + 1) + 20;
-		}
-		randPurple = Math.floor((Math.random() * randGreen) + 1);
-		randPurple = Math.floor((randPurple / randGreen) * 100);
-		points.push({ p: randPurple, g: randGreen});
-	}
-  	res.render('stats', {
-		is_production: is_production,
-		rows: rows,
-		points: points
-	})
 })
 
 app.listen(port, function() {

@@ -73,7 +73,7 @@
 		border: 1px solid rgba(0,0,0,0);
 		cursor: pointer;
 
-		&:hover {
+		&.active {
 			animation: signal 1.5s infinite linear;
 		}
 	}

@@ -767,7 +767,7 @@
     transition: .3s;
     border: 1px solid transparent;
     cursor: pointer; }
-    .home__location:hover {
+    .home__location.active {
       -webkit-animation: signal 1.5s infinite linear;
               animation: signal 1.5s infinite linear; }
   .home__location-ball {
