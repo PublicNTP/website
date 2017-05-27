@@ -7,10 +7,13 @@
 		var locationValue = '.pdx01';
      
 		$('.dropdown__input').blur(function() {
-			$($(this).siblings('.dropdown')[0]).removeClass('dropdown__show')
-			var dd_close = $($(this).siblings('.dropdown__close')[0])
-			$(dd_close.children()[0]).addClass('dropdown__arrow')
-			$(dd_close.children()[1]).addClass('dropdown__arrow')
+			var thisInput = this;
+			window.setTimeout(function() {
+				$($(thisInput).siblings('.dropdown')[0]).removeClass('dropdown__show')
+				var dd_close = $($(thisInput).siblings('.dropdown__close')[0])
+				$(dd_close.children()[0]).addClass('dropdown__arrow')
+				$(dd_close.children()[1]).addClass('dropdown__arrow')
+			}, 100)
 		})
 
 		$('.report__image').load(function() {
@@ -23,14 +26,14 @@
 			var value = $(this).attr('value');
 			var clickedItem = this;
 			$('.report__curtain').addClass('active');
+			if ($(clickedItem).hasClass('dropdown__time')) {
+				timeValue = value;	
+				$('.report__time').text(name);
+			} else {
+				locationValue = value;	
+			}
+			$($($(clickedItem).parent()).siblings('.dropdown__input')[0]).val(name);
 			window.setTimeout(function() {
-				if ($(clickedItem).hasClass('dropdown__time')) {
-					timeValue = value;	
-					$('.report__time').text(name);
-				} else {
-					locationValue = value;	
-				}
-				$($($(clickedItem).parent()).siblings('.dropdown__input')[0]).val(name);
 				$('.report__image').attr('src', firstHalfUrl + locationValue + '-' + timeValue + secondHalfUrl);
 			
 			}, 300)
