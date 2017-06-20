@@ -179,6 +179,7 @@ gulp.task('gather', function() {
 		gulp.start('minify:css');
 		gulp.start('copy:uploads');
 		gulp.start('copy:images');
-		gulp.start('minify:html')
+		gulp.start('minify:html');
+		gulp.start('minify:core-js');
 	}, 500)
 })
