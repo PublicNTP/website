@@ -1,13 +1,1 @@
-;(function ($){
-    $(function() {
-     
-		console.log('callllll')	
-		
-		$('#connect-submit').click(function() {
-			$('#connect-form').submit();
-			$('.connect__success').removeClass('hide');
-		})
-
-
-    });
-})(jQuery);
+!function(c){c(function(){c("#connect-submit").click(function(){c("#connect-form").submit(),c(".connect__success").removeClass("hide")})})}(jQuery);

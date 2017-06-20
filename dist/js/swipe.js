@@ -1,13 +1,1 @@
-;(function ($){
-    $(function() {
-
-		var swiper = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			paginationClickable: true,
-			autoplay: 5000,
-			speed: 400,
-			effect: 'coverflow'
-		});	
-
-    });
-})(jQuery);
+!function(e){e(function(){new Swiper(".swiper-container",{pagination:".swiper-pagination",paginationClickable:!0,autoplay:5e3,speed:400,effect:"coverflow"})})}(jQuery);
