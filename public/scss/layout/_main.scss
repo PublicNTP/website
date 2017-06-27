@@ -1,10 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    font-weight: 500;
-	font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
+	font-family: 'Roboto', sans-serif;
 }
 
 .wrap {
@@ -12,4 +12,10 @@
 	float: left;
 	position: relative;
 	overflow: hidden;
+}
+
+.main {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }

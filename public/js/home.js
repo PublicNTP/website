@@ -6,7 +6,7 @@
 			var getIndexFromId = function(tag) {
 				return parseInt($(tag).attr('id').split('-')[1]);
 			}
-	
+
 			$('#side-location-0').addClass('show')
 			$('#location-0').addClass('active')
 
@@ -53,6 +53,7 @@
 					$('#' + $(thisLocation).attr('id')).addClass('active')
 				}
 			})
+
 
     });
 })(jQuery);

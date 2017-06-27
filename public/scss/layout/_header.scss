@@ -1,7 +1,7 @@
 .header {
 	width: 100%;
 	float: left;
-	padding: 20px 70px;
+	padding: 33px 56px;
 	position: relative;
 
 	&__connect {
@@ -11,6 +11,8 @@
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			width: auto !important;
+			padding: 8px 17px !important;
+			margin-top: 20px;
 		}
 
 		&:hover {
@@ -20,11 +22,11 @@
 	}
 
 	&__item {
-		margin-top: 20px;
+		margin-top: 7.5px;
 		display: block;
 		float: right;
-		font-size: 13px;
-		padding: 10px 15px;
+		font-size: 12px;
+		padding: 8px 17px;
 		text-transform: uppercase;
 		text-decoration: none;
 		color: color(textColor);
@@ -41,7 +43,7 @@
 		text-align: right;
 		width: 100%;
 		font-size: 13px;
-		padding: 10px 15px;
+		padding: 20px 15px;
 		text-transform: uppercase;
 		text-decoration: none;
 		color: white;
@@ -64,7 +66,7 @@
 		height: 30px;
 		position: absolute;
 		right: 30px;
-		top: 20px;
+		top: 30px;
 		cursor: pointer;
 	}
 
@@ -78,13 +80,13 @@
 		transform: rotateZ(0deg) scale(1);
 		cursor: w-resize;
 		transition: .3s;
-		
+
 		@media screen and (max-width: breakpoint(tablet)) {
 			display: block;
 		}
 
 		&.shrink {
-			transform: rotateZ(360deg) scale(0);
+			transform: rotateZ(180deg) scale(0);
 		}
 	}
 
@@ -99,7 +101,7 @@
 		background: color(footer);
 		z-index: 200;
 		transition: .3s;
-		
+
 		@media screen and (max-width: breakpoint(tablet)) {
 			display: block;
 		}

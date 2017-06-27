@@ -1,7 +1,7 @@
 .footer {
 	width: 100%;
 	float: left;
-	padding: 40px 60px 60px 60px;
+	padding: 33px 56px;
 	background: color(footer);
 
 	&__connect {
@@ -22,6 +22,10 @@
 			background: color(textColor);
 			color: white;
 		}
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			float: left;
+		}
 	}
 
 	&__linkedin {
@@ -30,6 +34,10 @@
 		display: block;
 		float: right;
 		margin-bottom: 30px;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			float: left;
+		}
 	}
 
 	&__other-link {
@@ -47,7 +55,7 @@
 		margin-bottom: 30px;
 		color: color(title);
 		font-size: 16px;
-	}	
+	}
 
 	&__right {
 		width: calc(100% - 200px);
@@ -76,7 +84,7 @@
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			width: 100%;
-			text-align: right
+			text-align: left
 		}
 	}
 
@@ -88,5 +96,15 @@
 		color: color(title);
 		font-size: 16px;
 		text-align: right;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			text-align: left
+		}
+	}
+
+	&__wrap {
+		width: 100%;
+		max-width: 1440px;
+		margin: 0 auto;
 	}
 }

@@ -10,8 +10,9 @@
 	}
 
 	&__blog-image {
-		margin-top: 60px;
-		width: 30%;
+		margin-top: 70px;
+		width: 480px;
+		height: 480px;
 		float: left;
 		object-fit: cover;
 		display: block;
@@ -24,11 +25,12 @@
 
 	&__blog-p {
 		width: 50%;
-		font-size: 12px;
+		max-width: 410px;
+		font-size: 14px;
 		color: color(textColor);
 		line-height: 1.7;
 		float: left;
-		padding-left: 40px;
+		padding-left: 80px;
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			margin-top: 20px;
@@ -38,12 +40,12 @@
 	}
 
 	&__blog-title {
-		width: 70%;
+		width: calc(100% - 480px);
 		color: color(footer);
-		font-size: 20px;
-		margin-bottom: 30px;
+		font-size: 24px;
+		margin-bottom: 40px;
 		float: right;
-		padding-left: 40px;
+		padding-left: 80px;
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			width: 100%;
@@ -133,15 +135,15 @@
 	&__section {
 		width: 100%;
 		float: left;
-		padding: 40px 70px;
-		
+		padding: 40px 56px;
+
 		@media screen and (max-width: breakpoint(tablet)) {
 			padding: 40px 20px;
 		}
 	}
 
 	&__sidebar {
-		width: 350px;
+		width: 382px;
 		float: right;
 
 		@media screen and (max-width: breakpoint(tablet)) {
@@ -153,8 +155,8 @@
 	&__sidebar-title {
 		width: 100%;
 		float: left;
-		margin-bottom: 60px;
-		font-size: 70px;
+		margin-bottom: 40px;
+		font-size: 112px;
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			font-size: 45px;
@@ -173,7 +175,7 @@
 		width: 100%;
 		float: left;
 		display: none;
-		
+
 		&.show {
 			display: block;
 		}
@@ -183,7 +185,7 @@
 		width: 40px;
 		height: 40px;
 		position: absolute;
-		left: 0px; 
+		left: 0px;
 		top: 0px;
 		border-radius: 20px;
 		border: 1px solid color(textColor);
@@ -213,7 +215,7 @@
 		width: 40px;
 		height: 140px;
 		position: absolute;
-		left: 30%; 
+		left: 30%;
 		top: -150px;
 	}
 
@@ -228,18 +230,18 @@
 		float: left;
 		margin-bottom: 20px;
 	}
-	
+
 	&__sub-title {
 		width: 100%;
 		float: left;
 		color: color(textColor);
-		font-size: 12px;
+		font-size: 16px;
 		line-height: 1.5;
 	}
 
 	&__title {
 		width: 100%;
-		font-size: 60px;
+		font-size: 112px;
 		margin-bottom: 20px;
 		float: left;
 
@@ -253,7 +255,7 @@
 	}
 
 	&__world {
-		width: calc(100% - 400px);
+		width: calc(100% - 510px);
 		float: left;
 		position: relative;
 
@@ -269,7 +271,7 @@
 		height: auto;
 
 	}
-		
+
 	@media screen and (max-width: breakpoint(tablet)) {
 		margin-bottom: 0px;
 		padding-bottom: 30px;
@@ -304,4 +306,3 @@
 	70% { border: 1px solid black; }
 	100% { border: 1px solid rgba(0,0,0,0); }
 }
-
