@@ -15,6 +15,9 @@ router.get('/', function(req, res) {
 		limit: limit,
 		offset: page * limit,
 		distinct: true,
+		order: [
+			['id', 'DESC']
+		],
 		include: [{
 			model: models.Tag,
 			as: 'Tags'

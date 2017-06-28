@@ -71,7 +71,13 @@
 		</a>
 		<a href="/blog/posts/{{post.permalink}}.html">
 			{{#if post.Images.0.file_name}}
-				<img class="home__blog-image" src="{{post.Images.0.file_name}}">
+				<div class="swiper-container home__blog-image__wrap">
+					<div class="swiper-wrapper">
+						{{#each post.Images}}
+							<img class="swiper-slide home__blog-image" src="{{this.file_name}}">
+						{{/each}}
+					</div>
+				</div>
 			{{/if}}
 		</a>
 		<p class="home__blog-p">{{post.excerpt}}</p>

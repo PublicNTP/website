@@ -18,13 +18,10 @@
 		}
 	}
 
-	&__blog-image {
+	&__blog-image__wrap {
 		margin-top: 70px;
 		width: 480px;
 		height: 480px;
-		float: left;
-		object-fit: cover;
-		display: block;
 		float: left;
 
 		@media screen and (max-width: breakpoint(tablet-lg)) {
@@ -36,6 +33,14 @@
 		@media screen and (max-width: breakpoint(tablet)) {
 			width: 100%;
 		}
+	}
+
+	&__blog-image {
+		width: 100%;
+		height: 100%;
+		float: left;
+		object-fit: cover;
+		display: block;
 	}
 
 	&__blog-p {

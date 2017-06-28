@@ -26,6 +26,8 @@
 			var value = $(this).attr('value');
 			var clickedItem = this;
 			$('.report__curtain').addClass('active');
+      if ($(clickedItem).hasClass('dropdown__time')) timeValue = value;
+			else locationValue = value;
 			$($($(clickedItem).parent()).siblings('.dropdown__input')[0]).val(name);
 			window.setTimeout(function() {
 				$('.report__image').attr('src', firstHalfUrl + locationValue + '-' + timeValue + secondHalfUrl);

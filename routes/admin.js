@@ -24,7 +24,7 @@ var isAuthenticated = function(req, res) {
 	if (req.session.permission) {
 		return true
 	} else {
-		res.redirect('/admin/login')		
+		res.redirect('/admin/login')
 	}
 }
 
@@ -46,18 +46,22 @@ router.get('/', function(req, res) {
 		models.Post.findAll().then(function(posts) {
 			models.Post.findAndCountAll({
 				limit: 10,
-				raw: true
+				raw: true,
+				order: [
+					['id', 'DESC']
+				]
 			}).then(function(posts) {
 				posts = posts.rows.map(function(post, index) {
 					post.time = moment(post.createdAt).format("MMM Do YYYY")
 					return post
 				})
+				console.log(posts)
 				res.render('admin', {
 					posts: posts
 				})
 			})
 		})
-	} 
+	}
 })
 
 router.get('/posts/:id/destroy', function(req, res) {
@@ -89,7 +93,7 @@ router.get('/posts/new', function(req, res) {
 
 
 router.post('/posts/new', uploading.array('image_upload', 12), function(req, res) {
-	
+
 	if (isAuthenticated(req, res)) {
 		models.Category.findOne({
 			where: {
@@ -100,7 +104,7 @@ router.post('/posts/new', uploading.array('image_upload', 12), function(req, res
 			var permalink = req.body.title;
 			permalink = permalink.toLowerCase();
 			permalink = permalink.replace(/ /g, '-');
-			
+
 			models.Post.create({
 				CategoryId: category.id,
 				title: req.body.title,
@@ -118,7 +122,7 @@ router.post('/posts/new', uploading.array('image_upload', 12), function(req, res
 					}).then(function(img) {
 					})
 				}
-				
+
 				for (var i in tags) {
 					if (tags[i] != ' ') {
 						models.Tag.create({
@@ -164,7 +168,7 @@ router.get('/posts/:id/edit', function(req, res) {
 })
 
 router.post('/posts/:id/update', uploading.array('image_upload', 12), function(req, res) {
-	
+
 	if (isAuthenticated(req, res)) {
 		models.Category.findOne({
 			where: {
@@ -199,7 +203,7 @@ router.post('/posts/:id/update', uploading.array('image_upload', 12), function(r
 						}).then(function(img) {
 						})
 					}
-					
+
 					for (var i in tags) {
 						if (tags[i] != ' ') {
 							models.Tag.create({
@@ -212,7 +216,7 @@ router.post('/posts/:id/update', uploading.array('image_upload', 12), function(r
 					res.redirect('/admin')
 				})
 			})
-			
+
 		})
 	}
 })
