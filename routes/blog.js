@@ -6,7 +6,7 @@ var timelineHelpers = require('../helpers/timelineHelpers');
 
 
 router.get('/', function(req, res) {
-	var limit = 10; 
+	var limit = 10;
 	var page = 0;
 	if (req.query.page) {
 		page = parseInt(req.query.page) - 1;
@@ -30,7 +30,7 @@ router.get('/', function(req, res) {
 		if (page != 0 && page != 1) prev = '/blog.html?page=' + page;
 		else if (page != 0) prev = '/blog.html';
 		posts = posts.rows.map(function(post, index) {
-			post.time = moment(post.createdAt).format("MMM Do YYYY")
+			post.time = moment(post.createdAt).format("<b>MMM</b> D, YYYY")
 			return post
 		})
 		models.Post.findAll({
@@ -64,10 +64,10 @@ router.get('/posts/:permalink.html', function(req, res) {
 		include: [{
 			model: models.Image,
 			as: 'Images'
-		}]	
+		}]
 	}).then(function(post) {
 		post = JSON.parse(JSON.stringify(post))
-		post.time = moment(post.createdAt).format("MMMM Do, YYYY");
+		post.time = moment(post.createdAt).format("<b>MMMM</b> D, YYYY");
 		res.render('blog_detail', {
 			post: post,
 			the_title: post.title + ' - Blog | PublicNTP'

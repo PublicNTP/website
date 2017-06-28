@@ -5,7 +5,7 @@
 		var secondHalfUrl = '-packets.png';
 		var timeValue  = '0007d';
 		var locationValue = '.pdx01';
-     
+
 		$('.dropdown__input').blur(function() {
 			var thisInput = this;
 			window.setTimeout(function() {
@@ -26,20 +26,13 @@
 			var value = $(this).attr('value');
 			var clickedItem = this;
 			$('.report__curtain').addClass('active');
-			if ($(clickedItem).hasClass('dropdown__time')) {
-				timeValue = value;	
-				$('.report__time').text(name);
-			} else {
-				locationValue = value;	
-			}
 			$($($(clickedItem).parent()).siblings('.dropdown__input')[0]).val(name);
 			window.setTimeout(function() {
 				$('.report__image').attr('src', firstHalfUrl + locationValue + '-' + timeValue + secondHalfUrl);
-			
 			}, 300)
 
 		})
-		
+
 		$('.dropdown__input').click(function() {
 			var sibClose = $($(this).siblings('.dropdown__close')[0])
 			if ($(sibClose.children()[0]).hasClass('dropdown__arrow')) {
@@ -52,8 +45,8 @@
 				$($(this).siblings('.dropdown')[0]).removeClass('dropdown__show');
 			}
 		})
-		
-		
-		 
+
+
+
     });
 })(jQuery);

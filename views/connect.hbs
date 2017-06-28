@@ -1,7 +1,7 @@
 <div class="home__section">
 	<h1 class="home__title">Connect with PublicNTP</h1>
 	<p class="home__sub-title">
-		Sign up for our newsletter. Or drop us a line at 
+		Sign up for our newsletter. Or drop us a line at
 		<a href="mailto:contact@publicntp.org" class="connect__link">contact@publicntp.org</a>.
 	</p>
 </div>
@@ -9,8 +9,14 @@
 	<div class="connect__section">
 		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 		<form class="connect__form" id="connect-form" method="post" action="https://script.google.com/macros/s/AKfycbzRPH2Lr5pfra_y0wFGyNnJBu1t6-HjMcx3ftI8XDNSYo9T5Uft/exec" target="hidden_iframe">
-			<input name="Name" placeholder="Name" class="connect__input">
-			<input name="Email" placeholder="Email" class="connect__input">
+			<div class="connect__input-wrap">
+				<input name="Name" class="connect__input">
+				<label class="connect__label">Name</label>
+			</div>
+			<div class="connect__input-wrap">
+				<input name="Email" class="connect__input">
+				<label class="connect__label">Email</label>
+			</div>
 			<p class="connect__submit" id="connect-submit">Sign Up</p>
 			<p class="connect__success hide">Thanks for subscribing!</p>
 		</form>
@@ -20,9 +26,10 @@
 			How to connect with PublicNTP servers.
 		</h3>
 		<p class="connect__paragraph">
-			If you just want to synchronise your computers clock to the network, the configuration file
-			 (for the ntpd program from the ntp.org distribution, on any supported operating system -
-			Linux, *BSD, Windows and even some more erotic systems) is really simple:
+			If you just want to synchronise your computers clock to the network,
+			the configuration file (for the ntpd program from the ntp.org
+			distribution, on any supported operating system - Linux, *BSD,
+			Windows and even some more exotic systems) is really simple:
 		</p>
 		<p class="connect__paragraph">
 			driftfile /var/lib/ntp/ntp.drift
@@ -34,15 +41,52 @@
 			<li class="connect__li">server 3.pool.ntp.org</li>
 		</ul>
 		<p class="connect__paragraph">
-			The 0, 1, 2, and 3.pool.ntp.org names point to a random set of servers that will change every hour.
-			Make sure your computer's clock is set to something sensible (within a few minutes of the 'true' time) -
-			you could use ntpdate pool.ntp.org, or you could just use the date command and set it to your wristwatch.
-			Start ntpd, and after some time (this could take as long as half an hour!), ntpq = pn should output'
-			something like:	
+			The 0, 1, 2, and 3.pool.ntp.org names point to a random set
+			of servers that will change every hour. Make sure your computer's
+			clock is set to something sensible (within a few minutes of the 'true'
+			time) - you could use ntpdate pool.ntp.org, or you could just use the
+			date command and set it to your wristwatch. Start ntpd, and after
+			some time (this could take as long as half an hour!), ntpq
+			= pn should output' something like:
+			something like:
 		</p>
 		<p class="connect__paragraph">
 			$ ntpq -pn
 		</p>
+		<table class="connect__table">
+			<tr>
+				<th class="connect__table--head">remote</th>
+				<th class="connect__table--head">refid</th>
+				<th class="connect__table--head">st t when poll reach</th>
+				<th class="connect__table--head">delay</th>
+				<th class="connect__table--head">offset</th>
+				<th class="connect__table--head">jitter</th>
+			</tr>
+			<tr>
+				<td>+81.6.42.224</td>
+				<td>193.5.216.14</td>
+				<td>2 u   68 1024  377</td>
+				<td>158.995</td>
+				<td>51.220</td>
+				<td>50.287</td>
+			</tr>
+			<tr>
+				<td>*217.162.232.173</td>
+				<td>130.149.17.8</td>
+				<td>2 u  191 1024  176</td>
+				<td>79.245</td>
+				<td>3.589</td>
+				<td>27.454</td>
+			</tr>
+			<tr>
+				<td>-129.132.57.95</td>
+				<td>131.188.3.222</td>
+				<td>3 u  766 1024  377</td>
+				<td>22.302</td>
+				<td>-2.928</td>
+				<td>0.508</td>
+			</tr>
+		</table>
 		<p class="connect__paragraph">
 			The IP addresses will be different, because you've been assigned random timeservers. The essential
 			thing is that one of the lines starts with an asterisk (*), this means your computer gets

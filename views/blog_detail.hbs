@@ -5,11 +5,11 @@
 	</a>
 </div>
 <div class="home__section">
-	<h1 class="blog-detail__title">{{post.title}}</h1>
+	<h1 class="home__title">{{post.title}}</h1>
 </div>
 <div class="home__section">
-	<p class="blog-detail__time">
-		{{post.time}}
+	<p class="blog-detail__time blog-detail__time-main">
+		{{{post.time}}}
 	</p>
 	<div class="blog-detail__side">
 		{{#each post.Images}}
@@ -26,6 +26,9 @@
 		<div class="swiper-pagination"></div>
 	</div>
 	<div class="blog-detail__content">
+		<p class="blog-detail__time blog-detail__time-mobile">
+			{{{post.time}}}
+		</p>
 		<div class="blog-detail__article">
 			{{{post.content}}}
 		</div>

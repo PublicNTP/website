@@ -1,7 +1,6 @@
 .footer {
 	width: 100%;
 	float: left;
-	padding: 33px 56px;
 	background: color(footer);
 
 	&__connect {
@@ -25,6 +24,7 @@
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			float: left;
+			margin-left: 10px;
 		}
 	}
 
@@ -76,6 +76,10 @@
 		margin-bottom: 10px;
 		font-size: 10px;
 		text-decoration: none;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			text-align: left;
+		}
 	}
 
 	&__sites {
@@ -106,5 +110,10 @@
 		width: 100%;
 		max-width: 1440px;
 		margin: 0 auto;
+		padding: 33px 56px;
+	}
+
+	@media screen and (max-width: breakpoint(tablet)) {
+		padding: 40px 20px;
 	}
 }
