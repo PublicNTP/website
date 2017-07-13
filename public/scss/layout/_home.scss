@@ -162,6 +162,12 @@
 		float: left;
 		padding: 40px 56px;
 
+		&--clear {
+			@media screen and (max-width: breakpoint(tablet)) {
+				padding: 40px 0 !important;
+			}
+		}
+
 		@media screen and (max-width: breakpoint(tablet)) {
 			padding: 40px 20px;
 		}
