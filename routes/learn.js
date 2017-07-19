@@ -14,4 +14,10 @@ router.get('/atomic-clock.html', function(req, res) {
 	})
 })
 
+router.get('/amazing-atomic-clock.html', function(req, res) {
+	res.render('amazing_atomic_clock', {
+		the_title: 'The Amazing Atomic Clock - Learn | PublicNTP'
+	})
+})
+
 module.exports = router;

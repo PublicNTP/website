@@ -761,11 +761,15 @@
     height: 200px;
     -o-object-fit: contain;
        object-fit: contain; }
+    .how__image--rock {
+      max-width: 220px;
+      margin: 0 auto;
+      display: block; }
   .how__sub-title {
     width: 100%;
     font-weight: 600;
     color: #2a2a2a;
-    font-size: 10px;
+    font-size: 14px;
     margin-bottom: 25px;
     float: left; }
     @media screen and (max-width: 767px) {
