@@ -5,6 +5,21 @@
 		color: color(footer);
 		line-height: 2;
 
+		h4 {
+			font-weight: 600;
+			margin-bottom: 20px;
+		}
+
+		a {
+			text-decoration: none;
+			color: color(link);
+		}
+
+		ul {
+			padding-left: 20px;
+			list-style-type: none;
+		}
+
 		p {
 			margin-bottom: 20px;
 		}
