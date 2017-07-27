@@ -1,0 +1,31 @@
+<form action='/admin/posts/{{post.id}}/update' method='POST' enctype="multipart/form-data">
+	<select name='category' value="{{post.Category.id}}" selected="{{post.Category.name}}">
+		{{#each categories}}
+			<option value="{{this.name}}">{{this.name}}</option>
+		{{/each}}
+	</select>
+	<br>
+	<input name='title' placeholder='Title' value="{{post.title}}">
+	<br>
+	<input type="file" name='image_upload' placeholder='Image Upload' multiple>
+	<br>
+	<textarea name='excerpt' placeholder='Excerpt'>{{post.excerpt}}</textarea>
+	<br>
+	<textarea name="content" placeholder="content">{{post.content}}</textarea>
+	<br>
+	<textarea name="tags" placeholder="Tags"></textarea>
+	<br>
+	<input type='submit' value='Submit'>
+</form>
+{{#each post.Images}}
+	<img style="width: 200px; float: left;" src="{{this.file_name}}">
+	<a href="/admin/image/{{this.id}}/destroy">Delete: {{this.file_name}}</a>
+	<br>
+	<br>
+{{/each}}
+	<br>
+	<br>
+{{#each post.Tags}}
+	<a href="/admin/tags/{{this.id}}/destroy">Delete: {{this.name}}</a>
+	<br>
+{{/each}}

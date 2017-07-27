@@ -1,0 +1,123 @@
+.report {
+
+	&__bar-init {
+		height: 0 !important;
+	}
+
+	&__bar-green {
+		background: color(graphPrimary);
+		position: absolute;
+		bottom: 0;
+		transition: .3s ease-in;
+	}
+
+	&__bar-purple {
+		background: color(graphSecondary);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		transition: .3s ease-in;
+		z-index: 2;
+	}
+
+	&__curtain {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		height: 0;
+		background: white;
+		border: 1px solid color(textColor);
+		transition: .3s;
+		border-bottom: 0px;
+
+		&.active {
+			height: 100%;
+		}
+	}
+
+	&__graph {
+		width: 100%;
+		float: left;
+		position: relative;
+	}
+
+	&__graph-x {
+		width: 100%;
+		float: right;
+		color: color(textColor);
+
+		&--center {
+			text-align: center;
+			padding: 20px 0;
+		}
+	}
+
+	&__graph-column {
+		width: calc(100% / 7);
+		float: left;
+		margin-top: 10px;
+		font-size: 12px;
+	}
+
+	&__graph-y {
+		width: 100px;
+		position: absolute;
+		left: -130px;
+		top: 50%;
+		color: color(textColor);
+		transform: rotateZ(-90deg);
+	}
+
+	&__image {
+		width: 100%;
+		float: left;
+	}
+
+	&__row {
+		width: calc(100% + 50px);
+		height: 2px;
+		border-top: 1px solid color(textColor);
+		position: relative;
+		margin-bottom: 50px;
+		left: -50px;
+
+	}
+
+	&__row-label {
+		position: absolute;
+		left: -1px;
+		top: -7px;
+		color: color(textColor);
+		background: white;
+		font-size: 10px;
+		font-weight: 600;
+		padding: 0 5px;
+	}
+
+	&__section {
+		width: 100%;
+		float: left;
+		padding: 40px;
+	}
+
+	&__section-half {
+		width: 50%;
+		float: left;
+		padding: 0 10px;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: 100%;
+			margin-bottom: 25px;
+		}
+	}
+
+	&__time {
+		width: 100%;
+		float: left;
+		text-align: center;
+		padding: 20px;
+		text-transform: uppercase;
+		font-size: 22px;
+		color: color(textColor);
+	}
+}

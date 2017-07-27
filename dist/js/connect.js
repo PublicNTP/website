@@ -1,0 +1,1 @@
+!function(c){c(function(){c(".connect__input").focus(function(){c(c(this).siblings("label")[0]).addClass("connect__label--focused")}),c("#connect-submit").click(function(){c("#connect-form").submit(),c(".connect__success").removeClass("hide")})})}(jQuery);

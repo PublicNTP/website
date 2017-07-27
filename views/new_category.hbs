@@ -1,0 +1,10 @@
+<h1>New Category</h1>
+{{#each categories}}
+	<p>{{this.name}}</p>
+{{/each}}
+
+<form action='/admin/categories/new' method='POST'>
+	<input name='category' placeholder='Category'>
+	<br>
+	<input type='submit' value='Submit'>
+</form>

@@ -1,0 +1,43 @@
+<div class="home__section">
+	<a href="/blog.html" class="blog-detail__back">
+		Back
+		<img class="blog-detail__back-icon" src="/images/back.svg">
+	</a>
+</div>
+<div class="home__section">
+	<h1 class="home__title">{{post.title}}</h1>
+</div>
+<div class="home__section">
+	<p class="blog-detail__time blog-detail__time-main">
+		{{{post.time}}}
+	</p>
+	<div class="blog-detail__side">
+		{{#each post.Images}}
+			<img class="blog-detail__image" src="{{this.file_name}}">
+			<div class="node-clear"></div>
+		{{/each}}
+	</div>
+	<div class="blog-detail__swiper swiper-container">
+		<div class="swiper-wrapper">
+		{{#each post.Images}}
+			<img class="blog-detail__simage swiper-slide" src="{{this.file_name}}">
+		{{/each}}
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<div class="blog-detail__content">
+		<p class="blog-detail__time blog-detail__time-mobile">
+			{{{post.time}}}
+		</p>
+		<div class="blog-detail__article">
+			{{{post.content}}}
+		</div>
+	</div>
+</div>
+
+<div class="home__section"></div>
+<div class="home__section"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+<script src="/js/swipe.js"></script>

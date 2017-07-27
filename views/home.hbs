@@ -1,0 +1,90 @@
+<div class="home__section">
+	<h1 class="home__title">The PublicNTP Project</h1>
+	<p class="home__sub-title">
+		The PublicNTP Project provides unrestricted access to no-cost, highly-accurate time sources for the public good.
+	</p>
+</div>
+
+<div class="home__section">
+	<div class="home">
+		<div class="home__world">
+			<div class="home__signal-wrap">
+				<div class="home__signal"></div>
+				<div class="home__signal-bar"></div>
+				<div class="home__signal-ball"></div>
+			</div>
+			<div class="home__signal-wrap home__signal-flip">
+				<div class="home__signal"></div>
+				<div class="home__signal-bar"></div>
+				<div class="home__signal-ball"></div>
+			</div>
+			<img class="home__world-image" src="/images/globe.png">
+			{{#each locations}}
+				<div class="home__location" id="location-{{@index}}" style="left: {{this.geoX}}; top: {{this.geoY}};">
+					<div class="home__location-ball"></div>
+					{{#if this.multiple}}
+						<div class="home__location--outer">
+							<div class="home__location--multiple"></div>
+						</div>
+					{{/if}}
+				</div>
+			{{/each}}
+		</div>
+		<div class="home__sidebar">
+			<h2 class="home__sidebar-title">Servers</h2>
+			{{#each locations}}
+				<div class="home__sidebar-wrap" id="side-location-{{@index}}">
+					<h4 class="home__sidebar-sub-title">{{this.city}}</h4>
+					<p class="home__info">
+						Continent: <span class="home__emph">{{this.continent}}</span>
+					</p>
+					<div class="node-clear"></div>
+					<p class="home__info">
+						Country: <span class="home__emph">{{this.country}}</span>
+					</p>
+					<div class="node-clear"></div>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Live Date:
+					</p>
+					<p class="home__item">{{{this.liveDate}}}</span>
+					<div class="node-clear"></div>
+					<div class="home__spacer"></div>
+					<p class="home__info">
+						Hostname{{#if this.IPv6}} (IPv6){{/if}}:
+					</p>
+					<p class="home__item"> {{{this.hostname}}}</span>
+					<div class="node-clear"></div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="home__section">
+	<h1 class="home__title home__title--right">PublicNTP Experience</h1>
+</div>
+<div class="home__blog--wrap">
+	<div class="home__blog">
+		<a href="/blog/posts/{{post.permalink}}.html">
+			<h4 class="home__blog-title">{{post.title}}</h4>
+		</a>
+		<a href="/blog/posts/{{post.permalink}}.html">
+			{{#if post.Images.0.file_name}}
+				<div class="swiper-container home__blog-image__wrap">
+					<div class="swiper-wrapper">
+						{{#each post.Images}}
+							<img class="swiper-slide home__blog-image" src="{{this.file_name}}">
+						{{/each}}
+					</div>
+				</div>
+			{{/if}}
+		</a>
+		<p class="home__blog-p">{{post.excerpt}}</p>
+	</div>
+</div>
+<div class="home__section">
+</div>
+<div class="home__section">
+</div>
+<script src="/js/home.js"></script>

@@ -1,0 +1,40 @@
+<div class="home__section">
+	<div class="report__section-half">
+		<div class="dropdown__wrap">
+			<input class="dropdown__input" value="{{graphs.0.city}}, {{graphs.0.country}}" readonly>
+			<div class="dropdown__close">
+				<div class="dropdown__close-left dropdown__arrow"></div>
+				<div class="dropdown__close-right dropdown__arrow"></div>
+			</div>
+			<ul class="dropdown">
+			{{#each graphs}}
+				<li class="dropdown__item dropdown__place" value="{{this.prefix}}">{{this.city}}, {{this.country}}</li>
+			{{/each}}
+			</ul>
+		</div>
+	</div>
+	<div class="report__section-half">
+		<div class="dropdown__wrap">
+			<input class="dropdown__input" value="Weekly" readonly>
+			<div class="dropdown__close">
+				<div class="dropdown__close-left dropdown__arrow"></div>
+				<div class="dropdown__close-right dropdown__arrow"></div>
+			</div>
+			<ul class="dropdown">
+				<li class="dropdown__item dropdown__time" value="0001d">Daily</li>
+				<li class="dropdown__item dropdown__time" value="0007d">Weekly</li>
+				<li class="dropdown__item dropdown__time" value="0030d">Monthly</li>
+				<li class="dropdown__item dropdown__time" value="0364d">Yearly</li>
+				<li class="dropdown__item dropdown__time" value="3640d">Decennially</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="home__section home__section--clear">
+	<div class="report__graph" id="report-graph">
+		<img class="report__image" src="https://s3.amazonaws.com/stats.publicntp.org/png/stratum2{{graphs.0.prefix}}-0007d-packets.png">
+		<div class="report__curtain"></div>
+	</div>
+</div>
+<div class="home__section"></div>
+<script src="/js/dropdown.js"></script>

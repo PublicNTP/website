@@ -1,0 +1,74 @@
+<div class="home__section">
+	<h1 class="home__title">The PublicNTP Blog</h1>
+	<p class="home__sub-title">
+		Follow our journey to bring accurate time to the world
+	</p>
+</div>
+<div class="home__section">
+	<div class="blog__search-bar-wrap">
+		<input id="search-input" class="blog__search-input blog__search-input-hide" placeholder="Search" autocomplete="off">
+		<img class="blog__x" src="/images/x.svg">
+		<div class="blog__search-item-wrap blog__search-input-hide">
+		</div>
+	</div>
+	<div class="blog__sidebar">
+		<p class="blog__search">Search</p>
+		<div class="time">
+			{{#each timeline}}
+			<div>
+				<p class="time__year">
+					{{this.year}}
+					<img src="/images/down.png" class="time__icon">
+				</p>
+				{{#each this.months}}
+					<div class="time__wrap time__closed">
+						<p class="time__month">{{this.month}}<p>
+						{{#each this.posts}}
+							<a href="/blog/posts/{{this.permalink}}.html" class="time__post">
+								{{this.title}}
+							</a>
+						{{/each}}
+					</div>
+				{{/each}}
+				</div>
+			{{/each}}
+		</div>
+	</div>
+	<div class="blog__wrap">
+		<div class="blog__bar"></div>
+		{{#each posts}}
+			<div class="blog">
+				<a href='/blog/posts/{{this.permalink}}.html' class="blog__left-wrap">
+					<h2 class="blog__title">
+						{{this.title}}
+					</h2>
+					<p class="blog__time">
+						{{{this.time}}}
+					</p>
+				</a>
+				<a href='/blog/posts/{{this.permalink}}.html'>
+					{{#if this.Images.0.file_name}}
+						<img class="blog__image" src="{{this.Images.0.file_name}}">
+					{{/if}}
+				</a>
+				<a href='/blog/posts/{{this.permalink}}.html' class="blog__excerpt">
+					{{this.excerpt}}
+				</a>
+			</div>
+		{{/each}}
+		<div class="blog__page-prev">
+			{{#if prev}}
+				<a href="{{prev}}" class="blog__page">Newer Posts</a>
+			{{/if}}
+		</div>
+		<div class="blog__page-next">
+			{{#if next}}
+				<a href="{{next}}" class="blog__page">Older Posts</a>
+			{{/if}}
+		</div>
+	</div>
+</div>
+<p id="deserializedPosts" style="display: none;">{{deserializedPosts}}</p>
+
+<script src="/js/search.js"></script>
+<script src="/js/blog.js"></script>

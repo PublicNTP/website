@@ -1,0 +1,117 @@
+.header {
+	width: 100%;
+	float: left;
+	padding: 33px 56px;
+	position: relative;
+
+	&__connect {
+		border: 1px solid color(textColor);
+		border-radius: 2px;
+		margin-left: 10px;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			width: auto !important;
+			padding: 8px 17px !important;
+			margin-top: 20px;
+		}
+
+		&:hover {
+			background: color(textColor);
+			color: white;
+		}
+	}
+
+	&__item {
+		margin-top: 7.5px;
+		display: block;
+		float: right;
+		font-size: 12px;
+		padding: 8px 17px;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: color(textColor);
+		transition: .3s;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			display: none;
+		}
+	}
+
+	&__item-mobile {
+		display: block;
+		float: right;
+		text-align: right;
+		width: 100%;
+		font-size: 13px;
+		padding: 20px 15px;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: white;
+
+		&:hover {
+			border-bottom: 1px solid white;
+		}
+	}
+
+	&__logo {
+		display: block;
+		width: 200px;
+		height: auto;
+		float: left;
+	}
+
+	&__mobile-x {
+		display: block;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		right: 30px;
+		top: 30px;
+		cursor: pointer;
+	}
+
+	&__mobile-icon {
+		display: none;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		right: 30px;
+		top: 30px;
+		transform: rotateZ(0deg) scale(1);
+		cursor: w-resize;
+		transition: .3s;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			display: block;
+		}
+
+		&.shrink {
+			transform: rotateZ(180deg) scale(0);
+		}
+	}
+
+	&__mobile-wrap {
+		display: none;
+		width: 300px;
+		position: absolute;
+		right: -300px;
+		top: 0;
+		padding: 60px 10px 0 10px;
+		height: 100vh;
+		background: color(footer);
+		z-index: 200;
+		transition: .3s;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+			display: block;
+		}
+
+		&.pull-out {
+			right: 0;
+		}
+	}
+
+	@media screen and (max-width: breakpoint(tablet)) {
+		padding: 20px;
+	}
+}
