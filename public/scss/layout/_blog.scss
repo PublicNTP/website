@@ -207,6 +207,12 @@
 		float: left;
 		margin-bottom: 10px;
 		color: color(footer);
+		padding-right: 10px;
+		line-height: 1.4;
+
+		@media screen and (max-width: breakpoint(phone-lg)) {
+			padding: 0;
+		}
 	}
 
 	&__wrap {

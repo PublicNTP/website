@@ -19,6 +19,13 @@
 		}
 	}
 
+	&__command {
+		width: 100%;
+		float: left;
+		font-family: monospace;
+		margin-bottom: 30px;
+	}
+
 	&__label {
 		position: absolute;
 		pointer-events: none;
@@ -44,30 +51,56 @@
 		width: 100%;
 		float: left;
 		margin-bottom: 30px;
-		font-size: 14px;
+		font-size: 16px;
 		color: color(footer);
 		line-height: 1.8;
 	}
 
-	&__section {
+	&__server {
+		width: 100%;
+		float: left;
+		margin-bottom: 10px;
+		font-size: 16px;
+		color: color(footer);
+		line-height: 1.8;
+	}
+
+	&__form-section {
 		width: 40%;
 		float: left;
 		padding-right: 80px;
 
-		&:nth-child(2) {
-			width: 60%;
-			border-left: 2px solid color(footer);
-			padding-left: 80px;
-			padding-right: 0px;
+		@media screen and (max-width: breakpoint(tablet-lg)) {
+			width: 100% !important;
+			border: none;
+			padding: 0;
+			margin-bottom: 30px;
+		}
+	}
 
-			@media screen and (max-width: breakpoint(tablet-lg)) {
-				border: none;
-				padding-left: 0px;
+	&__section {
+		width: 60%;
+		border-left: 2px solid color(footer);
+		padding-left: 80px;
+		float: left;
+		padding-right: 0px;
+
+		ul {
+			padding-left: 20px;
+			list-style: none;
+			margin-bottom: 20px;
+			width: 100%;
+			float: left;
+
+			li {
+				font-weight: 400;
+				font-family: monospace;
 			}
 		}
 
 		@media screen and (max-width: breakpoint(tablet-lg)) {
 			width: 100% !important;
+			border: none;
 			padding: 0;
 			margin-bottom: 30px;
 		}
