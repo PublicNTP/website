@@ -20,4 +20,34 @@ router.get('/amazing-atomic-clock.html', function(req, res) {
 	})
 })
 
+router.get('/time-scales.html', function(req, res) {
+	res.render('time_scales', {
+		the_title: 'Time Scales - Learn | PublicNTP'
+	})
+})
+
+router.get('/what-is-a-second.html', function(req, res) {
+	res.render('what_is_a_second', {
+		the_title: 'What Is A Second? - Learn | PublicNTP'
+	})
+})
+
+router.get('/chrono-and-friends.html', function(req, res) {
+	res.render('chrono_and_friends', {
+		the_title: '\“-ology-of-ologies\”: chrono and friends - learn | publicntp'
+	})
+})
+
+router.get('/leap-seconds.html', function(req, res) {
+	res.render('leap_seconds', {
+		the_title: 'Leap Seconds - learn | publicntp'
+	})
+})
+
+router.get('/time-zones.html', function(req, res) {
+	res.render('time_zones', {
+		the_title: 'Time Zones - learn | publicntp'
+	})
+})
+
 module.exports = router;

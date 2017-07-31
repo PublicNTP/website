@@ -2,6 +2,7 @@
 	width: 100%;
 	float: left;
 	border-top: 2px solid color(footer);
+	padding-bottom: 20px;
 
 	&__image {
 		padding: 40px;
@@ -50,15 +51,22 @@
 		font-weight: 600;
 		color: color(footer);
 
-		&:nth-child(3) {
-			padding-right: 0px;
-		}
-
 		@media screen and (max-width: breakpoint(tablet)) {
 			width: 100%;
 			padding-right: 0;
 			margin-bottom: 20px;
 		}
+	}
+
+	&__list {
+		padding-left: 20px;
+		line-height: 1.5;
+		margin-top: 10px;
+	}
+
+	&__full {
+		width: 100%;
+		float: left;
 	}
 
 }
