@@ -1,0 +1,54 @@
+.about {
+  width: 100%;
+  float: left;
+
+  &__emph {
+    color: color(footer);
+  }
+
+  &__headshot {
+    width: 480px;
+    float: left;
+    height: 480px;
+    object-fit: cover;
+    margin-top: 80px;
+
+    &--right {
+      float: right;
+    }
+  }
+
+  &__person-wrap {
+    width: calc(100% - 480px);
+    float: right;
+  }
+
+  &__name {
+    font-size: 24px;
+    margin-bottom: 40px;
+    float: left;
+    width: 100%;
+    padding-left: 80px;
+    color: color(mainText);
+  }
+
+  &__p {
+    width: 100%;
+    float: left;
+    padding-left: 80px;
+    line-height: 1.7;
+    color: color(textColor);
+    margin-bottom: 20px;
+    padding-right: 40px;
+  }
+
+  &__spec {
+    width: 100%;
+    float: left;
+    padding-left: 80px;
+    line-height: 1.7;
+    color: color(textColor);
+    margin-bottom: 20px;
+    padding-right: 40px;
+  }
+}

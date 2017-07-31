@@ -1,10 +1,11 @@
 module.exports = [
 	'/',
-	'/history.html',
+	'/about-us.html',
 	'/blog.html',
-	'/stats.html',
+	'/connect.html',
+	'/history.html',
 	'/learn.html',
 	'/learn/atomic-clock.html',
 	'/learn/amazing-atomic-clock.html',
-	'/connect.html'
+	'/stats.html'
 ]
