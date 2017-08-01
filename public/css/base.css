@@ -875,6 +875,16 @@
     width: 100%;
     float: left;
     margin-bottom: 30px;
+    margin-top: 15px;
+    line-height: 1.5; }
+  .how__t {
+    line-height: 1.5;
+    color: #2a2a2a;
+    font-weight: 600;
+    font-size: 24px;
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
     margin-top: 15px; }
   .how__third {
     width: 33.33%;
@@ -896,9 +906,27 @@
     .how__list a {
       text-decoration: none;
       color: #aecde1; }
+    .how__list--p {
+      width: 100%;
+      float: left;
+      padding-left: 80px;
+      margin-bottom: 20px; }
   .how__full {
     width: 100%;
     float: left; }
+  .how__p {
+    width: 100%;
+    float: left;
+    line-height: 2;
+    font-size: 16px;
+    color: #2a2a2a;
+    margin-bottom: 20px;
+    padding-left: 40px; }
+    .how__p b {
+      font-weight: 600; }
+    .how__p a {
+      text-decoration: none;
+      color: #aecde1; }
   .how__paragraph a {
     text-decoration: none;
     color: #aecde1; }

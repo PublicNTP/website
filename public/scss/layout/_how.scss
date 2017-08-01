@@ -40,6 +40,18 @@
 		float: left;
 		margin-bottom: 30px;
 		margin-top: 15px;
+		line-height: 1.5;
+	}
+
+	&__t {
+		line-height: 1.5;
+		color: color(footer);
+		font-weight: 600;
+		font-size: 24px;
+		width: 100%;
+		float: left;
+		margin-bottom: 30px;
+		margin-top: 15px;
 	}
 
 	&__third {
@@ -67,11 +79,37 @@
 			text-decoration: none;
 			color: color(link);
 		}
+
+		&--p {
+			width: 100%;
+			float: left;
+			padding-left: 80px;
+			margin-bottom: 20px;
+		}
 	}
 
 	&__full {
 		width: 100%;
 		float: left;
+	}
+
+	&__p {
+		width: 100%;
+		float: left;
+		line-height: 2;
+		font-size: 16px;
+		color: color(footer);
+		margin-bottom: 20px;
+		padding-left: 40px;
+
+		b {
+			font-weight: 600;
+		}
+
+		a {
+			text-decoration: none;
+			color: color(link);
+		}
 	}
 
 	&__paragraph {
