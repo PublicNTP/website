@@ -4,12 +4,6 @@
 .restrict {
   max-width: 1300px; }
 
-.pull--right {
-  float: right; }
-
-.pull--left {
-  float: left; }
-
 .node-clear:before,
 .node-clear:after {
   content: " ";
@@ -73,33 +67,65 @@
     margin-top: 80px; }
     .about__headshot--right {
       float: right; }
+    @media screen and (max-width: 991px) {
+      .about__headshot {
+        width: 360px;
+        height: 360px; } }
+    @media screen and (max-width: 767px) {
+      .about__headshot {
+        max-width: 360px;
+        width: 100%;
+        margin: 0 auto 40px auto;
+        display: block;
+        float: none;
+        height: auto; } }
   .about__person-wrap {
     width: calc(100% - 480px);
-    float: right; }
+    float: right;
+    padding-left: 80px;
+    padding-right: 40px; }
+    .about__person-wrap--left {
+      float: left;
+      padding-right: 80px;
+      padding-left: 40px;
+      text-align: right; }
+    @media screen and (max-width: 991px) {
+      .about__person-wrap {
+        width: calc(100% - 360px); } }
+    @media screen and (max-width: 767px) {
+      .about__person-wrap {
+        width: 100%;
+        padding: 0; } }
   .about__name {
     font-size: 24px;
     margin-bottom: 40px;
     float: left;
     width: 100%;
-    padding-left: 80px;
     color: #383535; }
+    @media screen and (max-width: 767px) {
+      .about__name {
+        text-align: center; } }
   .about__p {
     width: 100%;
     float: left;
-    padding-left: 80px;
-    line-height: 1.7;
-    color: #9b9b9b;
-    margin-bottom: 20px;
-    padding-right: 40px; }
-  .about__spec {
-    width: 100%;
-    float: left;
-    padding-left: 80px;
     line-height: 1.7;
     font-size: 14px;
     color: #9b9b9b;
-    margin-bottom: 20px;
-    padding-right: 40px; }
+    margin-bottom: 20px; }
+    .about__p a {
+      text-decoration: none;
+      color: #aecde1; }
+  .about__spec {
+    width: 100%;
+    float: left;
+    line-height: 1.7;
+    font-size: 14px;
+    color: #9b9b9b;
+    margin-bottom: 20px; }
+  .about__wrap {
+    width: 100%;
+    float: left;
+    margin-bottom: 80px; }
 
 .blog {
   width: 100%;
