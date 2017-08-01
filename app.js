@@ -9,6 +9,7 @@ var session = require('cookie-session');
 var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
 var adminRoutes = require('./routes/admin');
+var aboutRoutes = require('./routes/about');
 var learnRoutes = require('./routes/learn');
 var connectRoutes = require('./routes/connect');
 var historyRoutes = require('./routes/history');
@@ -93,6 +94,7 @@ app.use('/learn', learnRoutes);
 app.use('/learn.html', learnRoutes);
 app.use('/connect.html', connectRoutes);
 app.use('/history.html', historyRoutes);
+app.use('/about-us.html', aboutRoutes);
 app.use('/stats.html', statsRoutes);
 
 app.get('/history.html', function(req, res) {

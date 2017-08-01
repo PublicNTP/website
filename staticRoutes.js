@@ -1,15 +1,16 @@
 module.exports = [
 	'/',
-	'/history.html',
+	'/about-us.html',
 	'/blog.html',
-	'/stats.html',
+	'/connect.html',
+	'/history.html',
 	'/learn.html',
 	'/learn/atomic-clock.html',
 	'/learn/amazing-atomic-clock.html',
 	'/learn/time-scales.html',
 	'/learn/what-is-a-second.html',
-	'/learn/chrono-and-frinds.html',
+	'/learn/chrono-and-friends.html',
 	'/learn/leap-seconds.html',
 	'/learn/time-zones.html',
-	'/connect.html'
+	'/stats.html'
 ]
