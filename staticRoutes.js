@@ -9,7 +9,7 @@ module.exports = [
 	'/learn/amazing-atomic-clock.html',
 	'/learn/time-scales.html',
 	'/learn/what-is-a-second.html',
-	'/learn/chrono-and-frinds.html',
+	'/learn/chrono-and-friends.html',
 	'/learn/leap-seconds.html',
 	'/learn/time-zones.html',
 	'/stats.html'
