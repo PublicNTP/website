@@ -96,6 +96,7 @@
     float: left;
     padding-left: 80px;
     line-height: 1.7;
+    font-size: 14px;
     color: #9b9b9b;
     margin-bottom: 20px;
     padding-right: 40px; }
@@ -866,9 +867,15 @@
     padding-left: 20px;
     line-height: 1.5;
     margin-top: 10px; }
+    .how__list a {
+      text-decoration: none;
+      color: #aecde1; }
   .how__full {
     width: 100%;
     float: left; }
+  .how__paragraph a {
+    text-decoration: none;
+    color: #aecde1; }
 
 .home {
   width: 100%;

@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
 		res.render('home', {
 			locations: locations,
 			post: post,
-			the_title: 'PublicNTP'
+			the_title: 'Welcome to PublicNTP'
 		})
 	})
 })
