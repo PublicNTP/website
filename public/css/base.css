@@ -59,6 +59,47 @@
   max-width: 1440px;
   margin: 0 auto; }
 
+.about {
+  width: 100%;
+  float: left; }
+  .about__emph {
+    color: #2a2a2a; }
+  .about__headshot {
+    width: 480px;
+    float: left;
+    height: 480px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-top: 80px; }
+    .about__headshot--right {
+      float: right; }
+  .about__person-wrap {
+    width: calc(100% - 480px);
+    float: right; }
+  .about__name {
+    font-size: 24px;
+    margin-bottom: 40px;
+    float: left;
+    width: 100%;
+    padding-left: 80px;
+    color: #383535; }
+  .about__p {
+    width: 100%;
+    float: left;
+    padding-left: 80px;
+    line-height: 1.7;
+    color: #9b9b9b;
+    margin-bottom: 20px;
+    padding-right: 40px; }
+  .about__spec {
+    width: 100%;
+    float: left;
+    padding-left: 80px;
+    line-height: 1.7;
+    color: #9b9b9b;
+    margin-bottom: 20px;
+    padding-right: 40px; }
+
 .blog {
   width: 100%;
   float: left;
