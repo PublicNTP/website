@@ -23,6 +23,7 @@
 
 .full-wrap {
   width: 100%;
+  display: block;
   float: left; }
 
 .clear-margin {
@@ -64,7 +65,7 @@
     height: 480px;
     -o-object-fit: cover;
        object-fit: cover;
-    margin-top: 80px; }
+    margin-top: 48px; }
     .about__headshot--right {
       float: right; }
     @media screen and (max-width: 991px) {
@@ -75,7 +76,7 @@
       .about__headshot {
         max-width: 360px;
         width: 100%;
-        margin: 0 auto 40px auto;
+        margin: 0 auto 30px auto;
         display: block;
         float: none;
         height: auto; } }
@@ -96,9 +97,19 @@
       .about__person-wrap {
         width: 100%;
         padding: 0; } }
+  .about__linkedin {
+    display: block;
+    margin-bottom: 20px;
+    float: left; }
+    .about__linkedin--right {
+      float: right; }
+    @media screen and (max-width: 767px) {
+      .about__linkedin {
+        float: none;
+        margin: 0 auto 20px auto; } }
   .about__name {
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     float: left;
     width: 100%;
     color: #383535; }

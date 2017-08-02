@@ -11,7 +11,7 @@
     float: left;
     height: 480px;
     object-fit: cover;
-    margin-top: 80px;
+    margin-top: 48px;
 
     &--right {
       float: right;
@@ -25,7 +25,7 @@
 		@media screen and (max-width: breakpoint(tablet)) {
 			max-width: 360px;
       width: 100%;
-      margin: 0 auto 40px auto;
+      margin: 0 auto 30px auto;
       display: block;
       float: none;
       height: auto;
@@ -55,9 +55,24 @@
 		}
   }
 
+  &__linkedin {
+    display: block;
+    margin-bottom: 20px;
+    float: left;
+
+    &--right {
+      float: right;
+    }
+
+		@media screen and (max-width: breakpoint(tablet)) {
+      float: none;
+      margin: 0 auto 20px auto;
+		}
+  }
+
   &__name {
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     float: left;
     width: 100%;
     color: color(mainText);

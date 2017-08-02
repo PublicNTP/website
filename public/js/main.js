@@ -15,6 +15,7 @@
     			$('#mobile-icon').removeClass('shrink')
     		}, 400)
     	})
+
       window.onload = function() {
         $('.logo__minute').addClass('logo__minute-move');
         $('.logo__hour').addClass('logo__hour-move');
