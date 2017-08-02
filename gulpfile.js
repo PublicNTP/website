@@ -41,6 +41,8 @@ gulp.task('minify:core-js', function() {
 		'./public/js/main.js',
 		'./public/js/search.js',
 		'./public/js/swipe.js',
+		'./public/js/swiper.min.js',
+		'./public/js/jquery-2.1.4.min.js',
 		]).pipe(stripDebug())
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/js/'));
@@ -167,7 +169,7 @@ gulp.task('routes', function () {
 					console.log('err', err)
 				})
 
-			}, 4000)
+			}, 5000)
 		})
 	});
 })
