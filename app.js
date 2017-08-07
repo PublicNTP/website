@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var hbs = require('hbs');
 var moment = require('moment');
 var session = require('cookie-session');
+var compression = require('compression');
 
 var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
@@ -32,6 +33,8 @@ if (ENV === 'development') {
 }
 
 app.locals.is_production = ENV !== 'development';
+
+app.use(compression());
 
 app.use(express.static(path.join(__dirname, 'public')));
 

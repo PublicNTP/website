@@ -47,14 +47,23 @@
 					<p class="home__info">
 						Live Date:
 					</p>
-					<p class="home__item">{{{this.liveDate}}}</span>
+					<p class="home__item">
+						{{{this.liveDate}}}
+					</p>
 					<div class="node-clear"></div>
 					<div class="home__spacer"></div>
 					<p class="home__info">
 						Hostname{{#if this.IPv6}} (IPv6){{/if}}:
 					</p>
-					<p class="home__item"> {{{this.hostname}}}</span>
+					<p class="home__item"> {{{this.hostname}}}</p>
 					<div class="node-clear"></div>
+					<p class="home__info">
+						Software:
+					</p>
+					<p class="home__item">
+						<a href="http://nwtime.org/projects/ntp/">NTP Reference Implementation</a>, <br/>
+						<a href="http://networktimefoundation.org/">Network Time Foundation</a>
+					</p>
 				</div>
 			{{/each}}
 		</div>
