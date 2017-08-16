@@ -1,9 +1,9 @@
 {
-  "name": "PublicNTP",
-  "version": "1.0.0",
+  "name": "publicntp",
+  "version": "2.0.0",
   "main": "index.js",
   "repository": {
-    "url": "https://github.com/boblad/publicNTPTemp.git",
+    "url": "git+https://github.com/PublicNTP/website.git",
     "type": "git"
   },
   "scripts": {
@@ -40,5 +40,13 @@
     "request-promise": "^4.2.0",
     "sequelize": "^3.30.4",
     "sequelize-cli": "^2.7.0"
+  },
+  "description": "yarn install npm start",
+  "bugs": {
+    "url": "https://github.com/PublicNTP/website/issues"
+  },
+  "homepage": "https://github.com/PublicNTP/website#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
