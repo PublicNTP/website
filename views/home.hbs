@@ -20,7 +20,7 @@
 			</div>
 			<img class="home__world-image" src="/images/globe.svg" alt="World">
 			{{#each locations}}
-				<div class="home__location" id="location-{{@index}}" style="left: {{this.geoX}}; top: {{this.geoY}};">
+				<div class="home__location {{this.className}}" id="location-{{@index}}">
 					<div class="home__location-ball"></div>
 					{{#if this.multiple}}
 						<div class="home__location--outer">
@@ -83,7 +83,7 @@
 				<div class="swiper-container home__blog-image__wrap">
 					<div class="swiper-wrapper">
 						{{#each post.Images}}
-							<img class="swiper-slide home__blog-image" src="{{this.file_name}}">
+							<img class="swiper-slide home__blog-image" src="{{this.file_name}}" alt="Blog Image">
 						{{/each}}
 					</div>
 				</div>
@@ -96,6 +96,6 @@
 </div>
 <div class="home__section">
 </div>
-<script src="/js/swiper.min.js"></script>
+<script src="/js/swiper.min.js" async></script>
 <link rel="stylesheet" href="/css/swiper.min.css">
-<script src="/js/home.js"></script>
+<script src="/js/home.js" async></script>

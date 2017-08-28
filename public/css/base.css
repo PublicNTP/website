@@ -34,6 +34,9 @@
   max-width: 1300px;
   margin: 0 auto; }
 
+.extra-padding {
+  padding: 20px; }
+
 * {
   margin: 0;
   padding: 0;
@@ -545,6 +548,62 @@
   color: #2a2a2a;
   line-height: 1.8;
   font-size: 12px; }
+
+.coord--pdx01 {
+  left: calc(7.5% - 15px);
+  top: calc(27% - 15px); }
+
+.coord--sjc01 {
+  left: calc(7.5% - 15px);
+  top: calc(34% - 15px); }
+
+.coord--slc01 {
+  left: calc(11% - 15px);
+  top: calc(30% - 15px); }
+
+.coord--ord2 {
+  left: calc(19% - 15px);
+  top: calc(29% - 15px); }
+
+.coord--iad01 {
+  left: calc(21% - 15px);
+  top: calc(30% - 15px); }
+
+.coord--yul01 {
+  left: calc(24% - 15px);
+  top: calc(24% - 15px); }
+
+.coord--gru01 {
+  left: calc(28% - 15px);
+  top: calc(77% - 15px); }
+
+.coord--dub01 {
+  left: calc(42% - 15px);
+  top: calc(20% - 15px); }
+
+.coord--fra01 {
+  left: calc(46.2% - 15px);
+  top: calc(23% - 15px); }
+
+.coord--bom01 {
+  left: calc(67.5% - 15px);
+  top: calc(43.5% - 15px); }
+
+.coord--bir01 {
+  left: calc(69.5% - 15px);
+  top: calc(49.5% - 15px); }
+
+.coord--sin01 {
+  left: calc(78% - 15px);
+  top: calc(56% - 15px); }
+
+.coord--hnd01 {
+  left: calc(87% - 15px);
+  top: calc(33% - 15px); }
+
+.coord--syd01 {
+  left: calc(91% - 15px);
+  top: calc(83% - 15px); }
 
 .category {
   width: 25%;
