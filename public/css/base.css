@@ -1066,6 +1066,11 @@
         text-align: right; } }
   .home__emph {
     color: #2a2a2a; }
+  .home__frame {
+    width: 100%;
+    float: left;
+    height: 650px;
+    border: none; }
   .home__item {
     color: #2a2a2a;
     float: left;

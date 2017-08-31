@@ -83,6 +83,13 @@
 		color: color(footer);
 	}
 
+	&__frame {
+		width: 100%;
+		float: left;
+		height: 650px;
+		border: none;
+	}
+
 	&__item {
 		color: color(footer);
 		float: left;
