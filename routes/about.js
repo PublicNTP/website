@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
   res.render('about_us', {
-		the_title: 'About Us | PublicNTP'
+		the_title: 'People | PublicNTP'
 	})
 })
 

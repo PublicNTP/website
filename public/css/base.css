@@ -1127,8 +1127,10 @@
     position: absolute;
     left: calc(50% - 4px);
     top: calc(50% - 4px);
-    background: #2a2a2a;
+    background: rgba(56, 53, 53, 0.87);
     transition: .3s; }
+    .home__location-ball.active {
+      background: #65A1C7; }
   .home__section {
     width: 100%;
     float: left;
@@ -1255,7 +1257,7 @@
   0% {
     border: 1px solid transparent; }
   50% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   100% {
     border: 1px solid transparent; } }
 
@@ -1263,7 +1265,7 @@
   0% {
     border: 1px solid transparent; }
   50% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   100% {
     border: 1px solid transparent; } }
 
@@ -1273,7 +1275,7 @@
   30% {
     border: 1px solid transparent; }
   50% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   70% {
     border: 1px solid transparent; }
   100% {
@@ -1285,7 +1287,7 @@
   30% {
     border: 1px solid transparent; }
   50% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   70% {
     border: 1px solid transparent; }
   100% {
@@ -1297,7 +1299,7 @@
   40% {
     border: 1px solid transparent; }
   60% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   90% {
     border: 1px solid transparent; } }
 
@@ -1307,7 +1309,7 @@
   40% {
     border: 1px solid transparent; }
   60% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   90% {
     border: 1px solid transparent; } }
 
@@ -1317,7 +1319,7 @@
   50% {
     border: 1px solid transparent; }
   70% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   100% {
     border: 1px solid transparent; } }
 
@@ -1327,7 +1329,7 @@
   50% {
     border: 1px solid transparent; }
   70% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   100% {
     border: 1px solid transparent; } }
 

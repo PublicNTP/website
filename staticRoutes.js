@@ -1,6 +1,6 @@
 module.exports = [
 	'/',
-	'/about-us.html',
+	'/people.html',
 	'/blog.html',
 	'/connect.html',
 	'/history.html',

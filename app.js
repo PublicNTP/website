@@ -97,7 +97,7 @@ app.use('/learn', learnRoutes);
 app.use('/learn.html', learnRoutes);
 app.use('/connect.html', connectRoutes);
 app.use('/history.html', historyRoutes);
-app.use('/about-us.html', aboutRoutes);
+app.use('/people.html', aboutRoutes);
 app.use('/stats.html', statsRoutes);
 
 app.get('/history.html', function(req, res) {
