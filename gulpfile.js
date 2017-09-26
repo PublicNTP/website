@@ -1,7 +1,6 @@
 'use strict';
 
 var path = require('path');
-var models = require('./models')
 var request = require('request')
 var mkdirp = require('mkdirp')
 var fs = require('fs')
@@ -20,6 +19,7 @@ var	uglify = require('gulp-uglify');
 var	stripDebug = require('gulp-strip-debug')
 var	minifyHTML = require('gulp-minify-html')
 var	minifyCSS = require('gulp-minify-css')
+var posts = require('./data/posts.json');
 
 gulp.task('clean:dist', function(cb) {
 	del('./dist/*', cb);
@@ -129,49 +129,40 @@ gulp.task('routes', function () {
 	  }
 	});
 	var routes = require('./staticRoutes');
-	models.sequelize.sync().then(function() {
-		models.Post.findAll({
-		}).then(function(posts) {
-			setTimeout(function() {
-				posts = JSON.parse(JSON.stringify(posts));
-				console.log('pops', posts)
-				var index = 2;
-				for (var i = 2; i < posts.length; i+=2) {
-					routes.push('/blog.html?page=' + index);
-					index++;
-				}
-				for (var i in posts) {
-					routes.push('/blog/posts/' + posts[i].permalink + '.html')
-				}
-				console.log('routes', routes)
-				let rpRoutes = routes.map(function(r, index) {
-					return rp('http://localhost:3020' + r);
-				})
-
-				Promise.all(rpRoutes).then(function(pages) {
-					console.log('pages', pages)
-					let tempPath = path.join(__dirname, 'dist');
-					for (let i = 0; i < pages.length; i++) {
-						let route = routes[i]
-						console.log('route', route);
-						if (route == '/') route = '/index.html';
-						var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'))
-						if (fs.existsSync(routeDir)) {
-							createFile(route, pages[i]);
-						} else {
-							mkdirp(routeDir, function(mkdirErr) {
-								if (mkdirErr) console.log('mkdirpErr', mkdirErr);
-								else createFile(route, pages[i]);
-							})
-						}
-					}
-				}).catch(function(err) {
-					console.log('err', err)
-				})
-
-			}, 5000)
+	setTimeout(function() {
+		var index = 2;
+		for (var i = 2; i < posts.length; i+=2) {
+			routes.push('/blog.html?page=' + index);
+			index++;
+		}
+		for (var i in posts) {
+			routes.push('/blog/posts/' + posts[i].permalink + '.html')
+		}
+		console.log('routes', routes)
+		let rpRoutes = routes.map(function(r, index) {
+			return rp('http://localhost:3020' + r);
 		})
-	});
+		Promise.all(rpRoutes).then(function(pages) {
+			console.log('pages', pages)
+			let tempPath = path.join(__dirname, 'dist');
+			for (let i = 0; i < pages.length; i++) {
+				let route = routes[i]
+				console.log('route', route);
+				if (route == '/') route = '/index.html';
+				var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'))
+				if (fs.existsSync(routeDir)) {
+					createFile(route, pages[i]);
+				} else {
+					mkdirp(routeDir, function(mkdirErr) {
+						if (mkdirErr) console.log('mkdirpErr', mkdirErr);
+						else createFile(route, pages[i]);
+					})
+				}
+			}
+		}).catch(function(err) {
+			console.log('err', err)
+		})
+	}, 6000)
 })
 
 gulp.task('gather', function() {

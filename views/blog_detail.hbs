@@ -12,15 +12,15 @@
 		{{{post.time}}}
 	</p>
 	<div class="blog-detail__side">
-		{{#each post.Images}}
-			<img class="blog-detail__image" src="{{this.file_name}}">
+		{{#each post.image_urls}}
+			<img class="blog-detail__image" src="{{this}}">
 			<div class="node-clear"></div>
 		{{/each}}
 	</div>
 	<div class="blog-detail__swiper swiper-container">
 		<div class="swiper-wrapper">
-		{{#each post.Images}}
-			<img class="blog-detail__simage swiper-slide" src="{{this.file_name}}">
+		{{#each post.image_urls}}
+			<img class="blog-detail__simage swiper-slide" src="{{this}}">
 		{{/each}}
 		</div>
 		<div class="swiper-pagination"></div>
