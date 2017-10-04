@@ -31,7 +31,7 @@ router.get('/', function(req, res) {
 		prev: prev,
 		timeline: timeline,
 		the_title: 'Blog | PublicNTP',
-		relative_path: '../'
+		relative_path: './'
 	})
 })
 

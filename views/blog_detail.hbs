@@ -13,14 +13,14 @@
 	</p>
 	<div class="blog-detail__side">
 		{{#each post.image_urls}}
-			<img class="blog-detail__image" src="{{relative_path}}{{this}}">
+			<img class="blog-detail__image" src="{{../relative_path}}{{this}}">
 			<div class="node-clear"></div>
 		{{/each}}
 	</div>
 	<div class="blog-detail__swiper swiper-container">
 		<div class="swiper-wrapper">
 		{{#each post.image_urls}}
-			<img class="blog-detail__simage swiper-slide" src="{{relative_path}}{{this}}">
+			<img class="blog-detail__simage swiper-slide" src="{{../relative_path}}{{this}}">
 		{{/each}}
 		</div>
 		<div class="swiper-pagination"></div>
