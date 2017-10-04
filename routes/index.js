@@ -5,11 +5,11 @@ var posts = require('../data/posts.json');
 
 router.get('/', function(req, res) {
 	var post = posts[0];
-	console.log('post', post);
 	res.render('home', {
 		locations: locations,
 		post: post,
-		the_title: 'PublicNTP'
+		the_title: 'PublicNTP',
+		relative_path: './'
 	})
 })
 

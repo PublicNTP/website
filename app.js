@@ -101,7 +101,9 @@ app.use('/people.html', aboutRoutes);
 app.use('/stats.html', statsRoutes);
 
 app.get('/history.html', function(req, res) {
-  res.render('history', {})
+  res.render('history', {
+    relative_path: './'
+  })
 })
 
 app.listen(port, function() {

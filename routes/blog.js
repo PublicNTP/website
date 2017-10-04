@@ -30,7 +30,8 @@ router.get('/', function(req, res) {
 		next: next,
 		prev: prev,
 		timeline: timeline,
-		the_title: 'Blog | PublicNTP'
+		the_title: 'Blog | PublicNTP',
+		relative_path: '../'
 	})
 })
 
@@ -39,7 +40,8 @@ router.get('/posts/:permalink.html', function(req, res) {
 	post.time = moment(post.timestamp).format("<b>MMMM</b> D, YYYY");
 	res.render('blog_detail', {
 		post: post,
-		the_title: post.title + ' - Blog | PublicNTP'
+		the_title: post.title + ' - Blog | PublicNTP',
+		relative_path: '../../'
 	})
 })
 
