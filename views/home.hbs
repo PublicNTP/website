@@ -18,7 +18,7 @@
 				<div class="home__signal-bar"></div>
 				<div class="home__signal-ball"></div>
 			</div>
-			<img class="home__world-image" src="/images/globe.svg" alt="World">
+			<img class="home__world-image" src="{{relative_path}}images/globe.svg" alt="World">
 			{{#each locations}}
 				<div class="home__location {{this.className}}" id="location-{{@index}}">
 					<div class="home__location-ball"></div>
@@ -96,6 +96,6 @@
 </div>
 <div class="home__section">
 </div>
-<script src="/js/swiper.min.js"></script>
-<link rel="stylesheet" href="/css/swiper.min.css">
-<script src="/js/home.js" async></script>
+<script src="{{relative_path}}js/swiper.min.js"></script>
+<link rel="stylesheet" href="{{relative_path}}css/swiper.min.css">
+<script src="/js/home.js"></script>
