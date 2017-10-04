@@ -161,6 +161,7 @@ gulp.task('routes', function () {
 			}
 		}).catch(function(err) {
 			console.log('err', err)
+			console.log('err with')
 		})
 	}, 6000)
 })
