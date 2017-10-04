@@ -47,8 +47,8 @@
 					</p>
 				</a>
 				<a href='/blog/posts/{{this.permalink}}.html'>
-					{{#if this.Images.0.file_name}}
-						<img class="blog__image" src="{{this.Images.0.file_name}}" alt="Blog Image">
+					{{#if this.image_urls.[0]}}
+						<img class="blog__image" src="{{this.image_urls.[0]}}" alt="Blog Image">
 					{{/if}}
 				</a>
 				<a href='/blog/posts/{{this.permalink}}.html' class="blog__excerpt">
@@ -68,7 +68,7 @@
 		</div>
 	</div>
 </div>
-<p id="deserializedPosts" class="hide" {{deserializedPosts}}</p>
+<p id="deserializedPosts" class="hide">{{deserializedPosts}}</p>
 
 <script src="/js/search.js" async></script>
 <script src="/js/blog.js" async></script>

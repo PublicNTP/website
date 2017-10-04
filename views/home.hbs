@@ -79,11 +79,11 @@
 			<h4 class="home__blog-title">{{post.title}}</h4>
 		</a>
 		<a href="/blog/posts/{{post.permalink}}.html">
-			{{#if post.Images.0.file_name}}
+			{{#if post.image_urls}}
 				<div class="swiper-container home__blog-image__wrap">
 					<div class="swiper-wrapper">
-						{{#each post.Images}}
-							<img class="swiper-slide home__blog-image" src="{{this.file_name}}" alt="Blog Image">
+						{{#each post.image_urls}}
+							<img class="swiper-slide home__blog-image" src="{{this}}" alt="Blog Image">
 						{{/each}}
 					</div>
 				</div>
