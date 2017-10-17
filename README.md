@@ -23,7 +23,7 @@ All builds should be done on staging.
 
 the root of the app on staging lives at `/home/boblad/website`
 
-To add a new page that is not a blog post, it must be created through the dynamic side. Create a route and create all the following appropriate files.
+To add a new page that is not a blog post, it must be created through the dynamic section of the app. Create a route and create all the following appropriate files.
 
 After the page is complete, it is very important to add the path of the route to the staticRoutes.js file found in the root of the project. If the path is not added, it will not be available in the static version of the site.
 
