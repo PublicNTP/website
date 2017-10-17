@@ -37,7 +37,7 @@ Step 1:
   (`pm2 status` will show all processes with pm2)
 
 Step 2:
-  In the `/home/boblad/website` directory run `gulp gather`. This command will start an instance of the dynamic app and scrape each path of the site and dump its contents in the dist folder creating a static version of the site. It is imperitve that there are no errors with this command. Check the logs for errors. 
+  In the `/home/boblad/website` directory run `gulp gather`. This command will start an instance of the dynamic app and scrape each path of the site and dump its contents in the dist folder creating a static version of the site. It is imperitve that there are no errors with this command. Check the logs for errors. You will then need to kill the app with control-c.
   
 Step 3:
 
