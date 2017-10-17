@@ -42,7 +42,8 @@
     "request-promise": "^4.2.0",
     "sequelize": "^3.30.4",
     "sequelize-cli": "^2.7.0",
-    "start": "^5.1.0"
+    "start": "^5.1.0",
+    "yargs": "^9.0.1"
   },
   "description": "yarn install npm start",
   "bugs": {

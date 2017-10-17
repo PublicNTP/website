@@ -20,6 +20,9 @@ var	stripDebug = require('gulp-strip-debug')
 var	minifyHTML = require('gulp-minify-html')
 var	minifyCSS = require('gulp-minify-css')
 var posts = require('./data/posts.json');
+var argv = require('yargs').argv;
+const { spawn } = require('child_process');
+const ls = spawn('ls', ['-lh', '/usr']);
 
 gulp.task('clean:dist', function(cb) {
 	del('./dist/*', cb);
@@ -176,4 +179,33 @@ gulp.task('gather', function() {
 		gulp.start('minify:html');
 		gulp.start('minify:core-js');
 	}, 500)
+})
+
+var pushS3Env = function(s3env) {
+  s3env.stdout.on('data', (data) => {
+    console.log(`stdout: ${data}`);
+  });
+
+  s3env.stderr.on('data', (data) => {
+    console.log(`stderr: ${data}`);
+  });
+
+  s3env.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+  });
+}
+
+gulp.task('pushs3', function() {
+  if (argv.env && argv.env == 'production') {
+    console.log('pushing to production s3');
+    pushs3d(s3Prod);
+  } else if (argv.env && argv.env == 'staging') {
+    console.log('pushing to staging s3');
+    pushs3d(s3Stage);
+  } else if (argv.env && argv.env == 'dev') {
+    console.error('dev is not currently an option, use --env production or --env staging');
+  } else {
+    console.error('must use --env production or --env staging');
+  }
+
 })
