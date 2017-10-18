@@ -23,7 +23,6 @@ router.get('/', function(req, res) {
 	})
 	var timeline = timelineHelpers.buildTimeline(posts);
   //timeline = timelineHelpers.denullifyTimeline(posts);
-  console.log('time', timeline)
 
 	res.render('blog', {
 		posts: posts,

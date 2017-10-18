@@ -828,10 +828,11 @@
   .header__connect {
     border: 1px solid #9b9b9b;
     border-radius: 2px;
-    margin-left: 10px; }
+    margin-left: 20px;
+    width: 90px !important;
+    text-align: center !important; }
     @media screen and (max-width: 767px) {
       .header__connect {
-        width: auto !important;
         padding: 8px 17px !important;
         margin-top: 20px; } }
     .header__connect:hover {
@@ -846,7 +847,9 @@
     text-transform: uppercase;
     text-decoration: none;
     color: #9b9b9b;
-    transition: .3s; }
+    transition: .3s;
+    width: 100%;
+    text-align: right; }
     @media screen and (max-width: 767px) {
       .header__item {
         display: none; } }
