@@ -18,11 +18,12 @@ router.get('/', function(req, res) {
 	if (page != 0 && page != 1) prev = '/blog.html?page=' + page;
 	else if (page != 0) prev = '/blog.html';
 	posts = posts.map(function(post, index) {
-		post.time = moment(post.timestamp).format("<b>MMM</b> D, YYYY")
+    post.time = moment(post.timestamp).format("<b>MMM</b> D, YYYY")
 		return post
 	})
 	var timeline = timelineHelpers.buildTimeline(posts);
-	timeline = timelineHelpers.denullifyTimeline(posts);
+  //timeline = timelineHelpers.denullifyTimeline(posts);
+  console.log('time', timeline)
 
 	res.render('blog', {
 		posts: posts,
