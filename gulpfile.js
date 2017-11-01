@@ -21,11 +21,10 @@ var	minifyHTML = require('gulp-minify-html')
 var	minifyCSS = require('gulp-minify-css')
 var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
-const spawn = require('child_process').spawn;
-const ls = spawn('ls', ['-lh', '/usr']);
-const s3Stage = spawn('aws',['s3', 'sync', './dist', 's3://staging.publicntp.org/']);
-const s3Dev = spawn('aws',['s3', 'sync', './dist', 's3://dev.publicntp.org/']);
-const s3Prod = spawn('aws',['s3', 'sync', './dist', 's3://publicntp.org/publicntp/']);
+const exec = require('child_process').exec;
+const s3Stage = 'aws s3 sync ./dist s3://staging.publicntp.org/';
+const s3Dev = 'aws s3 sync ./dist s3://dev.publicntp.org/';
+const s3Prod = 'aws s3 sync ./dist s3://publicntp.org/publicntp/';
 
 gulp.task('clean:dist', function(cb) {
 	del('./dist/*', cb);
@@ -186,18 +185,12 @@ gulp.task('gather', function() {
 })
 
 var pushS3Env = function(s3env) {
-  s3env.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
-  });
-
-  s3env.stderr.on('data', (data) => {
-    console.log(`stderr: ${data}`);
-  });
-
-  s3env.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
+  exec(s3env, function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log('err!!' + stderr);
   });
 }
+
 
 gulp.task('pushs3', function() {
   if (argv.env && argv.env == 'production') {
