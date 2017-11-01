@@ -22,9 +22,10 @@ var	minifyCSS = require('gulp-minify-css')
 var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
 const exec = require('child_process').exec;
-const s3Stage = 'aws s3 sync ./dist s3://staging.publicntp.org/';
-const s3Dev = 'aws s3 sync ./dist s3://dev.publicntp.org/';
-const s3Prod = 'aws s3 sync ./dist s3://publicntp.org/publicntp/';
+const s3Stage = 'aws s3 sync ' + __dirname + '/dist' + ' s3://staging.publicntp.org/';
+const s3Dev = 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/';
+const s3Prod = 'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/publicntp/';
+console.log('s', s3Stage)
 
 gulp.task('clean:dist', function(cb) {
 	del('./dist/*', cb);
@@ -186,8 +187,8 @@ gulp.task('gather', function() {
 
 var pushS3Env = function(s3env) {
   exec(s3env, function (err, stdout, stderr) {
-    console.log(stdout);
-    console.log('err!!' + stderr);
+    console.log('out', stdout);
+    if (err) console.log('err', err);
   });
 }
 
@@ -195,7 +196,7 @@ var pushS3Env = function(s3env) {
 gulp.task('pushs3', function() {
   if (argv.env && argv.env == 'production') {
     console.log('pushing to production s3');
-    //pushS3Env(s3Prod);
+    pushS3Env(s3Prod);
   } else if (argv.env && argv.env == 'staging') {
     console.log('pushing to staging s3');
     pushS3Env(s3Stage);
