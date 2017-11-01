@@ -148,6 +148,7 @@ gulp.task('routes', function () {
 		let rpRoutes = routes.map(function(r, index) {
 			return rp('http://localhost:3020' + r);
 		})
+		
 		Promise.all(rpRoutes).then(function(pages) {
 			console.log('pages', pages)
 			let tempPath = path.join(__dirname, 'dist');
@@ -181,7 +182,7 @@ gulp.task('gather', function() {
 		gulp.start('copy:images');
 		gulp.start('minify:html');
 		gulp.start('minify:core-js');
-	}, 500)
+	}, 1000)
 })
 
 var pushS3Env = function(s3env) {
@@ -201,13 +202,13 @@ var pushS3Env = function(s3env) {
 gulp.task('pushs3', function() {
   if (argv.env && argv.env == 'production') {
     console.log('pushing to production s3');
-    //pushs3Env(s3Prod);
+    //pushS3Env(s3Prod);
   } else if (argv.env && argv.env == 'staging') {
     console.log('pushing to staging s3');
-    pushs3Env(s3Stage);
+    pushS3Env(s3Stage);
   } else if (argv.env && argv.env == 'dev') {
     console.log('pushing to dev s3');
-    pushs3Env(s3Dev);
+    pushS3Env(s3Dev);
   } else {
     console.error('must use --env production or --env staging');
   }
