@@ -25,7 +25,6 @@ const exec = require('child_process').exec;
 const s3Stage = 'aws s3 sync ' + __dirname + '/dist' + ' s3://staging.publicntp.org/';
 const s3Dev = 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/';
 const s3Prod = 'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/publicntp/';
-console.log('s', s3Stage)
 
 gulp.task('clean:dist', function(cb) {
 	del('./dist/*', cb);

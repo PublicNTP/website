@@ -1,0 +1,34 @@
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<div class="home__section">
+	<h1 class="home__title">Bring Time to the World</h1>
+	<p class="home__sub-title">
+    Your donations help us to provide the public with unrestricted access
+    to highly-accurate time sources around the globe.
+	</p>
+</div>
+<div class="home__section">
+  <p class="donate__info">
+    By do
+  </p>
+  <div class="donate">
+    <h4 class="donate__title">Personal Info</h4>
+    <h4 class="donate__title">Billing Info</h4>
+    <h4 class="donate__title">Credit Card</h4>
+  </div>
+  <form id="payment-form" action="{{relative_path}}thank-you.html" method="POST">
+    <label>Card Number</label>
+    <input type="text" name="address_city" class="">
+    <input type="text" size="20" autocomplete="off" class="card-number">
+    <span>Enter the number without spaces or hyphens.</span>
+    <label>CVC</label>
+    <input type="text" size="4" autocomplete="off" class="card-cvc">
+    <label>Expiration (MM/YYYY)</label>
+    <input type="text" size="2" class="card-expiry-month">
+    <span> / </span>
+    <input type="text" size="4" class="card-expiry-year">
+    <div id="payment-errors"></div>
+    <button type="submit">Donate</button>
+  </form>
+</div>
+<script src="{{relative_path}}js/donate.js"></script>

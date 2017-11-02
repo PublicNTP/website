@@ -739,6 +739,24 @@
     float: left;
     position: relative; }
 
+.donate {
+  width: 100%;
+  float: left;
+  max-width: 700px; }
+  .donate__info {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    color: #2a2a2a;
+    font-weight: 600; }
+  .donate__title {
+    width: 100%;
+    float: left;
+    color: #2a2a2a;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600; }
+
 .footer {
   width: 100%;
   float: left;
@@ -1011,8 +1029,7 @@
     line-height: 2;
     font-size: 16px;
     color: #2a2a2a;
-    margin-bottom: 20px;
-    padding-left: 40px; }
+    margin-bottom: 20px; }
     .how__p b {
       font-weight: 600; }
     .how__p a {
@@ -1658,3 +1675,31 @@
     font-weight: 600;
     margin-bottom: 20px;
     color: #2a2a2a; }
+
+.learn {
+  width: 100%;
+  float: left;
+  border-top: 1px solid #2a2a2a; }
+  .learn__right {
+    width: 250px;
+    float: left;
+    padding: 20px; }
+    @media screen and (max-width: 767px) {
+      .learn__right {
+        width: 100%; } }
+  .learn__left {
+    width: calc(100% - 250px);
+    float: left; }
+    @media screen and (max-width: 767px) {
+      .learn__left {
+        width: 100%; } }
+  .learn__image {
+    width: 100%;
+    max-width: 250px;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+    image-rendering: -webkit-optimize-contrast;
+    max-height: 300px;
+    -o-object-fit: contain;
+       object-fit: contain; }

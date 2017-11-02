@@ -9,6 +9,8 @@ var compression = require('compression');
 
 var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
+var donateRoutes = require('./routes/donate');
+var thankYouRoutes = require('./routes/thankyou');
 var adminRoutes = require('./routes/admin');
 var aboutRoutes = require('./routes/about');
 var learnRoutes = require('./routes/learn');
@@ -94,6 +96,8 @@ app.use('/blog', blogRoutes);
 app.use('/blog.html', blogRoutes);
 app.use('/admin', adminRoutes);
 app.use('/learn', learnRoutes);
+app.use('/donate.html', donateRoutes);
+app.use('/thank-you.html', thankYouRoutes);
 app.use('/learn.html', learnRoutes);
 app.use('/connect.html', connectRoutes);
 app.use('/history.html', historyRoutes);

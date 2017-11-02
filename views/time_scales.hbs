@@ -12,74 +12,123 @@
   </p>
 </div>
 <div class="home__section">
-	<h4 class="how__t">What is a Time Scale</h4>
-	<p class="how__p">
-    Times scales allow dates to be assigned to events, and are based upon the measurement of time.
-	</p>
-	<p class="how__p">
-    The most widely-used measurement of time in the world is the <a href="https://en.wikipedia.org/wiki/International_System_of_Units">International System of Units (SI) second.</a>
-	</p>
-	<h4 class="how__t">Solar Time</h4>
-	<p class="how__p">
-    Solar time is a measurement of time based on the position of the sun as viewed from a fixed point on Earth.
-	</p>
-	<p class="how__p">
-    <b>Time unit</b>: one day, defined as the time it takes for the sun to return to a set starting position in the sky.
-	</p>
-	<h4 class="how__t">Universal Time (UT)</h4>
-	<p class="how__p">
-    Universal Time is based on the rotational speed of the Earth on its axis. The most common form of Universal Time, known a UT1, is based on solar time with small adjustments to more closely approximate solar time.
-	</p>
-	<p class="how__p">
-    <b>Time unit</b>: a second, defined as 1 / 86,400 of the time it takes for the earth to rotate exactly 360 degrees on its axis relative to distant celestial objects.
-	</p>
-	<h4 class="how__t">International Atomic Time (TAI)</h4>
-	<p class="how__p">
-    Overseen by the <a href="https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures">International Bureau of Weights and Measures</a> (BIPM), headquartered in France, TAI is a weighted average of time as reported by over 400 atomic clocks distributed across 50 national laboratories around the globe.
-	</p>
-	<p class="how__p">
-    The times provided by each clock/lab are compared against each other using both GPS signals as well as <a href="https://en.wikipedia.org/wiki/Two-way_satellite_time_and_frequency_transfer">two-way satellite time and frequency transfer.</a>
-	</p>
-	<p class="how__p">
-    The signals provided by each lab have a signal processing technique known as <a href="https://en.wikipedia.org/wiki/Signal_averaging">signal averaging</a> applied to them, which improves the overall stability of the system by an order of magnitude compared to any individual input signal.<br/><br/><b>Time Unit</b>: SI second
-  </p>
-	<h4 class="how__t">Coordinated Universal Time (UTC)</h4>
-	<p class="how__p">
-    UTC is derived directly from TAI.  The only difference between UTC and TAI is that UTC periodically has <a href="https://en.wikipedia.org/wiki/Leap_second">leap seconds</a> applied to it, thus making UTC a fixed number of integer seconds behind TAI.
-	</p>
-	<p class="how__p">
-    Leap seconds are added to UTC in order to ensure UTC never differs by more than 0.9 seconds from Universal Time (UT1). Having UTC approximate UT1 allows UTC to maintain a connection with Solar Time.
-	</p>
-	<p class="how__p">
-    UTC was defined at the beginning of 1972 to be equal to TAI minus 10 seconds.  As of this writing (June 2017), a total of 27 leap seconds have been added to UTC, thus making UTC currently equal to TAI plus 37 seconds (10 original leap seconds plus the 27 leap seconds added since 1972, for a total of 37).
-	</p>
-	<p class="how__p">
-    <b>Time unit</b>: SI Second
-  </p>
-	<h4 class="how__t">Greenwich Mean Time (GMT)</h4>
-	<p class="how__p">
-    Often—but incorrectly!—used interchangeably with UTC.
-	</p>
-	<p class="how__p">
-    GMT is not a time scale; GMT is a <a href="https://www.timeanddate.com/time/gmt-utc-time.html">time zone</a> with zero offset from UTC.
-	</p>
-	<p class="how__p">
-    <b>Time unit</b>: not applicable
-  </p>
-	<h4 class="how__t">Global Positioning System (GPS)</h4>
-	<p class="how__p">
-    GPS time, like UTC, is directly derived from TAI.
-	</p>
-	<p class="how__p">
-    The GPS epoch is 1980-01-06, 00:00, at which time it was defined as 19 seconds behind TAI.  As neither TAI nor GPS time use leap seconds, the 19 second delta between TAI and GPS will be true at all times.
-	</p>
-	<p class="how__p">
-    As UTC also derives from TAI, but adds leap seconds, UTC and GPS will always be an integer number of seconds different from each other.  As of June 2017, UTC is 18 seconds behind GPS, and 37 seconds behind TAI.
-	</p>
-	<p class="how__p">
-    <a href="http://www.leapsecond.com/java/gpsclock.htm">This table</a> is useful to see the current time in UTC, GPS, and TAI.
-  </p>
-	<p class="how__p">
-    <b>Time unit</b>: SI second
-  </p>
+  <div class="learn">
+    <div class="learn__left">
+      <h4 class="how__t">What is a Time Scale</h4>
+      <p class="how__p">
+        Times scales allow dates to be assigned to events, and are based upon the measurement of time.
+      </p>
+      <p class="how__p">
+        The most widely-used measurement of time in the world is the <a href="https://en.wikipedia.org/wiki/International_System_of_Units">International System of Units (SI) second.</a>
+      </p>
+    </div>
+    <div class="learn__right">
+      <img class="learn__image" src="{{relative_path}}images/watch.png" alt="PublicNTP Watch">
+    </div>
+  </div>
+  <div class="learn">
+    <div class="learn__left">
+      <h4 class="how__t">Solar Time</h4>
+      <p class="how__p">
+        Solar time is a measurement of time based on the position of the sun as viewed from a fixed point on Earth.
+      </p>
+      <p class="how__p">
+        <b>Time unit</b>: one day, defined as the time it takes for the sun to return to a set starting position in the sky.
+      </p>
+    </div>
+    <div class="learn__right">
+      <img class="learn__image" src="{{relative_path}}images/sun.png" alt="PublicNTP Sun">
+    </div>
+  </div>
+  <div class="learn">
+    <div class="learn__left">
+      <h4 class="how__t">Universal Time (UT)</h4>
+      <p class="how__p">
+        Universal Time is based on the rotational speed of the Earth on its axis. The most common form of Universal Time, known a UT1, is based on solar time with small adjustments to more closely approximate solar time.
+      </p>
+      <p class="how__p">
+        <b>Time unit</b>: a second, defined as 1 / 86,400 of the time it takes for the earth to rotate exactly 360 degrees on its axis relative to distant celestial objects.
+      </p>
+    </div>
+    <div class="learn__right">
+      <img class="learn__image" src="{{relative_path}}images/miniglobe.png" alt="PublicNTP Globe">
+    </div>
+  </div>
+  <div class="learn">
+    <div class="learn__left">
+      <h4 class="how__t">International Atomic Time (TAI)</h4>
+      <p class="how__p">
+        Overseen by the <a href="https://en.wikipedia.org/wiki/International_Bureau_of_Weights_and_Measures">International Bureau of Weights and Measures</a> (BIPM), headquartered in France, TAI is a weighted average of time as reported by over 400 atomic clocks distributed across 50 national laboratories around the globe.
+      </p>
+      <p class="how__p">
+        The times provided by each clock/lab are compared against each other using both GPS signals as well as <a href="https://en.wikipedia.org/wiki/Two-way_satellite_time_and_frequency_transfer">two-way satellite time and frequency transfer.</a>
+      </p>
+      <p class="how__p">
+        The signals provided by each lab have a signal processing technique known as <a href="https://en.wikipedia.org/wiki/Signal_averaging">signal averaging</a> applied to them, which improves the overall stability of the system by an order of magnitude compared to any individual input signal.<br/><br/><b>Time Unit</b>: SI second
+      </p>
+    </div>
+    <div class="learn__right">
+      <img class="learn__image" src="{{relative_path}}images/atom.png" alt="PublicNTP Atom">
+    </div>
+  </div>
+  <div class="learn">
+    <div class="learn__left">
+      <h4 class="how__t">Coordinated Universal Time (UTC)</h4>
+      <p class="how__p">
+        UTC is derived directly from TAI.  The only difference between UTC and TAI is that UTC periodically has <a href="https://en.wikipedia.org/wiki/Leap_second">leap seconds</a> applied to it, thus making UTC a fixed number of integer seconds behind TAI.
+      </p>
+      <p class="how__p">
+        Leap seconds are added to UTC in order to ensure UTC never differs by more than 0.9 seconds from Universal Time (UT1). Having UTC approximate UT1 allows UTC to maintain a connection with Solar Time.
+      </p>
+      <p class="how__p">
+        UTC was defined at the beginning of 1972 to be equal to TAI minus 10 seconds.  As of this writing (June 2017), a total of 27 leap seconds have been added to UTC, thus making UTC currently equal to TAI plus 37 seconds (10 original leap seconds plus the 27 leap seconds added since 1972, for a total of 37).
+      </p>
+      <p class="how__p">
+        <b>Time unit</b>: SI Second
+      </p>
+    </div>
+    <div class="learn__right">
+      <img class="learn__image" src="{{relative_path}}images/frog.png" alt="PublicNTP Frog">
+    </div>
+  </div>
+  <div class="learn">
+    <div class="learn__left">
+      <h4 class="how__t">Greenwich Mean Time (GMT)</h4>
+      <p class="how__p">
+        Often—but incorrectly!—used interchangeably with UTC.
+      </p>
+      <p class="how__p">
+        GMT is not a time scale; GMT is a <a href="https://www.timeanddate.com/time/gmt-utc-time.html">time zone</a> with zero offset from UTC.
+      </p>
+      <p class="how__p">
+        <b>Time unit</b>: not applicable
+      </p>
+    </div>
+    <div class="learn__right">
+      <img class="learn__image" src="{{relative_path}}images/earth.png" alt="PublicNTP Earth">
+    </div>
+  </div>
+  <div class="learn">
+    <div class="learn__left">
+      <h4 class="how__t">Global Positioning System (GPS)</h4>
+      <p class="how__p">
+        GPS time, like UTC, is directly derived from TAI.
+      </p>
+      <p class="how__p">
+        The GPS epoch is 1980-01-06, 00:00, at which time it was defined as 19 seconds behind TAI.  As neither TAI nor GPS time use leap seconds, the 19 second delta between TAI and GPS will be true at all times.
+      </p>
+      <p class="how__p">
+        As UTC also derives from TAI, but adds leap seconds, UTC and GPS will always be an integer number of seconds different from each other.  As of June 2017, UTC is 18 seconds behind GPS, and 37 seconds behind TAI.
+      </p>
+      <p class="how__p">
+        <a href="http://www.leapsecond.com/java/gpsclock.htm">This table</a> is useful to see the current time in UTC, GPS, and TAI.
+      </p>
+      <p class="how__p">
+        <b>Time unit</b>: SI second
+      </p>
+    </div>
+    <div class="learn__right">
+      <img class="learn__image" src="{{relative_path}}images/signal.png" alt="PublicNTP Signal">
+    </div>
+  </div>
 </div>
