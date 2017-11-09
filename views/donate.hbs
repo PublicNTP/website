@@ -9,26 +9,58 @@
 </div>
 <div class="home__section">
   <p class="donate__info">
-    By do
+    By donating $5 you'll be providing people in
+    San Paulo with 47 hours of server access.
   </p>
   <div class="donate">
     <h4 class="donate__title">Personal Info</h4>
+    <div class="connect__input-wrap donate__half">
+      <input name="first_name" class="connect__input">
+      <label class="connect__label">First Name</label>
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="last_name" class="connect__input">
+      <label class="connect__label">Last Name</label>
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="email" class="connect__input">
+      <label class="connect__label">Email</label>
+    </div>
     <h4 class="donate__title">Billing Info</h4>
+    <div class="connect__input-wrap donate__half">
+      <input name="address" class="connect__input">
+      <label class="connect__label">Address</label>
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="line_2" class="connect__input">
+      <label class="connect__label">Line 2</label>
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="city" class="connect__input">
+      <label class="connect__label">City</label>
+    </div>
+    <div class="connect__input-wrap donate__quarter">
+      <input name="state" class="connect__input">
+      <label class="connect__label">State</label>
+    </div>
+    <div class="connect__input-wrap donate__quarter">
+      <input name="zip" class="connect__input">
+      <label class="connect__label">Zip</label>
+    </div>
     <h4 class="donate__title">Credit Card</h4>
+    <div class="connect__input-wrap donate__half">
+      <input name="card_number" class="connect__input">
+      <label class="connect__label">Card Number</label>
+    </div>
+    <div class="connect__input-wrap donate__quarter">
+      <input name="expiration" class="connect__input">
+      <label class="connect__label">Expiation (MM/YY)</label>
+    </div>
+    <div class="connect__input-wrap donate__quarter">
+      <input name="ccv" class="connect__input">
+      <label class="connect__label">CCV</label>
+    </div>
+    <p class="connect__submit" id="connect-submit">Donate</p>
   </div>
-  <form id="payment-form" action="{{relative_path}}thank-you.html" method="POST">
-    <label>Card Number</label>
-    <input type="text" name="address_city" class="">
-    <input type="text" size="20" autocomplete="off" class="card-number">
-    <span>Enter the number without spaces or hyphens.</span>
-    <label>CVC</label>
-    <input type="text" size="4" autocomplete="off" class="card-cvc">
-    <label>Expiration (MM/YYYY)</label>
-    <input type="text" size="2" class="card-expiry-month">
-    <span> / </span>
-    <input type="text" size="4" class="card-expiry-year">
-    <div id="payment-errors"></div>
-    <button type="submit">Donate</button>
-  </form>
 </div>
 <script src="{{relative_path}}js/donate.js"></script>

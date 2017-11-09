@@ -748,14 +748,33 @@
     float: left;
     font-size: 20px;
     color: #2a2a2a;
-    font-weight: 600; }
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 24px; }
+  .donate__half {
+    width: 50%;
+    float: left;
+    padding-right: 40px; }
+    @media screen and (max-width: 649px) {
+      .donate__half {
+        width: 100%;
+        padding: none; } }
+  .donate__quarter {
+    width: 25%;
+    float: left;
+    padding-right: 40px; }
+    @media screen and (max-width: 649px) {
+      .donate__quarter {
+        width: 100%;
+        padding: none; } }
   .donate__title {
     width: 100%;
     float: left;
     color: #2a2a2a;
     text-transform: uppercase;
     font-size: 16px;
-    font-weight: 600; }
+    font-weight: 600;
+    margin-bottom: 24px; }
 
 .footer {
   width: 100%;
