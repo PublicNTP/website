@@ -18,7 +18,7 @@ var connectRoutes = require('./routes/connect');
 var historyRoutes = require('./routes/history');
 var statsRoutes = require('./routes/stats');
 var models = require('./models');
-var authConfig = require('./authConfig');
+// var authConfig = require('./authConfig');
 var port = 3020;
 
 
@@ -45,21 +45,21 @@ hbs.registerPartials(__dirname + '/views/partials');
 // // view engine setup
 app.set('view engine', 'hbs');
 
-app.use(session({
-	secret: authConfig.secret,
-	resave: true,
-	saveUninitialized: true
-}))
-app.set('case sensitive routing', true);
+// app.use(session({
+// 	secret: authConfig.secret,
+// 	resave: true,
+// 	saveUninitialized: true
+// }))
+// app.set('case sensitive routing', true);
 
 app.enable('trust proxy');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-models.sequelize.sync().then(function() {
-  app.on('error', onError);
-});
+// models.sequelize.sync().then(function() {
+//   app.on('error', onError);
+// });
 
 
 function onError(error) {
