@@ -1,0 +1,35 @@
+.learn {
+  width: 100%;
+  float: left;
+  border-top: 1px solid color(footer);
+
+  &__right {
+    width: 250px;
+    float: left;
+    padding: 20px;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+      width: 100%;
+		}
+  }
+
+  &__left {
+    width: calc(100% - 250px);
+    float: left;
+
+		@media screen and (max-width: breakpoint(tablet)) {
+      width: 100%;
+		}
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 250px;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+    image-rendering: -webkit-optimize-contrast;
+    max-height: 300px;
+    object-fit: contain;
+  }
+}
