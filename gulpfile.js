@@ -21,6 +21,7 @@ var	minifyHTML = require('gulp-minify-html')
 var	minifyCSS = require('gulp-minify-css')
 var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
+
 const exec = require('child_process').exec;
 const s3Stage = 'aws s3 sync ' + __dirname + '/dist' + ' s3://staging.publicntp.org/';
 const s3Dev = 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/';
