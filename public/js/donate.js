@@ -11,7 +11,6 @@
       //Stripe.setPublishableKey('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
       Stripe.setPublishableKey('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
       
-
       $('.donate__button--submit').click(function() {
         // Show processing message
         $('#donation-processing').text('Processing donation');
@@ -31,7 +30,6 @@
         var card_number = $('input[name=card_number]').val();
         var cvcNum = $('input[name=ccv]').val();
         var expiration = $('input[name=expiration]').val();
-
 
         var errorText = '';
         var expMonth = null;
