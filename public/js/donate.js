@@ -1,8 +1,20 @@
 ;(function ($){
-    $(function() {
+    // $(function() {
 
       var donationAmount = 500; // starts at $5, like the list.
-      var token;
+
+      // Set Donation Values
+      $('#select-value').change(function() {
+        var str = "";
+
+        $("select option:selected").each(function () {
+          str += $(this).text() + " ";
+        });
+        str = parseFloat(str.substr(1)) * 100;
+        donationAmount = str;
+        $('.donate__button--submit').text('Donate $' + (str / 100).toFixed(2));
+      })
+
 
       $('.connect__input').focus(function() {
         $($(this).siblings('label')[0]).addClass('connect__label--focused');
@@ -206,14 +218,5 @@
           console.log('errorText', errorText)
         }
       })
-
-      // Set Donation Values
-      $('.select-value').click(function(e) {
-        $('.donate__button--submit').text('Donate $' + (e.target.value / 100).toFixed(2));
-        donationAmount = e.target.value;
-      });
-
-
-
-    });
+    // });
 })(jQuery);
