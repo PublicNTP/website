@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 		locations: locations,
 		post: post,
 		the_title: 'PublicNTP',
-		relative_path: './'
+		relative_path: './',
 	})
 })
 

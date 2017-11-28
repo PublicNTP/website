@@ -9,8 +9,20 @@
 </div>
 <div class="home__section">
   <p class="donate__info">
-    By donating $5 you'll be providing people in
-    San Paulo with 47 hours of server access.
+    By donating 
+    <span class="select-style">
+      <select name="donations">
+        <option value="500" class="select-value">$5.00</option>
+        <option value="1000" class="select-value">$10.00</option>
+        <option value="2000" class="select-value">$20.00</option>
+        <option value="5000" class="select-value">$50.00</option>
+        <option value="10000" class="select-value">$100.00</option>
+        <option value="" class="select-value">Enter a value</option>
+      </select>
+    </span>
+    {{!-- you'll be providing people in
+    San Paulo with 47 hours of server access. --}}
+    you'll be providing people with hours of servers access.
   </p>
   <div class="donate">
     <h4 class="donate__title">Personal Info</h4>
@@ -47,7 +59,10 @@
       <input name="zip" class="connect__input">
       <label class="connect__label">Zip</label>
     </div>
-    <h4 class="donate__title">Credit Card</h4>
+    <div class="donate__title donate__button__wrapper">
+      <h4 class="donate__button donate__button--active">Credit Card</h4>
+      {{!-- <h4 class="donate__button" style="cursor: not-allowed;">PayPal</h4> --}}
+    </div>
     <div class="connect__input-wrap donate__half">
       <input name="card_number" class="connect__input">
       <label class="connect__label">Card Number</label>
@@ -60,7 +75,11 @@
       <input name="ccv" class="connect__input">
       <label class="connect__label">CCV</label>
     </div>
-    <p class="connect__submit" id="connect-submit">Donate</p>
+    <p class="donate__error" id="error-message"></p>
+    <p class="donate__button donate__button--submit" id="connect-submit">Donate $5.00</p>
+    <p class="donate__processing" id="donation-processing"></p>
   </div>
 </div>
 <script src="{{relative_path}}js/donate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.min.css">

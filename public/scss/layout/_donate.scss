@@ -2,13 +2,14 @@
   width: 100%;
   float: left;
   max-width: 700px;
+  position: relative;
 
   &__info {
     width: 100%;
     float: left;
     font-size: 20px;
     color: color(footer);
-    font-weight: 600;
+    // font-weight: 600;
     line-height: 1.25;
     margin-bottom: 24px;
   }
@@ -38,10 +39,69 @@
   &__title {
     width: 100%;
     float: left;
-    color: color(footer);
+    // color: color(footer);
+    color: color(gray);
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 600;
+    letter-spacing: 1px;
     margin-bottom: 24px;
   }
+
+
+
+  &__button {
+    display: block;
+    padding: 6px 0px;
+    text-align: center;
+    border-radius: 2px;
+    color: color(textColor);
+    border: 1px solid color(textColor);
+    width: 100px;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:first-of-type {
+      margin-right: 15px;
+    }
+
+    &__wrapper {
+      display: flex;
+    }
+
+    &--active {
+      background-color: color(blue);
+      color: white;
+      border: 1px solid color(blue);
+    }
+
+    &--submit {
+      background-color: color(black);
+      color: white;
+      border: 1px solid color(black);
+      float: left;
+    }
+  }
+
+  &__error {
+    color: red;
+  }
+
+  &__processing {
+    
+  }
+}
+
+#error-message {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+}
+
+#donation-processing {
+  position: absolute;
+  bottom: 5px;
+  left: 125px;
 }
