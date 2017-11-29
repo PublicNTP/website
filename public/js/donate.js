@@ -22,6 +22,7 @@
             $('.donate__button--submit').text('Donate $0.00');
             $('.select-style').css('display', 'none');
             $('.donate__input').css('display', 'inline-block');
+            $('#cash-money').removeClass('hide');
           }
         });
         
