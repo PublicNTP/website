@@ -21,7 +21,7 @@
       </select>
     </span>
     
-    <input type="text" class="donate__input">
+    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')">
     
     {{!-- you'll be providing people in
     San Paulo with 47 hours of server access. --}}
