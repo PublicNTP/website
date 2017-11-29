@@ -811,7 +811,8 @@
     border-bottom: 1px solid #312E2F;
     color: #312E2F;
     font-size: 20px;
-    width: 100px; }
+    width: 100px;
+    outline: 0; }
 
 #error-message {
   position: absolute;
