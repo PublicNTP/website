@@ -2,18 +2,43 @@
     // $(function() {
 
       var donationAmount = 500; // starts at $5, like the list.
+      var manualDonation = false;
 
       // Set Donation Values
       $('#select-value').change(function() {
         var str = "";
 
         $("select option:selected").each(function () {
-          str += $(this).text() + " ";
+          str += $(this).text();
+
+          if (str !== 'Enter a value') {
+            str = parseFloat(str.substr(1)) * 100;
+            donationAmount = str;
+            $('.donate__button--submit').text('Donate $' + (str / 100).toFixed(2));
+          }
+
+          if (str == 'Enter a value') {
+            manualDonation = true;
+            $('.donate__button--submit').text('Donate $0.00');
+            $('.select-style').css('display', 'none');
+            $('.donate__input').css('display', 'inline-block');
+          }
         });
-        str = parseFloat(str.substr(1)) * 100;
-        donationAmount = str;
-        $('.donate__button--submit').text('Donate $' + (str / 100).toFixed(2));
+        
       })
+
+      $('.donate__input').keyup(function(e) {
+        var val = parseInt($('.donate__input').val());
+
+        console.log('manual donation firing', val);
+        donationAmount = val * 100;
+
+        if (val >= 0) {
+          $('.donate__button--submit').text('Donate $' + val.toFixed(2));
+        } else {
+          $('.donate__button--submit').text('Donate $0.00');
+        }
+      });
 
 
       $('.connect__input').focus(function() {
@@ -188,6 +213,7 @@
                         $('input[name=expiration]').val('');
                         $('#error-message').text('');
                         $('#donation-processing').text('');
+                        $('.donate__input').val('');
                         console.log('Clearing credit card and payment details from forms.');
                       })
                     }
