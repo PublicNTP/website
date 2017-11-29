@@ -9,9 +9,8 @@
     float: left;
     font-size: 20px;
     color: color(footer);
-    // font-weight: 600;
-    line-height: 1.25;
     margin-bottom: 24px;
+    border-bottom: 1px solid transparent;
   }
 
   &__half {
@@ -95,8 +94,8 @@
     border-bottom: 1px solid color(black);
     color: color(black);
     font-size: 20px;
-    width: 139px;
-    height: 36px;
+    width: 138.5px;
+    height: 35px;
     outline: 0;
   }
 }
