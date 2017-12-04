@@ -75,7 +75,7 @@
         var state = $('input[name=state]').val();
         var zip = $('input[name=zip]').val();
         var card_number = $('input[name=card_number]').val();
-        var cvcNum = $('input[name=cvv]').val();
+        var cvcNum = $('input[name=ccv]').val();
         var expiration = $('input[name=expiration]').val();
 
         var errorText = '';
@@ -143,7 +143,7 @@
           
         if (!Stripe.card.validateCVC(cvcNum)) {
             error = true;
-            errorText += 'The CVC number appears to be invalid.';
+            errorText += 'The CVV number appears to be invalid.';
           $('#error-message').text(errorText);
         }
           
@@ -219,7 +219,7 @@
                         $('input[name=state]').val('');
                         $('input[name=zip]').val('');
                         $('input[name=card_number]').val('');
-                        $('input[name=cvv]').val('');
+                        $('input[name=ccv]').val('');
                         $('input[name=expiration]').val('');
                         $('#error-message').text('');
                         $('#donation-processing').text('');
