@@ -21,7 +21,10 @@
       </select>
     </span>
     
-    <span id="cash-money" class="hide">$</span><input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')">
+    {{!-- <span id="cash-money" class="hide">$</span><input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"> --}}
+    <span class="donate__cash hide">$</span>
+    <span class="donate__underline hide"></span>
+    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')">
     
     {{!-- you'll be providing people in
     

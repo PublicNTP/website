@@ -750,7 +750,9 @@
     font-size: 20px;
     color: #2a2a2a;
     margin-bottom: 24px;
-    border-bottom: 1px solid transparent; }
+    border-bottom: 1px solid transparent;
+    position: relative;
+    min-height: 61px; }
   .donate__half {
     width: 50%;
     float: left;
@@ -808,12 +810,27 @@
   .donate__input {
     display: none;
     border: 0;
-    border-bottom: 1px solid #312E2F;
-    color: #312E2F;
+    color: #5A97C0;
     font-size: 20px;
-    width: 138.5px;
-    height: 35px;
-    outline: 0; }
+    width: 150px;
+    height: 34px;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    padding-left: 23px; }
+  .donate__cash {
+    position: absolute;
+    font-size: 20px;
+    color: #5A97C0;
+    top: 6px;
+    left: 121.5px; }
+  .donate__underline {
+    position: absolute;
+    background-color: #9b9b9b;
+    width: 144.94px;
+    height: 1px;
+    top: 29px;
+    left: 110px; }
 
 #error-message {
   position: absolute;

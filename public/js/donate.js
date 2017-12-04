@@ -22,10 +22,19 @@
             $('.donate__button--submit').text('Donate $0.00');
             $('.select-style').css('display', 'none');
             $('.donate__input').css('display', 'inline-block');
-            $('#cash-money').removeClass('hide');
+            $('.donate__underline').removeClass('hide');
+            $('.donate__cash').removeClass('hide');
           }
         });
         
+      });
+
+      $('.donate__input').dblclick(function() {
+        $('.donate__cash').addClass('hide');
+        $('.donate__input').css('display', 'none');
+        $('.select-style').css('display', 'inline');
+        $('.donate__underline').addClass('hide');
+        console.log('double click firing');
       })
 
       $('.donate__input').keyup(function(e) {
