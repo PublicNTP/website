@@ -48,11 +48,11 @@
     <h4 class="donate__title">Billing Info</h4>
     <div class="connect__input-wrap donate__half">
       <input name="address" class="connect__input">
-      <label class="connect__label">Address</label>
+      <label class="connect__label">Address Line 1</label>
     </div>
     <div class="connect__input-wrap donate__half">
       <input name="line_2" class="connect__input">
-      <label class="connect__label">Line 2</label>
+      <label class="connect__label">Address Line 2</label>
     </div>
     <div class="connect__input-wrap donate__half">
       <input name="city" class="connect__input">
@@ -60,12 +60,15 @@
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="state" class="connect__input">
-      <label class="connect__label">State</label>
+      <label class="connect__label">State / Province / Region</label>
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="zip" class="connect__input">
-      <label class="connect__label">Zip</label>
+      <label class="connect__label">ZIP / Postal Code</label>
     </div>
+
+    <select class="gds-cr donate__country" country-data-region-id="gds-cr-two" country-data-default-value="US"></select>
+    
     <div class="donate__title donate__button__wrapper">
       <h4 class="donate__button donate__button--active">Credit Card</h4>
       {{!-- <h4 class="donate__button" style="cursor: not-allowed;">PayPal</h4> --}}
@@ -76,7 +79,7 @@
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="expiration" class="connect__input">
-      <label class="connect__label">Expiation (MM/YY)</label>
+      <label class="connect__label">Expiration (MM/YY)</label>
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="ccv" class="connect__input">
@@ -89,4 +92,5 @@
 </div>
 <script src="{{relative_path}}js/donate.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/country-region-dropdown-menu/1.1.2/geodatasource-cr.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.min.css">

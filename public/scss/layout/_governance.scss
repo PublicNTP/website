@@ -49,6 +49,10 @@
         font-size: 16px;
         min-width: 150px;
         max-width: 150px;
+
+        a {
+            text-decoration: none;
+        }
     }
 
     &__date {

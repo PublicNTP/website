@@ -121,6 +121,23 @@
     top: 29px;
     left: 110px;
   }
+
+  &__country {
+    display: block;
+    // width: 100%;
+    float: left;
+    margin-bottom: 24px;
+    border: 0;
+    border-bottom: 1px solid color(textColor);
+    color: color(textColor);
+    font-size: 13px;
+    padding-bottom: 5px;
+    background-image: url("../images/arrow-down.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 70% 50%;
+    -moz-appearance: none;
+  }
 }
 
 #error-message {
