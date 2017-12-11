@@ -81,6 +81,11 @@ gulp.task('copy:images', function() {
 		.pipe(gulp.dest('./dist/images/'));
 });
 
+gulp.task('copy:documents', function() {
+	return gulp.src('./public/documents/*')
+		.pipe(gulp.dest('./dist/documents/'));
+});
+
 gulp.task('copy:host-js', function() {
 	return gulp.src('./src/host.js')
 		.pipe(gulp.dest('./dist/'));
@@ -180,6 +185,7 @@ gulp.task('gather', function() {
 		gulp.start('minify:css');
 		gulp.start('copy:uploads');
 		gulp.start('copy:images');
+		gulp.start('copy:documents');
 		gulp.start('minify:html');
 		gulp.start('minify:core-js');
 	}, 1000)

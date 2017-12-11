@@ -78,15 +78,24 @@
             <h3 class="logo__title">PublicNTP</h3>
           </div>
   			</a>
-  			<a href="./donate.html" class="header__item header__connect">Donate</a>
-  			<a href="./connect.html" class="header__item header__connect">Connect</a>
-  			<a href="./learn.html" class="header__item header__connect">Learn</a>
-  			<a href="./blog.html" class="header__item">Blog</a>
-  			<a href="./people.html" class="header__item">People</a>
-  			<a href="./stats.html" class="header__item">Stats</a>
-  			<a href="./history.html" class="header__item">History</a>
-  			<a href="./governance.html" class="header__item">Governance</a>
+
+        <div class="flex__wrapper">
+          <div>
+            <a href="./donate.html" class="header__item header__connect">Donate</a>
+            <a href="./connect.html" class="header__item header__connect">Connect</a>
+            <a href="./learn.html" class="header__item header__connect">Learn</a>
+          </div>
+          <div class="header__wrapper">
+            <a href="./blog.html" class="header__link">Blog</a>
+            <a href="./people.html" class="header__link">People</a>
+            <a href="./stats.html" class="header__link">Stats</a>
+            <a href="./history.html" class="header__link">History</a>
+            <a href="./governance.html" class="header__link">Governance</a>
+          </div>
+        </div>
+
   			<img class="header__mobile-icon" id="mobile-icon" src="./images/list-menu.svg" alt="Menu">
+
   		</header>
   		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
@@ -101,8 +110,8 @@
   <p class="donate__info">
     By donating 
     <span class="select-style">
-      <select name="donations">
-        <option value="500" class="select-value">$5.00</option>
+      <select name="donations" id="select-value">
+        <option value="500" class="select-value" selected>$5.00</option>
         <option value="1000" class="select-value">$10.00</option>
         <option value="2000" class="select-value">$20.00</option>
         <option value="5000" class="select-value">$50.00</option>
@@ -110,6 +119,11 @@
         <option value="" class="select-value">Enter a value</option>
       </select>
     </span>
+    
+    <span class="donate__cash hide">$</span>
+    <span class="donate__underline hide"></span>
+    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')">
+    
     you'll be providing people with hours of servers access.
   </p>
   <div class="donate">
@@ -129,11 +143,11 @@
     <h4 class="donate__title">Billing Info</h4>
     <div class="connect__input-wrap donate__half">
       <input name="address" class="connect__input">
-      <label class="connect__label">Address</label>
+      <label class="connect__label">Address Line 1</label>
     </div>
     <div class="connect__input-wrap donate__half">
       <input name="line_2" class="connect__input">
-      <label class="connect__label">Line 2</label>
+      <label class="connect__label">Address Line 2</label>
     </div>
     <div class="connect__input-wrap donate__half">
       <input name="city" class="connect__input">
@@ -141,12 +155,15 @@
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="state" class="connect__input">
-      <label class="connect__label">State</label>
+      <label class="connect__label">State / Province / Region</label>
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="zip" class="connect__input">
-      <label class="connect__label">Zip</label>
+      <label class="connect__label">ZIP / Postal Code</label>
     </div>
+
+    <select class="gds-cr donate__country" country-data-region-id="gds-cr-two" country-data-default-value="US"></select>
+    
     <div class="donate__title donate__button__wrapper">
       <h4 class="donate__button donate__button--active">Credit Card</h4>
     </div>
@@ -156,10 +173,10 @@
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="expiration" class="connect__input">
-      <label class="connect__label">Expiation (MM/YY)</label>
+      <label class="connect__label">Expiration (MM/YY)</label>
     </div>
     <div class="connect__input-wrap donate__quarter">
-      <input name="cvv" class="connect__input">
+      <input name="ccv" class="connect__input">
       <label class="connect__label">CVV</label>
     </div>
     <p class="donate__error" id="error-message"></p>
@@ -169,6 +186,7 @@
 </div>
 <script src="./js/donate.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/country-region-dropdown-menu/1.1.2/geodatasource-cr.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.min.css">
     </div>
 		<footer class="footer">
