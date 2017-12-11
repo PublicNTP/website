@@ -81,6 +81,7 @@ gulp.task('copy:images', function() {
 		.pipe(gulp.dest('./dist/images/'));
 });
 
+
 gulp.task('copy:documents', function() {
 	return gulp.src('./public/documents/*')
 		.pipe(gulp.dest('./dist/documents/'));
