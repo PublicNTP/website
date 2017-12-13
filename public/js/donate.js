@@ -38,7 +38,7 @@
       })
 
       $('.donate__input').keyup(function(e) {
-        var val = parseInt($('.donate__input').val());
+        var val = parseFloat($('.donate__input').val());
 
         console.log('manual donation firing', val);
         donationAmount = val * 100;
