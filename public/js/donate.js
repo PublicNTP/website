@@ -8,10 +8,13 @@
       $('#select-value').change(function() {
         var str = "";
 
-        $("select option:selected").each(function () {
+        $("#select-value option:selected").each(function () {
+        // $("select option:selected").each(function () {
           str += $(this).text();
+          // console.log('Firing')
 
           if (str !== 'Enter a value') {
+            console.log('Firing', str)
             str = parseFloat(str.substr(1)) * 100;
             donationAmount = str;
             $('.donate__button--submit').text('Donate $' + (str / 100).toFixed(2));
@@ -73,6 +76,7 @@
         var line_2 = $('input[name=line_2]').val();
         var city = $('input[name=city]').val();
         var state = $('input[name=state]').val();
+        var country = $(".donate__country option:selected").val();
         var zip = $('input[name=zip]').val();
         var card_number = $('input[name=card_number]').val();
         var cvcNum = $('input[name=ccv]').val();
@@ -188,7 +192,7 @@
                           ],
                           city: city,
                           state_province_region: state,
-                          country: "US"
+                          country: country
                         },
                         email: [email]
                       }
@@ -224,7 +228,9 @@
                         $('#error-message').text('');
                         $('#donation-processing').text('');
                         $('.donate__input').val('');
+                        // $(".donate__country option:selected").val('');
                         console.log('Clearing credit card and payment details from forms.');
+                        console.log('Country', country);
                       })
                     }
 
@@ -255,4 +261,12 @@
         }
       })
     // });
+    $.getJSON("documents/countries.json", function(data) {
+      // var items = [];
+      $.each(data, function(key, val) {
+        $(".donate__country").append("<option value='" + val.Code + "'>" + val.Name + "</option>");
+        // console.log(val);
+      })
+    })
+
 })(jQuery);
