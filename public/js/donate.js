@@ -96,10 +96,11 @@
         var expYear = null;
         var error = false;
 
-        // if (expiration.indexOf('/') != -1) {
-        //   expiration = expiration.split('/');
-        //   expMonth = expiration[0];
-        //   expYear = expiration[1];
+        if (expiration.indexOf('/') != -1) {
+          expiration = expiration.split('/');
+          expMonth = expiration[0];
+          expYear = expiration[1];
+        }
         // } else {
         //   errorText = 'Expiration Date must have a /';
         //   $('#expirationError').text(errorText);
