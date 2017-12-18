@@ -95,66 +95,110 @@
           errorText = 'Expiration Date must have a /';
           $('#error-message').text(errorText);
           error = true;
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
 
         if (first_name == '' || first_name == null) {
             error = true;
             errorText += 'First name is required';
             $('#error-message').text(errorText);
+            setTimeout(function(){
+              $('#error-message').text('');
+              $('.donate__processing').text('');
+            }, 5000);
         }
 
         if (last_name == '' || last_name == null) {
             error = true;
             errorText += 'Last name is required';
             $('#error-message').text(errorText);
+            setTimeout(function(){
+              $('#error-message').text('');
+              $('.donate__processing').text('');
+            }, 5000);
         }
 
         if (email == '' || email == null) {
             error = true;
             errorText += 'Email is required';
           $('#error-message').text(errorText);
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
 
         if (address == '' || address == null) {
             error = true;
             errorText += 'Address is required';
           $('#error-message').text(errorText);
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
 
         if (city == '' || city == null) {
             error = true;
             errorText += 'City is required';
           $('#error-message').text(errorText);
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
 
         if (state == '' || state == null) {
             error = true;
             errorText += 'State is required';
           $('#error-message').text(errorText);
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
 
         if (zip == '' || zip == null) {
             error = true;
             errorText += 'Zip Code is required';
           $('#error-message').text(errorText);
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
 
         if (!Stripe.card.validateCardNumber(card_number)) {
             error = true;
             errorText += 'The credit card number appears to be invalid.';
           $('#error-message').text(errorText);
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
           
         if (!Stripe.card.validateCVC(cvcNum)) {
             error = true;
             errorText += 'The CVV number appears to be invalid.';
           $('#error-message').text(errorText);
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
           
         if (!Stripe.card.validateExpiry(expMonth, expYear)) {
             error = true;
             errorText += 'The expiration date appears to be invalid.';
           $('#error-message').text(errorText);
+          setTimeout(function(){
+            $('#error-message').text('');
+            $('.donate__processing').text('');
+          }, 5000);
         }
 
         if (!error) {
