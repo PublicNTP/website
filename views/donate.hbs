@@ -36,19 +36,23 @@
     <div class="connect__input-wrap donate__half">
       <input name="first_name" class="connect__input">
       <label class="connect__label">First Name</label>
+      <p class="donate__error" id="firstNameError"></p>
     </div>
     <div class="connect__input-wrap donate__half">
       <input name="last_name" class="connect__input">
       <label class="connect__label">Last Name</label>
+      <p class="donate__error" id="lastNameError"></p>
     </div>
     <div class="connect__input-wrap donate__half">
       <input name="email" class="connect__input">
       <label class="connect__label">Email</label>
+      <p class="donate__error" id="emailError"></p>
     </div>
     <h4 class="donate__title">Billing Info</h4>
     <div class="connect__input-wrap donate__half">
       <input name="address" class="connect__input">
       <label class="connect__label">Address Line 1</label>
+      <p class="donate__error" id="addressError"></p>
     </div>
     <div class="connect__input-wrap donate__half">
       <input name="line_2" class="connect__input">
@@ -57,14 +61,17 @@
     <div class="connect__input-wrap donate__half">
       <input name="city" class="connect__input">
       <label class="connect__label">City</label>
+      <p class="donate__error" id="cityError"></p>
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="state" class="connect__input">
       <label class="connect__label">State / Province / Region</label>
+      <p class="donate__error" id="stateError"></p>
     </div>
     <div class="connect__input-wrap donate__quarter">
       <input name="zip" class="connect__input">
       <label class="connect__label">ZIP / Postal Code</label>
+      <p class="donate__error" id="zipcodeError"></p>
     </div>
     <div class="relative arrow-bg">
       <div class="donate__country--bar"></div>
@@ -78,23 +85,27 @@
       {{!-- <h4 class="donate__button" style="cursor: not-allowed;">PayPal</h4> --}}
     </div>
     <div class="connect__input-wrap donate__half">
-      <input name="card_number" class="connect__input">
+      <input name="card_number" id="ccInput" class="connect__input">
       <label class="connect__label">Card Number</label>
+      <p class="donate__error" id="creditCardError"></p>
     </div>
     <div class="connect__input-wrap donate__quarter">
-      <input name="expiration" class="connect__input">
+      <input name="expiration" id="expInput" class="connect__input">
       <label class="connect__label">Expiration (MM/YY)</label>
+      <p class="donate__error" id="expirationError"></p>
     </div>
     <div class="connect__input-wrap donate__quarter">
-      <input name="ccv" class="connect__input">
+      <input name="ccv" class="connect__input" maxlength="3">
       <label class="connect__label">CVV</label>
+      <p class="donate__error" id="cvvError"></p>
     </div>
-    <p class="donate__error" id="error-message"></p>
+    {{!-- <p class="donate__error" id="error-message"></p> --}}
     <p class="donate__button donate__button--submit" id="connect-submit">Donate $5.00</p>
     <p class="donate__processing" id="donation-processing"></p>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.9/cleave.min.js"></script>
 <script src="{{relative_path}}js/donate.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.all.min.js"></script>
-{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/country-region-dropdown-menu/1.1.2/geodatasource-cr.min.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.9/cleave.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.min.css">

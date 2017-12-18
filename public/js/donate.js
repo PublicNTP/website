@@ -1,17 +1,28 @@
 ;(function ($){
     // $(function() {
 
-      var donationAmount = 500; // starts at $5, like the list.
-      var manualDonation = false;
+    // Input Formatting
+    var expInput = new Cleave('#expInput', {
+      date: true,
+      datePattern: ['m', 'y']
+    });
+
+    var ccInput = new Cleave('#ccInput', {
+      creditCard: true,
+      onCreditCardTypeChanged: function (type) {
+        // update UI ...
+      }
+    });
+
+    var donationAmount = 500; // starts at $5, like the list.
+    var manualDonation = false;
 
       // Set Donation Values
       $('#select-value').change(function() {
         var str = "";
 
         $("#select-value option:selected").each(function () {
-        // $("select option:selected").each(function () {
           str += $(this).text();
-          // console.log('Firing')
 
           if (str !== 'Enter a value') {
             console.log('Firing', str)
@@ -62,8 +73,6 @@
       Stripe.setPublishableKey('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
       
       $('.donate__button--submit').click(function() {
-        // Show processing message
-        $('#donation-processing').text('Processing donation');
 
         // Reset error if any
         $('#error-message').text('');
@@ -87,118 +96,125 @@
         var expYear = null;
         var error = false;
 
-        if (expiration.indexOf('/') != -1) {
-          expiration = expiration.split('/');
-          expMonth = expiration[0];
-          expYear = expiration[1];
-        } else {
-          errorText = 'Expiration Date must have a /';
-          $('#error-message').text(errorText);
-          error = true;
-          setTimeout(function(){
-            $('#error-message').text('');
-            $('.donate__processing').text('');
-          }, 5000);
-        }
+        // if (expiration.indexOf('/') != -1) {
+        //   expiration = expiration.split('/');
+        //   expMonth = expiration[0];
+        //   expYear = expiration[1];
+        // } else {
+        //   errorText = 'Expiration Date must have a /';
+        //   $('#expirationError').text(errorText);
+        //   error = true;
+        //   setTimeout(function(){
+        //     $('#expirationError').text('');
+        //     $('.donate__processing').text('');
+        //   }, 5000);
+        // }
 
         if (first_name == '' || first_name == null) {
             error = true;
-            errorText += 'First name is required';
-            $('#error-message').text(errorText);
+            errorText = 'First name is required';
+            $('#firstNameError').text(errorText);
             setTimeout(function(){
-              $('#error-message').text('');
+              $('#firstNameError').text('');
               $('.donate__processing').text('');
             }, 5000);
         }
 
         if (last_name == '' || last_name == null) {
             error = true;
-            errorText += 'Last name is required';
-            $('#error-message').text(errorText);
+            errorText = 'Last name is required';
+            $('#lastNameError').text(errorText);
             setTimeout(function(){
-              $('#error-message').text('');
+              $('#lastNameError').text('');
               $('.donate__processing').text('');
             }, 5000);
         }
 
-        if (email == '' || email == null) {
+        // if (email == '' || email == null && !validateEmail(email)) {
+        if (email == '' || !validateEmail(email)) {
             error = true;
-            errorText += 'Email is required';
-          $('#error-message').text(errorText);
+            errorText = 'Valid email address is required';
+          $('#emailError').text(errorText);
+          // $('#error-message').text(errorText);
           setTimeout(function(){
-            $('#error-message').text('');
+            $('#emailError').text('');
             $('.donate__processing').text('');
           }, 5000);
         }
 
         if (address == '' || address == null) {
             error = true;
-            errorText += 'Address is required';
-          $('#error-message').text(errorText);
+            errorText = 'Address is required';
+          $('#addressError').text(errorText);
           setTimeout(function(){
-            $('#error-message').text('');
+            $('#addressError').text('');
             $('.donate__processing').text('');
           }, 5000);
         }
 
         if (city == '' || city == null) {
             error = true;
-            errorText += 'City is required';
-          $('#error-message').text(errorText);
+            errorText = 'City is required';
+          $('#cityError').text(errorText);
           setTimeout(function(){
-            $('#error-message').text('');
+            $('#cityError').text('');
             $('.donate__processing').text('');
           }, 5000);
         }
 
         if (state == '' || state == null) {
             error = true;
-            errorText += 'State is required';
-          $('#error-message').text(errorText);
+            errorText = 'State is required';
+          $('#stateError').text(errorText);
           setTimeout(function(){
-            $('#error-message').text('');
+            $('#stateError').text('');
             $('.donate__processing').text('');
           }, 5000);
         }
 
         if (zip == '' || zip == null) {
             error = true;
-            errorText += 'Zip Code is required';
-          $('#error-message').text(errorText);
+            errorText = 'Zip Code is required';
+          $('#zipcodeError').text(errorText);
           setTimeout(function(){
-            $('#error-message').text('');
+            $('#zipcodeError').text('');
             $('.donate__processing').text('');
           }, 5000);
         }
 
         if (!Stripe.card.validateCardNumber(card_number)) {
             error = true;
-            errorText += 'The credit card number appears to be invalid.';
-          $('#error-message').text(errorText);
+            errorText = 'The credit card number appears to be invalid.';
+          $('#creditCardError').text(errorText);
           setTimeout(function(){
-            $('#error-message').text('');
+            $('#creditCardError').text('');
             $('.donate__processing').text('');
           }, 5000);
         }
           
         if (!Stripe.card.validateCVC(cvcNum)) {
             error = true;
-            errorText += 'The CVV number appears to be invalid.';
-          $('#error-message').text(errorText);
+            errorText = 'The CVV number appears to be invalid.';
+          $('#cvvError').text(errorText);
           setTimeout(function(){
-            $('#error-message').text('');
+            $('#cvvError').text('');
             $('.donate__processing').text('');
           }, 5000);
         }
           
         if (!Stripe.card.validateExpiry(expMonth, expYear)) {
             error = true;
-            errorText += 'The expiration date appears to be invalid.';
-          $('#error-message').text(errorText);
+            errorText = 'The expiration date appears to be invalid.';
+          $('#expirationError').text(errorText);
           setTimeout(function(){
-            $('#error-message').text('');
+            $('#expirationError').text('');
             $('.donate__processing').text('');
           }, 5000);
+        }
+
+        // Show processing message
+        if (!error) {
+          $('#donation-processing').text('Processing donation');
         }
 
         if (!error) {
@@ -258,21 +274,7 @@
                         'Thank you for your $' + donationAmount / 100 + ' donation!',
                         'success'
                       ).then(function() {
-                        $('input[name=first_name]').val('');
-                        $('input[name=last_name]').val('');
-                        $('input[name=email]').val('');
-                        $('input[name=address]').val('');
-                        $('input[name=line_2]').val('');
-                        $('input[name=city]').val('');
-                        $('input[name=state]').val('');
-                        $('input[name=zip]').val('');
-                        $('input[name=card_number]').val('');
-                        $('input[name=ccv]').val('');
-                        $('input[name=expiration]').val('');
-                        $('#error-message').text('');
-                        $('#donation-processing').text('');
-                        $('.donate__input').val('');
-                        // $(".donate__country option:selected").val('');
+                        clearErrors();
                         console.log('Clearing credit card and payment details from forms.');
                         console.log('Country', country);
                       })
@@ -305,6 +307,7 @@
         }
       })
     // });
+
     $.getJSON("documents/countries.json", function(data) {
       // var items = [];
       $.each(data, function(key, val) {
@@ -312,5 +315,35 @@
         // console.log(val);
       })
     })
+
+  function validateEmail(email) {
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    return emailReg.test(email);
+  }
+
+  function clearErrors() {
+    $('input[name=first_name]').val('');
+    $('input[name=last_name]').val('');
+    $('input[name=email]').val('');
+    $('input[name=address]').val('');
+    $('input[name=line_2]').val('');
+    $('input[name=city]').val('');
+    $('input[name=state]').val('');
+    $('input[name=zip]').val('');
+    $('input[name=card_number]').val('');
+    $('input[name=ccv]').val('');
+    $('input[name=expiration]').val('');
+
+    $('#firstNameError').text('');
+    $('#lastNameError').text('');
+    $('#emailError').text('');
+    $('#addressError').text('');
+    $('#cityError').text('');
+    $('#stateError').text('');
+    $('#zipcodeError').text('');
+    $('#cvvError').text('');
+    $('#donation-processing').text('');
+    $('.donate__input').val('');
+  }
 
 })(jQuery);

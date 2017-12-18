@@ -814,8 +814,6 @@
       color: white;
       border: 1px solid #312E2F;
       float: left; }
-  .donate__error {
-    color: red; }
   .donate__input {
     display: none;
     border: 0;
@@ -861,6 +859,12 @@
       right: 0;
       height: 1px;
       background-color: #9b9b9b; }
+  .donate__error {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    color: red;
+    font-size: 12px; }
 
 #error-message {
   position: absolute;
