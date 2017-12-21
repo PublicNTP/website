@@ -73,9 +73,9 @@
       <label class="connect__label">ZIP / Postal Code</label>
       <p class="donate__error" id="zipcodeError"></p>
     </div>
-    <div class="relative arrow-bg">
-      <div class="donate__country--bar"></div>
-      <select class="donate__country donate__half">
+    <div class="relative arrow-bg donate__width">
+      {{!-- <div class="donate__country--bar"></div> --}}
+      <select class="donate__country">
         {{!-- <option value="AF">Afghanistan</option> --}}
       </select>
     </div>
@@ -95,7 +95,7 @@
       <p class="donate__error" id="expirationError"></p>
     </div>
     <div class="connect__input-wrap donate__quarter">
-      <input name="ccv" class="connect__input" maxlength="3">
+      <input name="ccv" class="connect__input" id="cvvInput" maxlength="4">
       <label class="connect__label">CVV</label>
       <p class="donate__error" id="cvvError"></p>
     </div>

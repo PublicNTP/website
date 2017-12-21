@@ -7,6 +7,11 @@
       datePattern: ['m', 'y']
     });
 
+    var cvvInput = new Cleave('#cvvInput', {
+      numeral: true,
+      numeralThousandsGroupStyle: 'none'
+    });
+
     var ccInput = new Cleave('#ccInput', {
       creditCard: true,
       onCreditCardTypeChanged: function (type) {
