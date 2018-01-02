@@ -1,6 +1,161 @@
 ;(function ($){
     // $(function() {
 
+    // Blur Error
+    var errorText = '';
+
+    // console.log('something blurred!', e.target);
+
+    $('input[name=first_name]').blur(function() {
+      var first_name = $('input[name=first_name]').val();
+      $(this).next().removeClass('red');
+
+      if (first_name == '' || first_name == null) {
+        errorText = 'First name is required';
+        $(this).next().addClass('red')
+        $('#firstNameError').text(errorText);
+        setTimeout(function () {
+          $('#firstNameError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=last_name]').blur(function () {
+      var last_name = $('input[name=last_name]').val();
+      $(this).next().removeClass('red');
+
+      if (last_name === '' || last_name == null) {
+        errorText = 'Last name is required';
+        $(this).next().addClass('red')
+        $('#lastNameError').text(errorText);
+        return setTimeout(function () {
+          $('#lastNameError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=email]').blur(function () {
+      var email = $('input[name=email]').val();
+      $(this).next().removeClass('red');
+
+      if (email == '' || !validateEmail(email)) {
+        errorText = 'Valid email address is required';
+        $(this).next().addClass('red')
+        $('#emailError').text(errorText);
+        return setTimeout(function () {
+          $('#emailError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=address]').blur(function () {
+      var address = $('input[name=address]').val();
+      $(this).next().removeClass('red');
+
+      if (address == '' || address == null) {
+        errorText = 'Address is required';
+        $(this).next().addClass('red')
+        $('#addressError').text(errorText);
+        return setTimeout(function () {
+          $('#addressError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=city]').blur(function () {
+      var city = $('input[name=city]').val();
+      $(this).next().removeClass('red');
+
+      if (city == '' || city == null) {
+        errorText = 'City is required';
+        $(this).next().addClass('red')
+        $('#cityError').text(errorText);
+        return setTimeout(function () {
+          $('#cityError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=state]').blur(function () {
+      var state = $('input[name=state]').val();
+      $(this).next().removeClass('red');
+
+      if (state == '' || state == null) {
+        errorText = 'State is required';
+        $(this).next().addClass('red')
+        $('#stateError').text(errorText);
+        return setTimeout(function () {
+          $('#stateError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=zip]').blur(function () {
+      var zip = $('input[name=zip]').val();
+      $(this).next().removeClass('red');
+
+      if (zip == '' || zip == null) {
+        errorText = 'Zip Code is required';
+        $(this).next().addClass('red')
+        $('#zipcodeError').text(errorText);
+        return setTimeout(function () {
+          $('#zipcodeError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=card_number]').blur(function () {
+      var card_number = $('input[name=card_number]').val();
+      $(this).next().removeClass('red');
+
+      if (card_number == '' || card_number == null) {
+        errorText = 'Card number is required';
+        $(this).next().addClass('red')
+        $('#creditCardError').text(errorText);
+        return setTimeout(function () {
+          $('#creditCardError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=ccv]').blur(function () {
+      var cvcNum = $('input[name=ccv]').val();
+      $(this).next().removeClass('red');
+
+      if (cvcNum == '' || cvcNum == null) {
+        errorText = 'CVV is required';
+        $(this).next().addClass('red')
+        $('#cvvError').text(errorText);
+        return setTimeout(function () {
+          $('#cvvError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
+    $('input[name=expiration]').blur(function () {
+      var expiration = $('input[name=expiration]').val();
+      $(this).next().removeClass('red');
+
+      if (expiration == '' || expiration == null) {
+        errorText = 'Expiration date is required';
+        $(this).next().addClass('red');
+        $('#expirationError').text(errorText);
+        return setTimeout(function () {
+          $('#expirationError').text('');
+          errorText = '';
+        }, 5000);
+      }
+    })
+
     // Input Formatting
     var expInput = new Cleave('#expInput', {
       date: true,
@@ -82,7 +237,7 @@
         // Reset error if any
         $('#error-message').text('');
 
-        console.log('click')
+        console.log('click');
         var first_name = $('input[name=first_name]').val();
         var last_name = $('input[name=last_name]').val();
         var email = $('input[name=email]').val();
