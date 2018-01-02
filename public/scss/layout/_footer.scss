@@ -54,7 +54,7 @@
 		float: left;
 		margin-bottom: 30px;
 		color: color(title);
-		font-size: 14px;
+		font-size: 16px;
 	}
 
 	&__right {
@@ -98,7 +98,7 @@
 		float: left;
 		margin-bottom: 25px;
 		color: color(title);
-		font-size: 14px;
+		font-size: 16px;
 		text-align: right;
 
 		@media screen and (max-width: breakpoint(tablet)) {

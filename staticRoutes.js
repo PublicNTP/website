@@ -1,11 +1,8 @@
 module.exports = [
 	'/',
-	'/people.html',
+	'/about-us.html',
 	'/blog.html',
-  '/connect.html',
-	'/donate.html',
-	'/terms.html',
-	'/governance.html',
+	'/connect.html',
 	'/history.html',
 	'/learn.html',
 	'/learn/atomic-clock.html',

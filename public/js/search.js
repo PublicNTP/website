@@ -22,8 +22,8 @@
 				if (title.indexOf(search) != -1) {
 					search_results = buildSearchItem(search_results, deserializedPosts[d])
 				} else {
-					for (var t in deserializedPosts[d].tags) {
-						var tag = deserializedPosts[d].tags[t].name.toLowerCase();
+					for (var t in deserializedPosts[d].Tags) {
+						var tag = deserializedPosts[d].Tags[t].name.toLowerCase();
 						if (tag.indexOf(search) != -1) {
 							search_results = buildSearchItem(search_results, deserializedPosts[d])
 							break;

@@ -4,7 +4,7 @@ var router = express.Router();
 var multer = require('multer');
 var moment = require('moment');
 var models = require('../models');
-// var authConfig = require('../authConfig');
+var authConfig = require('../authConfig');
 
 
 
@@ -20,23 +20,20 @@ var uploading = multer({
 	})
 });
 
-// var isAuthenticated = function(req, res) {
-// 	if (req.session.permission) {
-// 		return true
-// 	} else {
-// 		res.redirect('/admin/login')
-// 	}
-// }
-
-var isAuthenticated = true;
+var isAuthenticated = function(req, res) {
+	if (req.session.permission) {
+		return true
+	} else {
+		res.redirect('/admin/login')
+	}
+}
 
 router.get('/login', function(req, res) {
 	res.render('login', {})
 })
 
 router.post('/login', function(req, res) {
-	if (true) {
-	// if (req.body.username === authConfig.username && req.body.password === authConfig.password) {
+	if (req.body.username === authConfig.username && req.body.password === authConfig.password) {
 		req.session.permission = true;
 		res.redirect('/admin')
 	} else {
