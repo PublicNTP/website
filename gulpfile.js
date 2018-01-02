@@ -43,6 +43,7 @@ gulp.task('minify:core-js', function() {
 		'./public/js/blog.js',
 		'./public/js/connect.js',
 		'./public/js/dropdown.js',
+		'./public/js/donate.js',
 		'./public/js/home.js',
 		'./public/js/main.js',
 		'./public/js/search.js',
@@ -70,7 +71,6 @@ gulp.task('minify:css', function() {
 		.pipe(gulp.dest('./dist/css/'));
 });
 
-
 gulp.task('copy:uploads', function() {
 	return gulp.src('./public/uploads/*')
 		.pipe(gulp.dest('./dist/uploads/'));
@@ -79,6 +79,11 @@ gulp.task('copy:uploads', function() {
 gulp.task('copy:images', function() {
 	return gulp.src('./public/images/*')
 		.pipe(gulp.dest('./dist/images/'));
+});
+
+gulp.task('copy:documents', function() {
+	return gulp.src('./public/documents/*')
+		.pipe(gulp.dest('./dist/documents/'));
 });
 
 gulp.task('copy:host-js', function() {
@@ -180,6 +185,7 @@ gulp.task('gather', function() {
 		gulp.start('minify:css');
 		gulp.start('copy:uploads');
 		gulp.start('copy:images');
+		gulp.start('copy:documents');
 		gulp.start('minify:html');
 		gulp.start('minify:core-js');
 	}, 1000)

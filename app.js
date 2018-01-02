@@ -17,15 +17,16 @@ var learnRoutes = require('./routes/learn');
 var connectRoutes = require('./routes/connect');
 var historyRoutes = require('./routes/history');
 var statsRoutes = require('./routes/stats');
+var termsRoutes = require('./routes/terms');
+var governanceRoutes = require('./routes/governance');
 var models = require('./models');
-var authConfig = require('./authConfig');
+// var authConfig = require('./authConfig');
 var port = 3020;
-
-
 var app = express();
 
 var ENV = process.env.NODE_ENV;
 var is_production = true;
+
 
 if (ENV === 'development') {
   is_production = false;
@@ -45,21 +46,21 @@ hbs.registerPartials(__dirname + '/views/partials');
 // // view engine setup
 app.set('view engine', 'hbs');
 
-app.use(session({
-	secret: authConfig.secret,
-	resave: true,
-	saveUninitialized: true
-}))
-app.set('case sensitive routing', true);
+// app.use(session({
+// 	secret: authConfig.secret,
+// 	resave: true,
+// 	saveUninitialized: true
+// }))
+// app.set('case sensitive routing', true);
 
 app.enable('trust proxy');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-models.sequelize.sync().then(function() {
-  app.on('error', onError);
-});
+// models.sequelize.sync().then(function() {
+//   app.on('error', onError);
+// });
 
 
 function onError(error) {
@@ -103,6 +104,8 @@ app.use('/connect.html', connectRoutes);
 app.use('/history.html', historyRoutes);
 app.use('/people.html', aboutRoutes);
 app.use('/stats.html', statsRoutes);
+app.use('/terms.html', termsRoutes);
+app.use('/governance.html', governanceRoutes);
 
 app.get('/history.html', function(req, res) {
   res.render('history', {

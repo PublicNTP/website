@@ -12,8 +12,8 @@ module.exports = [
 	{
 		continent: 'North America',
 		country: 'US',
-		city: 'San Jose, California',
-		className: 'coord--sjc01',
+		city: 'San Francisco, California',
+		className: 'coord--san01',
 		hostname: 'stratum2.sjc01.publicntp.org',
 		liveDate: '2016-07-31',
 		multiple: false,
@@ -94,6 +94,16 @@ module.exports = [
 		country: 'India',
 		city: 'Mumbai',
 		className: 'coord--bom01',
+		hostname: 'stratum2.bom01.publicntp.org',
+		liveDate: '2016-08-01',
+		IPv6: false,
+		multiple: true
+	},
+	{
+		continent: 'Africa',
+		country: 'Nigeria',
+		city: 'Lagos',
+		className: 'coord--lag01',
 		hostname: 'stratum2.bom01.publicntp.org',
 		liveDate: '2016-08-01',
 		IPv6: false,
