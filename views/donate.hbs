@@ -1,0 +1,111 @@
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<div class="home__section">
+	<h1 class="home__title">Bring Time to the World</h1>
+	<p class="home__sub-title">
+    Your donations help us to provide the public with unrestricted access
+    to highly-accurate time sources around the globe.
+	</p>
+</div>
+<div class="home__section">
+  <p class="donate__info">
+    By donating 
+    <span class="select-style">
+      <select name="donations" id="select-value">
+        <option value="500" class="select-value" selected>$5.00</option>
+        <option value="1000" class="select-value">$10.00</option>
+        <option value="2000" class="select-value">$20.00</option>
+        <option value="5000" class="select-value">$50.00</option>
+        <option value="10000" class="select-value">$100.00</option>
+        <option value="" class="select-value">Enter a value</option>
+      </select>
+    </span>
+    
+    {{!-- <span id="cash-money" class="hide">$</span><input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"> --}}
+    <span class="donate__cash hide">$</span>
+    <span class="donate__underline hide"></span>
+    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')">
+    
+    {{!-- you'll be providing people in
+    
+    San Paulo with 47 hours of server access. --}}
+    you'll be providing people with hours of servers access.
+  </p>
+  <div class="donate">
+    <h4 class="donate__title">Personal Info</h4>
+    <div class="connect__input-wrap donate__half">
+      <input name="first_name" class="connect__input">
+      <label class="connect__label">First Name</label>
+      <p class="donate__error" id="firstNameError"></p>
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="last_name" class="connect__input">
+      <label class="connect__label">Last Name</label>
+      <p class="donate__error" id="lastNameError"></p>
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="email" class="connect__input">
+      <label class="connect__label">Email</label>
+      <p class="donate__error" id="emailError"></p>
+    </div>
+    <h4 class="donate__title">Billing Info</h4>
+    <div class="connect__input-wrap donate__half">
+      <input name="address" class="connect__input">
+      <label class="connect__label">Address Line 1</label>
+      <p class="donate__error" id="addressError"></p>
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="line_2" class="connect__input">
+      <label class="connect__label">Address Line 2</label>
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="city" class="connect__input">
+      <label class="connect__label">City</label>
+      <p class="donate__error" id="cityError"></p>
+    </div>
+    <div class="connect__input-wrap donate__quarter">
+      <input name="state" class="connect__input">
+      <label class="connect__label">State / Province / Region</label>
+      <p class="donate__error" id="stateError"></p>
+    </div>
+    <div class="connect__input-wrap donate__quarter">
+      <input name="zip" class="connect__input">
+      <label class="connect__label">ZIP / Postal Code</label>
+      <p class="donate__error" id="zipcodeError"></p>
+    </div>
+    <div class="relative arrow-bg donate__width">
+      {{!-- <div class="donate__country--bar"></div> --}}
+      <select class="donate__country">
+        {{!-- <option value="AF">Afghanistan</option> --}}
+      </select>
+    </div>
+    
+    <div class="donate__title donate__button__wrapper">
+      <h4 class="donate__button donate__button--active">Credit Card</h4>
+      {{!-- <h4 class="donate__button" style="cursor: not-allowed;">PayPal</h4> --}}
+    </div>
+    <div class="connect__input-wrap donate__half">
+      <input name="card_number" id="ccInput" class="connect__input">
+      <label class="connect__label">Card Number</label>
+      <p class="donate__error" id="creditCardError"></p>
+    </div>
+    <div class="connect__input-wrap donate__quarter">
+      <input name="expiration" id="expInput" class="connect__input">
+      <label class="connect__label">Expiration (MM/YY)</label>
+      <p class="donate__error" id="expirationError"></p>
+    </div>
+    <div class="connect__input-wrap donate__quarter">
+      <input name="ccv" class="connect__input" id="cvvInput" maxlength="4">
+      <label class="connect__label">CVV</label>
+      <p class="donate__error" id="cvvError"></p>
+    </div>
+    {{!-- <p class="donate__error" id="error-message"></p> --}}
+    <p class="donate__button donate__button--submit" id="connect-submit">Donate $5.00</p>
+    <p class="donate__processing" id="donation-processing"></p>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.9/cleave.min.js"></script>
+<script src="{{relative_path}}js/donate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.9/cleave.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.3/sweetalert2.min.css">

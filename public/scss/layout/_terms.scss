@@ -1,0 +1,20 @@
+.terms {
+
+    &__title {
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        margin-bottom: 20px;
+    }
+
+    &__indent {
+        padding-left: 50px;
+    }
+
+    &__footer {
+        margin-top: 75px;
+    }
+}
