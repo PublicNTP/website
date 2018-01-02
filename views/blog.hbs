@@ -7,7 +7,7 @@
 <div class="home__section">
 	<div class="blog__search-bar-wrap">
 		<input id="search-input" class="blog__search-input blog__search-input-hide" placeholder="Search" autocomplete="off">
-		<img class="blog__x" src="{{relative_path}}images/x.svg" alt="Close">
+		<img class="blog__x" src="/images/x.svg" alt="Close">
 		<div class="blog__search-item-wrap blog__search-input-hide">
 		</div>
 	</div>
@@ -18,13 +18,13 @@
 			<div>
 				<p class="time__year">
 					{{this.year}}
-					<img src="{{relative_path}}images/down.png" class="time__icon" alt="Down Arrow">
+					<img src="/images/down.png" class="time__icon" alt="Down Arrow">
 				</p>
 				{{#each this.months}}
 					<div class="time__wrap time__closed">
 						<p class="time__month">{{this.month}}<p>
 						{{#each this.posts}}
-							<a href="{{relative_path}}blog/posts/{{this.permalink}}.html" class="time__post">
+							<a href="/blog/posts/{{this.permalink}}.html" class="time__post">
 								{{this.title}}
 							</a>
 						{{/each}}
@@ -38,7 +38,7 @@
 		<div class="blog__bar"></div>
 		{{#each posts}}
 			<div class="blog">
-				<a href='{{../relative_path}}blog/posts/{{this.permalink}}.html' class="blog__left-wrap">
+				<a href='/blog/posts/{{this.permalink}}.html' class="blog__left-wrap">
 					<h2 class="blog__title">
 						{{this.title}}
 					</h2>
@@ -46,29 +46,29 @@
 						{{{this.time}}}
 					</p>
 				</a>
-				<a href='{{../relative_path}}blog/posts/{{this.permalink}}.html'>
-					{{#if this.image_urls.[0]}}
-						<img class="blog__image" src="{{../relative_path}}{{this.image_urls.[0]}}" alt="Blog Image">
+				<a href='/blog/posts/{{this.permalink}}.html'>
+					{{#if this.Images.0.file_name}}
+						<img class="blog__image" src="{{this.Images.0.file_name}}" alt="Blog Image">
 					{{/if}}
 				</a>
-				<a href='{{../relative_path}}blog/posts/{{this.permalink}}.html' class="blog__excerpt">
+				<a href='/blog/posts/{{this.permalink}}.html' class="blog__excerpt">
 					{{this.excerpt}}
 				</a>
 			</div>
 		{{/each}}
 		<div class="blog__page-prev">
 			{{#if prev}}
-				<a href="{{relative_path}}{{prev}}" class="blog__page">Newer Posts</a>
+				<a href="{{prev}}" class="blog__page">Newer Posts</a>
 			{{/if}}
 		</div>
 		<div class="blog__page-next">
 			{{#if next}}
-				<a href="{{relative_path}}{{next}}" class="blog__page">Older Posts</a>
+				<a href="{{next}}" class="blog__page">Older Posts</a>
 			{{/if}}
 		</div>
 	</div>
 </div>
-<p id="deserializedPosts" class="hide">{{deserializedPosts}}</p>
+<p id="deserializedPosts" class="hide" {{deserializedPosts}}</p>
 
-<script src="{{relative_path}}js/search.js"></script>
-<script src="{{relative_path}}js/blog.js"></script>
+<script src="/js/search.js" async></script>
+<script src="/js/blog.js" async></script>

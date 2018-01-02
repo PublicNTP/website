@@ -3,8 +3,7 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
   res.render('about_us', {
-		the_title: 'People | PublicNTP',
-		relative_path: './'
+		the_title: 'About Us | PublicNTP'
 	})
 })
 

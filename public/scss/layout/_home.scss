@@ -160,12 +160,8 @@
 		position: absolute;
 		left: calc(50% - 4px);
 		top: calc(50% - 4px);
-		background: color(inactiveDot);
+		background: color(footer);
 		transition: .3s;
-
-		&.active {
-			background: color(activeDot);
-		}
 	}
 
 	&__section {
@@ -292,7 +288,6 @@
 	&__title {
 		width: 100%;
 		font-size: 112px;
-		// font-size: 11.2vh;
 		margin-bottom: 20px;
 		float: left;
 
@@ -340,14 +335,14 @@
 
 @keyframes signal {
 	0% { border: 1px solid rgba(0,0,0,0); }
-	50% { border: 1px solid color(activeDot); }
+	50% { border: 1px solid black; }
 	100% { border: 1px solid rgba(0,0,0,0); }
 }
 
 @keyframes signalSmall {
 	0% { border: 1px solid rgba(0,0,0,0); }
 	30% { border: 1px solid rgba(0,0,0,0); }
-	50% { border: 1px solid color(activeDot); }
+	50% { border: 1px solid black; }
 	70% { border: 1px solid rgba(0,0,0,0); }
 	100% { border: 1px solid rgba(0,0,0,0); }
 }
@@ -355,13 +350,13 @@
 @keyframes signalMed {
 	0% { border: 1px solid rgba(0,0,0,0); }
 	40% { border: 1px solid rgba(0,0,0,0); }
-	60% { border: 1px solid color(activeDot); }
+	60% { border: 1px solid black; }
 	90% { border: 1px solid rgba(0,0,0,0); }
 }
 
 @keyframes signalLarge {
 	0% { border: 1px solid rgba(0,0,0,0); }
 	50% { border: 1px solid rgba(0,0,0,0); }
-	70% { border: 1px solid color(activeDot); }
+	70% { border: 1px solid black; }
 	100% { border: 1px solid rgba(0,0,0,0); }
 }

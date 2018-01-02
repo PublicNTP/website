@@ -5,13 +5,12 @@
 	position: relative;
 
 	&__connect {
-		border: 1px solid color(textColor) !important;
+		border: 1px solid color(textColor);
 		border-radius: 2px;
-		margin-left: 20px;
-		width: 90px !important;
-		text-align: center !important;
+		margin-left: 10px;
 
 		@media screen and (max-width: breakpoint(tablet)) {
+			width: auto !important;
 			padding: 8px 17px !important;
 			margin-top: 20px;
 		}
@@ -19,31 +18,6 @@
 		&:hover {
 			background: color(textColor);
 			color: white;
-		}
-	}
-
-	&__wrapper {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		margin-top: 14px;
-	}
-
-	&__link {
-		margin-top: 7.5px;
-		display: inline-block;
-		align-self:flex-start;
-		margin-left: auto;
-		font-size: 12px;
-		padding: 8px 17px;
-		text-transform: uppercase;
-		text-decoration: none;
-		color: color(textColor);
-		transition: .3s;
-		text-align: right;
-
-		@media screen and (max-width: breakpoint(tablet)) {
-			display: none;
 		}
 	}
 
@@ -57,8 +31,6 @@
 		text-decoration: none;
 		color: color(textColor);
 		transition: .3s;
-		width: 100%;
-		text-align: right;
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			display: none;
@@ -75,7 +47,6 @@
 		text-transform: uppercase;
 		text-decoration: none;
 		color: white;
-		border-bottom: 1px solid transparent;
 
 		&:hover {
 			border-bottom: 1px solid white;
