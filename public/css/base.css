@@ -1979,6 +1979,23 @@
   display: -ms-flexbox;
   display: flex; }
 
+.sort__btn {
+  color: #9b9b9b;
+  border: 1px solid #9b9b9b;
+  padding: 8px 17px;
+  width: 150px;
+  text-align: center;
+  margin-bottom: 30px;
+  transition: all .15s ease-in-out;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .sort__btn:hover {
+    background-color: #9b9b9b;
+    color: white; }
+
 .select-style {
   border: 1px solid #ccc;
   overflow: hidden;
