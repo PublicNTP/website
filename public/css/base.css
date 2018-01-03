@@ -1964,6 +1964,7 @@
   border: 1px solid #9b9b9b;
   padding: 8px 17px;
   width: 150px;
+  font-size: 12px;
   text-align: center;
   margin-bottom: 30px;
   transition: all .15s ease-in-out;

@@ -12,7 +12,7 @@
   <div class="governance__wrapper" id="documents">
 
     <div class="sort sort__btn" data-sort="date">
-      Sort by date
+      Order by descending
     </div>
 
     <div class="governance__divider"></div>
@@ -128,10 +128,31 @@
 
 <script>
   var options = {
-      valueNames: ['date', 'born']
-    };
+    valueNames: ['date']
+  };
 
   var userList = new List('documents', options);
+
+  var message1 = 'Order by ascending';
+  var message2 = 'Order by descending';
+  var state = false;
+
+  $('.sort__btn').on('click', function(e) {
+    console.log('firing', e.target);
+    if (state === false) {
+      $('.sort__btn').text(message1);
+
+      state = true;
+      return;
+    }
+
+    if (state === true) {
+      $('.sort__btn').text(message2);
+
+      state = false;
+      return;
+    }
+  })
 </script>
 
-<script src="{{relative_path}}js/donate.js"></script>
+{{!-- <script src="{{relative_path}}js/donate.js"></script> --}}
