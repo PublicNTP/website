@@ -193,6 +193,7 @@
 
           if (str == 'Enter a value') {
             manualDonation = true;
+            $('.donate__input').val('');
             $('.donate__button--submit').text('Donate $0.00');
             $('.select-style').css('display', 'none');
             $('.donate__input').css('display', 'inline-block');
@@ -204,6 +205,7 @@
       });
 
       $('.donate__input').dblclick(function() {
+        $('.donate__button--submit').text('Donate $0.00');
         $('.donate__cash').addClass('hide');
         $('.donate__input').css('display', 'none');
         $('.select-style').css('display', 'inline');
