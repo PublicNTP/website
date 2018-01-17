@@ -22,10 +22,10 @@
 		width: 100%;
 		font-weight: 600;
 		color: color(footer);
-		font-size: 14px;
+		font-size: 16px;
 		margin-bottom: 25px;
 		float: left;
-
+		
 		@media screen and (max-width: breakpoint(tablet)) {
 			margin-bottom: 15px;
 		}
@@ -35,7 +35,7 @@
 	&__title {
 		color: color(footer);
 		font-weight: 600;
-		font-size: 20px;
+		font-size: 24px; //20px;
 		width: 100%;
 		float: left;
 		margin-bottom: 30px;
@@ -112,6 +112,7 @@
 	}
 
 	&__paragraph {
+		font-size: 16px;
 
 		a {
 			text-decoration: none;

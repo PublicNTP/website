@@ -812,7 +812,10 @@
       background-color: #312E2F;
       color: white;
       border: 1px solid #312E2F;
-      float: left; }
+      float: left;
+      width: 150px;
+      padding: 11px 10px;
+      font-size: 12px; }
   .donate__input {
     display: none;
     border: 0;
@@ -1141,7 +1144,7 @@
     width: 100%;
     font-weight: 600;
     color: #2a2a2a;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 25px;
     float: left; }
     @media screen and (max-width: 767px) {
@@ -1150,7 +1153,7 @@
   .how__title {
     color: #2a2a2a;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
     width: 100%;
     float: left;
     margin-bottom: 30px;
@@ -1205,9 +1208,11 @@
     .how__p a {
       text-decoration: none;
       color: #aecde1; }
-  .how__paragraph a {
-    text-decoration: none;
-    color: #aecde1; }
+  .how__paragraph {
+    font-size: 16px; }
+    .how__paragraph a {
+      text-decoration: none;
+      color: #aecde1; }
 
 .home {
   width: 100%;

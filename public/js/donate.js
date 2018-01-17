@@ -1,6 +1,23 @@
 ;(function ($){
     // $(function() {
 
+    // Country Code Setter
+    var country;
+    $.ajax({
+      dataType: "jsonp",
+      url: 'http://freegeoip.net/json',
+      success: function(data) {
+        country = data.country_code;
+        console.log('Country Code:', country);
+        setTimeout(function() {
+          document.querySelector('.donate__country option[value="' + country + '"]').selected = true;
+        }, 1000);
+      },
+      error: function(data) {
+        console.log('Not able to get country data');
+      }
+    })
+
     // Blur Error
     var errorText = '';
 
@@ -471,11 +488,12 @@
       })
     // });
 
-    $.getJSON("documents/countries.json", function(data) {
-      // var items = [];
+    $.getJSON("https://raw.githubusercontent.com/umpirsky/country-list/master/data/en_US/country.json", function (data) {
+    // $.getJSON("documents/countries.json", function(data) {
+
       $.each(data, function(key, val) {
-        $(".donate__country").append("<option value='" + val.Code + "'>" + val.Name + "</option>");
-        // console.log(val);
+        $(".donate__country").append("<option value='" + key + "'>" + val + "</option>");
+        // $(".donate__country").append("<option value='" + val.Code + "'>" + val.Name + "</option>");
       })
     })
 
