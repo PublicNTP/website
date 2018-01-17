@@ -402,7 +402,14 @@
               number: card_number,
               cvc: cvcNum,
               exp_month: expMonth,
-              exp_year: expYear
+              exp_year: expYear,
+              name: first_name + ' ' + last_name,
+              address_line1: address,
+              address_line2: line_2,
+              address_city: city,
+              address_zip: zip,
+              address_state: state,
+              address_country: country
           }, function(status, res) {
               console.log('res', res)
               console.log('status', status)
@@ -412,31 +419,12 @@
               } else { 
                 var dataToSend = {
                   payment_info: {
-                    required: {
-                      stripe_key: "test",
-                      amount: donationAmount,
-                      currency: "usd",
-                      source: res.id,
-                      description: "Test Donation"
-                    },
-                    optional: {
-                      donor_info: {
-                        donor_name: {
-                          last: last_name,
-                          first: first_name
-                        },
-                        address: {
-                          street_lines: [
-                            address,
-                            line_2
-                          ],
-                          city: city,
-                          state_province_region: state,
-                          country: country
-                        },
-                        email: [email]
-                      }
-                    }
+                    stripe_key: "test",
+                    amount: donationAmount,
+                    currency: "usd",
+                    source: res.id,
+                    description: "Test Donation",
+                    email: email
                   }
                 }
                 console.log('data', dataToSend)
