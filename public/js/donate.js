@@ -424,7 +424,7 @@
                     currency: "usd",
                     source: res.id,
                     description: "Test Donation",
-                    email: email
+                    receipt_email: email
                   }
                 }
                 console.log('data', dataToSend)
