@@ -41,8 +41,10 @@
 	}
 
 	&__other-link {
-		width: 100%;
-		float: left;
+		// width: 100%;
+		display: inline-table;
+
+		// float: left;
 		margin-bottom: 10px;
 		text-decoration: none;
 		font-size: 12px;
@@ -60,16 +62,20 @@
 	&__right {
 		width: calc(100% - 200px);
 		float: right;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			width: 100%;
 			margin-top: 10px;
+			align-items: flex-start;
 		}
 	}
 
 	&__right-link {
-		width: 100%;
-		float: left;
+		// width: 100%;
+		// float: left;
 		color: color(textColor);
 		display: block;
 		text-align: right;
@@ -85,6 +91,8 @@
 	&__sites {
 		width: 200px;
 		float: left;
+		display: flex;
+		flex-direction: column;
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			width: 100%;

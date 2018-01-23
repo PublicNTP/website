@@ -31,15 +31,15 @@
     float: left;
     padding-right: 40px;
 
-    @media screen and (max-width: breakpoint(phone-lg)) {
+    @media screen and (max-width: 900px) {
       width: 100%;
-      padding: none;
+      padding-right: 40px;
     }
 
     &--small {
       padding-right: 15px;
 
-      @media screen and (max-width: breakpoint(phone-lg)) {
+      @media screen and (max-width: 900px) {
         padding-right: 40px;
       }
     }
@@ -109,7 +109,6 @@
     padding: 0;
     margin: 0;
     padding-left: 23px;
-
   }
 
   &__cash {
@@ -147,7 +146,7 @@
   &__country {
     display: block;
     border: 0;
-    outline: 0;
+    // outline: 0;
     border-bottom: 1px solid color(textColor);
     width: 100%;
     max-width: 310px;

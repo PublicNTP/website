@@ -2,6 +2,10 @@
   width: 100%;
   float: left;
 
+  &:first-of-type {
+    margin-top: 20px;
+  }
+
   &__emph {
     color: color(footer);
   }
@@ -57,7 +61,7 @@
 
   &__linkedin {
     display: block;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     float: left;
 
     &--right {
@@ -66,7 +70,7 @@
 
 		@media screen and (max-width: breakpoint(tablet)) {
       float: none;
-      margin: 0 auto 20px auto;
+      // margin: 0 auto 20px auto;
 		}
   }
 

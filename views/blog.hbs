@@ -1,18 +1,18 @@
 <div class="home__section">
 	<h1 class="home__title">The PublicNTP Blog</h1>
 	<p class="home__sub-title">
-		Follow our journey to bring accurate time to the world
+		Follow our journey to bring accurate time to the world.
 	</p>
 </div>
 <div class="home__section">
 	<div class="blog__search-bar-wrap">
-		<input id="search-input" class="blog__search-input blog__search-input-hide" placeholder="Search" autocomplete="off">
+		<input id="search-input" class="blog__search-input blog__search-input-hide" placeholder="Search" autocomplete="off" tabindex="2">
 		<img class="blog__x" src="{{relative_path}}images/x.svg" alt="Close">
 		<div class="blog__search-item-wrap blog__search-input-hide">
 		</div>
 	</div>
 	<div class="blog__sidebar">
-		<p class="blog__search">Search</p>
+		<p class="blog__search" tabindex="1">Search</p>
 		<div class="time">
 			{{#each timeline}}
 			<div>

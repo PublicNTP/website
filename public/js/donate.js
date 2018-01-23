@@ -103,7 +103,7 @@
       $(this).next().removeClass('red');
 
       if (state == '' || state == null) {
-        errorText = 'State is required';
+        errorText = 'State / Province / Region is required';
         $(this).next().addClass('red')
         $('#stateError').text(errorText);
         return setTimeout(function () {
@@ -118,7 +118,7 @@
       $(this).next().removeClass('red');
 
       if (zip == '' || zip == null) {
-        errorText = 'Zip Code is required';
+        errorText = 'ZIP / Postal Code is required';
         $(this).next().addClass('red')
         $('#zipcodeError').text(errorText);
         return setTimeout(function () {
@@ -133,7 +133,7 @@
       $(this).next().removeClass('red');
 
       if (card_number == '' || card_number == null) {
-        errorText = 'Card number is required';
+        errorText = 'Card Number is required';
         $(this).next().addClass('red')
         $('#creditCardError').text(errorText);
         return setTimeout(function () {
@@ -439,7 +439,7 @@
                     if (response.status === 'succeeded') {
                       swal(
                         'Donation Sent',
-                        'Thank you for your $' + donationAmount / 100 + ' donation!',
+                        'Thank you for your $' + (donationAmount / 100).toFixed(2) + ' donation!',
                         'success'
                       ).then(function() {
                         clearErrors();
@@ -486,8 +486,11 @@
     })
 
   function validateEmail(email) {
-    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    return emailReg.test(email);
+    // Old regex
+    // var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    // return emailReg.test(email);
+    var emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailReg.test(email.toLowerCase());
   }
 
   function clearErrors() {
