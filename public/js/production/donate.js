@@ -248,8 +248,8 @@
         $($(this).siblings('label')[0]).addClass('connect__label--focused');
       })
 
-      //Stripe.setPublishableKey('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
-      Stripe.setPublishableKey('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
+      Stripe.setPublishableKey('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
+      //Stripe.setPublishableKey('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
 
       $('.donate__button--submit').click(function() {
 
