@@ -23,9 +23,9 @@ var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
 
 const exec = require('child_process').exec;
-const s3Stage = 'aws s3 sync ' + __dirname + '/dist' + ' s3://staging.publicntp.org/';
-const s3Dev = 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/';
-const s3Prod = 'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/publicntp/';
+const s3Stage = 'aws s3 sync ' + __dirname + '/dist' + ' s3://staging.publicntp.org/ --delete';
+const s3Dev = 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/ --delete';
+const s3Prod = 'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/publicntp/ --delete';
 
 gulp.task('clean:dist', function(cb) {
 	del('./dist/*', cb);
