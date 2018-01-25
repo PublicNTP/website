@@ -423,7 +423,7 @@
                     amount: donationAmount,
                     currency: "usd",
                     source: res.id,
-                    description: "Test Donation",
+                    description: "PublicNTP tax-deductible donation",
                     receipt_email: email
                   }
                 }
