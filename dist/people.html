@@ -80,10 +80,10 @@
   			</a>
 
         <div class="flex__wrapper">
-          <div>
-            <a href="./donate.html" class="header__item header__connect">Donate</a>
-            <a href="./connect.html" class="header__item header__connect">Connect</a>
-            <a href="./learn.html" class="header__item header__connect">Learn</a>
+          <div style="display: flex;justify-content: flex-end;">
+            <a href="./donate.html" class="header__item header__connect" tabindex="0">Donate</a>
+            <a href="./connect.html" class="header__item header__connect" tabindex="0">Connect</a>
+            <a href="./learn.html" class="header__item header__connect" tabindex="0">Learn</a>
           </div>
           <div class="header__wrapper">
             <a href="./blog.html" class="header__link">Blog</a>
@@ -110,7 +110,7 @@
     </div>
   	<img class="about__headshot" src="./images/terry.jpg" alt="Terry Ott">
 	  <div class="about__person-wrap">
-			<a class="full-wrap" href="https://www.linkedin.com/in/terry-ott-730b422/">
+			<a class="full-wrap" href="https://www.linkedin.com/in/terry-ott-730b422/" target="_blank">
 				<img class="about__linkedin" src="./images/linkedin.png" alt="LinkedIn">
 			</a>
       <div class="about">
@@ -153,7 +153,7 @@
     </div>
   	<img class="about__headshot about__headshot--right" src="./images/scott.jpg" alt="Scott Waddell">
 	  <div class="about__person-wrap about__person-wrap--left">
-			<a class="full-wrap" href="https://www.linkedin.com/in/scott-waddell/">
+			<a class="full-wrap" style="float: right;" href="https://www.linkedin.com/in/scott-waddell/" target="_blank">
 				<img class="about__linkedin about__linkedin--right" src="./images/linkedin.png" alt="LinkedIn">
 			</a>
       <div class="about">
@@ -183,7 +183,7 @@
     </div>
   	<img class="about__headshot" src="./images/dan.jpg" alt="Dan Noland">
 	  <div class="about__person-wrap">
-			<a class="full-wrap" href="https://www.linkedin.com/in/dannoland/">
+			<a class="full-wrap" href="https://www.linkedin.com/in/dannoland/" target="_blank">
 				<img class="about__linkedin" src="./images/linkedin.png" alt="LinkedIn">
 			</a>
       <div class="about">
@@ -221,7 +221,7 @@
     </div>
   	<img class="about__headshot about__headshot--right" src="./images/brad.jpg" alt="Brad Woodfin">
 	  <div class="about__person-wrap about__person-wrap--left">
-			<a class="full-wrap" href="https://www.linkedin.com/in/j-brad-woodfin-9340721/">
+			<a class="full-wrap" style="float: right;" href="https://www.linkedin.com/in/j-brad-woodfin-9340721/" target="_blank">
 				<img class="about__linkedin about__linkedin--right" src="./images/linkedin.png" alt="LinkedIn">
 			</a>
       <div class="about">
@@ -285,22 +285,24 @@
   				<h3 class="footer__other-title">
   					Other Great NTP Sites
   				</h3>
-  				<a href="http://www.pool.ntp.org/en/" class="footer__other-link">NTP Pool</a>
-  				<a href="http://www.ntp.org/" class="footer__other-link">NTP</a>
-  				<a href="http://www.networktimefoundation.org/" class="footer__other-link">Network Time Foundation</a>
+  				<a href="http://www.pool.ntp.org/en/" target="_blank" class="footer__other-link" tabindex="0">NTP Pool</a>
+  				<a href="http://www.ntp.org/" target="_blank" class="footer__other-link" tabindex="0">NTP</a>
+  				<a href="https://networktimefoundation.org" target="_blank" class="footer__other-link" tabindex="0">Network Time Foundation</a>
   			</div>
   			<div class="footer__right">
   				<h3 class="footer__title">
   					Learn how you can connect and help, or follow us on LinkedIn.
   				</h3>
-  				<a href="https://linkedin.com/company/publicntp/">
-  					<img class="footer__linkedin" src="./images/linkedin.png" alt="LinkedIn">
-  				</a>
-  				<a href="./connect.html" class="footer__connect">Connect</a>
-  				<!-- <a href="/terms-of-use.html" class="footer__right-link">Terms of Use</a>
-  				<a href="/privacy.html" class="footer__right-link">Privacy Policy</a> -->
-  				<a href="./terms.html"><p class="footer__right-link">Terms & Conditions</p></a>
-  				<p class="footer__right-link">Copyright 2017</p>
+          <div style="display: flex;">
+            <a href="./connect.html" class="footer__connect" tabindex="0">Connect</a>
+            <a href="https://linkedin.com/company/publicntp/" target="_blank" tabindex="0">
+              <img class="footer__linkedin" src="./images/linkedin.png" alt="LinkedIn">
+            </a>
+          </div>
+          <div>
+            <a href="./terms.html"><p class="footer__right-link" tabindex="0">Terms & Conditions</p></a>
+            <p class="footer__right-link">Copyright 2017 PublicNTP, Inc.</p>
+          </div>
   			</div>
         <div class="node-clear"></div>
   		</div>

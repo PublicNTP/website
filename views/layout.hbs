@@ -80,10 +80,10 @@
   			</a>
 
         <div class="flex__wrapper">
-          <div>
-            <a href="{{relative_path}}donate.html" class="header__item header__connect">Donate</a>
-            <a href="{{relative_path}}connect.html" class="header__item header__connect">Connect</a>
-            <a href="{{relative_path}}learn.html" class="header__item header__connect">Learn</a>
+          <div style="display: flex;justify-content: flex-end;">
+            <a href="{{relative_path}}donate.html" class="header__item header__connect" tabindex="0">Donate</a>
+            <a href="{{relative_path}}connect.html" class="header__item header__connect" tabindex="0">Connect</a>
+            <a href="{{relative_path}}learn.html" class="header__item header__connect" tabindex="0">Learn</a>
           </div>
           <div class="header__wrapper">
             <a href="{{relative_path}}blog.html" class="header__link">Blog</a>
@@ -105,22 +105,22 @@
   				<h3 class="footer__other-title">
   					Other Great NTP Sites
   				</h3>
-  				<a href="http://www.pool.ntp.org/en/" target="_blank" class="footer__other-link">NTP Pool</a>
-  				<a href="http://www.ntp.org/" target="_blank" class="footer__other-link">NTP</a>
-  				<a href="https://www.nwtime.org" target="_blank" class="footer__other-link">Network Time Foundation</a>
+  				<a href="http://www.pool.ntp.org/en/" target="_blank" class="footer__other-link" tabindex="0">NTP Pool</a>
+  				<a href="http://www.ntp.org/" target="_blank" class="footer__other-link" tabindex="0">NTP</a>
+  				<a href="https://networktimefoundation.org" target="_blank" class="footer__other-link" tabindex="0">Network Time Foundation</a>
   			</div>
   			<div class="footer__right">
   				<h3 class="footer__title">
   					Learn how you can connect and help, or follow us on LinkedIn.
   				</h3>
-          <div>
-            <a href="https://linkedin.com/company/publicntp/">
+          <div style="display: flex;">
+            <a href="{{relative_path}}connect.html" class="footer__connect" tabindex="0">Connect</a>
+            <a href="https://linkedin.com/company/publicntp/" target="_blank" tabindex="0">
               <img class="footer__linkedin" src="{{relative_path}}images/linkedin.png" alt="LinkedIn">
             </a>
-            <a href="{{relative_path}}connect.html" class="footer__connect">Connect</a>
           </div>
           <div>
-            <a href="{{relative_path}}terms.html"><p class="footer__right-link">Terms & Conditions</p></a>
+            <a href="{{relative_path}}terms.html"><p class="footer__right-link" tabindex="0">Terms & Conditions</p></a>
             {{!-- <p class="footer__right-link">Privacy Policy</p> --}}
             <p class="footer__right-link">Copyright <script>document.write(new Date().getFullYear())</script> PublicNTP, Inc.</p>
   				  {{!-- <p class="footer__right-link">Copyright &copy; 2017 PublicNTP, Inc.</p> --}}

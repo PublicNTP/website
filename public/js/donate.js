@@ -5,7 +5,7 @@
     var country;
     $.ajax({
       dataType: "jsonp",
-      url: 'http://freegeoip.net/json',
+      url: 'https://freegeoip.net/json',
       success: function(data) {
         country = data.country_code;
         console.log('Country Code:', country);
@@ -174,6 +174,11 @@
     })
 
     // Input Formatting
+    var donateInput = new Cleave('#donateInput', {
+      numeral: true,
+      prefix: '$'
+    })
+
     var expInput = new Cleave('#expInput', {
       date: true,
       datePattern: ['m', 'y']
@@ -231,9 +236,8 @@
       })
 
       $('.donate__input').keyup(function(e) {
-        var val = parseFloat($('.donate__input').val());
-
-        console.log('manual donation firing', val);
+        var donation = $('.donate__input').val().replace(/\$|,/g, "");
+        var val = parseFloat(donation);
         donationAmount = val * 100;
 
         if (val >= 0) {
@@ -280,15 +284,6 @@
           expMonth = expiration[0];
           expYear = expiration[1];
         }
-        // } else {
-        //   errorText = 'Expiration Date must have a /';
-        //   $('#expirationError').text(errorText);
-        //   error = true;
-        //   setTimeout(function(){
-        //     $('#expirationError').text('');
-        //     $('.donate__processing').text('');
-        //   }, 5000);
-        // }
 
         if (first_name == '' || first_name == null) {
             error = true;
@@ -310,7 +305,6 @@
             }, 5000);
         }
 
-        // if (email == '' || email == null && !validateEmail(email)) {
         if (email == '' || !validateEmail(email)) {
             error = true;
             errorText = 'Valid email address is required';
@@ -444,11 +438,10 @@
                       ).then(function() {
                         clearErrors();
                         console.log('Clearing credit card and payment details from forms.');
-                        console.log('Country', country);
                       })
                     }
 
-                    if (response.status === 'error') {
+                    if (response.status !== 'succeeded') {
                       swal(
                         'Oops...',
                         response.message,
@@ -459,11 +452,17 @@
                   },
                   error: function(err) {
                     console.log('err', err);
+
                     swal(
                       'Oops...',
                       'Something went wrong!',
                       'error'
                     )
+
+                    $('#donation-processing').text('Error occured: ' + error);
+                    setTimeout(function () {
+                      $('#donation-processing').text('');
+                    }, 3000);
                   }
                 })
 
@@ -477,7 +476,6 @@
     // });
 
     $.getJSON("https://raw.githubusercontent.com/umpirsky/country-list/master/data/en_US/country.json", function (data) {
-    // $.getJSON("documents/countries.json", function(data) {
 
       $.each(data, function(key, val) {
         $(".donate__country").append("<option value='" + key + "'>" + val + "</option>");
