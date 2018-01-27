@@ -23,9 +23,9 @@ var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
 
 const exec = require('child_process').exec;
-const s3Stage = 'aws s3 sync ' + __dirname + '/dist' + ' s3://staging.publicntp.org/';
-const s3Dev = 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/';
-const s3Prod = 'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/publicntp/';
+const s3Stage = 'aws s3 sync ' + __dirname + '/dist' + ' s3://staging.publicntp.org/ --delete';
+const s3Dev = 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/ --delete';
+const s3Prod = 'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/ --delete';
 
 gulp.task('clean:dist', function(cb) {
 	del('./dist/*', cb);
@@ -37,20 +37,20 @@ gulp.task('minify:html', function() {
 		.pipe(gulp.dest('./dist/'));
 });
 
-
 gulp.task('minify:core-js', function() {
-	return gulp.src([
-		'./public/js/blog.js',
-		'./public/js/connect.js',
-		'./public/js/dropdown.js',
-		'./public/js/donate.js',
-		'./public/js/home.js',
-		'./public/js/main.js',
-		'./public/js/search.js',
-		'./public/js/swipe.js',
-		'./public/js/swiper.min.js',
-		'./public/js/jquery-2.1.4.min.js',
-		]).pipe(stripDebug())
+	var jsList = [
+					'./public/js/blog.js',
+					'./public/js/connect.js',
+					'./public/js/dropdown.js',
+					(argv.env && argv.env == 'production' ? './public/js/production/donate.js' : './public/js/donate.js'),
+					'./public/js/home.js',
+					'./public/js/main.js',
+					'./public/js/search.js',
+					'./public/js/swipe.js',
+					'./public/js/swiper.min.js',
+					'./public/js/jquery-2.1.4.min.js',
+	]
+	return gulp.src(jsList).pipe(stripDebug())
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist/js/'));
 });
@@ -153,7 +153,7 @@ gulp.task('routes', function () {
 		let rpRoutes = routes.map(function(r, index) {
 			return rp('http://localhost:3020' + r);
 		})
-		
+
 		Promise.all(rpRoutes).then(function(pages) {
 			console.log('pages', pages)
 			let tempPath = path.join(__dirname, 'dist');
