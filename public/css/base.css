@@ -152,7 +152,12 @@
 .blog {
   width: 100%;
   float: left;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
   .blog__bar {
     width: 2px;
     height: 100%;
@@ -825,7 +830,7 @@
     outline: 0;
     padding: 0;
     margin: 0;
-    padding-left: 23px; }
+    padding-left: 10px; }
   .donate__cash {
     position: absolute;
     font-size: 20px;
@@ -910,6 +915,7 @@
   float: left;
   background: #2a2a2a; }
   .footer__connect {
+    height: 32px;
     border: 1px solid #9b9b9b;
     border-radius: 2px;
     margin-right: 10px;
