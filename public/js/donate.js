@@ -389,7 +389,17 @@
         if (!error) {
           $('#donation-processing').text('Processing donation');
 
-          stripe.createToken(card).then(function (result) {
+          var data = {
+            name: first_name + ' ' + last_name,
+            address_line1: address,
+            address_line2: line_2,
+            address_city: city,
+            address_zip: zip,
+            address_state: state,
+            address_country: country
+          };
+
+          stripe.createToken(card, data).then(function(result) {
             if (result.error) {
               // Inform the user if there was an error
               var errorElement = document.getElementById('card-errors');
@@ -404,16 +414,10 @@
                   source: result.token.id,
                   description: "Test Donation",
                   receipt_email: email,
-                  name: first_name + ' ' + last_name,
-                  address_line1: address,
-                  address_line2: line_2,
-                  address_city: city,
-                  address_zip: zip,
-                  address_state: state,
-                  address_country: country
                 }
               };
               stripeTokenHandler(result.token, dataToSend);
+              console.log('results bbz:', result);
             }
           });
 
@@ -434,6 +438,7 @@
                     'success'
                   ).then(function () {
                     clearErrors();
+                    card.clear();
                     console.log('Clearing credit card and payment details from forms.');
                   })
                 }
