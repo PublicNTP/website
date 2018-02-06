@@ -768,6 +768,9 @@
       .donate__half {
         width: 100%;
         padding: none; } }
+  .donate__stripe {
+    width: 100% !important;
+    margin-bottom: 40px; }
   .donate__quarter {
     width: 25%;
     float: left;
@@ -909,6 +912,23 @@
 
 .red {
   color: red; }
+
+.StripeElement {
+  color: #383535;
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 1px solid #9b9b9b; }
+
+.StripeElement--invalid {
+  border-color: #fa755a; }
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important; }
+
+#card-errors {
+  margin-top: 15px; }
 
 .footer {
   width: 100%;

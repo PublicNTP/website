@@ -21,8 +21,6 @@
     // Blur Error
     var errorText = '';
 
-    // console.log('something blurred!', e.target);
-
     $('input[name=first_name]').blur(function() {
       var first_name = $('input[name=first_name]').val();
       $(this).next().removeClass('red');
@@ -194,29 +192,6 @@
       prefix: '$'
     })
 
-    var expInput = new Cleave('#expInput', {
-      date: true,
-      datePattern: ['m', 'y']
-    });
-
-    var cvvInput = new Cleave('#cvvInput', {
-      numeral: true,
-      numeralThousandsGroupStyle: 'none',
-    });
-
-    $('#cvvInput').keyup(function(e) {
-      var newCVV = $('#cvvInput').val();
-      console.log('firing cvv input', newCVV);
-      $('#cvvInput').val(newCVV.replace(/\./g, ''));
-    })
-
-    var ccInput = new Cleave('#ccInput', {
-      creditCard: true,
-      onCreditCardTypeChanged: function (type) {
-        // update UI ...
-      }
-    });
-
     var donationAmount = 500; // starts at $5, like the list.
     var manualDonation = false;
 
@@ -244,7 +219,6 @@
             $('.donate__cash').removeClass('hide');
           }
         });
-        
       });
 
       $('.donate__input').dblclick(function() {
@@ -268,20 +242,63 @@
         }
       });
 
-
       $('.connect__input').focus(function() {
         $($(this).siblings('label')[0]).addClass('connect__label--focused');
       })
 
+      // Fancy Stripe Credit Card Magic //
+      // Create a Stripe client
+      var stripe = Stripe('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
+
+      // Create an instance of Elements
+      var elements = stripe.elements();
+
+      // Custom styling can be passed to options when creating an Element.
+      // (Note that this demo uses a wider set of styles than the guide below.)
+      var style = {
+        base: {
+          // color: '#32325d',
+          lineHeight: '18px',
+          fontFamily: '"Roboto", sans-serif',
+          fontWeight: '500',
+          // fontSmoothing: 'antialiased',
+          fontSize: '14px',
+          '::placeholder': {
+            color: '#9b9b9b'
+          }
+        },
+        invalid: {
+          color: '#fa755a',
+          iconColor: '#fa755a'
+        }
+      };
+
+      // Create an instance of the card Element
+      var card = elements.create('card', {
+        style: style
+      });
+
+      // Add an instance of the card Element into the `card-element` <div>
+      card.mount('#card-element');
+
+      // Handle real-time validation errors from the card Element.
+      card.addEventListener('change', function (event) {
+        var displayError = document.getElementById('card-errors');
+        if (event.error) {
+          displayError.textContent = event.error.message;
+        } else {
+          displayError.textContent = '';
+        }
+      });
+
       //Stripe.setPublishableKey('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
-      Stripe.setPublishableKey('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
+      // Stripe.setPublishableKey('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
       
       $('.donate__button--submit').click(function() {
 
         // Reset error if any
         $('#error-message').text('');
 
-        console.log('click');
         var first_name = $('input[name=first_name]').val();
         var last_name = $('input[name=last_name]').val();
         var email = $('input[name=email]').val();
@@ -291,20 +308,12 @@
         var state = $('input[name=state]').val();
         var country = $(".donate__country option:selected").val();
         var zip = $('input[name=zip]').val();
-        var card_number = $('input[name=card_number]').val();
-        var cvcNum = $('input[name=ccv]').val();
-        var expiration = $('input[name=expiration]').val();
+
 
         var errorText = '';
         var expMonth = null;
         var expYear = null;
         var error = false;
-
-        if (expiration.indexOf('/') != -1) {
-          expiration = expiration.split('/');
-          expMonth = expiration[0];
-          expYear = expiration[1];
-        }
 
         if (first_name == '' || first_name == null) {
             error = true;
@@ -377,122 +386,204 @@
           }, 5000);
         }
 
-        if (!Stripe.card.validateCardNumber(card_number)) {
-            error = true;
-            errorText = 'The credit card number appears to be invalid.';
-          $('#creditCardError').text(errorText);
-          setTimeout(function(){
-            $('#creditCardError').text('');
-            $('.donate__processing').text('');
-          }, 5000);
-        }
-          
-        if (!Stripe.card.validateCVC(cvcNum)) {
-            error = true;
-            errorText = 'The CVV number appears to be invalid.';
-          $('#cvvError').text(errorText);
-          setTimeout(function(){
-            $('#cvvError').text('');
-            $('.donate__processing').text('');
-          }, 5000);
-        }
-          
-        if (!Stripe.card.validateExpiry(expMonth, expYear)) {
-            error = true;
-            errorText = 'The expiration date appears to be invalid.';
-          $('#expirationError').text(errorText);
-          setTimeout(function(){
-            $('#expirationError').text('');
-            $('.donate__processing').text('');
-          }, 5000);
-        }
-
-        // Show processing message
         if (!error) {
           $('#donation-processing').text('Processing donation');
+
+          var data = {
+            name: first_name + ' ' + last_name,
+            address_line1: address,
+            address_line2: line_2,
+            address_city: city,
+            address_zip: zip,
+            address_state: state,
+            address_country: country
+          };
+
+          stripe.createToken(card, data).then(function(result) {
+            if (result.error) {
+              // Inform the user if there was an error
+              var errorElement = document.getElementById('card-errors');
+              errorElement.textContent = result.error.message;
+            } else {
+              // Send the token to your server
+              var dataToSend = {
+                payment_info: {
+                  stripe_key: "test",
+                  amount: donationAmount,
+                  currency: "usd",
+                  source: result.token.id,
+                  description: "Test Donation",
+                  receipt_email: email,
+                }
+              };
+              stripeTokenHandler(result.token, dataToSend);
+              console.log('results bbz:', result);
+            }
+          });
+
+          function stripeTokenHandler(token, dataToSend) {
+            $.ajax({
+              url: 'https://api.publicntp.org/v1/payment/request',
+              method: 'POST',
+              headers: {
+                "Content-Type": "application/json"
+              },
+              data: JSON.stringify(dataToSend),
+              success: function (response) {
+                console.log('response', response);
+                if (response.status === 'succeeded') {
+                  swal(
+                    'Donation Sent',
+                    'Thank you for your $' + (donationAmount / 100).toFixed(2) + ' donation!',
+                    'success'
+                  ).then(function () {
+                    clearErrors();
+                    card.clear();
+                    console.log('Clearing credit card and payment details from forms.');
+                  })
+                }
+                if (response.status !== 'succeeded') {
+                  swal(
+                    'Oops...',
+                    response.message,
+                    'error'
+                  )
+                  $('#donation-processing').text('');
+                }
+              },
+              error: function (err) {
+                console.log('err', err);
+                swal(
+                  'Oops...',
+                  'Something went wrong!',
+                  'error'
+                )
+
+                $('#donation-processing').text('Error occured: ' + error);
+                setTimeout(function () {
+                  $('#donation-processing').text('');
+                }, 3000);
+              }
+            })
+          }
         }
 
-        if (!error) {
-          Stripe.card.createToken({
-              number: card_number,
-              cvc: cvcNum,
-              exp_month: expMonth,
-              exp_year: expYear,
-              name: first_name + ' ' + last_name,
-              address_line1: address,
-              address_line2: line_2,
-              address_city: city,
-              address_zip: zip,
-              address_state: state,
-              address_country: country
-          }, function(status, res) {
-              console.log('res', res)
-              console.log('status', status)
-              if (res.error) {
-                errorText += res.error.message;
-                $('#error-message').val(errorText)
-              } else { 
-                var dataToSend = {
-                  payment_info: {
-                    stripe_key: "test",
-                    amount: donationAmount,
-                    currency: "usd",
-                    source: res.id,
-                    description: "Test Donation",
-                    receipt_email: email
-                  }
-                }
-                console.log('data', dataToSend)
-                $.ajax({
-                  url: 'https://api.publicntp.org/v1/payment/request',
-                  method: 'POST',
-                  headers: { "Content-Type": "application/json" },
-                  data: JSON.stringify(dataToSend),
-                  success: function(response) {
-                    console.log('response', response);
+        // if (!Stripe.card.validateCardNumber(card_number)) {
+        //     error = true;
+        //     errorText = 'The credit card number appears to be invalid.';
+        //   $('#creditCardError').text(errorText);
+        //   setTimeout(function(){
+        //     $('#creditCardError').text('');
+        //     $('.donate__processing').text('');
+        //   }, 5000);
+        // }
+          
+        // if (!Stripe.card.validateCVC(cvcNum)) {
+        //     error = true;
+        //     errorText = 'The CVV number appears to be invalid.';
+        //   $('#cvvError').text(errorText);
+        //   setTimeout(function(){
+        //     $('#cvvError').text('');
+        //     $('.donate__processing').text('');
+        //   }, 5000);
+        // }
+          
+        // if (!Stripe.card.validateExpiry(expMonth, expYear)) {
+        //     error = true;
+        //     errorText = 'The expiration date appears to be invalid.';
+        //   $('#expirationError').text(errorText);
+        //   setTimeout(function(){
+        //     $('#expirationError').text('');
+        //     $('.donate__processing').text('');
+        //   }, 5000);
+        // }
 
-                    if (response.status === 'succeeded') {
-                      swal(
-                        'Donation Sent',
-                        'Thank you for your $' + (donationAmount / 100).toFixed(2) + ' donation!',
-                        'success'
-                      ).then(function() {
-                        // clearErrors();
-                        console.log('Clearing credit card and payment details from forms.');
-                      })
-                    }
+        // Show processing message
+        // if (!error) {
+        //   $('#donation-processing').text('Processing donation');
+        // }
 
-                    if (response.status !== 'succeeded') {
-                      swal(
-                        'Oops...',
-                        response.message,
-                        'error'
-                      )
-                      $('#donation-processing').text('');
-                    }
-                  },
-                  error: function(err) {
-                    console.log('err', err);
+        // if (!error) {
+        //   Stripe.card.createToken({
+        //       number: card_number,
+        //       cvc: cvcNum,
+        //       exp_month: expMonth,
+        //       exp_year: expYear,
+        //       name: first_name + ' ' + last_name,
+        //       address_line1: address,
+        //       address_line2: line_2,
+        //       address_city: city,
+        //       address_zip: zip,
+        //       address_state: state,
+        //       address_country: country
+        //   }, function(status, res) {
+        //       console.log('res', res)
+        //       console.log('status', status)
+        //       if (res.error) {
+        //         errorText += res.error.message;
+        //         $('#error-message').val(errorText)
+        //       } else { 
+        //         var dataToSend = {
+        //           payment_info: {
+        //             stripe_key: "test",
+        //             amount: donationAmount,
+        //             currency: "usd",
+        //             source: res.id,
+        //             description: "Test Donation",
+        //             receipt_email: email
+        //           }
+        //         }
+        //         console.log('data', dataToSend)
+                // $.ajax({
+                //   url: 'https://api.publicntp.org/v1/payment/request',
+                //   method: 'POST',
+                //   headers: { "Content-Type": "application/json" },
+                //   data: JSON.stringify(dataToSend),
+                //   success: function(response) {
+                //     console.log('response', response);
 
-                    swal(
-                      'Oops...',
-                      'Something went wrong!',
-                      'error'
-                    )
+                //     if (response.status === 'succeeded') {
+                //       swal(
+                //         'Donation Sent',
+                //         'Thank you for your $' + (donationAmount / 100).toFixed(2) + ' donation!',
+                //         'success'
+                //       ).then(function() {
+                //         // clearErrors();
+                //         console.log('Clearing credit card and payment details from forms.');
+                //       })
+                //     }
 
-                    $('#donation-processing').text('Error occured: ' + error);
-                    setTimeout(function () {
-                      $('#donation-processing').text('');
-                    }, 3000);
-                  }
-                })
+                //     if (response.status !== 'succeeded') {
+                //       swal(
+                //         'Oops...',
+                //         response.message,
+                //         'error'
+                //       )
+                //       $('#donation-processing').text('');
+                //     }
+                //   },
+                //   error: function(err) {
+                //     console.log('err', err);
+
+                //     swal(
+                //       'Oops...',
+                //       'Something went wrong!',
+                //       'error'
+                //     )
+
+                //     $('#donation-processing').text('Error occured: ' + error);
+                //     setTimeout(function () {
+                //       $('#donation-processing').text('');
+                //     }, 3000);
+                //   }
+                // })
 
                 //window.location.href = "/thank-you.html";
-              }
-          })
-        } else {
-          console.log('errorText', errorText)
-        }
+        //       }
+        //   })
+        // } else {
+        //   console.log('errorText', errorText)
+        // }
       })
     // });
 
