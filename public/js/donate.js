@@ -158,12 +158,27 @@
       }
     })
 
+    function expCheck(expiration) {
+      var d = new Date();
+      var currentYear = d.getFullYear();
+      var currentMonth = d.getMonth() + 1;
+      // get parts of the expiration date
+      var parts = expiration.split('/');
+      var year = parseInt(parts[1], 10) + 2000;
+      var month = parseInt(parts[0], 10);
+      // compare the dates
+      if (year < currentYear || (year == currentYear && month < currentMonth)) {
+        errorText += "The expiry date has passed.\n";
+        return true;
+      }
+    }
+
     $('input[name=expiration]').blur(function () {
       var expiration = $('input[name=expiration]').val();
       $(this).next().removeClass('red');
 
-      if (expiration == '' || expiration == null) {
-        errorText = 'Expiration date is required';
+      if (expiration == '' || expiration == null || expCheck(expiration)) {
+        errorText = 'Valid Expiration required';
         $(this).next().addClass('red');
         $('#expirationError').text(errorText);
         return setTimeout(function () {
@@ -186,8 +201,14 @@
 
     var cvvInput = new Cleave('#cvvInput', {
       numeral: true,
-      numeralThousandsGroupStyle: 'none'
+      numeralThousandsGroupStyle: 'none',
     });
+
+    $('#cvvInput').keyup(function(e) {
+      var newCVV = $('#cvvInput').val();
+      console.log('firing cvv input', newCVV);
+      $('#cvvInput').val(newCVV.replace(/\./g, ''));
+    })
 
     var ccInput = new Cleave('#ccInput', {
       creditCard: true,
@@ -436,7 +457,7 @@
                         'Thank you for your $' + (donationAmount / 100).toFixed(2) + ' donation!',
                         'success'
                       ).then(function() {
-                        clearErrors();
+                        // clearErrors();
                         console.log('Clearing credit card and payment details from forms.');
                       })
                     }
