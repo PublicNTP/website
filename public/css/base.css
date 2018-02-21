@@ -562,6 +562,42 @@
   line-height: 1.8;
   font-size: 12px; }
 
+.coord--miami01 {
+  left: calc(19% - 15px);
+  top: calc(40% - 15px); }
+
+.coord--dallas01 {
+  left: calc(14% - 15px);
+  top: calc(34% - 15px); }
+
+.coord--guadala01 {
+  left: calc(11.5% - 15px);
+  top: calc(43% - 15px); }
+
+.coord--guadala01 {
+  left: calc(11.5% - 15px);
+  top: calc(43% - 15px); }
+
+.coord--santiago01 {
+  left: calc(23% - 15px);
+  top: calc(79% - 15px); }
+
+.coord--hongkong01 {
+  left: calc(81.5% - 15px);
+  top: calc(42% - 15px); }
+
+.coord--bogota01 {
+  left: calc(20.5% - 15px);
+  top: calc(54% - 15px); }
+
+.coord--johannes01 {
+  left: calc(52.5% - 15px);
+  top: calc(79% - 15px); }
+
+.coord--tokyo01 {
+  left: calc(84% - 15px);
+  top: calc(49% - 15px); }
+
 .coord--pdx01 {
   left: calc(7.5% - 15px);
   top: calc(27% - 15px); }
@@ -624,7 +660,7 @@
 
 .coord--san01 {
   left: calc(7% - 15px);
-  top: calc(30% - 15px); }
+  top: calc(31.5% - 15px); }
 
 .category {
   width: 25%;

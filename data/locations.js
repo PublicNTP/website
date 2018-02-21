@@ -2,9 +2,9 @@ module.exports = [
 	{
 		continent: 'North America',
 		country: 'US',
-		city: 'The Dalles, Oregon',
-		className: 'coord--pdx01',
-		hostname: 'stratum2.pdx01.publicntp.org',
+		city: 'Miami, Florida',
+		className: 'coord--miami01',
+		hostname: 'stratum2-01.mia01.publicntp.org/',
 		liveDate: '2016-07-30',
 		multiple: false,
 		IPv6: false
@@ -12,9 +12,79 @@ module.exports = [
 	{
 		continent: 'North America',
 		country: 'US',
+		city: 'Dallas / Ft. Worth',
+		className: 'coord--dallas01',
+		hostname: 'stratum2-01.dfw01.publicntp.org',
+		liveDate: '2016-07-30',
+		multiple: false,
+		IPv6: false
+	},
+	{
+		continent: 'North America',
+		country: 'Mexico',
+		city: 'Guadalajara',
+		className: 'coord--guadala01',
+		hostname: 'stratum2-01.gdl01.publicntp.org',
+		liveDate: '2016-07-30',
+		multiple: false,
+		IPv6: false
+	},
+	{
+		continent: 'South America',
+		country: 'Chile',
+		city: 'Santiago',
+		className: 'coord--santiago01',
+		hostname: 'stratum2-01.scl01.publicntp.org',
+		liveDate: '2016-07-30',
+		multiple: false,
+		IPv6: false
+	},
+	{
+		continent: 'Asia',
+		country: 'Hong Kong',
+		city: 'Hong Kong',
+		className: 'coord--hongkong01',
+		hostname: 'stratum2-01.hkg01.publicntp.org/',
+		liveDate: '2016-07-30',
+		multiple: false,
+		IPv6: false
+	},
+	{
+		continent: 'South America',
+		country: 'Colombia',
+		city: 'Bogota',
+		className: 'coord--bogota01',
+		hostname: 'stratum2-01.bog01.publicntp.org',
+		liveDate: '2017-11-01',
+		multiple: false,
+		IPv6: false
+	},
+	{
+		continent: 'Africa',
+		country: 'South Africa',
+		city: 'Johannesburg',
+		className: 'coord--johannes01',
+		hostname: 'stratum2-01.jnb01.publicntp.org',
+		liveDate: '2017-11-07',
+		multiple: false,
+		IPv6: false
+	},
+	{
+		continent: 'Asia',
+		country: 'Japan',
+		city: 'Tokyo',
+		className: 'coord--tokyo01',
+		hostname: 'stratum2-01.hnd01.publicntp.org <br /> stratum2-01.hnd02.publicntp.org <br /> stratum2-02.hnd02.publicntp.org',
+		liveDate: '2017-11-07',
+		multiple: true,
+		IPv6: false
+	},
+	{
+		continent: 'North America',
+		country: 'US',
 		city: 'San Francisco, California',
 		className: 'coord--san01',
-		hostname: 'stratum2.sjc01.publicntp.org',
+		hostname: 'stratum2-01.sfo01.publicntp.org',
 		liveDate: '2016-07-31',
 		multiple: false,
 		IPv6: false
@@ -51,7 +121,7 @@ module.exports = [
 	},
 	{
 		continent: 'North America',
-		country: 'US',
+		country: 'Canada',
 		city: 'Montreal, Québec',
 		className: 'coord--yul01',
 		hostname: 'stratum2.yul01.publicntp.org',
@@ -104,8 +174,8 @@ module.exports = [
 		country: 'Nigeria',
 		city: 'Lagos',
 		className: 'coord--lag01',
-		hostname: 'stratum2.bom01.publicntp.org',
-		liveDate: '2016-08-01',
+		hostname: 'stratum2-01.los01.publicntp.org',
+		liveDate: '2017-10-01',
 		IPv6: false,
 		multiple: false
 	},
@@ -114,7 +184,7 @@ module.exports = [
 		country: 'India',
 		city: 'Bangalore',
 		className: 'coord--bir01',
-		hostname: 'stratum2-01.bir01.publicntp.org',
+		hostname: 'stratum2-01.blr01.publicntp.org',
 		liveDate: '2017-01-09',
 		IPv6: true,
 		multiple: false
@@ -144,8 +214,9 @@ module.exports = [
 		country: 'Australia',
 		city: 'Sydney',
 		className: 'coord--syd01',
-		hostname: 'stratum2.syd01.publicntp.org',
+		hostname: 'stratum2-01.syd01.publicntp.org <br /> stratum2-01.syd02.publicntp.org',
 		liveDate: '2016-07-31',
-		IPv6: false
+		IPv6: false,
+		multiple: true
 	}
 ]
