@@ -64,6 +64,14 @@
 						<a href="http://nwtime.org/projects/ntp/">NTP Reference Implementation</a>, <br/>
 						<a href="http://networktimefoundation.org/">Network Time Foundation</a>
 					</p>
+
+					<div class="node-clear"></div>
+					<p class="home__info">
+						Latency:
+					</p>
+					<p class="home__item">
+						{{this.time}} ms
+					</p>
 				</div>
 			{{/each}}
 		</div>
@@ -97,5 +105,6 @@
 <div class="home__section">
 </div>
 <script src="{{relative_path}}js/swiper.min.js"></script>
+<script src="{{relative_path}}js/ping.min.js"></script>
 <link rel="stylesheet" href="{{relative_path}}css/swiper.min.css">
 <script src="{{relative_path}}js/home.js"></script>

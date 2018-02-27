@@ -595,8 +595,8 @@
   top: calc(79% - 15px); }
 
 .coord--tokyo01 {
-  left: calc(84% - 15px);
-  top: calc(49% - 15px); }
+  left: calc(87% - 15px);
+  top: calc(33% - 15px); }
 
 .coord--pdx01 {
   left: calc(7.5% - 15px);
@@ -622,10 +622,6 @@
   left: calc(24% - 15px);
   top: calc(24% - 15px); }
 
-.coord--gru01 {
-  left: calc(28% - 15px);
-  top: calc(77% - 15px); }
-
 .coord--dub01 {
   left: calc(42% - 15px);
   top: calc(20% - 15px); }
@@ -646,10 +642,6 @@
   left: calc(78% - 15px);
   top: calc(56% - 15px); }
 
-.coord--hnd01 {
-  left: calc(87% - 15px);
-  top: calc(33% - 15px); }
-
 .coord--syd01 {
   left: calc(91% - 15px);
   top: calc(83% - 15px); }
@@ -661,6 +653,18 @@
 .coord--san01 {
   left: calc(7% - 15px);
   top: calc(31.5% - 15px); }
+
+.coord--aires01 {
+  left: calc(26% - 15px);
+  top: calc(84% - 15px); }
+
+.coord--sao01 {
+  left: calc(28% - 15px);
+  top: calc(77% - 15px); }
+
+.coord--mxcity01 {
+  left: calc(12.5% - 15px);
+  top: calc(46% - 15px); }
 
 .category {
   width: 25%;
