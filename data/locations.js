@@ -7,7 +7,7 @@ module.exports = [
 		hostname: 'stratum2-01.mia01.publicntp.org/',
 		liveDate: '2016-07-30',
 		multiple: false,
-		IPv6: false
+		IPv6: false,
 	},
 	{
 		continent: 'North America',
@@ -54,9 +54,9 @@ module.exports = [
 		country: 'Colombia',
 		city: 'Bogota',
 		className: 'coord--bogota01',
-		hostname: 'stratum2-01.bog01.publicntp.org',
-		liveDate: '2017-11-01',
-		multiple: false,
+		hostname: 'stratum2-01.bog01.publicntp.org <br /> stratum2-01.bog02.publicntp.org',
+		liveDate: '2017-11-01 <br /> 2018-02-15',
+		multiple: true,
 		IPv6: false
 	},
 	{
@@ -133,9 +133,19 @@ module.exports = [
 		continent: 'South America',
 		country: 'Brazil',
 		city: 'São Paulo',
-		className: 'coord--gru01',
-		hostname: 'stratum2.gru01.publicntp.org<br/>stratum2-02.gru01.publicntp.org<br>stratum2.gru02.publicntp.org',
-		liveDate: '2016-08-03<br>2016-12-28<br>2016-12-28',
+		className: 'coord--sao01',
+		hostname: 'stratum2.gru01.publicntp.org<br/>stratum2-01.gru02.publicntp.org',
+		liveDate: '2016-08-03<br>2016-12-28<br>2018-02-10',
+		IPv6: false,
+		multiple: true
+	},
+	{
+		continent: 'South America',
+		country: 'Brazil',
+		city: 'Sao Paulo',
+		className: 'coord--sao01',
+		hostname: 'stratum2-01.gru02.publicntp.org',
+		liveDate: '2018-02-15',
 		IPv6: false,
 		multiple: true
 	},
@@ -200,16 +210,6 @@ module.exports = [
 		multiple: true
 	},
 	{
-		continent: 'Asia',
-		country: 'Japan',
-		city: 'Tokyo',
-		className: 'coord--hnd01',
-		hostname: 'stratum2.hnd01.publicntp.org',
-		liveDate: '2016-08-04',
-		IPv6: false,
-		multiple: false
-	},
-	{
 		continent: 'Oceania',
 		country: 'Australia',
 		city: 'Sydney',
@@ -218,5 +218,25 @@ module.exports = [
 		liveDate: '2016-07-31',
 		IPv6: false,
 		multiple: true
-	}
+	},
+	{
+		continent: 'South America',
+		country: 'Argentina',
+		city: 'Buenos Aires',
+		className: 'coord--aires01',
+		hostname: 'stratum2-01.eze01.publicntp.org',
+		liveDate: '2018-02-15',
+		IPv6: false,
+		multiple: true
+	},
+	{
+		continent: 'North America',
+		country: 'Mexico',
+		city: 'Mexico City',
+		className: 'coord--mxcity01',
+		hostname: 'stratum2-01.mex01.publicntp.org',
+		liveDate: '2018-02-23',
+		IPv6: false,
+		multiple: true
+	},
 ]

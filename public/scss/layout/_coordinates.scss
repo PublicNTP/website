@@ -40,14 +40,9 @@
   }
 
   &--tokyo01 {
-    left: calc(84% - 15px);
-    top: calc(49% - 15px);
+    left: calc(87% - 15px);
+    top: calc(33% - 15px);
   }
-
-  // &--bangalore01 {
-  //   left: calc(70% - 15px);
-  //   top: calc(49% - 15px);
-  // }
 
   &--pdx01 {
 		left: calc(7.5% - 15px);
@@ -79,11 +74,6 @@
 		top: calc(24% - 15px);
   }
 
-  &--gru01 {
-		left: calc(28% - 15px);
-		top: calc(77% - 15px);
-  }
-
   &--dub01 {
 		left: calc(42% - 15px);
 		top: calc(20% - 15px);
@@ -109,11 +99,6 @@
 		top: calc(56% - 15px);
   }
 
-  &--hnd01 {
-		left: calc(87% - 15px);
-		top: calc(33% - 15px);
-  }
-
   &--syd01 {
 		left: calc(91% - 15px);
 		top: calc(83% - 15px);
@@ -127,5 +112,20 @@
   &--san01 {
 		left: calc(7% - 15px);
 		top: calc(31.5% - 15px);
+  }
+
+  &--aires01 {
+    left: calc(26% - 15px);
+    top: calc(84% - 15px);
+  }
+
+  &--sao01 {
+    left: calc(28% - 15px);
+    top: calc(77% - 15px);
+  }
+
+  &--mxcity01 {
+    left: calc(12.5% - 15px);
+    top: calc(46% - 15px);
   }
 }
