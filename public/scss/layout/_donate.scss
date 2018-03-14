@@ -28,7 +28,7 @@
 
   &__stripe {
     width: 100% !important;
-    margin-bottom: 40px
+    margin-bottom: 40px;
   }
 
   &__quarter {
@@ -61,8 +61,6 @@
     letter-spacing: 1px;
     margin-bottom: 24px;
   }
-
-
 
   &__button {
     display: block;
@@ -150,6 +148,7 @@
   &__country {
     display: block;
     border: 0;
+    margin-bottom: 16px;
     // outline: 0;
     border-bottom: 1px solid color(textColor);
     width: 100%;
@@ -204,7 +203,7 @@
 }
 
 .arrow-bg {
-  background-image: url("../images/arrow-down.png");
+  background-image: url('../images/arrow-down.png');
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: 85% 10%;
@@ -229,7 +228,7 @@
   // box-shadow: 0 1px 3px 0 #e6ebf1;
   // -webkit-transition: box-shadow 150ms ease;
   // transition: box-shadow 150ms ease;
-  // color: 
+  // color:
 }
 
 .StripeElement--focus {
