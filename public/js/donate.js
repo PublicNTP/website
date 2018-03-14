@@ -360,10 +360,6 @@ var spinner =
       html: spinner,
       // type: 'success',
       showConfirmButton: false,
-    }).then(function() {
-      clearErrors();
-      card.clear();
-      console.log('Clearing credit card and payment details from forms.');
     });
 
     // Reset error if any
@@ -506,8 +502,8 @@ var spinner =
                 'Thank you for your $' + (donationAmount / 100).toFixed(2) + ' donation!',
                 'success'
               ).then(function() {
-                // clearErrors();
-                // card.clear();
+                clearErrors();
+                card.clear();
                 console.log('Clearing credit card and payment details from forms.');
               });
             }
