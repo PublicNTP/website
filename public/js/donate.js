@@ -1,3 +1,21 @@
+var spinner =
+  '   <div class="logo-infinite-container logo-infinite__opened">  ' +
+  '         <div class="logo-infinite">  ' +
+  '           <div class="logo-infinite__inner">  ' +
+  '             <div class="logo-infinite__center">  ' +
+  '               <div class="logo-infinite__minute logo-infinite__rotate logo-infinite__minute-move">  ' +
+  '                 <div class="logo-infinite__minute-ball"></div>  ' +
+  '               </div>  ' +
+  '               <div class="logo-infinite__hour logo-infinite__rotate logo-infinite__hour-move">  ' +
+  '                 <div class="logo-infinite__hour-orb">  ' +
+  '                   <div class="logo-infinite__hour-ball"></div>  ' +
+  '                 </div>  ' +
+  '               </div>  ' +
+  '             </div>  ' +
+  '           </div>  ' +
+  '         </div>  ' +
+  '      </div>  ';
+
 (function($) {
   // $(function() {
 
@@ -337,6 +355,17 @@
   // Stripe.setPublishableKey('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
 
   $('.donate__button--submit').click(function() {
+    swal({
+      title: 'Processing Donation',
+      html: spinner,
+      // type: 'success',
+      showConfirmButton: false,
+    }).then(function() {
+      clearErrors();
+      card.clear();
+      console.log('Clearing credit card and payment details from forms.');
+    });
+
     // Reset error if any
     $('#error-message').text('');
 
