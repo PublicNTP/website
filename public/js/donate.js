@@ -351,9 +351,6 @@ var spinner =
     }
   });
 
-  //Stripe.setPublishableKey('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
-  // Stripe.setPublishableKey('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
-
   $('.donate__button--submit').click(function() {
     swal({
       title: 'Processing Donation',
