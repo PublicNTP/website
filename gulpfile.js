@@ -210,10 +210,10 @@ gulp.task('pushs3', function() {
   } else if (argv.env && argv.env == 'staging') {
     console.log('pushing to staging s3');
     pushS3Env(s3Stage);
+    pushS3Env(clearStaging);
   } else if (argv.env && argv.env == 'dev') {
     console.log('pushing to dev s3');
     pushS3Env(s3Dev);
-    pushS3Env(clearStaging);
   } else {
     console.error('must use --env production or --env staging');
   }
