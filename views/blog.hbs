@@ -46,13 +46,13 @@
 						{{{this.time}}}
 					</p>
 				</a>
+				<a href='{{../relative_path}}blog/posts/{{this.permalink}}.html' class="blog__excerpt">
+					{{this.excerpt}}
+				</a>
 				<a href='{{../relative_path}}blog/posts/{{this.permalink}}.html'>
 					{{#if this.image_urls.[0]}}
 						<img class="blog__image" src="{{../relative_path}}{{this.image_urls.[0]}}" alt="Blog Image">
 					{{/if}}
-				</a>
-				<a href='{{../relative_path}}blog/posts/{{this.permalink}}.html' class="blog__excerpt">
-					{{this.excerpt}}
 				</a>
 			</div>
 		{{/each}}

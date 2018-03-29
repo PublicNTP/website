@@ -1,17 +1,18 @@
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+{{!--
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script> --}} {{!-- Stripe Card magic --}}
+<script src="https://js.stripe.com/v3/"></script>
 
 <div class="home__section">
-	<h1 class="home__title">Bring Time to the World</h1>
-	<p class="home__sub-title">
-    Your donations help us to provide the public with unrestricted access
-    to highly-accurate time sources around the globe.
-	</p>
+  <h1 class="home__title">Bring Time to the World</h1>
+  <p class="home__sub-title">
+    Your donations help us to provide the public with unrestricted access to highly-accurate time sources around the globe.
+  </p>
 </div>
 <div class="home__section">
   <p class="donate__info">
-    By donating 
+    By donating
     <span class="select-style">
-      <select name="donations" id="select-value">
+      <select name="donations" id="select-value" tabindex="0">
         <option value="500" class="select-value" selected>$5.00</option>
         <option value="1000" class="select-value">$10.00</option>
         <option value="2000" class="select-value">$20.00</option>
@@ -20,16 +21,15 @@
         <option value="" class="select-value">Enter a value</option>
       </select>
     </span>
-    
-    {{!-- <span id="cash-money" class="hide">$</span><input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"> --}}
-    <span class="donate__cash hide">$</span>
+
+    {{!--
+    <span id="cash-money" class="hide">$</span>
+    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"> --}} {{!--
+    <span class="donate__cash hide">$</span> --}}
     <span class="donate__underline hide"></span>
-    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')">
-    
-    {{!-- you'll be providing people in
-    
-    San Paulo with 47 hours of server access. --}}
-    you'll be providing people with hours of servers access.
+    <input type="text" class="donate__input" id="donateInput"> {{!--
+    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"> --}} {{!-- you'll be providing people in San Paulo with 47 hours of server access. --}} you'll be providing people with
+    hours of servers access.
   </p>
   <div class="donate">
     <h4 class="donate__title">Personal Info</h4>
@@ -79,24 +79,25 @@
 
     <h4 class="donate__title">Credit Card Info</h4>
 
+    {{!--
     <div class="connect__input-wrap donate__half">
       <input name="card_number" id="ccInput" class="connect__input">
       <label class="connect__label">Card Number</label>
       <p class="donate__error" id="creditCardError"></p>
+    </div> --}}
+
+    <div class="connect__input-wrap donate__half donate__stripe">
+      <div id="card-element">
+        <!-- a Stripe Element will be inserted here. -->
+      </div>
+
+      <!-- Used to display form errors -->
+      <div id="card-errors" role="alert"></div>
     </div>
-    <div class="connect__input-wrap donate__quarter">
-      <input name="expiration" id="expInput" class="connect__input">
-      <label class="connect__label">Expiration (MM/YY)</label>
-      <p class="donate__error" id="expirationError"></p>
-    </div>
-    <div class="connect__input-wrap donate__quarter">
-      <input name="ccv" class="connect__input" id="cvvInput" maxlength="4">
-      <label class="connect__label">CVV</label>
-      <p class="donate__error" id="cvvError"></p>
-    </div>
-    {{!-- <p class="donate__error" id="error-message"></p> --}}
+
     <p class="donate__button donate__button--submit" id="connect-submit">Donate $5.00</p>
     <p class="donate__processing" id="donation-processing"></p>
+
   </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.9/cleave.min.js"></script>
