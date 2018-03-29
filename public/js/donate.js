@@ -308,7 +308,19 @@ var spinner =
 
   // Fancy Stripe Credit Card Magic //
   // Create a Stripe client
-  var stripe = Stripe('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
+  var stripe;
+
+  // Test
+  if (window.location.hostname === 'localhost') {
+    stripe = Stripe('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
+    console.log('Stripe key test!');
+  }
+
+  if (window.location.hostname !== 'localhost') {
+    // Live
+    stripe = Stripe('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
+    console.log('Stripe key live!');
+  }
 
   // Create an instance of Elements
   var elements = stripe.elements();
