@@ -85,6 +85,10 @@ gulp.task('copy:images', function() {
   return gulp.src('./public/images/*').pipe(gulp.dest('./dist/images/'));
 });
 
+gulp.task('copy:fonts', function() {
+  return gulp.src('./public/fonts/*').pipe(gulp.dest('./dist/fonts/'));
+});
+
 gulp.task('copy:documents', function() {
   return gulp.src('./public/documents/*').pipe(gulp.dest('./dist/documents/'));
 });
@@ -189,6 +193,7 @@ gulp.task('gather', function() {
     gulp.start('minify:css');
     gulp.start('copy:uploads');
     gulp.start('copy:images');
+    gulp.start('copy:fonts');
     gulp.start('copy:documents');
     gulp.start('minify:html');
     gulp.start('minify:core-js');
