@@ -311,7 +311,10 @@ var spinner =
   var stripe;
 
   // Test
-  if (window.location.hostname === 'localhost') {
+  if (
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === 'dev.publicntp.org'
+  ) {
     stripe = Stripe('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
     console.log('Stripe key test!');
   }
