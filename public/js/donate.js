@@ -319,7 +319,10 @@ var spinner =
     console.log('Stripe key test!');
   }
 
-  if (window.location.hostname !== 'localhost') {
+  if (
+    window.location.hostname === 'staging.publicntp.org' ||
+    window.location.hostname === 'publicntp.org'
+  ) {
     // Live
     stripe = Stripe('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
     console.log('Stripe key live!');
