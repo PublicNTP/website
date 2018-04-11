@@ -370,12 +370,12 @@ var spinner =
   });
 
   $('.donate__button--submit').click(function() {
-    swal({
-      title: 'Processing Donation',
-      html: spinner,
-      // type: 'success',
-      showConfirmButton: false,
-    });
+    // swal({
+    //   title: 'Processing Donation',
+    //   html: spinner,
+    //   // type: 'success',
+    //   showConfirmButton: false,
+    // });
 
     // Reset error if any
     $('#error-message').text('');
@@ -466,7 +466,16 @@ var spinner =
       }, 5000);
     }
 
+    // If no errors, submit!
     if (!error) {
+
+      swal({
+        title: "Processing Donation",
+        html: spinner,
+        // type: 'success',
+        showConfirmButton: false
+      });
+
       // $('#donation-processing').css('display', 'block');
       $('#donation-processing').text('Processing donation');
 
@@ -519,7 +528,7 @@ var spinner =
               ).then(function() {
                 clearErrors();
                 card.clear();
-                console.log('Clearing credit card and payment details from forms.');
+                // console.log('Clearing credit card and payment details from forms.');
               });
             }
             if (response.status !== 'succeeded') {
@@ -539,125 +548,7 @@ var spinner =
         });
       }
     }
-
-    // if (!Stripe.card.validateCardNumber(card_number)) {
-    //     error = true;
-    //     errorText = 'The credit card number appears to be invalid.';
-    //   $('#creditCardError').text(errorText);
-    //   setTimeout(function(){
-    //     $('#creditCardError').text('');
-    //     $('.donate__processing').text('');
-    //   }, 5000);
-    // }
-
-    // if (!Stripe.card.validateCVC(cvcNum)) {
-    //     error = true;
-    //     errorText = 'The CVV number appears to be invalid.';
-    //   $('#cvvError').text(errorText);
-    //   setTimeout(function(){
-    //     $('#cvvError').text('');
-    //     $('.donate__processing').text('');
-    //   }, 5000);
-    // }
-
-    // if (!Stripe.card.validateExpiry(expMonth, expYear)) {
-    //     error = true;
-    //     errorText = 'The expiration date appears to be invalid.';
-    //   $('#expirationError').text(errorText);
-    //   setTimeout(function(){
-    //     $('#expirationError').text('');
-    //     $('.donate__processing').text('');
-    //   }, 5000);
-    // }
-
-    // Show processing message
-    // if (!error) {
-    //   $('#donation-processing').text('Processing donation');
-    // }
-
-    // if (!error) {
-    //   Stripe.card.createToken({
-    //       number: card_number,
-    //       cvc: cvcNum,
-    //       exp_month: expMonth,
-    //       exp_year: expYear,
-    //       name: first_name + ' ' + last_name,
-    //       address_line1: address,
-    //       address_line2: line_2,
-    //       address_city: city,
-    //       address_zip: zip,
-    //       address_state: state,
-    //       address_country: country
-    //   }, function(status, res) {
-    //       console.log('res', res)
-    //       console.log('status', status)
-    //       if (res.error) {
-    //         errorText += res.error.message;
-    //         $('#error-message').val(errorText)
-    //       } else {
-    //         var dataToSend = {
-    //           payment_info: {
-    //             stripe_key: "test",
-    //             amount: donationAmount,
-    //             currency: "usd",
-    //             source: res.id,
-    //             description: "Test Donation",
-    //             receipt_email: email
-    //           }
-    //         }
-    //         console.log('data', dataToSend)
-    // $.ajax({
-    //   url: 'https://api.publicntp.org/v1/payment/request',
-    //   method: 'POST',
-    //   headers: { "Content-Type": "application/json" },
-    //   data: JSON.stringify(dataToSend),
-    //   success: function(response) {
-    //     console.log('response', response);
-
-    //     if (response.status === 'succeeded') {
-    //       swal(
-    //         'Donation Sent',
-    //         'Thank you for your $' + (donationAmount / 100).toFixed(2) + ' donation!',
-    //         'success'
-    //       ).then(function() {
-    //         // clearErrors();
-    //         console.log('Clearing credit card and payment details from forms.');
-    //       })
-    //     }
-
-    //     if (response.status !== 'succeeded') {
-    //       swal(
-    //         'Oops...',
-    //         response.message,
-    //         'error'
-    //       )
-    //       $('#donation-processing').text('');
-    //     }
-    //   },
-    //   error: function(err) {
-    //     console.log('err', err);
-
-    //     swal(
-    //       'Oops...',
-    //       'Something went wrong!',
-    //       'error'
-    //     )
-
-    //     $('#donation-processing').text('Error occured: ' + error);
-    //     setTimeout(function () {
-    //       $('#donation-processing').text('');
-    //     }, 3000);
-    //   }
-    // })
-
-    //window.location.href = "/thank-you.html";
-    //       }
-    //   })
-    // } else {
-    //   console.log('errorText', errorText)
-    // }
   });
-  // });
 
   $.getJSON(
     'https://raw.githubusercontent.com/umpirsky/country-list/master/data/en_US/country.json',
