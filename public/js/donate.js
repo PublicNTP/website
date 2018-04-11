@@ -494,6 +494,8 @@ var spinner =
           // Inform the user if there was an error
           var errorElement = document.getElementById('card-errors');
           errorElement.textContent = result.error.message;
+          $("#donation-processing").text('');
+          swal.close();
         } else {
           // Send the token to your server
           var dataToSend = {
