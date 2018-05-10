@@ -62,7 +62,7 @@
   }
 
   &__right {
-    width: calc(100% - 200px);
+    // width: calc(100% - 200px);
     float: right;
     display: flex;
     flex-direction: column;
@@ -91,10 +91,11 @@
   }
 
   &__sites {
-    width: 200px;
+    // width: 200px;
     float: left;
     display: flex;
     flex-direction: column;
+    margin-right: 80px;
 
     @media screen and (max-width: breakpoint(tablet)) {
       width: 100%;

@@ -977,6 +977,23 @@
     top: 35px;
     color: red;
     font-size: 12px; }
+  .donate__contact {
+    float: left;
+    width: 100%;
+    margin-top: 70px; }
+    .donate__contact--heading {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      font-size: 24px; }
+    .donate__contact p {
+      font-size: 14px;
+      line-height: 1.8; }
+    .donate__contact--bold {
+      font-weight: bold;
+      margin-top: 25px;
+      display: inline-block; }
+    .donate__contact--heavy {
+      font-weight: bold; }
 
 #error-message {
   position: absolute;
@@ -1070,7 +1087,6 @@
     color: #dbdbdb;
     font-size: 14px; }
   .footer__right {
-    width: calc(100% - 200px);
     float: right;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1100,7 +1116,6 @@
       .footer__right-link {
         text-align: left; } }
   .footer__sites {
-    width: 200px;
     float: left;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1108,7 +1123,8 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column; }
+            flex-direction: column;
+    margin-right: 80px; }
     @media screen and (max-width: 767px) {
       .footer__sites {
         width: 100%;
@@ -1468,7 +1484,8 @@
       height: 40px;
       top: -6px;
       border: 1px solid transparent;
-      cursor: pointer; }
+      cursor: pointer;
+      z-index: -1; }
       .home__location--outer.active {
         -webkit-animation: signalMed 1.5s infinite linear;
                 animation: signalMed 1.5s infinite linear; }

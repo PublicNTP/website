@@ -183,6 +183,33 @@
     color: red;
     font-size: 12px;
   }
+
+  &__contact {
+    float: left;
+    width: 100%;
+    margin-top: 70px;
+
+    &--heading {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    &--bold {
+      font-weight: bold;
+      margin-top: 25px;
+      display: inline-block;
+    }
+
+    &--heavy {
+      font-weight: bold;
+    }
+  }
 }
 
 #error-message {
