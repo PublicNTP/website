@@ -610,6 +610,10 @@
   left: calc(19% - 15px);
   top: calc(40% - 15px); }
 
+.coord--korea01 {
+  left: calc(84% - 15px);
+  top: calc(32% - 15px); }
+
 .coord--dallas01 {
   left: calc(14% - 15px);
   top: calc(34% - 15px); }

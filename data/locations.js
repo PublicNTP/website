@@ -1,5 +1,15 @@
 module.exports = [
   {
+    continent: 'Asia',
+    country: 'KR',
+    city: 'Seoul',
+    className: 'coord--korea01',
+    hostname: 'stratum2-01.mia01.publicntp.org',
+    liveDate: '2018-05-06',
+    multiple: false,
+    IPv6: false
+  },
+  {
     continent: 'North America',
     country: 'US',
     city: 'Miami, Florida',
