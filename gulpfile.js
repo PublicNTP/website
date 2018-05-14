@@ -34,7 +34,8 @@ const s3Prod =
   'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/ --delete';
 const clearStaging = `aws cloudfront create-invalidation --distribution-id E2DMT4MYD734FG --paths '/*'`;
 const clearProduction = `aws cloudfront create-invalidation --distribution-id E3A3QPXYOQ5VVV --paths '/*'`;
-const backupProduction = `aws s3 sync s3://publicntp.org backups/${Date()}`;
+const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
+  1}-${new Date().getDate()}`;
 
 gulp.task('clean:dist', function(cb) {
   del('./dist/*', cb);
@@ -234,7 +235,6 @@ gulp.task('pushs3', function() {
     pushS3Env(clearStaging);
   } else if (argv.env && argv.env == 'dev') {
     console.log('pushing to dev s3');
-    pushS3Env(backupProduction);
     pushS3Env(s3Dev);
   } else {
     console.error('must use --env production or --env staging');
