@@ -4,10 +4,11 @@ module.exports = [
     country: 'KR',
     city: 'Seoul',
     className: 'coord--korea01',
-    hostname: 'stratum2-01.mia01.publicntp.org',
+    hostname:
+      'stratum2-01.mia01.publicntp.org <br> stratum2-01.icn01.publicntp.org',
     liveDate: '2018-05-06',
-    multiple: false,
-    IPv6: false
+    multiple: true,
+    IPv6: true
   },
   {
     continent: 'North America',
