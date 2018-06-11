@@ -28,7 +28,7 @@ const s3Stage =
   __dirname +
   '/dist' +
   ' s3://staging.publicntp.org/ --delete';
-const s3Dev = `aws s3 sync ${__dirname}/dist --expires "$(date -d '+6 months' --utc +'%Y-%m-%dT%H:%M:%SZ')" s3://dev.publicntp.org/ --delete`;
+const s3Dev = `aws s3 sync ${__dirname}/dist s3://dev.publicntp.org/ --delete --expires "$(date -d '+6 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
 // 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/ --delete';
 const s3Prod =
   'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/ --delete';
