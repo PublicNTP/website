@@ -28,10 +28,10 @@ const s3Stage =
   __dirname +
   '/dist' +
   ' s3://staging.publicntp.org/ --delete';
-const s3Dev = `aws s3 sync ${__dirname}/dist s3://dev.publicntp.org/ --delete --expires "$(date -d '+6 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
-// 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/ --delete';
-const s3Prod =
-  'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/ --delete';
+const s3Dev = `aws s3 sync ${__dirname}/dist s3://dev.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
+const s3Prod = `aws s3 sync ${__dirname}/dist s3://publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
+// const s3Prod =
+//   'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/ --delete';
 const clearStaging = `aws cloudfront create-invalidation --distribution-id E2DMT4MYD734FG --paths '/*'`;
 const clearProduction = `aws cloudfront create-invalidation --distribution-id E3A3QPXYOQ5VVV --paths '/*'`;
 const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
