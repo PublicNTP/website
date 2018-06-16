@@ -1,13 +1,14 @@
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
 <div class="home__section">
-	<h1 class="home__title">Governance</h1>
-	<p class="home__sub-title">We operate with transparency. Feel free to browse our company's governing documents by clicking any item's title.</p>
+  <h1 class="home__title">Governance</h1>
+  <p class="home__sub-title">We operate with transparency. Feel free to browse our company's governing documents by clicking any item's title.</p>
 </div>
 
 <div class="home__section">
-  
-  {{!-- <div class="governance__search">Search</div> --}}
+
+  {{!--
+  <div class="governance__search">Search</div> --}}
 
   <div class="governance__wrapper" id="documents">
 
@@ -17,10 +18,21 @@
 
     <div class="governance__divider"></div>
     <div class="governance__divider--end"></div>
-    
+
     <div class="list">
 
-       {{!-- Bylaws --}}
+      {{!-- IRS 2017--}}
+      <div class="governance__block">
+        <div class="governance__title">
+          <a href="{{relative_path}}documents/pntp_irs_filing_2017.pdf" target="_blank">IRS Tax Filing - 2017</a>
+          <span class="governance__date date">06-11-2018</span>
+        </div>
+        <div class="governance__text">
+          Tax filing with the IRS in 2017.
+        </div>
+      </div>
+
+      {{!-- Bylaws --}}
       <div class="governance__block">
         <div class="governance__title">
           <a href="{{relative_path}}documents/bylaws.pdf" target="_blank">Bylaws</a>
@@ -31,7 +43,7 @@
         </div>
       </div>
 
-       {{!-- Certificate --}}
+      {{!-- Certificate --}}
       <div class="governance__block">
         <div class="governance__title">
           <a href="{{relative_path}}documents/1023_filing.pdf" target="_blank">1023 Filing</a>
@@ -64,7 +76,7 @@
         </div>
       </div>
 
-       {{!-- Incorporation --}}
+      {{!-- Incorporation --}}
       <div class="governance__block">
         <div class="governance__title">
           <a href="{{relative_path}}documents/articles_of_incorp.pdf" target="_blank">Articles of Incorporation</a>
@@ -76,8 +88,8 @@
         </div>
       </div>
 
-      {{!-- Financials --}}
-      {{!-- <div class="governance__block">
+      {{!-- Financials --}} {{!--
+      <div class="governance__block">
         <div class="governance__title">
           Quaterly Financials
           <span class="governance__date date">MAR 26, 2017</span>
@@ -86,10 +98,8 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
-      </div> --}}
-
-      {{!-- Audit --}}
-      {{!-- <div class="governance__block">
+      </div> --}} {{!-- Audit --}} {{!--
+      <div class="governance__block">
         <div class="governance__title">
           2016 Audit Reports
           <span class="governance__date date">MAR 26, 2017</span>
@@ -98,10 +108,8 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
-      </div> --}}
-
-      {{!-- Tax --}}
-      {{!-- <div class="governance__block">
+      </div> --}} {{!-- Tax --}} {{!--
+      <div class="governance__block">
         <div class="governance__title">
           2016 Tax Filing
           <span class="governance__date date">JAN 14, 2017</span>
@@ -110,10 +118,8 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
-      </div> --}}
-
-      {{!-- Post Options --}}
-      {{!-- <div class="governance__block governance__center">
+      </div> --}} {{!-- Post Options --}} {{!--
+      <div class="governance__block governance__center">
         <div class="governance__post">Older Posts</div>
         <div class="governance__post governance__post--center">Newer Posts</div>
         <div class="governance__post"></div>
@@ -137,7 +143,7 @@
   var message2 = 'Order by ▼';
   var state = false;
 
-  $('.sort__btn').on('click', function(e) {
+  $('.sort__btn').on('click', function (e) {
     console.log('firing', e.target);
     if (state === false) {
       $('.sort__btn').text(message1);
@@ -153,6 +159,5 @@
       return;
     }
   })
-</script>
-
-{{!-- <script src="{{relative_path}}js/donate.js"></script> --}}
+</script> {{!--
+<script src="{{relative_path}}js/donate.js"></script> --}}

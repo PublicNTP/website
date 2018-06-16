@@ -294,6 +294,7 @@
 				</a>
 			</div>
 		<div class="blog__page-prev">
+				<a href=".//blog.html" class="blog__page">Newer Posts</a>
 		</div>
 		<div class="blog__page-next">
 		</div>

@@ -119,12 +119,12 @@
       <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
 <div class="home__section">
-	<h1 class="home__title">Governance</h1>
-	<p class="home__sub-title">We operate with transparency. Feel free to browse our company's governing documents by clicking any item's title.</p>
+  <h1 class="home__title">Governance</h1>
+  <p class="home__sub-title">We operate with transparency. Feel free to browse our company's governing documents by clicking any item's title.</p>
 </div>
 
 <div class="home__section">
-  
+
 
   <div class="governance__wrapper" id="documents">
 
@@ -134,8 +134,18 @@
 
     <div class="governance__divider"></div>
     <div class="governance__divider--end"></div>
-    
+
     <div class="list">
+
+      <div class="governance__block">
+        <div class="governance__title">
+          <a href="./documents/pntp_irs_filing_2017.pdf" target="_blank">IRS Tax Filing - 2017</a>
+          <span class="governance__date date">06-11-2018</span>
+        </div>
+        <div class="governance__text">
+          Tax filing with the IRS in 2017.
+        </div>
+      </div>
 
       <div class="governance__block">
         <div class="governance__title">
@@ -188,9 +198,7 @@
         </div>
       </div>
 
-
-
-
+             
     </div>
 
   </div>
@@ -210,7 +218,7 @@
   var message2 = 'Order by ▼';
   var state = false;
 
-  $('.sort__btn').on('click', function(e) {
+  $('.sort__btn').on('click', function (e) {
     console.log('firing', e.target);
     if (state === false) {
       $('.sort__btn').text(message1);
@@ -226,9 +234,7 @@
       return;
     }
   })
-</script>
-
-
+</script> 
     </div>
     <footer class="footer">
       <div class="footer__wrap">
@@ -239,6 +245,15 @@
           <a href="http://www.pool.ntp.org/en/" target="_blank" class="footer__other-link" tabindex="0">NTP Pool</a>
           <a href="http://www.ntp.org/" target="_blank" class="footer__other-link" tabindex="0">NTP</a>
           <a href="https://networktimefoundation.org" target="_blank" class="footer__other-link" tabindex="0">Network Time Foundation</a>
+        </div>
+        <div class="footer__sites">
+          <h3 class="footer__other-title">
+            Contact Info
+          </h3>
+          <span class="footer__other-link">PublicNTP, Inc.</span>
+          <span class="footer__other-link">1405 S Fern St #90372</span>
+          <span class="footer__other-link">Arlington, VA 22202-2810</span>
+          <span class="footer__other-link">+1-703-651-2996</span>
         </div>
         <div class="footer__right">
           <h3 class="footer__title">
@@ -254,6 +269,7 @@
             <a href="./terms.html">
               <p class="footer__right-link" tabindex="0">Terms & Conditions</p>
             </a>
+            <p class="footer__right-link">Tax ID: 82-2301559</p>
             <p class="footer__right-link">Copyright
               <script>document.write(new Date().getFullYear())</script> PublicNTP, Inc.</p>
           </div>
