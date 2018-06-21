@@ -119,7 +119,7 @@
     }
 
     &.slow-active {
-      animation: signalSmall 1.5s infinite linear;
+      animation: signalSmall 2.5s infinite linear;
     }
 
     &--multiple {
@@ -149,7 +149,8 @@
       z-index: -1;
 
       &.active {
-        animation: signalMed 1.5s infinite linear;
+        animation: signalLarge 2.5s infinite linear;
+        // animation: signalMed 1.5s infinite linear;
       }
     }
   }
@@ -354,9 +355,7 @@
   0% {
     border: 1px solid rgba(0, 0, 0, 0);
   }
-  30% {
-    border: 1px solid rgba(0, 0, 0, 0);
-  }
+
   50% {
     border: 1px solid color(activeDot);
   }

@@ -1507,8 +1507,8 @@ strong {
       -webkit-animation: signal 1.5s infinite linear;
               animation: signal 1.5s infinite linear; }
     .home__location.slow-active {
-      -webkit-animation: signalSmall 1.5s infinite linear;
-              animation: signalSmall 1.5s infinite linear; }
+      -webkit-animation: signalSmall 2.5s infinite linear;
+              animation: signalSmall 2.5s infinite linear; }
     .home__location--multiple {
       left: -6px;
       width: 50px;
@@ -1532,8 +1532,8 @@ strong {
       cursor: pointer;
       z-index: -1; }
       .home__location--outer.active {
-        -webkit-animation: signalMed 1.5s infinite linear;
-                animation: signalMed 1.5s infinite linear; }
+        -webkit-animation: signalLarge 2.5s infinite linear;
+                animation: signalLarge 2.5s infinite linear; }
   .home__location-ball {
     width: 8px;
     height: 8px;
@@ -1689,8 +1689,6 @@ strong {
 @-webkit-keyframes signalSmall {
   0% {
     border: 1px solid transparent; }
-  30% {
-    border: 1px solid transparent; }
   50% {
     border: 1px solid #65A1C7; }
   70% {
@@ -1700,8 +1698,6 @@ strong {
 
 @keyframes signalSmall {
   0% {
-    border: 1px solid transparent; }
-  30% {
     border: 1px solid transparent; }
   50% {
     border: 1px solid #65A1C7; }
