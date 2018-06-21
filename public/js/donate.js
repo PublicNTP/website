@@ -311,6 +311,7 @@ var spinner =
   // Fancy Stripe Credit Card Magic //
   // Create a Stripe client
   var stripe;
+  var stripeKey;
 
   // Test
   if (
@@ -318,7 +319,8 @@ var spinner =
     window.location.hostname === 'dev.publicntp.org'
   ) {
     stripe = Stripe('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
-    console.log('Stripe key test!', stripe);
+    stripeKey = 'pk_test_hagCUEZIKkraUVhbV6gnNbB4';
+    console.log('Stripe key test!', stripeKey);
   }
 
   if (
@@ -327,7 +329,8 @@ var spinner =
   ) {
     // Live
     stripe = Stripe('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
-    console.log('Stripe key live!', stripe);
+    stripeKey = 'pk_live_A0ZBe4eQAenJlhbcv2wIdV8G';
+    console.log('Stripe key live!', stripeKey);
   }
 
   // Create an instance of Elements
@@ -497,11 +500,12 @@ var spinner =
           errorElement.textContent = result.error.message;
           $('#donation-processing').text('');
           swal.close();
+          console.log('Stripe key: ', stripeKey);
         } else {
           // Send the token to your server
           var dataToSend = {
             payment_info: {
-              stripe_key: stripe,
+              stripe_key: stripeKey,
               amount: donationAmount,
               currency: 'usd',
               source: result.token.id,
