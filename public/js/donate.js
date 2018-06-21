@@ -28,12 +28,14 @@ var spinner =
       country = data.country_code;
       console.log('Country Code:', country);
       setTimeout(function() {
-        document.querySelector('.donate__country option[value="' + country + '"]').selected = true;
+        document.querySelector(
+          '.donate__country option[value="' + country + '"]'
+        ).selected = true;
       }, 1000);
     },
     error: function(data) {
       console.log('Not able to get country data');
-    },
+    }
   });
 
   // Blur Error
@@ -247,7 +249,7 @@ var spinner =
   // Input Formatting
   var donateInput = new Cleave('#donateInput', {
     numeral: true,
-    prefix: '$',
+    prefix: '$'
   });
 
   var donationAmount = 500; // starts at $5, like the list.
@@ -316,7 +318,7 @@ var spinner =
     window.location.hostname === 'dev.publicntp.org'
   ) {
     stripe = Stripe('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
-    console.log('Stripe key test!');
+    console.log('Stripe key test!', stripe);
   }
 
   if (
@@ -325,7 +327,7 @@ var spinner =
   ) {
     // Live
     stripe = Stripe('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
-    console.log('Stripe key live!');
+    console.log('Stripe key live!', stripe);
   }
 
   // Create an instance of Elements
@@ -342,18 +344,18 @@ var spinner =
       // fontSmoothing: 'antialiased',
       fontSize: '14px',
       '::placeholder': {
-        color: '#9b9b9b',
-      },
+        color: '#9b9b9b'
+      }
     },
     invalid: {
       color: '#fa755a',
-      iconColor: '#fa755a',
-    },
+      iconColor: '#fa755a'
+    }
   };
 
   // Create an instance of the card Element
   var card = elements.create('card', {
-    style: style,
+    style: style
   });
 
   // Add an instance of the card Element into the `card-element` <div>
@@ -468,9 +470,8 @@ var spinner =
 
     // If no errors, submit!
     if (!error) {
-
       swal({
-        title: "Processing Donation",
+        title: 'Processing Donation',
         html: spinner,
         // type: 'success',
         showConfirmButton: false
@@ -486,7 +487,7 @@ var spinner =
         address_city: city,
         address_zip: zip,
         address_state: state,
-        address_country: country,
+        address_country: country
       };
 
       stripe.createToken(card, data).then(function(result) {
@@ -494,19 +495,19 @@ var spinner =
           // Inform the user if there was an error
           var errorElement = document.getElementById('card-errors');
           errorElement.textContent = result.error.message;
-          $("#donation-processing").text('');
+          $('#donation-processing').text('');
           swal.close();
         } else {
           // Send the token to your server
           var dataToSend = {
             payment_info: {
-              stripe_key: 'test',
+              stripe_key: stripe,
               amount: donationAmount,
               currency: 'usd',
               source: result.token.id,
               description: 'Test Donation',
-              receipt_email: email,
-            },
+              receipt_email: email
+            }
           };
           stripeTokenHandler(result.token, dataToSend);
         }
@@ -517,7 +518,7 @@ var spinner =
           url: 'https://api.publicntp.org/v1/payment/request',
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
           },
           data: JSON.stringify(dataToSend),
           success: function(response) {
@@ -525,7 +526,9 @@ var spinner =
             if (response.status === 'succeeded') {
               swal(
                 'Donation Sent',
-                'Thank you for your $' + (donationAmount / 100).toFixed(2) + ' donation!',
+                'Thank you for your $' +
+                  (donationAmount / 100).toFixed(2) +
+                  ' donation!',
                 'success'
               ).then(function() {
                 clearErrors();
@@ -546,7 +549,7 @@ var spinner =
             setTimeout(function() {
               $('#donation-processing').text('');
             }, 3000);
-          },
+          }
         });
       }
     }
@@ -556,7 +559,9 @@ var spinner =
     'https://raw.githubusercontent.com/umpirsky/country-list/master/data/en_US/country.json',
     function(data) {
       $.each(data, function(key, val) {
-        $('.donate__country').append("<option value='" + key + "'>" + val + '</option>');
+        $('.donate__country').append(
+          "<option value='" + key + "'>" + val + '</option>'
+        );
         // $(".donate__country").append("<option value='" + val.Code + "'>" + val.Name + "</option>");
       });
     }
