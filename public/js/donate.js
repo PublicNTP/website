@@ -319,8 +319,8 @@ var spinner =
     window.location.hostname === 'dev.publicntp.org'
   ) {
     stripe = Stripe('pk_test_hagCUEZIKkraUVhbV6gnNbB4');
-    stripeKey = 'pk_test_hagCUEZIKkraUVhbV6gnNbB4';
-    console.log('Stripe key test!', stripeKey);
+    stripeKey = 'test';
+    console.log('Stripe key test!', stripe);
   }
 
   if (
@@ -329,8 +329,8 @@ var spinner =
   ) {
     // Live
     stripe = Stripe('pk_live_A0ZBe4eQAenJlhbcv2wIdV8G');
-    stripeKey = 'pk_live_A0ZBe4eQAenJlhbcv2wIdV8G';
-    console.log('Stripe key live!', stripeKey);
+    stripeKey = 'live';
+    console.log('Stripe key live!', stripe);
   }
 
   // Create an instance of Elements
