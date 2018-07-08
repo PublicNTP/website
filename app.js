@@ -27,12 +27,11 @@ var app = express();
 var ENV = process.env.NODE_ENV;
 var is_production = true;
 
-
 if (ENV === 'development') {
   is_production = false;
 } else {
-	process.env.NODE_ENV = 'production';
-	ENV = 'production';
+  process.env.NODE_ENV = 'production';
+  ENV = 'production';
 }
 
 app.locals.is_production = ENV !== 'development';
@@ -62,15 +61,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //   app.on('error', onError);
 // });
 
-
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -91,7 +87,7 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-app.use('/', indexRoutes)
+app.use('/', indexRoutes);
 
 app.use('/blog', blogRoutes);
 app.use('/blog.html', blogRoutes);
@@ -103,16 +99,16 @@ app.use('/learn.html', learnRoutes);
 app.use('/connect.html', connectRoutes);
 app.use('/history.html', historyRoutes);
 app.use('/people.html', aboutRoutes);
-app.use('/stats.html', statsRoutes);
+// app.use('/stats.html', statsRoutes);
 app.use('/terms.html', termsRoutes);
 app.use('/governance.html', governanceRoutes);
 
 app.get('/history.html', function(req, res) {
   res.render('history', {
     relative_path: './'
-  })
-})
+  });
+});
 
 app.listen(port, function() {
-	console.log('listening on port ', port)
+  console.log('listening on port ', port);
 });

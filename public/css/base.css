@@ -372,6 +372,47 @@
     -o-object-fit: contain;
        object-fit: contain; }
 
+.section__puzzle p {
+  position: relative;
+  left: 35px; }
+
+.section__puzzle .table_contents li {
+  position: relative;
+  list-style-type: none;
+  left: 15px; }
+  .section__puzzle .table_contents li::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background-image: url("../images/square_icon.png");
+    top: 3px;
+    left: -30px;
+    height: 20px;
+    width: 20px;
+    background-size: cover; }
+  .section__puzzle .table_contents li:last-of-type {
+    margin-bottom: 10px; }
+
+.section__puzzle ul {
+  position: relative;
+  left: 35px; }
+  .section__puzzle ul li {
+    list-style-type: disc; }
+
+.section__puzzle ul > li > ul {
+  left: 15px; }
+  .section__puzzle ul > li > ul li {
+    list-style-type: circle; }
+
+strong {
+  font-weight: bold; }
+
+.italic {
+  font-style: italic; }
+
+.indent__left {
+  padding-left: 45px; }
+
 .blog-detail__article {
   font-size: 14px;
   color: #2a2a2a;
@@ -609,6 +650,10 @@
 .coord--miami01 {
   left: calc(19% - 15px);
   top: calc(40% - 15px); }
+
+.coord--korea01 {
+  left: calc(84% - 15px);
+  top: calc(32% - 15px); }
 
 .coord--dallas01 {
   left: calc(14% - 15px);
@@ -977,6 +1022,23 @@
     top: 35px;
     color: red;
     font-size: 12px; }
+  .donate__contact {
+    float: left;
+    width: 100%;
+    margin-top: 70px; }
+    .donate__contact--heading {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      font-size: 24px; }
+    .donate__contact p {
+      font-size: 14px;
+      line-height: 1.8; }
+    .donate__contact--bold {
+      font-weight: bold;
+      margin-top: 25px;
+      display: inline-block; }
+    .donate__contact--heavy {
+      font-weight: bold; }
 
 #error-message {
   position: absolute;
@@ -1070,7 +1132,6 @@
     color: #dbdbdb;
     font-size: 14px; }
   .footer__right {
-    width: calc(100% - 200px);
     float: right;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1100,7 +1161,6 @@
       .footer__right-link {
         text-align: left; } }
   .footer__sites {
-    width: 200px;
     float: left;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1108,7 +1168,8 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column; }
+            flex-direction: column;
+    margin-right: 80px; }
     @media screen and (max-width: 767px) {
       .footer__sites {
         width: 100%;
@@ -1446,8 +1507,8 @@
       -webkit-animation: signal 1.5s infinite linear;
               animation: signal 1.5s infinite linear; }
     .home__location.slow-active {
-      -webkit-animation: signalSmall 1.5s infinite linear;
-              animation: signalSmall 1.5s infinite linear; }
+      -webkit-animation: signalSmall 2.5s infinite linear;
+              animation: signalSmall 2.5s infinite linear; }
     .home__location--multiple {
       left: -6px;
       width: 50px;
@@ -1468,10 +1529,11 @@
       height: 40px;
       top: -6px;
       border: 1px solid transparent;
-      cursor: pointer; }
+      cursor: pointer;
+      z-index: -1; }
       .home__location--outer.active {
-        -webkit-animation: signalMed 1.5s infinite linear;
-                animation: signalMed 1.5s infinite linear; }
+        -webkit-animation: signalLarge 2.5s infinite linear;
+                animation: signalLarge 2.5s infinite linear; }
   .home__location-ball {
     width: 8px;
     height: 8px;
@@ -1628,10 +1690,8 @@
   0% {
     border: 1px solid transparent; }
   30% {
-    border: 1px solid transparent; }
-  50% {
     border: 1px solid #65A1C7; }
-  70% {
+  60% {
     border: 1px solid transparent; }
   100% {
     border: 1px solid transparent; } }
@@ -1640,10 +1700,8 @@
   0% {
     border: 1px solid transparent; }
   30% {
-    border: 1px solid transparent; }
-  50% {
     border: 1px solid #65A1C7; }
-  70% {
+  60% {
     border: 1px solid transparent; }
   100% {
     border: 1px solid transparent; } }
@@ -1673,7 +1731,7 @@
     border: 1px solid transparent; }
   50% {
     border: 1px solid transparent; }
-  70% {
+  60% {
     border: 1px solid #65A1C7; }
   100% {
     border: 1px solid transparent; } }
@@ -1683,7 +1741,7 @@
     border: 1px solid transparent; }
   50% {
     border: 1px solid transparent; }
-  70% {
+  60% {
     border: 1px solid #65A1C7; }
   100% {
     border: 1px solid transparent; } }

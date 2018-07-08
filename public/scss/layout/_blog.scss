@@ -240,3 +240,63 @@
     object-fit: contain;
   }
 }
+
+.section {
+  &__puzzle {
+    p {
+      position: relative;
+      left: 35px;
+    }
+
+    .table_contents li {
+      position: relative;
+      list-style-type: none;
+      left: 15px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url('../images/square_icon.png');
+        top: 3px;
+        left: -30px;
+        height: 20px;
+        width: 20px;
+        background-size: cover;
+      }
+
+      &:last-of-type {
+        margin-bottom: 10px;
+      }
+    }
+
+    ul {
+      position: relative;
+      left: 35px;
+
+      li {
+        list-style-type: disc;
+      }
+    }
+
+    ul > li > ul {
+      left: 15px;
+
+      li {
+        list-style-type: circle;
+      }
+    }
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.indent__left {
+  padding-left: 45px;
+}

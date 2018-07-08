@@ -68,7 +68,6 @@
         <a href="../../people.html" class="header__item-mobile">People</a>
         <a href="../../blog.html" class="header__item-mobile">Blog</a>
         <a href="../../history.html" class="header__item-mobile">History</a>
-        <a href="../../stats.html" class="header__item-mobile">Stats</a>
         <a href="../../governance.html" class="header__item-mobile">Governance</a>
         <a href="../../learn.html" class="header__item-mobile header__connect">Learn</a>
         <div class="node-clear"></div>
@@ -107,7 +106,6 @@
           <div class="header__wrapper">
             <a href="../../blog.html" class="header__link">Blog</a>
             <a href="../../people.html" class="header__link">People</a>
-            <a href="../../stats.html" class="header__link">Stats</a>
             <a href="../../history.html" class="header__link">History</a>
             <a href="../../governance.html" class="header__link">Governance</a>
           </div>
@@ -144,7 +142,7 @@
 			<b>July</b> 8, 2017
 		</p>
 		<div class="blog-detail__article">
-			<h4>Terry D. Ott - 2017-06-17, 4:52pm EDT (UTC -0400)</h4><p>When I first launched PublicNTP with a single NTP server in Chicago, Illinois, I had grand plans for rapid expansion, first across the US, to be quickly followed by exotic locations around the globe I’d always wanted to visit.</p><p>As is often the case, reality ended up diverging quite a bit from the original dreams. :slightly_smiling_face: From the launch in 2008 through the summer of 2016, PublicNTP was largely in stasis. The server in Chicago was quite reliable/stable over those eight years, but the Chicago deployment was all there was to PublicNTP.</p><p>While my original deployment vision centered around purchasing and installing physical servers in leased data center space, in 2012 the Chicago server was transitioned from a physical server to a cloud-based virtual machine. I was pleasantly surprised to see a virtualized environment was entirely capable of providing high-quality stratum 2 time data to clients.</p><p>Many NTP information sources strongly discourage running NTPd on anything but bare metal hardware. I tend to agree that stratum 1 servers should be running directly on a physical server if possible, but I personally found virtualized NTP server deployments to be entirely well-suited for servicing stratum 2 time needs. As a nice bonus, virtualized deployments were vastly easier to maintain—not to mention significantly cheaper!</p><p>In the summer of 2015, I was sitting at my desk at work looking at the AWS Global Infrastructure map, doing some investigation for my day job. While looking at the map, it hit me that the global nature of AWS data centers could provide the foundation for the first major expansion for PublicNTP.</p><p>A brief investigation demonstrated that, much like I had found with the virtualized server in Chicago, (properly-sized!) EC2 instances proved to be an ideal hosting environment for PublicNTP servers.</p><p>Starting in late July 2016, thanks to Amazon’s EC2 offering, PublicNTP experienced tremendous deployment expansion for the first time in its eight-year history! In just six months, PublicNTP grew from the single deployment in Chicago to 11 deployments across 5 continents:</p><ul><li>North America (4)<li><ul><li>The Dalles, Oregon, USA</li><li>San Jose, California, USA</li><li>Chicago, Illinois, USA</li><li>Ashburn, Virginia, USA</li></ul><li>South America (1)</li><ul><li>São Paulo, Brazil</li></ul><li>Europe (2)</li><ul><li>Dublin, Ireland</li><li>Frankfurt, Germany</li></ul><li>Asia (3)</li><ul><li>Mumbai, India</li><li>Singapore</li><li>Tokyo, Japan</li></ul><li>Australia/Oceania (1)</li><ul><li>Sydney, Australia</li></ul></ul><p></p><p>Starting in the second half of 2016, my long-time friend Scott Waddell and I found ourselves in the same city on a regular basis for the first time in almost twenty years. As we caught up on each others’ lives and interests, I mentioned my work with PublicNTP. Scott immediately grasped the PublicNTP mission and offered to get involved.</p><p>With Scott’s support, we deployed the first-ever PublicNTP stratum 1 time server, a CDMA-based Endrun Technologies Tempus LX server, in Salt Lake City, Utah, USA. Scott also provided access to an excellent technical team, including a graphic designer and a web developer who jointly produced the massive overhaul to the PublicNTP website that you’re currently looking at!</p><p>Stay tuned for more blog posts across the remainder of 2017, which will largely focus on the shared vision Scott and I have for the short- and medium-term evolution/expansion of PublicNTP!</p>
+			<h4>Terry D. Ott</h4><p>When I first launched PublicNTP with a single NTP server in Chicago, Illinois, I had grand plans for rapid expansion, first across the US, to be quickly followed by exotic locations around the globe I’d always wanted to visit.</p><p>As is often the case, reality ended up diverging quite a bit from the original dreams. :slightly_smiling_face: From the launch in 2008 through the summer of 2016, PublicNTP was largely in stasis. The server in Chicago was quite reliable/stable over those eight years, but the Chicago deployment was all there was to PublicNTP.</p><p>While my original deployment vision centered around purchasing and installing physical servers in leased data center space, in 2012 the Chicago server was transitioned from a physical server to a cloud-based virtual machine. I was pleasantly surprised to see a virtualized environment was entirely capable of providing high-quality stratum 2 time data to clients.</p><p>Many NTP information sources strongly discourage running NTPd on anything but bare metal hardware. I tend to agree that stratum 1 servers should be running directly on a physical server if possible, but I personally found virtualized NTP server deployments to be entirely well-suited for servicing stratum 2 time needs. As a nice bonus, virtualized deployments were vastly easier to maintain—not to mention significantly cheaper!</p><p>In the summer of 2015, I was sitting at my desk at work looking at the AWS Global Infrastructure map, doing some investigation for my day job. While looking at the map, it hit me that the global nature of AWS data centers could provide the foundation for the first major expansion for PublicNTP.</p><p>A brief investigation demonstrated that, much like I had found with the virtualized server in Chicago, (properly-sized!) EC2 instances proved to be an ideal hosting environment for PublicNTP servers.</p><p>Starting in late July 2016, thanks to Amazon’s EC2 offering, PublicNTP experienced tremendous deployment expansion for the first time in its eight-year history! In just six months, PublicNTP grew from the single deployment in Chicago to 11 deployments across 5 continents:</p><ul><li>North America (4)<li><ul><li>The Dalles, Oregon, USA</li><li>San Jose, California, USA</li><li>Chicago, Illinois, USA</li><li>Ashburn, Virginia, USA</li></ul><li>South America (1)</li><ul><li>São Paulo, Brazil</li></ul><li>Europe (2)</li><ul><li>Dublin, Ireland</li><li>Frankfurt, Germany</li></ul><li>Asia (3)</li><ul><li>Mumbai, India</li><li>Singapore</li><li>Tokyo, Japan</li></ul><li>Australia/Oceania (1)</li><ul><li>Sydney, Australia</li></ul></ul><p></p><p>Starting in the second half of 2016, my long-time friend Scott Waddell and I found ourselves in the same city on a regular basis for the first time in almost twenty years. As we caught up on each others’ lives and interests, I mentioned my work with PublicNTP. Scott immediately grasped the PublicNTP mission and offered to get involved.</p><p>With Scott’s support, we deployed the first-ever PublicNTP stratum 1 time server, a CDMA-based Endrun Technologies Tempus LX server, in Salt Lake City, Utah, USA. Scott also provided access to an excellent technical team, including a graphic designer and a web developer who jointly produced the massive overhaul to the PublicNTP website that you’re currently looking at!</p><p>Stay tuned for more blog posts across the remainder of 2017, which will largely focus on the shared vision Scott and I have for the short- and medium-term evolution/expansion of PublicNTP!</p>
 		</div>
 	</div>
 </div>
@@ -167,6 +165,15 @@
           <a href="http://www.ntp.org/" target="_blank" class="footer__other-link" tabindex="0">NTP</a>
           <a href="https://networktimefoundation.org" target="_blank" class="footer__other-link" tabindex="0">Network Time Foundation</a>
         </div>
+        <div class="footer__sites">
+          <h3 class="footer__other-title">
+            Contact Info
+          </h3>
+          <span class="footer__other-link">PublicNTP, Inc.</span>
+          <span class="footer__other-link">1405 S Fern St #90372</span>
+          <span class="footer__other-link">Arlington, VA 22202-2810</span>
+          <span class="footer__other-link">+1-703-651-2996</span>
+        </div>
         <div class="footer__right">
           <h3 class="footer__title">
             Learn how you can connect and help, or follow us on LinkedIn.
@@ -181,6 +188,7 @@
             <a href="../../terms.html">
               <p class="footer__right-link" tabindex="0">Terms & Conditions</p>
             </a>
+            <p class="footer__right-link">Tax ID: 82-2301559</p>
             <p class="footer__right-link">Copyright
               <script>document.write(new Date().getFullYear())</script> PublicNTP, Inc.</p>
           </div>

@@ -23,11 +23,19 @@ var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
 
 const exec = require('child_process').exec;
-const s3Stage = 'aws s3 sync ' + __dirname + '/dist' + ' s3://staging.publicntp.org/ --delete';
-const s3Dev = 'aws s3 sync ' + __dirname + '/dist' + ' s3://dev.publicntp.org/ --delete';
-const s3Prod = 'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/ --delete';
+const s3Stage =
+  'aws s3 sync ' +
+  __dirname +
+  '/dist' +
+  ' s3://staging.publicntp.org/ --delete';
+const s3Dev = `aws s3 sync ${__dirname}/dist s3://dev.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
+const s3Prod = `aws s3 sync ${__dirname}/dist s3://publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
+// const s3Prod =
+//   'aws s3 sync ' + __dirname + '/dist' + ' s3://publicntp.org/ --delete';
 const clearStaging = `aws cloudfront create-invalidation --distribution-id E2DMT4MYD734FG --paths '/*'`;
 const clearProduction = `aws cloudfront create-invalidation --distribution-id E3A3QPXYOQ5VVV --paths '/*'`;
+const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
+  1}-${new Date().getDate()}`;
 
 gulp.task('clean:dist', function(cb) {
   del('./dist/*', cb);
@@ -45,15 +53,16 @@ gulp.task('minify:core-js', function() {
     './public/js/blog.js',
     './public/js/connect.js',
     './public/js/dropdown.js',
-    argv.env && argv.env == 'production'
-      ? './public/js/production/donate.js'
-      : './public/js/donate.js',
+    './public/js/donate.js',
+    // argv.env && argv.env == 'production'
+    //   ? './public/js/production/donate.js'
+    //   : './public/js/donate.js',
     './public/js/home.js',
     './public/js/main.js',
     './public/js/search.js',
     './public/js/swipe.js',
     './public/js/swiper.min.js',
-    './public/js/jquery-2.1.4.min.js',
+    './public/js/jquery-2.1.4.min.js'
   ];
   return gulp
     .src(jsList)
@@ -68,6 +77,12 @@ gulp.task('copy:js-libs', function() {
 
 gulp.task('copy:json-files', function() {
   return gulp.src(['./src/json/*.json']).pipe(gulp.dest('./dist/json/'));
+});
+
+gulp.task('copy:root-files', function() {
+  return gulp
+    .src(['./public/robots.txt', './public/sitemap.xml'])
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('minify:css', function() {
@@ -113,12 +128,12 @@ gulp.task('sass:watch', function() {
 gulp.task('dev', function() {
   nodemon({
     script: 'app.js',
-    ext: 'js html',
+    ext: 'js html'
   });
   env({
     vars: {
-      NODE_ENV: 'development',
-    },
+      NODE_ENV: 'development'
+    }
   });
   gulp.watch('public/scss/**/*.scss', ['sass']);
 });
@@ -138,12 +153,12 @@ var relPath = path.join(__dirname, 'dist');
 gulp.task('routes', function() {
   nodemon({
     script: 'app.js',
-    ext: 'js html',
+    ext: 'js html'
   });
   env({
     vars: {
-      NODE_ENV: 'development',
-    },
+      NODE_ENV: 'development'
+    }
   });
   var routes = require('./staticRoutes');
   setTimeout(function() {
@@ -197,6 +212,7 @@ gulp.task('gather', function() {
     gulp.start('copy:documents');
     gulp.start('minify:html');
     gulp.start('minify:core-js');
+    gulp.start('copy:root-files');
   }, 1000);
 });
 
@@ -210,6 +226,7 @@ var pushS3Env = function(s3env) {
 gulp.task('pushs3', function() {
   if (argv.env && argv.env == 'production') {
     console.log('pushing to production s3');
+    pushS3Env(backupProduction);
     pushS3Env(s3Prod);
     pushS3Env(clearProduction);
   } else if (argv.env && argv.env == 'staging') {

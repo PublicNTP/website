@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>PublicNTP’s Dizzying Terminology - Blog | PublicNTP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="PublicNTP provides unrestricted access to no-cost, highly-accurate time sources for the public good.">
+  <meta name="keywords" content="Network, Time, Server, NTP, Network Time Server, public, publicntp, stratum, stratum 1, stratum 2, ntp.org, deployment, network time foundation, ntf,  reference, ntp reference implementation, unrestricted access, no-cost, highly-accurate, time sources, foundation, continent, global, wordwide, learn, connect, follow">
+  <meta name="robots" content="index, follow">
+  <meta name="referrer" content="always">
+  <meta name="web_author" content="Dan Noland, Terry Ott, Scott Waddell, Brad Woodfin">
+  <meta name="language" content="English">
+  <meta property="og:title" content="PublicNTP">
+  <meta property="og:site_name" content="PublicNTP">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="PublicNTP provides unrestricted access to no-cost, highly-accurate time sources for the public good.">
+  <meta property="og:image" content="https://publicntp.org/images/publicNTPLogo.png">
+  <meta property="og:image:secure_url" content="https://publicntp.org/images/publicNTPLogo.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="882">
+  <meta property="og:image:height" content="262">
+  <meta property="og:image:alt" content="PublicNTP">
+  <meta property="og:url" content="https://publicntp.org/">
+  <meta property="og:type" content="website">
+  <meta name="msapplication-config" content="../../images/browserconfig.xml">
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PLGMHRG');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="shortcut icon" type="image/png" href="../../images/favicon.png">
+  <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="150x150" href="../../images/mstile-150x150.png">
+  <link rel="manifest" href="../../images/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../images/android-chrome-512x512.png">
+  <link rel="mask-icon" href="../../images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="../../css/base.css">
+  <script src="../../js/jquery-2.1.4.min.js"></script>
+  <link rel="canonical" href="https://publicntp.org/">
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLGMHRG" height="0" width="0" class="hide"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="wrap">
+    <div class="main">
+      <div class="header__mobile-wrap">
+        <img class="header__mobile-x" id="mobile-close" src="../../images/x-light.svg" alt="Close">
+        <a href="../../people.html" class="header__item-mobile">People</a>
+        <a href="../../blog.html" class="header__item-mobile">Blog</a>
+        <a href="../../history.html" class="header__item-mobile">History</a>
+        <a href="../../governance.html" class="header__item-mobile">Governance</a>
+        <a href="../../learn.html" class="header__item-mobile header__connect">Learn</a>
+        <div class="node-clear"></div>
+        <a href="../../connect.html" class="header__item-mobile header__connect">Connect</a>
+        <div class="node-clear"></div>
+        <a href="../../donate.html" class="header__item-mobile header__connect">Donate</a>
+        <div class="node-clear"></div>
+      </div>
+      <header class="header">
+        <a href="../../">
+          <div class="logo__wrap">
+            <div class="logo">
+              <div class="logo__inner">
+                <div class="logo__center">
+                  <div class="logo__minute logo__rotate">
+                    <div class="logo__minute-ball"></div>
+                  </div>
+                  <div class="logo__hour logo__rotate">
+                    <div class="logo__hour-orb">
+                      <div class="logo__hour-ball"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3 class="logo__title">PublicNTP</h3>
+          </div>
+        </a>
+
+        <div class="flex__wrapper">
+          <div style="display: flex;justify-content: flex-end;">
+            <a href="../../donate.html" class="header__item header__connect" tabindex="0">Donate</a>
+            <a href="../../connect.html" class="header__item header__connect" tabindex="0">Connect</a>
+            <a href="../../learn.html" class="header__item header__connect" tabindex="0">Learn</a>
+          </div>
+          <div class="header__wrapper">
+            <a href="../../blog.html" class="header__link">Blog</a>
+            <a href="../../people.html" class="header__link">People</a>
+            <a href="../../history.html" class="header__link">History</a>
+            <a href="../../governance.html" class="header__link">Governance</a>
+          </div>
+        </div>
+
+        <img class="header__mobile-icon" id="mobile-icon" src="../../images/list-menu.svg" alt="Menu">
+
+      </header>
+      <div class="home__section">
+	<a href="../../blog.html" class="blog-detail__back">
+		Back
+		<img class="blog-detail__back-icon" src="../../images/back.svg" alt="Back Arrow">
+	</a>
+</div>
+<div class="home__section">
+	<h1 class="home__title">PublicNTP’s Dizzying Terminology</h1>
+</div>
+<div class="home__section">
+	<p class="blog-detail__time blog-detail__time-main">
+		<b>August</b> 21, 2017
+	</p>
+	<div class="blog-detail__side">
+			<img class="blog-detail__image" src="../../images/terminology.jpg">
+			<div class="node-clear"></div>
+	</div>
+	<div class="blog-detail__swiper swiper-container">
+		<div class="swiper-wrapper">
+			<img class="blog-detail__simage swiper-slide" src="../../images/terminology.jpg">
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<div class="blog-detail__content">
+		<p class="blog-detail__time blog-detail__time-mobile">
+			<b>August</b> 21, 2017
+		</p>
+		<div class="blog-detail__article">
+			<h4>Terry D. Ott</h4><p>The first steps to becoming tax-exempt required we know a series of new terms that were interpreted specifically by the IRS. It was important to make sure we knew the specifics of these terms because, at first glance, some of them seem similar enough to be interchangeable. As the IRS doesn’t play in gray areas, we couldn’t either.</p><h4>Employer Identification Number (EIN)</h4><p>This one’s pretty straightforward. Any business, from individual startups to large corporations, needs one of these. It’s used to identify the company for tax-purposes. For our tax-exempt company, it would also be given to our donors for their own records when claiming the charity on their taxes. It takes about five minutes to apply for online.</p><h4>Non-stock Corporation</h4><p>A non-stock corporation is a corporation which does not issue any shares of stock. What that meant for our organization purposes was that <strong>non-stock corporations have no owners.</strong></p><p>A nonprofit is, by definition, a non-stock corporation.</p><h4>Non-profit/Not-for-profit Corporation</h4><p>There’s no gray area between these two terms; they are synonymous.</p><p>Nonprofit corporations <span style='text-decoration:underline;'>cannot distribute dividends or income to their directors, officers, or individual members</span>, <span style='font-style:italic;'>except</span> as compensation for services rendered, or upon dissolution of the corporation.</p><p>However, this doesn’t mean nonprofits can’t be profitable—<strong>they absolutely can be, and often are!</strong> The critical difference is all profits must be reinvested into the company’s operations. Individuals cannot financially benefit from profits generated by a nonprofit, only the company itself is permitted to do so.</p><h4>Nonprofit versus Tax-exempt</h4><p>All corporations exempt from paying taxes, either at the state or federal level, are non-profit corporations. <strong>However, not all nonprofit corporations are tax-exempt.</strong></p><h4>Tax-exempt Status</h4><p>Nonprofits, depending on the purpose for which they are organized, may apply to the Internal Revenue Service and/or the state in which they incorporated for exemption from some taxes.</p><p>Our target exemption status would shield PublicNTP from having to pay income tax, as well as make all donations to the corporation a legal income tax deduction for donors. </p><p>Most charities calling themselves “tax-exempt” or “tax-deductible” are referring to this type of exemption status, meaning the full dollar amount of all donations can legally be deducted from donors’ income tax filings. Both individuals and for-profit corporations can legally donate to a tax-exempt corporation and benefit from the resulting income tax deductions.</p><h4>Registered Agent</h4><p>The registered agent is the point of contact for the corporation when being served when the company is being served with legal papers (such as a lawsuit).</p><p>There was a bit of learning to do but once we had this vocabulary list under our belt we could move on to the stickier subjects of organizing ourselves both structurally and financially.</p>
+		</div>
+	</div>
+</div>
+
+<div class="home__section"></div>
+<div class="home__section"></div>
+
+<script src="../../js/swiper.min.js"></script>
+<link rel="stylesheet" href="../../css/swiper.min.css">
+<script src="../../js/swipe.js" async></script>
+
+    </div>
+    <footer class="footer">
+      <div class="footer__wrap">
+        <div class="footer__sites">
+          <h3 class="footer__other-title">
+            Other Great NTP Sites
+          </h3>
+          <a href="http://www.pool.ntp.org/en/" target="_blank" class="footer__other-link" tabindex="0">NTP Pool</a>
+          <a href="http://www.ntp.org/" target="_blank" class="footer__other-link" tabindex="0">NTP</a>
+          <a href="https://networktimefoundation.org" target="_blank" class="footer__other-link" tabindex="0">Network Time Foundation</a>
+        </div>
+        <div class="footer__sites">
+          <h3 class="footer__other-title">
+            Contact Info
+          </h3>
+          <span class="footer__other-link">PublicNTP, Inc.</span>
+          <span class="footer__other-link">1405 S Fern St #90372</span>
+          <span class="footer__other-link">Arlington, VA 22202-2810</span>
+          <span class="footer__other-link">+1-703-651-2996</span>
+        </div>
+        <div class="footer__right">
+          <h3 class="footer__title">
+            Learn how you can connect and help, or follow us on LinkedIn.
+          </h3>
+          <div style="display: flex;">
+            <a href="../../connect.html" class="footer__connect" tabindex="0">Connect</a>
+            <a href="https://linkedin.com/company/publicntp/" target="_blank" tabindex="0">
+              <img class="footer__linkedin" src="../../images/linkedin.png" alt="LinkedIn">
+            </a>
+          </div>
+          <div>
+            <a href="../../terms.html">
+              <p class="footer__right-link" tabindex="0">Terms & Conditions</p>
+            </a>
+            <p class="footer__right-link">Tax ID: 82-2301559</p>
+            <p class="footer__right-link">Copyright
+              <script>document.write(new Date().getFullYear())</script> PublicNTP, Inc.</p>
+          </div>
+        </div>
+        <div class="node-clear"></div>
+      </div>
+    </footer>
+  </div>
+  <script src="../../js/main.js"></script>
+</body>
+
+</html>

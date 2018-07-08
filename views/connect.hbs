@@ -8,7 +8,8 @@
 <div class="home__section">
 	<div class="connect__form-section">
 		<iframe name="hidden_iframe" id="hidden_iframe" class="hide"></iframe>
-		<form class="connect__form" id="connect-form" method="post" action="https://script.google.com/macros/s/AKfycbzRPH2Lr5pfra_y0wFGyNnJBu1t6-HjMcx3ftI8XDNSYo9T5Uft/exec" target="hidden_iframe">
+		<form class="connect__form" id="connect-form" method="post" action="https://script.google.com/macros/s/AKfycbzRPH2Lr5pfra_y0wFGyNnJBu1t6-HjMcx3ftI8XDNSYo9T5Uft/exec"
+		 target="hidden_iframe">
 			<div class="connect__input-wrap">
 				<input name="Name" class="connect__input" id="connect-name" tabindex=0>
 				<label class="connect__label">Name</label>
@@ -20,7 +21,20 @@
 			<p class="connect__submit" id="connect-submit" tabindex=0>Sign Up</p>
 			<p class="connect__success hide"></p>
 		</form>
+
+		{{!-- Contact Section --}}
+		<div class="donate__contact">
+			<h3 class="donate__contact--heading">Contact Us</h3>
+			<p>PublicNTP, Inc.</p>
+			<p>1405 S Fern St #90372</p>
+			<p>Arlington, VA 22202-2810</p>
+			<p>+1-703-651-2996</p>
+
+			<h3 class="donate__contact--heading">Tax ID</h3>
+			<p>82-2301559</p>
+		</div>
 	</div>
+
 	<div class="connect__section">
 		<h3 class="connect__title">
 			Synchronizing Linux/BSD systems with PublicNTP time servers
@@ -29,7 +43,8 @@
 			1. Install NTP server software
 		</h3>
 		<p class="connect__paragraph">
-			This step varies based on what OS/distribution you may be using. Full details are beyond the scope of this page, but here’s a starting point for some of the more common systems:
+			This step varies based on what OS/distribution you may be using. Full details are beyond the scope of this page, but here’s
+			a starting point for some of the more common systems:
 		</p>
 		<p class="connect__server">
 			Ubuntu 16.04 LTS
@@ -57,10 +72,12 @@
 			2. Find best/closest PublicNTP servers
 		</h3>
 		<p class="connect__paragraph">
-			Consulting the <a href="/">map of servers</a>, identify the PublicNTP server deployment that’s closest to the client system geographically.
+			Consulting the
+			<a href="/">map of servers</a>, identify the PublicNTP server deployment that’s closest to the client system geographically.
 		</p>
 		<p class="connect__paragraph">
-			To be more accurate, the UNIX traceroute utility to confirm which site has the least number of network “hops” and lowest network latency from your location.
+			To be more accurate, the UNIX traceroute utility to confirm which site has the least number of network “hops” and lowest
+			network latency from your location.
 		</p>
 		<p class="connect__paragraph">
 			Below are two example outputs from traceroutes originating in Chicago, Illinois, USA.
@@ -71,16 +88,20 @@
 		<p class="connect__command">
 			$ traceroute stratum2.iad01.publicntp.org
 			<br>traceroute to stratum2.iad01.publicntp.org (52.206.70.54), 30 hops max, 60 byte packets
-			<br> 5  equinix01-chi2.amazon.com (206.223.119.98)  0.469 ms  0.577 ms  0.548 ms
-			<br> 6  52.95.62.100 (52.95.62.100)  3.612 ms  3.379 ms  3.327 ms
-			<br> 7  52.95.62.45 (52.95.62.45)  0.753 ms 52.95.62.31 (52.95.62.31)  0.724 ms 52.95.62.61 (52.95.62.61)  0.622 ms
-			<br> 8  54.239.43.209 (54.239.43.209)  18.708 ms 54.239.43.211 (54.239.43.211)  18.756 ms 54.239.43.209 (54.239.43.209)  18.733 ms
-			<br> 9  54.239.42.59 (54.239.42.59)  18.740 ms 54.239.43.221 (54.239.43.221)  19.363 ms *
-			<br>10  52.95.3.152 (52.95.3.152)  19.401 ms * 54.239.42.69 (54.239.42.69)  20.770 ms
-			<br>11  54.239.110.147 (54.239.110.147)  45.775 ms 54.239.110.171 (54.239.110.171)  96.660 ms 54.239.110.187 (54.239.110.187)  66.894 ms
-			<br>12  54.239.109.245 (54.239.109.245)  19.492 ms 54.239.111.115 (54.239.111.115)  20.147 ms 54.239.43.158 (54.239.43.158)  20.877 ms
-			<br>13  205.251.244.216 (205.251.244.216)  19.427 ms 205.251.244.210 (205.251.244.210)  19.374 ms 205.251.244.216 (205.251.244.216)  19.306 ms
-			<br>14  * * *
+			<br> 5 equinix01-chi2.amazon.com (206.223.119.98) 0.469 ms 0.577 ms 0.548 ms
+			<br> 6 52.95.62.100 (52.95.62.100) 3.612 ms 3.379 ms 3.327 ms
+			<br> 7 52.95.62.45 (52.95.62.45) 0.753 ms 52.95.62.31 (52.95.62.31) 0.724 ms 52.95.62.61 (52.95.62.61) 0.622 ms
+			<br> 8 54.239.43.209 (54.239.43.209) 18.708 ms 54.239.43.211 (54.239.43.211) 18.756 ms 54.239.43.209 (54.239.43.209) 18.733
+			ms
+			<br> 9 54.239.42.59 (54.239.42.59) 18.740 ms 54.239.43.221 (54.239.43.221) 19.363 ms *
+			<br>10 52.95.3.152 (52.95.3.152) 19.401 ms * 54.239.42.69 (54.239.42.69) 20.770 ms
+			<br>11 54.239.110.147 (54.239.110.147) 45.775 ms 54.239.110.171 (54.239.110.171) 96.660 ms 54.239.110.187 (54.239.110.187)
+			66.894 ms
+			<br>12 54.239.109.245 (54.239.109.245) 19.492 ms 54.239.111.115 (54.239.111.115) 20.147 ms 54.239.43.158 (54.239.43.158) 20.877
+			ms
+			<br>13 205.251.244.216 (205.251.244.216) 19.427 ms 205.251.244.210 (205.251.244.210) 19.374 ms 205.251.244.216 (205.251.244.216)
+			19.306 ms
+			<br>14 * * *
 		</p>
 
 
@@ -90,24 +111,26 @@
 		<p class="connect__command">
 			$ traceroute stratum2.bom01.publicntp.org
 			<br>traceroute to stratum2.bom01.publicntp.org (52.66.76.135), 30 hops max, 60 byte packets
-			<br> 4  te0-0-1-1.rcr12.b002281-5.ord03.atlas.cogentco.com (38.104.103.237)  1.235 ms  1.492 ms  1.566 ms
-			<br> 5  be2461.ccr41.ord03.atlas.cogentco.com (154.54.29.237)  2.245 ms  1.002 ms  2.102 ms
-			<br> 6  btn.ord03.atlas.cogentco.com (154.54.13.254)  0.860 ms  0.996 ms  0.969 ms
-			<br> 7  TenGE0-1-0-6.br02.sin03.pccwbtn.net (63.218.248.118)  222.310 ms TenGE0-1-0-17.br02.sin03.pccwbtn.net (63.218.248.234)  225.022 ms TenGE0-0-0-1.br02.sin03.pccwbtn.net (63.218.248.70)  237.199 ms
-			<br> 8  TenGE0-1-0-23.br02.sin03.pccwbtn.net (63.218.248.230)  222.085 ms TenGE0-0-0-3.br02.sin03.pccwbtn.net (63.218.248.78)  245.578 ms TenGE0-0-0-11.br02.sin03.pccwbtn.net (63.218.248.122)  219.868 ms
-			<br> 9  63-218-213-206.static.pccwglobal.net (63.218.213.206)  236.023 ms  235.952 ms  244.604 ms
-			<br>10  52.93.9.144 (52.93.9.144)  237.116 ms 52.93.9.122 (52.93.9.122)  238.968 ms 52.93.9.56 (52.93.9.56)  249.836 ms
-			<br>11  52.93.9.157 (52.93.9.157)  238.631 ms 52.93.9.133 (52.93.9.133)  233.322 ms 52.93.9.113 (52.93.9.113)  246.186 ms
-			<br>12  52.93.10.120 (52.93.10.120)  235.264 ms  240.839 ms 52.93.10.116 (52.93.10.116)  247.237 ms
-			<br>13  54.239.44.64 (54.239.44.64)  253.196 ms 54.239.44.5 (54.239.44.5)  238.891 ms 54.239.44.64 (54.239.44.64)  240.044 ms
-			<br>14  52.93.19.159 (52.93.19.159)  242.164 ms 52.95.67.14 (52.95.67.14)  253.358 ms 52.95.67.36 (52.95.67.36)  242.211 ms
-			<br>15  52.95.67.71 (52.95.67.71)  240.354 ms 52.95.67.49 (52.95.67.49)  253.576 ms 54.239.44.62 (54.239.44.62)  238.309 ms
-			<br>16  52.95.66.184 (52.95.66.184)  249.127 ms 52.95.66.96 (52.95.66.96)  240.691 ms 52.95.66.184 (52.95.66.184)  249.043 ms
-			<br>17  52.95.67.65 (52.95.67.65)  236.027 ms 52.95.67.21 (52.95.67.21)  238.863 ms 52.95.66.181 (52.95.66.181)  236.032 ms
-			<br>18  52.95.66.180 (52.95.66.180)  235.396 ms 52.95.66.198 (52.95.66.198)  243.373 ms 52.95.66.154 (52.95.66.154)  246.503 ms
-			<br>19  52.95.66.175 (52.95.66.175)  231.917 ms  231.707 ms *
-			<br>20  * 52.95.67.212 (52.95.67.212)  230.906 ms *
-			<br>21  * * *
+			<br> 4 te0-0-1-1.rcr12.b002281-5.ord03.atlas.cogentco.com (38.104.103.237) 1.235 ms 1.492 ms 1.566 ms
+			<br> 5 be2461.ccr41.ord03.atlas.cogentco.com (154.54.29.237) 2.245 ms 1.002 ms 2.102 ms
+			<br> 6 btn.ord03.atlas.cogentco.com (154.54.13.254) 0.860 ms 0.996 ms 0.969 ms
+			<br> 7 TenGE0-1-0-6.br02.sin03.pccwbtn.net (63.218.248.118) 222.310 ms TenGE0-1-0-17.br02.sin03.pccwbtn.net (63.218.248.234)
+			225.022 ms TenGE0-0-0-1.br02.sin03.pccwbtn.net (63.218.248.70) 237.199 ms
+			<br> 8 TenGE0-1-0-23.br02.sin03.pccwbtn.net (63.218.248.230) 222.085 ms TenGE0-0-0-3.br02.sin03.pccwbtn.net (63.218.248.78)
+			245.578 ms TenGE0-0-0-11.br02.sin03.pccwbtn.net (63.218.248.122) 219.868 ms
+			<br> 9 63-218-213-206.static.pccwglobal.net (63.218.213.206) 236.023 ms 235.952 ms 244.604 ms
+			<br>10 52.93.9.144 (52.93.9.144) 237.116 ms 52.93.9.122 (52.93.9.122) 238.968 ms 52.93.9.56 (52.93.9.56) 249.836 ms
+			<br>11 52.93.9.157 (52.93.9.157) 238.631 ms 52.93.9.133 (52.93.9.133) 233.322 ms 52.93.9.113 (52.93.9.113) 246.186 ms
+			<br>12 52.93.10.120 (52.93.10.120) 235.264 ms 240.839 ms 52.93.10.116 (52.93.10.116) 247.237 ms
+			<br>13 54.239.44.64 (54.239.44.64) 253.196 ms 54.239.44.5 (54.239.44.5) 238.891 ms 54.239.44.64 (54.239.44.64) 240.044 ms
+			<br>14 52.93.19.159 (52.93.19.159) 242.164 ms 52.95.67.14 (52.95.67.14) 253.358 ms 52.95.67.36 (52.95.67.36) 242.211 ms
+			<br>15 52.95.67.71 (52.95.67.71) 240.354 ms 52.95.67.49 (52.95.67.49) 253.576 ms 54.239.44.62 (54.239.44.62) 238.309 ms
+			<br>16 52.95.66.184 (52.95.66.184) 249.127 ms 52.95.66.96 (52.95.66.96) 240.691 ms 52.95.66.184 (52.95.66.184) 249.043 ms
+			<br>17 52.95.67.65 (52.95.67.65) 236.027 ms 52.95.67.21 (52.95.67.21) 238.863 ms 52.95.66.181 (52.95.66.181) 236.032 ms
+			<br>18 52.95.66.180 (52.95.66.180) 235.396 ms 52.95.66.198 (52.95.66.198) 243.373 ms 52.95.66.154 (52.95.66.154) 246.503 ms
+			<br>19 52.95.66.175 (52.95.66.175) 231.917 ms 231.707 ms *
+			<br>20 * 52.95.67.212 (52.95.67.212) 230.906 ms *
+			<br>21 * * *
 		</p>
 
 		<h3 class="connect__title">
@@ -115,7 +138,8 @@
 		</h3>
 
 		<p class="connect__paragraph">
-			Edit the <span class="">/etc/ntp.conf</span> to contain the following:
+			Edit the
+			<span class="">/etc/ntp.conf</span> to contain the following:
 		</p>
 		<p class="connect__command">
 			# File to store local drift data
@@ -146,7 +170,8 @@
 		</h3>
 
 		<p class="connect__paragraph">
-			Doing this while the system is running depends on operating system/distribution as well, but the easiest way to have the service read the new configuration is to reboot the operating system.
+			Doing this while the system is running depends on operating system/distribution as well, but the easiest way to have the
+			service read the new configuration is to reboot the operating system.
 		</p>
 	</div>
 </div>
