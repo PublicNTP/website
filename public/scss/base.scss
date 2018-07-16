@@ -1,6 +1,8 @@
-@import "_variables.scss";
+@import '_variables.scss';
 
-@import "_helpers.scss";
+@import '_fonts';
+
+@import '_helpers.scss';
 
 @import 'layout/main.scss';
 
@@ -19,3 +21,8 @@
 @import 'layout/report.scss';
 @import 'layout/time.scss';
 @import 'layout/video.scss';
+@import 'layout/learn.scss';
+@import 'layout/terms';
+@import 'layout/governance';
+@import 'layout/select';
+@import 'layout/logo-infinite';

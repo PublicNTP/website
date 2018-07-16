@@ -1,123 +1,134 @@
 .footer {
-	width: 100%;
-	float: left;
-	background: color(footer);
+  margin-top: 160px;
+  width: 100%;
+  float: left;
+  background: color(footer);
 
-	&__connect {
-		border: 1px solid color(textColor);
-		border-radius: 2px;
-		margin-right: 10px;
-		display: block;
-		float: right;
-		font-size: 12px;
-		font-weight: 600;
-		padding: 8px 15px;
-		text-transform: uppercase;
-		text-decoration: none;
-		color: color(textColor);
-		transition: .3s;
+  &__connect {
+    height: 32px;
+    border: 1px solid color(textColor);
+    border-radius: 2px;
+    margin-right: 10px;
+    display: block;
+    float: right;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: color(textColor);
+    transition: 0.3s;
 
-		&:hover {
-			background: color(textColor);
-			color: white;
-		}
+    &:hover {
+      background: color(textColor);
+      color: white;
+    }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			float: left;
-			margin-left: 10px;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet)) {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 
-	&__linkedin {
-		width: 32px;
-		height: auto;
-		display: block;
-		float: right;
-		margin-bottom: 30px;
+  &__linkedin {
+    width: 32px;
+    height: auto;
+    display: block;
+    float: right;
+    margin-bottom: 30px;
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			float: left;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet)) {
+      float: left;
+    }
+  }
 
-	&__other-link {
-		width: 100%;
-		float: left;
-		margin-bottom: 10px;
-		text-decoration: none;
-		font-size: 10px;
-		color: color(textColor);
-	}
+  &__other-link {
+    // width: 100%;
+    display: inline-table;
 
-	&__other-title {
-		width: 100%;
-		float: left;
-		margin-bottom: 30px;
-		color: color(title);
-		font-size: 16px;
-	}
+    // float: left;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    color: color(textColor);
+  }
 
-	&__right {
-		width: calc(100% - 200px);
-		float: right;
+  &__other-title {
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+    color: color(title);
+    font-size: 14px;
+  }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			width: 100%;
-			margin-top: 10px;
-		}
-	}
+  &__right {
+    // width: calc(100% - 200px);
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
-	&__right-link {
-		width: 100%;
-		float: left;
-		color: color(textColor);
-		display: block;
-		text-align: right;
-		margin-bottom: 10px;
-		font-size: 10px;
-		text-decoration: none;
+    @media screen and (max-width: breakpoint(tablet)) {
+      width: 100%;
+      margin-top: 10px;
+      align-items: flex-start;
+    }
+  }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			text-align: left;
-		}
-	}
+  &__right-link {
+    // width: 100%;
+    // float: left;
+    color: color(textColor);
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-decoration: none;
 
-	&__sites {
-		width: 200px;
-		float: left;
+    @media screen and (max-width: breakpoint(tablet)) {
+      text-align: left;
+    }
+  }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			width: 100%;
-			text-align: left
-		}
-	}
+  &__sites {
+    // width: 200px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    margin-right: 80px;
 
-	&__title {
-		width: 100%;
-		line-height: 1.5;
-		float: left;
-		margin-bottom: 25px;
-		color: color(title);
-		font-size: 16px;
-		text-align: right;
+    @media screen and (max-width: breakpoint(tablet)) {
+      width: 100%;
+      text-align: left;
+    }
+  }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			text-align: left
-		}
-	}
+  &__title {
+    width: 100%;
+    line-height: 1.5;
+    float: left;
+    margin-bottom: 25px;
+    color: color(title);
+    font-size: 14px;
+    text-align: right;
 
-	&__wrap {
-		width: 100%;
-		max-width: 1440px;
-		margin: 0 auto;
-		padding: 33px 56px;
+    @media screen and (max-width: breakpoint(tablet)) {
+      text-align: left;
+    }
+  }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			padding: 33px 0px;
-		}
-	}
+  &__wrap {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 60px; //33px 56px;
 
-	@media screen and (max-width: breakpoint(tablet)) {
-		padding: 40px 20px;
-	}
+    @media screen and (max-width: breakpoint(tablet)) {
+      padding: 33px 0px;
+    }
+  }
+
+  @media screen and (max-width: breakpoint(tablet)) {
+    padding: 40px 20px;
+  }
 }

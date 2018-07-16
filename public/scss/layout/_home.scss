@@ -1,362 +1,399 @@
 .home {
-	width: 100%;
-	float: left;
-	padding: 150px 0;
+  width: 100%;
+  float: left;
+  padding: 350px 0; //150px 0;
 
-	&__blog {
-		width: 100%;
-		float: left;
-		margin-top: 20px;
+  &__blog {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
 
-		&--wrap {
-			width: 100%;
-			float: left;
+    &--wrap {
+      width: 100%;
+      float: left;
 
-			@media screen and (max-width: breakpoint(tablet)) {
-				padding: 20px 20px 40px 20px;
-			}
-		}
-	}
+      @media screen and (max-width: breakpoint(tablet)) {
+        padding: 20px 20px 40px 20px;
+      }
+    }
+  }
 
-	&__blog-image__wrap {
-		margin-top: 70px;
-		width: 480px;
-		height: 480px;
-		float: left;
+  &__blog-image__wrap {
+    margin-top: 75px !important;
+    width: 480px;
+    height: 480px;
+    float: left;
 
-		@media screen and (max-width: breakpoint(tablet-lg)) {
-			width: 300px;
-			height: 300px;
-			margin-top: 30px;
-		}
+    @media screen and (max-width: breakpoint(tablet-lg)) {
+      width: 300px;
+      height: 300px;
+      margin-top: 30px;
+    }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			width: 100%;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet)) {
+      width: 100%;
+    }
+  }
 
-	&__blog-image {
-		width: 100%;
-		height: 100%;
-		float: left;
-		object-fit: cover;
-		display: block;
-	}
+  &__blog-image {
+    width: 100%;
+    height: 100%;
+    float: left;
+    object-fit: cover;
+    display: block;
+  }
 
-	&__blog-p {
-		width: 50%;
-		max-width: 410px;
-		font-size: 14px;
-		color: color(textColor);
-		line-height: 1.7;
-		float: left;
-		padding-left: 80px;
+  &__blog-p {
+    width: 50%;
+    max-width: 410px;
+    font-size: 14px;
+    color: color(textColor);
+    line-height: 1.7;
+    float: left;
+    padding-left: 80px;
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			margin-top: 20px;
-			padding-left: 0;
-			width: 100%;
-			max-width: none;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet)) {
+      margin-top: 20px;
+      padding-left: 0;
+      width: 100%;
+      max-width: none;
+    }
+  }
 
-	&__blog-title {
-		width: calc(100% - 480px);
-		color: color(footer);
-		font-size: 24px;
-		margin-bottom: 40px;
-		float: right;
-		padding-left: 80px;
+  &__blog-title {
+    width: calc(100% - 480px);
+    color: color(footer);
+    font-size: 24px;
+    margin-bottom: 40px;
+    float: right;
+    padding-left: 80px;
 
-		@media screen and (max-width: breakpoint(tablet-lg)) {
-			width: calc(100% - 300px);
-		}
+    @media screen and (max-width: breakpoint(tablet-lg)) {
+      width: calc(100% - 300px);
+    }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			width: 100%;
-			padding: 0;
-			text-align: right;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet)) {
+      width: 100%;
+      padding: 0;
+      text-align: right;
+    }
+  }
 
-	&__emph {
-		color: color(footer);
-	}
+  &__emph {
+    color: color(footer);
+  }
 
-	&__frame {
-		width: 100%;
-		float: left;
-		height: 650px;
-		border: none;
-	}
+  &__frame {
+    width: 100%;
+    float: left;
+    height: 650px;
+    border: none;
+  }
 
-	&__item {
-		color: color(footer);
-		float: left;
-		padding-bottom: 10px;
-		font-size: 13px;
-	}
+  &__item {
+    color: color(footer);
+    float: left;
+    padding-bottom: 10px;
+    font-size: 13px;
+  }
 
-	&__info {
-		float: left;
-		padding-bottom: 10px;
-		font-size: 13px;
-		color: color(textColor);
-		padding-right: 5px;
-	}
+  &__info {
+    float: left;
+    padding-bottom: 10px;
+    font-size: 13px;
+    color: color(textColor);
+    padding-right: 5px;
+  }
 
-	&__location {
-		width: 30px;
-		height: 30px;
-		border-radius: 15px;
-		position: absolute;
-		transition: .3s;
-		border: 1px solid rgba(0,0,0,0);
-		cursor: pointer;
+  &__location {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    position: absolute;
+    transition: 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
 
-		&.active {
-			animation: signal 1.5s infinite linear;
-		}
+    &.active {
+      animation: signal 1.5s infinite linear;
+    }
 
-		&.slow-active {
-			animation: signalSmall 1.5s infinite linear;
-		}
+    &.slow-active {
+      animation: signalSmall 2.5s infinite linear;
+    }
 
-		&--multiple {
-			left: -6px;
-			width: 50px;
-			height: 50px;
-			border-radius: 25px;
-			position: absolute;
-			top: -6px;
-			border: 1px solid rgba(0,0,0,0);
-			cursor: pointer;
+    &--multiple {
+      left: -6px;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      position: absolute;
+      top: -6px;
+      border: 1px solid rgba(0, 0, 0, 0);
+      cursor: pointer;
 
-			&.active {
-				animation: signalLarge 1.5s infinite linear;
-			}
-		}
+      &.active {
+        animation: signalLarge 1.5s infinite linear;
+      }
+    }
 
-		&--outer {
-			left: -6px;
-			position: absolute;
-			width: 40px;
-			border-radius: 20px;
-			height: 40px;
-			top: -6px;
-			border: 1px solid rgba(0,0,0,0);
-			cursor: pointer;
+    &--outer {
+      left: -6px;
+      position: absolute;
+      width: 40px;
+      border-radius: 20px;
+      height: 40px;
+      top: -6px;
+      border: 1px solid rgba(0, 0, 0, 0);
+      cursor: pointer;
+      z-index: -1;
 
-			&.active {
-				animation: signalMed 1.5s infinite linear;
-			}
-		}
-	}
+      &.active {
+        animation: signalLarge 2.5s infinite linear;
+        // animation: signalMed 1.5s infinite linear;
+      }
+    }
+  }
 
-	&__location-ball {
-		width: 8px;
-		height: 8px;
-		border-radius: 4px;
-		position: absolute;
-		left: calc(50% - 4px);
-		top: calc(50% - 4px);
-		background: color(footer);
-		transition: .3s;
-	}
+  &__location-ball {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    position: absolute;
+    left: calc(50% - 4px);
+    top: calc(50% - 4px);
+    background: color(inactiveDot);
+    transition: 0.3s;
 
-	&__section {
-		width: 100%;
-		float: left;
-		padding: 40px 56px;
+    &.active {
+      background: color(activeDot);
+    }
+  }
 
-		&--clear {
-			@media screen and (max-width: breakpoint(tablet)) {
-				padding: 40px 0 !important;
-			}
-		}
+  &__section {
+    width: 100%;
+    float: left;
+    padding: 40px 56px;
+    position: relative;
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			padding: 40px 20px;
-		}
-	}
+    &--clear {
+      @media screen and (max-width: breakpoint(tablet)) {
+        padding: 40px 0 !important;
+      }
+    }
 
-	&__sidebar {
-		width: 382px;
-		float: right;
+    @media screen and (max-width: breakpoint(tablet)) {
+      padding: 40px 20px;
+    }
+  }
 
-		@media screen and (max-width: breakpoint(tablet-lg)) {
-			width: 275px;
-		}
+  &__sidebar {
+    width: 382px;
+    float: right;
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			width: 100%;
-			margin-top: 150px;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet-lg)) {
+      width: 275px;
+    }
 
-	&__sidebar-title {
-		width: 100%;
-		float: left;
-		margin-bottom: 40px;
-		font-size: 112px;
+    @media screen and (max-width: breakpoint(tablet)) {
+      width: 100%;
+      margin-top: 150px;
+    }
+  }
 
-		@media screen and (max-width: breakpoint(tablet-lg)) {
-			font-size: 60px;
-		}
+  &__sidebar-title {
+    width: 100%;
+    float: left;
+    margin-bottom: 40px;
+    font-size: 112px;
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			font-size: 45px;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet-lg)) {
+      font-size: 60px;
+    }
 
-	&__sidebar-sub-title {
-		width: 100%;
-		float: left;
-		color: color(footer);
-		margin-bottom: 40px;
-		font-size: 24px;
-	}
+    @media screen and (max-width: breakpoint(tablet)) {
+      font-size: 45px;
+    }
+  }
 
-	&__sidebar-wrap {
-		width: 100%;
-		float: left;
-		display: none;
+  &__sidebar-sub-title {
+    width: 100%;
+    float: left;
+    color: color(footer);
+    margin-bottom: 40px;
+    font-size: 24px;
+  }
 
-		&.show {
-			display: block;
-		}
-	}
+  &__sidebar-wrap {
+    width: 100%;
+    float: left;
+    display: none;
 
-	&__signal {
-		width: 40px;
-		height: 40px;
-		position: absolute;
-		left: 0px;
-		top: 0px;
-		border-radius: 20px;
-		border: 1px solid color(textColor);
-		animation: signal 1.5s infinite linear;
-	}
+    &.show {
+      display: block;
+    }
+  }
 
-	&__signal-bar {
-		width: 2px;
-		height: 120px;
-		bottom: 0;
-		position: absolute;
-		left: calc(50% - 1px);
-		background: linear-gradient(black, white);
-	}
+  &__signal {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: 20px;
+    border: 1px solid color(textColor);
+    animation: signal 1.5s infinite linear;
+  }
 
-	&__signal-ball {
-		width: 15px;
-		height: 15px;
-		position: absolute;
-		left: calc(50% - 7.5px);
-		background: black;
-		border-radius: 7.5px;
-		top: 12.5px;
-	}
+  &__signal-bar {
+    width: 2px;
+    height: 200px; //120px;
+    bottom: 0;
+    position: absolute;
+    left: calc(50% - 1px);
+    background: linear-gradient(black, white);
+  }
 
-	&__signal-wrap {
-		width: 40px;
-		height: 140px;
-		position: absolute;
-		left: 30%;
-		top: -150px;
-	}
+  &__signal-ball {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: calc(50% - 7.5px);
+    background: black;
+    border-radius: 7.5px;
+    top: 12.5px;
+  }
 
-	&__signal-flip {
-		transform: rotate(180deg);
-		top: auto;
-		bottom: -150px;
-	}
+  &__signal-wrap {
+    width: 40px;
+    height: 220px; //140px;
+    position: absolute;
+    left: 30%;
+    top: -230px; //-150px;
+  }
 
-	&__spacer {
-		width: 100%;
-		float: left;
-		margin-bottom: 20px;
-	}
+  &__signal-flip {
+    transform: rotate(180deg);
+    top: auto;
+    bottom: -230px; //-150px;
+  }
 
-	&__sub-title {
-		width: 100%;
-		float: left;
-		color: color(textColor);
-		font-size: 16px;
-		line-height: 1.5;
-	}
+  &__spacer {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+  }
 
-	&__title {
-		width: 100%;
-		font-size: 112px;
-		margin-bottom: 20px;
-		float: left;
+  &__sub-title {
+    width: 100%;
+    float: left;
+    color: color(textColor);
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
-		&--right {
-			text-align: right;
-		}
+  &__title {
+    width: 100%;
+    font-size: 112px;
+    // font-size: 11.2vh;
+    margin-bottom: 20px;
+    float: left;
 
-		@media screen and (max-width: breakpoint(tablet-lg)) {
-			font-size: 60px;
-		}
+    &--right {
+      text-align: right;
+    }
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			font-size: 50px;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet-lg)) {
+      font-size: 60px;
+    }
 
-	&__world {
-		width: calc(100% - 510px);
-		float: left;
-		position: relative;
+    @media screen and (max-width: breakpoint(tablet)) {
+      font-size: 50px;
+    }
+  }
 
-		@media screen and (max-width: breakpoint(tablet-lg)) {
-			width: calc(100% - 315px);
-		}
+  &__world {
+    width: calc(100% - 510px);
+    float: left;
+    position: relative;
 
-		@media screen and (max-width: breakpoint(tablet)) {
-			width: 100%;
-			padding: 0;
-		}
-	}
+    @media screen and (max-width: breakpoint(tablet-lg)) {
+      width: calc(100% - 315px);
+    }
 
-	&__world-image {
-		width: 100%;
-		float: left;
-		height: auto;
-	}
+    @media screen and (max-width: breakpoint(tablet)) {
+      width: 100%;
+      padding: 0;
+    }
+  }
 
+  &__world-image {
+    width: 100%;
+    float: left;
+    height: auto;
+  }
 
-	@media screen and (max-width: breakpoint(tablet)) {
-		margin-bottom: 0px;
-		padding-bottom: 30px;
-	}
+  @media screen and (max-width: breakpoint(tablet)) {
+    margin-bottom: 0px;
+    padding-bottom: 30px;
+  }
 }
 
-
 @keyframes signal {
-	0% { border: 1px solid rgba(0,0,0,0); }
-	50% { border: 1px solid black; }
-	100% { border: 1px solid rgba(0,0,0,0); }
+  0% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  50% {
+    border: 1px solid color(activeDot);
+  }
+  100% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
 }
 
 @keyframes signalSmall {
-	0% { border: 1px solid rgba(0,0,0,0); }
-	30% { border: 1px solid rgba(0,0,0,0); }
-	50% { border: 1px solid black; }
-	70% { border: 1px solid rgba(0,0,0,0); }
-	100% { border: 1px solid rgba(0,0,0,0); }
+  0% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  // 50
+  30% {
+    border: 1px solid color(activeDot);
+  }
+  // 70
+  60% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  100% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
 }
 
 @keyframes signalMed {
-	0% { border: 1px solid rgba(0,0,0,0); }
-	40% { border: 1px solid rgba(0,0,0,0); }
-	60% { border: 1px solid black; }
-	90% { border: 1px solid rgba(0,0,0,0); }
+  0% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  40% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  60% {
+    border: 1px solid color(activeDot);
+  }
+  90% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
 }
 
 @keyframes signalLarge {
-	0% { border: 1px solid rgba(0,0,0,0); }
-	50% { border: 1px solid rgba(0,0,0,0); }
-	70% { border: 1px solid black; }
-	100% { border: 1px solid rgba(0,0,0,0); }
+  0% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  50% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  60% {
+    border: 1px solid color(activeDot);
+  }
+  100% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
 }

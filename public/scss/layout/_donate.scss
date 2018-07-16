@@ -1,0 +1,275 @@
+.donate {
+  width: 100%;
+  float: left;
+  max-width: 700px;
+  position: relative;
+
+  &__info {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    color: color(footer);
+    margin-bottom: 24px;
+    border-bottom: 1px solid transparent;
+    position: relative;
+    min-height: 61px;
+  }
+
+  &__half {
+    width: 50%;
+    float: left;
+    padding-right: 40px;
+
+    @media screen and (max-width: breakpoint(phone-lg)) {
+      width: 100%;
+      padding: none;
+    }
+  }
+
+  &__stripe {
+    width: 100% !important;
+    margin-bottom: 40px;
+  }
+
+  &__quarter {
+    width: 25%;
+    float: left;
+    padding-right: 40px;
+
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      padding-right: 40px;
+    }
+
+    &--small {
+      padding-right: 15px;
+
+      @media screen and (max-width: 900px) {
+        padding-right: 40px;
+      }
+    }
+  }
+
+  &__title {
+    width: 100%;
+    float: left;
+    // color: color(footer);
+    color: color(gray);
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    display: block;
+    padding: 6px 0px;
+    text-align: center;
+    border-radius: 2px;
+    color: color(textColor);
+    border: 1px solid color(textColor);
+    width: 100px;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:first-of-type {
+      margin-right: 15px;
+    }
+
+    &__wrapper {
+      display: flex;
+    }
+
+    &--active {
+      background-color: color(blue);
+      color: white;
+      border: 1px solid color(blue);
+    }
+
+    &--submit {
+      background-color: color(black);
+      color: white;
+      border: 1px solid color(black);
+      float: left;
+      width: 150px;
+      padding: 11px 10px;
+      font-size: 12px;
+    }
+  }
+
+  &__input {
+    display: none;
+    border: 0;
+    color: color(blue);
+    font-size: 20px;
+    width: 150px;
+    height: 34px;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    padding-left: 10px;
+  }
+
+  &__cash {
+    position: absolute;
+    font-size: 20px;
+    color: color(blue);
+    top: 6px;
+    left: 121.5px;
+  }
+
+  &__underline {
+    position: absolute;
+    background-color: color(textColor);
+    width: 144.94px;
+    height: 1px;
+    top: 29px;
+    left: 110px;
+  }
+
+  &__width {
+    width: 50%;
+    // max-width: 310px;
+
+    float: left;
+    padding-right: 40px;
+    margin-bottom: 24px;
+    // border-bottom: 1px solid color(textColor);
+
+    @media screen and (max-width: breakpoint(phone-lg)) {
+      width: 100%;
+      max-width: 594px; //550px;
+    }
+  }
+
+  &__country {
+    display: block;
+    border: 0;
+    margin-bottom: 16px;
+    // outline: 0;
+    border-bottom: 1px solid color(textColor);
+    width: 100%;
+    max-width: 310px;
+    color: color(textColor);
+    font-size: 13px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border-radius: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    @media screen and (max-width: breakpoint(phone-lg)) {
+      width: 100%;
+      max-width: inherit;
+    }
+
+    &--bar {
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: color(textColor);
+    }
+  }
+
+  &__error {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    color: red;
+    font-size: 12px;
+  }
+
+  &__contact {
+    float: left;
+    width: 100%;
+    margin-top: 70px;
+
+    &--heading {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    &--bold {
+      font-weight: bold;
+      margin-top: 25px;
+      display: inline-block;
+    }
+
+    &--heavy {
+      font-weight: bold;
+    }
+  }
+}
+
+#error-message {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+}
+
+#donation-processing {
+  position: absolute;
+  bottom: 9px;
+  left: 165px;
+}
+
+.relative {
+  position: relative;
+  float: left;
+}
+
+.arrow-bg {
+  background-image: url('../images/arrow-down.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 85% 10%;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.StripeElement {
+  color: color(mainText);
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  // border-radius: 4px;
+  border: 0;
+  border-bottom: 1px solid #9b9b9b;
+  // box-shadow: 0 1px 3px 0 #e6ebf1;
+  // -webkit-transition: box-shadow 150ms ease;
+  // transition: box-shadow 150ms ease;
+  // color:
+}
+
+.StripeElement--focus {
+  // box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+#card-errors {
+  margin-top: 15px;
+}

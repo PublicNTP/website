@@ -1,160 +1,159 @@
 .connect {
+  &__input {
+    width: 100%;
+    float: left;
+    color: color(mainText);
+    padding: 5px;
+    font-size: 13px;
+    border: none;
+    border-bottom: 1px solid color(textColor);
+    margin-bottom: 40px;
+    outline: none;
 
-	&__input {
-		width: 100%;
-		float: left;
-		color: color(mainText);
-		padding: 5px;
-		font-size: 13px;
-		border: none;
-		border-bottom: 1px solid color(textColor);
-		margin-bottom: 40px;
-		outline: none;
+    &-wrap {
+      position: relative;
+      width: 100%;
+      float: left;
+    }
+  }
 
+  &__command {
+    width: 100%;
+    float: left;
+    font-family: monospace;
+    margin-bottom: 30px;
+  }
 
-		&-wrap {
-			position: relative;
-			width: 100%;
-			float: left;
-		}
-	}
+  &__label {
+    position: absolute;
+    pointer-events: none;
+    font-size: 14px;
+    top: 5px;
+    left: 5px;
+    color: color(textColor);
+    transition: 0.3s;
 
-	&__command {
-		width: 100%;
-		float: left;
-		font-family: monospace;
-		margin-bottom: 30px;
-	}
+    &--focused {
+      font-size: 10px;
+      top: -10px;
+    }
+  }
 
-	&__label {
-		position: absolute;
-		pointer-events: none;
-		font-size: 14px;
-		top: 5px;
-		left: 5px;
-		color: color(textColor);
-		transition: .3s;
+  &__link {
+    text-decoration: none;
+    color: color(link);
+  }
 
-		&--focused {
-			font-size: 10px;
-			top: -10px;
-		}
-	}
+  &__paragraph {
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: color(footer);
+    line-height: 1.8;
+  }
 
-	&__link {
-		text-decoration: none;
-		color: color(link);
-	}
+  &__server {
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: color(footer);
+    line-height: 1.8;
+  }
 
+  &__form-section {
+    width: 40%;
+    float: left;
+    padding-right: 80px;
 
-	&__paragraph {
-		width: 100%;
-		float: left;
-		margin-bottom: 30px;
-		font-size: 16px;
-		color: color(footer);
-		line-height: 1.8;
-	}
+    @media screen and (max-width: breakpoint(tablet-lg)) {
+      width: 100% !important;
+      border: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+  }
 
-	&__server {
-		width: 100%;
-		float: left;
-		margin-bottom: 10px;
-		font-size: 16px;
-		color: color(footer);
-		line-height: 1.8;
-	}
+  &__section {
+    width: 60%;
+    border-left: 2px solid color(footer);
+    padding-left: 80px;
+    float: left;
+    padding-right: 0px;
 
-	&__form-section {
-		width: 40%;
-		float: left;
-		padding-right: 80px;
+    ul {
+      padding-left: 20px;
+      list-style: none;
+      margin-bottom: 20px;
+      width: 100%;
+      float: left;
 
-		@media screen and (max-width: breakpoint(tablet-lg)) {
-			width: 100% !important;
-			border: none;
-			padding: 0;
-			margin-bottom: 30px;
-		}
-	}
+      li {
+        font-weight: 400;
+        font-family: monospace;
+      }
+    }
 
-	&__section {
-		width: 60%;
-		border-left: 2px solid color(footer);
-		padding-left: 80px;
-		float: left;
-		padding-right: 0px;
+    @media screen and (max-width: breakpoint(tablet-lg)) {
+      width: 100% !important;
+      border: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+  }
 
-		ul {
-			padding-left: 20px;
-			list-style: none;
-			margin-bottom: 20px;
-			width: 100%;
-			float: left;
+  &__success {
+    float: left;
+    width: 100%;
+    color: color(footer);
+    margin-top: 10px;
+  }
 
-			li {
-				font-weight: 400;
-				font-family: monospace;
-			}
-		}
+  &__submit {
+    float: left;
+    border: 1px solid color(textColor);
+    color: color(textColor);
+    border-radius: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    font-size: 12px;
+    cursor: pointer;
+    width: 150px;
+    padding: 11px 10px;
+    text-align: center;
 
-		@media screen and (max-width: breakpoint(tablet-lg)) {
-			width: 100% !important;
-			border: none;
-			padding: 0;
-			margin-bottom: 30px;
-		}
-	}
+    &:hover {
+      color: white;
+      background: color(textColor);
+    }
+  }
 
-	&__success {
-		float: left;
-		width: 100%;
-		color: color(footer);
-		margin-top: 10px;
-	}
+  &__table {
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.8;
 
-	&__submit {
-		float: left;
-		padding: 8px 17px;
-		border: 1px solid color(textColor);
-		color: color(textColor);
-		border-radius: 2px;
-		text-transform: uppercase;
-		transition: .3s;
-		font-size: 12px;
-		cursor: pointer;
+    &--head {
+      border-bottom: 1px solid color(mainText);
+    }
+  }
 
-		&:hover {
-			color: white;
-			background: color(textColor);
-		}
-	}
+  &__title {
+    width: 100%;
+    float: left;
+    color: color(footer);
+    margin-bottom: 25px;
+    font-size: 28px;
+  }
 
-	&__table {
-		width: 100%;
-		float: left;
-		font-size: 14px;
-		margin-bottom: 20px;
-		line-height: 1.8;
-
-		&--head {
-			border-bottom: 1px solid color(mainText);
-		}
-	}
-
-	&__title {
-		width: 100%;
-		float: left;
-		color: color(footer);
-		margin-bottom: 25px;
-		font-size: 28px;
-	}
-
-	&__ul {
-		list-style: none;
-		margin-bottom: 30px;
-		color: color(footer);
-		line-height: 1.8;
-		font-size: 12px;
-	}
+  &__ul {
+    list-style: none;
+    margin-bottom: 30px;
+    color: color(footer);
+    line-height: 1.8;
+    font-size: 12px;
+  }
 }

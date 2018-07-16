@@ -662,6 +662,17 @@ clean-css@^3.3.3:
     commander "2.8.x"
     source-map "0.4.x"
 
+<<<<<<< HEAD
+cleave.js@^1.0.9:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cleave.js/-/cleave.js-1.1.1.tgz#a575ea4afe963b00589d1bac0909e1a4da98f7c3"
+
+cli-boxes@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
+
+=======
+>>>>>>> master
 cli-color@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/cli-color/-/cli-color-1.1.0.tgz#de188cdc4929d83b67aea04110fbed40fdbf6775"
@@ -2762,9 +2773,15 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
+<<<<<<< HEAD
+node-gyp@^3.3.1, node-gyp@^3.6.2, node-gyp@~3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.6.2.tgz#9bfbe54562286284838e750eac05295853fa1c60"
+=======
 node-gyp@^3.3.1:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.4.0.tgz#dda558393b3ecbbe24c9e6b8703c71194c63fa36"
+>>>>>>> master
   dependencies:
     fstream "^1.0.0"
     glob "^7.0.3"
