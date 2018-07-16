@@ -15,14 +15,21 @@
     "async": "^2.4.0",
     "babel-preset-node6": "^11.0.0",
     "babel-preset-stage-0": "^6.24.1",
-    "body-parser": "^1.18.2",
-    "cleave.js": "^1.0.9",
+    "body-parser": "^1.15.2",
     "compression": "^1.7.0",
     "cookie-session": "^2.0.0-beta.1",
+<<<<<<< HEAD
     "del": "^3.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.2",
     "gulp-autoprefixer": "^4.1.0",
+=======
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "express-session": "^1.15.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+>>>>>>> master
     "gulp-env": "^0.4.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-minify-html": "^1.0.6",
@@ -43,16 +50,24 @@
     "ping": "^0.2.2",
     "request": "^2.81.0",
     "request-promise": "^4.2.0",
+<<<<<<< HEAD
     "sequelize": "^4.34.0",
     "sequelize-cli": "^4.0.0",
     "start": "^5.1.0",
     "stripe": "^5.3.0",
     "yargs": "^11.0.0"
+=======
+    "sequelize": "^3.30.4",
+    "sequelize-cli": "^2.7.0",
+    "start": "^5.1.0"
+>>>>>>> master
   },
   "description": "yarn install npm start",
   "bugs": {
     "url": "https://github.com/PublicNTP/website/issues"
   },
   "homepage": "https://github.com/PublicNTP/website#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }

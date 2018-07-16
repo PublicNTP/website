@@ -64,15 +64,6 @@
 .extra-padding {
   padding: 20px; }
 
-.flex__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
 * {
   margin: 0;
   padding: 0;
@@ -881,6 +872,7 @@ strong {
     float: left;
     position: relative; }
 
+<<<<<<< HEAD
 .donate {
   width: 100%;
   float: left;
@@ -1083,6 +1075,8 @@ strong {
 #card-errors {
   margin-top: 15px; }
 
+=======
+>>>>>>> master
 .footer {
   margin-top: 160px;
   width: 100%;
@@ -1130,7 +1124,7 @@ strong {
     float: left;
     margin-bottom: 30px;
     color: #dbdbdb;
-    font-size: 14px; }
+    font-size: 16px; }
   .footer__right {
     float: right;
     display: -webkit-box;
@@ -1180,7 +1174,7 @@ strong {
     float: left;
     margin-bottom: 25px;
     color: #dbdbdb;
-    font-size: 14px;
+    font-size: 16px;
     text-align: right; }
     @media screen and (max-width: 767px) {
       .footer__title {
@@ -1203,18 +1197,18 @@ strong {
   padding: 33px 56px;
   position: relative; }
   .header__connect {
-    border: 1px solid #9b9b9b !important;
+    border: 1px solid #9b9b9b;
     border-radius: 2px;
-    margin-left: 20px;
-    width: 90px !important;
-    text-align: center !important; }
+    margin-left: 10px; }
     @media screen and (max-width: 767px) {
       .header__connect {
+        width: auto !important;
         padding: 8px 17px !important;
         margin-top: 20px; } }
     .header__connect:hover {
       background: #9b9b9b;
       color: white; }
+<<<<<<< HEAD
   .header__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1243,6 +1237,8 @@ strong {
     @media screen and (max-width: 767px) {
       .header__link {
         display: none; } }
+=======
+>>>>>>> master
   .header__item {
     margin-top: 7.5px;
     display: block;
@@ -1252,10 +1248,14 @@ strong {
     text-transform: uppercase;
     text-decoration: none;
     color: #9b9b9b;
+<<<<<<< HEAD
     -webkit-transition: .3s;
     transition: .3s;
     width: 100%;
     text-align: right; }
+=======
+    transition: .3s; }
+>>>>>>> master
     @media screen and (max-width: 767px) {
       .header__item {
         display: none; } }
@@ -1268,8 +1268,7 @@ strong {
     padding: 20px 15px;
     text-transform: uppercase;
     text-decoration: none;
-    color: white;
-    border-bottom: 1px solid transparent; }
+    color: white; }
     .header__item-mobile:hover {
       border-bottom: 1px solid white; }
   .header__logo {
@@ -1401,7 +1400,8 @@ strong {
     line-height: 2;
     font-size: 16px;
     color: #2a2a2a;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    padding-left: 40px; }
     .how__p b {
       font-weight: 600; }
     .how__p a {
@@ -1541,11 +1541,16 @@ strong {
     position: absolute;
     left: calc(50% - 4px);
     top: calc(50% - 4px);
+<<<<<<< HEAD
     background: rgba(56, 53, 53, 0.87);
     -webkit-transition: 0.3s;
     transition: 0.3s; }
     .home__location-ball.active {
       background: #65A1C7; }
+=======
+    background: #2a2a2a;
+    transition: .3s; }
+>>>>>>> master
   .home__section {
     width: 100%;
     float: left;
@@ -1674,7 +1679,7 @@ strong {
   0% {
     border: 1px solid transparent; }
   50% {
-    border: 1px solid #65A1C7; }
+    border: 1px solid black; }
   100% {
     border: 1px solid transparent; } }
 
@@ -1682,7 +1687,7 @@ strong {
   0% {
     border: 1px solid transparent; }
   50% {
-    border: 1px solid #65A1C7; }
+    border: 1px solid black; }
   100% {
     border: 1px solid transparent; } }
 
@@ -1690,8 +1695,15 @@ strong {
   0% {
     border: 1px solid transparent; }
   30% {
+<<<<<<< HEAD
     border: 1px solid #65A1C7; }
   60% {
+=======
+    border: 1px solid transparent; }
+  50% {
+    border: 1px solid black; }
+  70% {
+>>>>>>> master
     border: 1px solid transparent; }
   100% {
     border: 1px solid transparent; } }
@@ -1700,8 +1712,15 @@ strong {
   0% {
     border: 1px solid transparent; }
   30% {
+<<<<<<< HEAD
     border: 1px solid #65A1C7; }
   60% {
+=======
+    border: 1px solid transparent; }
+  50% {
+    border: 1px solid black; }
+  70% {
+>>>>>>> master
     border: 1px solid transparent; }
   100% {
     border: 1px solid transparent; } }
@@ -1712,7 +1731,7 @@ strong {
   40% {
     border: 1px solid transparent; }
   60% {
-    border: 1px solid #65A1C7; }
+    border: 1px solid black; }
   90% {
     border: 1px solid transparent; } }
 
@@ -1722,7 +1741,7 @@ strong {
   40% {
     border: 1px solid transparent; }
   60% {
-    border: 1px solid #65A1C7; }
+    border: 1px solid black; }
   90% {
     border: 1px solid transparent; } }
 
@@ -1731,8 +1750,13 @@ strong {
     border: 1px solid transparent; }
   50% {
     border: 1px solid transparent; }
+<<<<<<< HEAD
   60% {
     border: 1px solid #65A1C7; }
+=======
+  70% {
+    border: 1px solid black; }
+>>>>>>> master
   100% {
     border: 1px solid transparent; } }
 
@@ -1741,8 +1765,13 @@ strong {
     border: 1px solid transparent; }
   50% {
     border: 1px solid transparent; }
+<<<<<<< HEAD
   60% {
     border: 1px solid #65A1C7; }
+=======
+  70% {
+    border: 1px solid black; }
+>>>>>>> master
   100% {
     border: 1px solid transparent; } }
 
@@ -2053,6 +2082,7 @@ strong {
     font-weight: 600;
     margin-bottom: 20px;
     color: #2a2a2a; }
+<<<<<<< HEAD
 
 .learn {
   width: 100%;
@@ -2351,3 +2381,5 @@ strong {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+=======
+>>>>>>> master
