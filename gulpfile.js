@@ -17,8 +17,10 @@ var autoprefixer = require('gulp-autoprefixer');
 
 var uglify = require('gulp-uglify');
 var stripDebug = require('gulp-strip-debug');
-var minifyHTML = require('gulp-minify-html');
-var minifyCSS = require('gulp-minify-css');
+var minifyHTML = require('gulp-htmlmin');
+// var minifyHTML = require('gulp-minify-html');
+var minifyCSS = require('gulp-clean-css');
+// var minifyCSS = require('gulp-minify-css');
 var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
 
