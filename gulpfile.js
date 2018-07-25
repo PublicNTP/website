@@ -92,7 +92,6 @@ gulp.task('minify:css', function() {
     .pipe(gulp.dest('./dist/css/'));
 });
 
-
 gulp.task('copy:uploads', function() {
   return gulp.src('./public/uploads/*').pipe(gulp.dest('./dist/uploads/'));
 });

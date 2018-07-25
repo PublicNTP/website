@@ -64,6 +64,15 @@
 .extra-padding {
   padding: 20px; }
 
+.flex__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
 * {
   margin: 0;
   padding: 0;
@@ -872,7 +881,6 @@ strong {
     float: left;
     position: relative; }
 
-<<<<<<< HEAD
 .donate {
   width: 100%;
   float: left;
@@ -1075,8 +1083,6 @@ strong {
 #card-errors {
   margin-top: 15px; }
 
-=======
->>>>>>> master
 .footer {
   margin-top: 160px;
   width: 100%;
@@ -1124,7 +1130,7 @@ strong {
     float: left;
     margin-bottom: 30px;
     color: #dbdbdb;
-    font-size: 16px; }
+    font-size: 14px; }
   .footer__right {
     float: right;
     display: -webkit-box;
@@ -1174,7 +1180,7 @@ strong {
     float: left;
     margin-bottom: 25px;
     color: #dbdbdb;
-    font-size: 16px;
+    font-size: 14px;
     text-align: right; }
     @media screen and (max-width: 767px) {
       .footer__title {
@@ -1197,18 +1203,18 @@ strong {
   padding: 33px 56px;
   position: relative; }
   .header__connect {
-    border: 1px solid #9b9b9b;
+    border: 1px solid #9b9b9b !important;
     border-radius: 2px;
-    margin-left: 10px; }
+    margin-left: 20px;
+    width: 90px !important;
+    text-align: center !important; }
     @media screen and (max-width: 767px) {
       .header__connect {
-        width: auto !important;
         padding: 8px 17px !important;
         margin-top: 20px; } }
     .header__connect:hover {
       background: #9b9b9b;
       color: white; }
-<<<<<<< HEAD
   .header__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1237,8 +1243,6 @@ strong {
     @media screen and (max-width: 767px) {
       .header__link {
         display: none; } }
-=======
->>>>>>> master
   .header__item {
     margin-top: 7.5px;
     display: block;
@@ -1248,14 +1252,10 @@ strong {
     text-transform: uppercase;
     text-decoration: none;
     color: #9b9b9b;
-<<<<<<< HEAD
     -webkit-transition: .3s;
     transition: .3s;
     width: 100%;
     text-align: right; }
-=======
-    transition: .3s; }
->>>>>>> master
     @media screen and (max-width: 767px) {
       .header__item {
         display: none; } }
@@ -1268,7 +1268,8 @@ strong {
     padding: 20px 15px;
     text-transform: uppercase;
     text-decoration: none;
-    color: white; }
+    color: white;
+    border-bottom: 1px solid transparent; }
     .header__item-mobile:hover {
       border-bottom: 1px solid white; }
   .header__logo {
@@ -1400,8 +1401,7 @@ strong {
     line-height: 2;
     font-size: 16px;
     color: #2a2a2a;
-    margin-bottom: 20px;
-    padding-left: 40px; }
+    margin-bottom: 20px; }
     .how__p b {
       font-weight: 600; }
     .how__p a {
@@ -1497,18 +1497,10 @@ strong {
   .home__location {
     width: 30px;
     height: 30px;
-    border-radius: 15px;
     position: absolute;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    border: 1px solid transparent;
     cursor: pointer; }
-    .home__location.active {
-      -webkit-animation: signal 1.5s infinite linear;
-              animation: signal 1.5s infinite linear; }
-    .home__location.slow-active {
-      -webkit-animation: signalSmall 2.5s infinite linear;
-              animation: signalSmall 2.5s infinite linear; }
     .home__location--multiple {
       left: -6px;
       width: 50px;
@@ -1516,41 +1508,63 @@ strong {
       border-radius: 25px;
       position: absolute;
       top: -6px;
-      border: 1px solid transparent;
+      border: 1px solid rgba(0, 0, 0, 0);
       cursor: pointer; }
       .home__location--multiple.active {
         -webkit-animation: signalLarge 1.5s infinite linear;
                 animation: signalLarge 1.5s infinite linear; }
     .home__location--outer {
-      left: -6px;
-      position: absolute;
-      width: 40px;
-      border-radius: 20px;
-      height: 40px;
-      top: -6px;
-      border: 1px solid transparent;
       cursor: pointer;
-      z-index: -1; }
-      .home__location--outer.active {
-        -webkit-animation: signalLarge 2.5s infinite linear;
-                animation: signalLarge 2.5s infinite linear; }
+      z-index: -1;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      position: absolute;
+      left: calc(50% - 4px);
+      top: calc(50% - 4px);
+      background: rgba(56, 53, 53, 0.87);
+      -webkit-transition: 0.3s;
+      transition: 0.3s; }
+      .home__location--outer.active:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -3px;
+        right: 0;
+        bottom: 0;
+        left: -3px;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+        -webkit-animation: ripple-outer 1.5s linear 0.5s infinite;
+                animation: ripple-outer 1.5s linear 0.5s infinite;
+        border: 1px solid #65a1c7; }
   .home__location-ball {
     width: 8px;
     height: 8px;
-    border-radius: 4px;
+    border-radius: 50%;
     position: absolute;
     left: calc(50% - 4px);
     top: calc(50% - 4px);
-<<<<<<< HEAD
     background: rgba(56, 53, 53, 0.87);
     -webkit-transition: 0.3s;
     transition: 0.3s; }
     .home__location-ball.active {
       background: #65A1C7; }
-=======
-    background: #2a2a2a;
-    transition: .3s; }
->>>>>>> master
+      .home__location-ball.active:before, .home__location-ball.active:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+        z-index: -1; }
+      .home__location-ball.active:before {
+        -webkit-animation: ripple 1.5s linear 0s infinite;
+                animation: ripple 1.5s linear 0s infinite;
+        border: 1px solid #65a1c7; }
   .home__section {
     width: 100%;
     float: left;
@@ -1675,105 +1689,137 @@ strong {
       margin-bottom: 0px;
       padding-bottom: 30px; } }
 
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; }
+  75% {
+    -webkit-transform: scale(1.75);
+            transform: scale(1.75);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0; } }
+
+@keyframes ripple {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; }
+  75% {
+    -webkit-transform: scale(1.75);
+            transform: scale(1.75);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0; } }
+
+@-webkit-keyframes ripple-outer {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; }
+  75% {
+    -webkit-transform: scale(1.75);
+            transform: scale(1.75);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0; } }
+
+@keyframes ripple-outer {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0; }
+  75% {
+    -webkit-transform: scale(1.75);
+            transform: scale(1.75);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0; } }
+
 @-webkit-keyframes signal {
   0% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   50% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   100% {
-    border: 1px solid transparent; } }
+    border: 1px solid rgba(0, 0, 0, 0); } }
 
 @keyframes signal {
   0% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   50% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   100% {
-    border: 1px solid transparent; } }
+    border: 1px solid rgba(0, 0, 0, 0); } }
 
 @-webkit-keyframes signalSmall {
   0% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   30% {
-<<<<<<< HEAD
     border: 1px solid #65A1C7; }
   60% {
-=======
-    border: 1px solid transparent; }
-  50% {
-    border: 1px solid black; }
-  70% {
->>>>>>> master
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   100% {
-    border: 1px solid transparent; } }
+    border: 1px solid rgba(0, 0, 0, 0); } }
 
 @keyframes signalSmall {
   0% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   30% {
-<<<<<<< HEAD
     border: 1px solid #65A1C7; }
   60% {
-=======
-    border: 1px solid transparent; }
-  50% {
-    border: 1px solid black; }
-  70% {
->>>>>>> master
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   100% {
-    border: 1px solid transparent; } }
+    border: 1px solid rgba(0, 0, 0, 0); } }
 
 @-webkit-keyframes signalMed {
   0% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   40% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   60% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   90% {
-    border: 1px solid transparent; } }
+    border: 1px solid rgba(0, 0, 0, 0); } }
 
 @keyframes signalMed {
   0% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   40% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   60% {
-    border: 1px solid black; }
+    border: 1px solid #65A1C7; }
   90% {
-    border: 1px solid transparent; } }
+    border: 1px solid rgba(0, 0, 0, 0); } }
 
 @-webkit-keyframes signalLarge {
   0% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   50% {
-    border: 1px solid transparent; }
-<<<<<<< HEAD
+    border: 1px solid rgba(0, 0, 0, 0); }
   60% {
     border: 1px solid #65A1C7; }
-=======
-  70% {
-    border: 1px solid black; }
->>>>>>> master
   100% {
-    border: 1px solid transparent; } }
+    border: 1px solid rgba(0, 0, 0, 0); } }
 
 @keyframes signalLarge {
   0% {
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
   50% {
-    border: 1px solid transparent; }
-<<<<<<< HEAD
+    border: 1px solid rgba(0, 0, 0, 0); }
   60% {
     border: 1px solid #65A1C7; }
-=======
-  70% {
-    border: 1px solid black; }
->>>>>>> master
   100% {
-    border: 1px solid transparent; } }
+    border: 1px solid rgba(0, 0, 0, 0); } }
 
 .logo {
   width: 52px;
@@ -2082,7 +2128,6 @@ strong {
     font-weight: 600;
     margin-bottom: 20px;
     color: #2a2a2a; }
-<<<<<<< HEAD
 
 .learn {
   width: 100%;
@@ -2381,5 +2426,3 @@ strong {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
-=======
->>>>>>> master

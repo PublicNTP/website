@@ -6,7 +6,12 @@ $colors: (
   footer: rgb(42, 42, 42),
   graphPrimary: rgb(110, 174, 125),
   graphSecondary: rgb(141, 103, 165),
-  link: rgb(174, 205, 225)
+  link: rgb(174, 205, 225),
+	inactiveDot: rgba(56,53,53,.87),
+  activeDot: #65A1C7,
+  blue: #5A97C0,
+  gray: #504B4B,
+  black: #312E2F
 );
 
 $breakpoints: (
