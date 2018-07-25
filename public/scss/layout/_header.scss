@@ -5,12 +5,13 @@
 	position: relative;
 
 	&__connect {
-		border: 1px solid color(textColor);
+		border: 1px solid color(textColor) !important;
 		border-radius: 2px;
-		margin-left: 10px;
+		margin-left: 20px;
+		width: 90px !important;
+		text-align: center !important;
 
 		@media screen and (max-width: breakpoint(tablet)) {
-			width: auto !important;
 			padding: 8px 17px !important;
 			margin-top: 20px;
 		}
@@ -56,6 +57,8 @@
 		text-decoration: none;
 		color: color(textColor);
 		transition: .3s;
+		width: 100%;
+		text-align: right;
 
 		@media screen and (max-width: breakpoint(tablet)) {
 			display: none;
@@ -72,6 +75,7 @@
 		text-transform: uppercase;
 		text-decoration: none;
 		color: white;
+		border-bottom: 1px solid transparent;
 
 		&:hover {
 			border-bottom: 1px solid white;

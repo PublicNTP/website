@@ -38,7 +38,9 @@ var pushPostToTimeline = function(timeline, year, month, monthNum, yearIndex, ti
 		timeline[yearIndex].months[monthNum]['month'] = month;
 		timeline[yearIndex].months[monthNum]['posts'] = [];
 		timeline[yearIndex].months[monthNum]['posts'].push(timelinePost)
-	}
+  }
+  
+  console.log('timeline', timeline)
 
 	return timeline;
 }
@@ -48,10 +50,10 @@ module.exports = {
 	buildTimeline: function(timelinePosts) {
 		var timeline = []
 		for (var i in timelinePosts) {
-			var year = moment(timelinePosts[i].createdAt).format('Y')
-			var month = moment(timelinePosts[i].createdAt).format('MMMM');
-			var monthNum = parseInt(moment(timelinePosts[i].createdAt).format('M'))
-			var yearIndex = getYearIndex(timeline, year);	
+			var year = moment(timelinePosts[i].timestamp).format('Y')
+			var month = moment(timelinePosts[i].timestamp).format('MMMM');
+			var monthNum = parseInt(moment(timelinePosts[i].timestamp).format('M'))
+      var yearIndex = getYearIndex(timeline, year);	
 			timeline = pushPostToTimeline(timeline, year, month, monthNum, yearIndex, timelinePosts[i]);
 		}
 		return timeline;

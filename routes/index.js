@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models');
 var locations = require('../data/locations');
 var posts = require('../data/posts.json');
 var ping = require('ping');

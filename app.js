@@ -1,25 +1,23 @@
-//import express ('express');
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var hbs = require('hbs');
-var moment = require('moment');
-var session = require('cookie-session');
 var compression = require('compression');
 
 var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
+var donateRoutes = require('./routes/donate');
+var thankYouRoutes = require('./routes/thankyou');
 var adminRoutes = require('./routes/admin');
 var aboutRoutes = require('./routes/about');
 var learnRoutes = require('./routes/learn');
 var connectRoutes = require('./routes/connect');
 var historyRoutes = require('./routes/history');
 var statsRoutes = require('./routes/stats');
-var models = require('./models');
-var authConfig = require('./authConfig');
+var termsRoutes = require('./routes/terms');
+var governanceRoutes = require('./routes/governance');
+// var models = require('./models');
 var port = 3020;
-
-
 var app = express();
 
 var ENV = process.env.NODE_ENV;
@@ -43,21 +41,10 @@ hbs.registerPartials(__dirname + '/views/partials');
 // // view engine setup
 app.set('view engine', 'hbs');
 
-app.use(session({
-	secret: authConfig.secret,
-	resave: true,
-	saveUninitialized: true
-}))
-app.set('case sensitive routing', true);
-
 app.enable('trust proxy');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-models.sequelize.sync().then(function() {
-  app.on('error', onError);
-});
 
 function onError(error) {
   if (error.syscall !== 'listen') {
@@ -91,6 +78,8 @@ app.use('/blog', blogRoutes);
 app.use('/blog.html', blogRoutes);
 app.use('/admin', adminRoutes);
 app.use('/learn', learnRoutes);
+app.use('/donate.html', donateRoutes);
+app.use('/thank-you.html', thankYouRoutes);
 app.use('/learn.html', learnRoutes);
 app.use('/connect.html', connectRoutes);
 app.use('/history.html', historyRoutes);
