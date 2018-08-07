@@ -12,17 +12,22 @@
   <meta name="referrer" content="always">
   <meta name="web_author" content="Dan Noland, Terry Ott, Scott Waddell, Brad Woodfin">
   <meta name="language" content="English">
-  <meta property="og:title" content="PublicNTP">
+  <meta property="og:title" content="{{the_title}}">
   <meta property="og:site_name" content="PublicNTP">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:description" content="PublicNTP provides unrestricted access to no-cost, highly-accurate time sources for the public good.">
-  <meta property="og:image" content="https://publicntp.org/images/publicNTPLogo.png">
-  <meta property="og:image:secure_url" content="https://publicntp.org/images/publicNTPLogo.png">
-  <meta property="og:image:type" content="image/png">
+  <meta property="og:locale" content="en_US"> {{#if description}}
+  <meta property="og:description" content="{{description}}"> {{else}}
+  <meta property="og:description" content="PublicNTP provides unrestricted access to no-cost, highly-accurate time sources for the public good."> {{/if}} {{#if image}}
+  <meta property="og:image" content="https://publicntp.org/{{image}}"> {{else}}
+  <meta property="og:image" content="https://publicntp.org/images/publicNTPLogo.png"> {{/if}} {{#if image}}
+  <meta property="og:image:secure_url" content="https://publicntp.org/{{image}}"> {{else}}
+  <meta property="og:image:secure_url" content="https://publicntp.org/images/publicNTPLogo.png"> {{/if}} {{!--
+  <meta property="og:image:type" content="image/png"> --}} {{!--
   <meta property="og:image:width" content="882">
-  <meta property="og:image:height" content="262">
-  <meta property="og:image:alt" content="PublicNTP">
-  <meta property="og:url" content="https://publicntp.org/">
+  <meta property="og:image:height" content="262"> --}} {{#if image_alt}}
+  <meta property="og:image:alt" content="{{image_alt}}"> {{else}}
+  <meta property="og:image:alt" content="PublicNTP"> {{/if}}
+  <meta property="og:url" content="https://publicntp.org{{url}}"> {{!--
+  <meta property="og:url" content="https://publicntp.org/"> --}}
   <meta property="og:type" content="website">
   <meta name="msapplication-config" content="{{relative_path}}images/browserconfig.xml">
 

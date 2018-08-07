@@ -15,7 +15,9 @@ locations.forEach(function(host, i) {
   // console.log('its a url: ', url);
 
   ping.sys.probe(url, function(isAlive) {
-    var msg = isAlive ? 'host ' + url + ' is alive' : 'host ' + url + ' is dead';
+    var msg = isAlive
+      ? 'host ' + url + ' is alive'
+      : 'host ' + url + ' is dead';
     end = now();
     time = end - start;
     // console.log('Time', time);
@@ -32,7 +34,7 @@ router.get('/', function(req, res) {
     locations: locations,
     post: post,
     the_title: 'PublicNTP',
-    relative_path: './',
+    relative_path: './'
   });
 });
 
