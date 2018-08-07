@@ -5,7 +5,6 @@ var request = require('request');
 var mkdirp = require('mkdirp');
 var fs = require('fs');
 var del = require('del');
-var async = require('async');
 var rp = require('request-promise');
 
 var gulp = require('gulp');
@@ -39,18 +38,18 @@ const clearProduction = `aws cloudfront create-invalidation --distribution-id E3
 const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
   1}-${new Date().getDate()}`;
 
-gulp.task('clean:dist', function(cb) {
+gulp.task('clean:dist', function (cb) {
   del('./dist/*', cb);
 });
 
-gulp.task('minify:html', function() {
+gulp.task('minify:html', function () {
   return gulp
     .src('./dist/*.html')
     .pipe(minifyHTML())
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('minify:core-js', function() {
+gulp.task('minify:core-js', function () {
   var jsList = [
     './public/js/blog.js',
     './public/js/connect.js',
@@ -73,48 +72,48 @@ gulp.task('minify:core-js', function() {
     .pipe(gulp.dest('./dist/js/'));
 });
 
-gulp.task('copy:js-libs', function() {
+gulp.task('copy:js-libs', function () {
   return gulp.src(['./public/js/*.js']).pipe(gulp.dest('./dist/js/'));
 });
 
-gulp.task('copy:json-files', function() {
+gulp.task('copy:json-files', function () {
   return gulp.src(['./src/json/*.json']).pipe(gulp.dest('./dist/json/'));
 });
 
-gulp.task('copy:root-files', function() {
+gulp.task('copy:root-files', function () {
   return gulp
     .src(['./public/robots.txt', './public/sitemap.xml'])
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('minify:css', function() {
+gulp.task('minify:css', function () {
   return gulp
     .src('./public/css/*.css')
     .pipe(minifyCSS())
     .pipe(gulp.dest('./dist/css/'));
 });
 
-gulp.task('copy:uploads', function() {
+gulp.task('copy:uploads', function () {
   return gulp.src('./public/uploads/*').pipe(gulp.dest('./dist/uploads/'));
 });
 
-gulp.task('copy:images', function() {
+gulp.task('copy:images', function () {
   return gulp.src('./public/images/*').pipe(gulp.dest('./dist/images/'));
 });
 
-gulp.task('copy:fonts', function() {
+gulp.task('copy:fonts', function () {
   return gulp.src('./public/fonts/*').pipe(gulp.dest('./dist/fonts/'));
 });
 
-gulp.task('copy:documents', function() {
+gulp.task('copy:documents', function () {
   return gulp.src('./public/documents/*').pipe(gulp.dest('./dist/documents/'));
 });
 
-gulp.task('copy:host-js', function() {
+gulp.task('copy:host-js', function () {
   return gulp.src('./src/host.js').pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', function () {
   gulp
     .src('public/scss/**/*.scss')
     .pipe(sassGlob())
@@ -123,11 +122,11 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('sass:watch', function() {
+gulp.task('sass:watch', function () {
   gulp.watch('public/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('dev', function() {
+gulp.task('dev', function () {
   nodemon({
     script: 'app.js',
     ext: 'js html'
@@ -140,19 +139,19 @@ gulp.task('dev', function() {
   gulp.watch('public/scss/**/*.scss', ['sass']);
 });
 
-var createFile = function(place, content) {
+var createFile = function (place, content) {
   console.log('place', place);
-  fs.writeFile('dist' + place, content, function(err) {
+  fs.writeFile('dist' + place, content, function (err) {
     if (err) console.log(err);
   });
 };
 
-var syncDir = function(route, cb) {
+var syncDir = function (route, cb) {
   console.log('called1');
 };
 
 var relPath = path.join(__dirname, 'dist');
-gulp.task('routes', function() {
+gulp.task('routes', function () {
   nodemon({
     script: 'app.js',
     ext: 'js html'
@@ -163,7 +162,7 @@ gulp.task('routes', function() {
     }
   });
   var routes = require('./staticRoutes');
-  setTimeout(function() {
+  setTimeout(function () {
     var index = 2;
     for (var i = 2; i < posts.length; i += 2) {
       routes.push('/blog.html?page=' + index);
@@ -173,12 +172,12 @@ gulp.task('routes', function() {
       routes.push('/blog/posts/' + posts[i].permalink + '.html');
     }
     console.log('routes', routes);
-    let rpRoutes = routes.map(function(r, index) {
+    let rpRoutes = routes.map(function (r, index) {
       return rp('http://localhost:3020' + r);
     });
 
     Promise.all(rpRoutes)
-      .then(function(pages) {
+      .then(function (pages) {
         console.log('pages', pages);
         let tempPath = path.join(__dirname, 'dist');
         for (let i = 0; i < pages.length; i++) {
@@ -189,23 +188,23 @@ gulp.task('routes', function() {
           if (fs.existsSync(routeDir)) {
             createFile(route, pages[i]);
           } else {
-            mkdirp(routeDir, function(mkdirErr) {
+            mkdirp(routeDir, function (mkdirErr) {
               if (mkdirErr) console.log('mkdirpErr', mkdirErr);
               else createFile(route, pages[i]);
             });
           }
         }
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.log('err', err);
         console.log('err with');
       });
   }, 6000);
 });
 
-gulp.task('gather', function() {
+gulp.task('gather', function () {
   gulp.start('clean:dist');
-  setTimeout(function() {
+  setTimeout(function () {
     gulp.start('routes');
     gulp.start('minify:css');
     gulp.start('copy:uploads');
@@ -218,14 +217,14 @@ gulp.task('gather', function() {
   }, 1000);
 });
 
-var pushS3Env = function(s3env) {
-  exec(s3env, function(err, stdout, stderr) {
+var pushS3Env = function (s3env) {
+  exec(s3env, function (err, stdout, stderr) {
     console.log('out', stdout);
     if (err) console.log('err', err);
   });
 };
 
-gulp.task('pushs3', function() {
+gulp.task('pushs3', function () {
   if (argv.env && argv.env == 'production') {
     console.log('pushing to production s3');
     pushS3Env(backupProduction);
