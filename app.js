@@ -8,7 +8,6 @@ var indexRoutes = require('./routes/index');
 var blogRoutes = require('./routes/blog');
 var donateRoutes = require('./routes/donate');
 var thankYouRoutes = require('./routes/thankyou');
-var adminRoutes = require('./routes/admin');
 var aboutRoutes = require('./routes/about');
 var learnRoutes = require('./routes/learn');
 var connectRoutes = require('./routes/connect');
@@ -16,7 +15,6 @@ var historyRoutes = require('./routes/history');
 var statsRoutes = require('./routes/stats');
 var termsRoutes = require('./routes/terms');
 var governanceRoutes = require('./routes/governance');
-// var models = require('./models');
 var port = 3020;
 var app = express();
 
@@ -76,7 +74,6 @@ app.use('/', indexRoutes);
 
 app.use('/blog', blogRoutes);
 app.use('/blog.html', blogRoutes);
-app.use('/admin', adminRoutes);
 app.use('/learn', learnRoutes);
 app.use('/donate.html', donateRoutes);
 app.use('/thank-you.html', thankYouRoutes);
