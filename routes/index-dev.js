@@ -5,7 +5,7 @@ var posts = require('../data/posts.json');
 var ping = require('ping');
 var now = require('performance-now');
 var argv = require('yargs').argv;
-var env = require('../gulpfile.js');
+var env = require('../gulpfile');
 
 // Get Time to Servers
 locations.forEach(function (host, i) {
@@ -31,20 +31,13 @@ locations.forEach(function (host, i) {
 });
 
 router.get('/', function (req, res) {
-  // let domain;
-  // // let domain = 'http://localhost:3020';
-
-  // if (process.argv[4] == 'dev') domain = 'http://dev.publicntp.org';
-  // if (process.argv[4] === 'staging') domain = 'https://staging.publicntp.org';
-  // if (process.argv[4] === 'production') domain = 'https://publicntp.org';
-
   var post = posts[0];
   res.render('home', {
     locations: locations,
     post: post,
     the_title: 'PublicNTP',
     relative_path: './',
-    domain: 'https://publicntp.org'
+    domain: 'http://dev.publicntp.org'
   });
 });
 

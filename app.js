@@ -5,6 +5,8 @@ var hbs = require('hbs');
 var compression = require('compression');
 
 var indexRoutes = require('./routes/index');
+var indexDevRoutes = require('./routes/index-dev');
+var indexStagingRoutes = require('./routes/index-staging');
 var blogRoutes = require('./routes/blog');
 var donateRoutes = require('./routes/donate');
 var thankYouRoutes = require('./routes/thankyou');
@@ -71,6 +73,8 @@ function onError(error) {
  */
 
 app.use('/', indexRoutes);
+app.use('/index-dev', indexDevRoutes);
+app.use('/index-staging', indexStagingRoutes);
 
 app.use('/blog', blogRoutes);
 app.use('/blog.html', blogRoutes);
@@ -85,12 +89,12 @@ app.use('/people.html', aboutRoutes);
 app.use('/terms.html', termsRoutes);
 app.use('/governance.html', governanceRoutes);
 
-app.get('/history.html', function(req, res) {
+app.get('/history.html', function (req, res) {
   res.render('history', {
     relative_path: './'
   });
 });
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log('listening on port ', port);
 });
