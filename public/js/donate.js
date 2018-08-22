@@ -16,7 +16,7 @@ var spinner =
   '         </div>  ' +
   '      </div>  ';
 
-(function($) {
+(function ($) {
   // $(function() {
 
   // Country Code Setter
@@ -24,16 +24,16 @@ var spinner =
   $.ajax({
     dataType: 'jsonp',
     url: 'https://freegeoip.net/json',
-    success: function(data) {
+    success: function (data) {
       country = data.country_code;
       console.log('Country Code:', country);
-      setTimeout(function() {
+      setTimeout(function () {
         document.querySelector(
           '.donate__country option[value="' + country + '"]'
         ).selected = true;
       }, 1000);
     },
-    error: function(data) {
+    error: function (data) {
       console.log('Not able to get country data');
     }
   });
@@ -41,7 +41,7 @@ var spinner =
   // Blur Error
   var errorText = '';
 
-  $('input[name=first_name]').blur(function() {
+  $('input[name=first_name]').blur(function () {
     var first_name = $('input[name=first_name]').val();
     $(this)
       .next()
@@ -53,14 +53,14 @@ var spinner =
         .next()
         .addClass('red');
       $('#firstNameError').text(errorText);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#firstNameError').text('');
         errorText = '';
       }, 5000);
     }
   });
 
-  $('input[name=last_name]').blur(function() {
+  $('input[name=last_name]').blur(function () {
     var last_name = $('input[name=last_name]').val();
     $(this)
       .next()
@@ -72,14 +72,14 @@ var spinner =
         .next()
         .addClass('red');
       $('#lastNameError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#lastNameError').text('');
         errorText = '';
       }, 5000);
     }
   });
 
-  $('input[name=email]').blur(function() {
+  $('input[name=email]').blur(function () {
     var email = $('input[name=email]').val();
     $(this)
       .next()
@@ -91,14 +91,14 @@ var spinner =
         .next()
         .addClass('red');
       $('#emailError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#emailError').text('');
         errorText = '';
       }, 5000);
     }
   });
 
-  $('input[name=address]').blur(function() {
+  $('input[name=address]').blur(function () {
     var address = $('input[name=address]').val();
     $(this)
       .next()
@@ -110,14 +110,14 @@ var spinner =
         .next()
         .addClass('red');
       $('#addressError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#addressError').text('');
         errorText = '';
       }, 5000);
     }
   });
 
-  $('input[name=city]').blur(function() {
+  $('input[name=city]').blur(function () {
     var city = $('input[name=city]').val();
     $(this)
       .next()
@@ -129,14 +129,14 @@ var spinner =
         .next()
         .addClass('red');
       $('#cityError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#cityError').text('');
         errorText = '';
       }, 5000);
     }
   });
 
-  $('input[name=state]').blur(function() {
+  $('input[name=state]').blur(function () {
     var state = $('input[name=state]').val();
     $(this)
       .next()
@@ -148,14 +148,14 @@ var spinner =
         .next()
         .addClass('red');
       $('#stateError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#stateError').text('');
         errorText = '';
       }, 5000);
     }
   });
 
-  $('input[name=zip]').blur(function() {
+  $('input[name=zip]').blur(function () {
     var zip = $('input[name=zip]').val();
     $(this)
       .next()
@@ -167,14 +167,14 @@ var spinner =
         .next()
         .addClass('red');
       $('#zipcodeError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#zipcodeError').text('');
         errorText = '';
       }, 5000);
     }
   });
 
-  $('input[name=card_number]').blur(function() {
+  $('input[name=card_number]').blur(function () {
     var card_number = $('input[name=card_number]').val();
     $(this)
       .next()
@@ -186,14 +186,14 @@ var spinner =
         .next()
         .addClass('red');
       $('#creditCardError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#creditCardError').text('');
         errorText = '';
       }, 5000);
     }
   });
 
-  $('input[name=ccv]').blur(function() {
+  $('input[name=ccv]').blur(function () {
     var cvcNum = $('input[name=ccv]').val();
     $(this)
       .next()
@@ -205,7 +205,7 @@ var spinner =
         .next()
         .addClass('red');
       $('#cvvError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#cvvError').text('');
         errorText = '';
       }, 5000);
@@ -227,7 +227,7 @@ var spinner =
     }
   }
 
-  $('input[name=expiration]').blur(function() {
+  $('input[name=expiration]').blur(function () {
     var expiration = $('input[name=expiration]').val();
     $(this)
       .next()
@@ -239,7 +239,7 @@ var spinner =
         .next()
         .addClass('red');
       $('#expirationError').text(errorText);
-      return setTimeout(function() {
+      return setTimeout(function () {
         $('#expirationError').text('');
         errorText = '';
       }, 5000);
@@ -256,10 +256,10 @@ var spinner =
   var manualDonation = false;
 
   // Set Donation Values
-  $('#select-value').change(function() {
+  $('#select-value').change(function () {
     var str = '';
 
-    $('#select-value option:selected').each(function() {
+    $('#select-value option:selected').each(function () {
       str += $(this).text();
 
       if (str !== 'Enter a value') {
@@ -281,7 +281,7 @@ var spinner =
     });
   });
 
-  $('.donate__input').dblclick(function() {
+  $('.donate__input').dblclick(function () {
     $('.donate__button--submit').text('Donate $0.00');
     $('.donate__cash').addClass('hide');
     $('.donate__input').css('display', 'none');
@@ -290,7 +290,7 @@ var spinner =
     console.log('double click firing');
   });
 
-  $('.donate__input').keyup(function(e) {
+  $('.donate__input').keyup(function (e) {
     var donation = $('.donate__input')
       .val()
       .replace(/\$|,/g, '');
@@ -304,7 +304,7 @@ var spinner =
     }
   });
 
-  $('.connect__input').focus(function() {
+  $('.connect__input').focus(function () {
     $($(this).siblings('label')[0]).addClass('connect__label--focused');
   });
 
@@ -365,7 +365,7 @@ var spinner =
   card.mount('#card-element');
 
   // Handle real-time validation errors from the card Element.
-  card.addEventListener('change', function(event) {
+  card.addEventListener('change', function (event) {
     var displayError = document.getElementById('card-errors');
     if (event.error) {
       displayError.textContent = event.error.message;
@@ -374,7 +374,7 @@ var spinner =
     }
   });
 
-  $('.donate__button--submit').click(function() {
+  $('.donate__button--submit').click(function () {
     // swal({
     //   title: 'Processing Donation',
     //   html: spinner,
@@ -404,7 +404,7 @@ var spinner =
       error = true;
       errorText = 'First name is required';
       $('#firstNameError').text(errorText);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#firstNameError').text('');
         $('.donate__processing').text('');
       }, 5000);
@@ -414,7 +414,7 @@ var spinner =
       error = true;
       errorText = 'Last name is required';
       $('#lastNameError').text(errorText);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#lastNameError').text('');
         $('.donate__processing').text('');
       }, 5000);
@@ -425,7 +425,7 @@ var spinner =
       errorText = 'Valid email address is required';
       $('#emailError').text(errorText);
       // $('#error-message').text(errorText);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#emailError').text('');
         $('.donate__processing').text('');
       }, 5000);
@@ -435,7 +435,7 @@ var spinner =
       error = true;
       errorText = 'Address is required';
       $('#addressError').text(errorText);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#addressError').text('');
         $('.donate__processing').text('');
       }, 5000);
@@ -445,7 +445,7 @@ var spinner =
       error = true;
       errorText = 'City is required';
       $('#cityError').text(errorText);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#cityError').text('');
         $('.donate__processing').text('');
       }, 5000);
@@ -455,7 +455,7 @@ var spinner =
       error = true;
       errorText = 'State is required';
       $('#stateError').text(errorText);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#stateError').text('');
         $('.donate__processing').text('');
       }, 5000);
@@ -465,7 +465,7 @@ var spinner =
       error = true;
       errorText = 'Zip Code is required';
       $('#zipcodeError').text(errorText);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#zipcodeError').text('');
         $('.donate__processing').text('');
       }, 5000);
@@ -493,7 +493,7 @@ var spinner =
         address_country: country
       };
 
-      stripe.createToken(card, data).then(function(result) {
+      stripe.createToken(card, data).then(function (result) {
         if (result.error) {
           // Inform the user if there was an error
           var errorElement = document.getElementById('card-errors');
@@ -509,7 +509,7 @@ var spinner =
               amount: donationAmount,
               currency: 'usd',
               source: result.token.id,
-              description: 'Test Donation',
+              description: 'PublicNTP tax-deductible donation.',
               receipt_email: email
             }
           };
@@ -525,16 +525,16 @@ var spinner =
             'Content-Type': 'application/json'
           },
           data: JSON.stringify(dataToSend),
-          success: function(response) {
+          success: function (response) {
             console.log('response', response);
             if (response.status === 'succeeded') {
               swal(
                 'Donation Sent',
                 'Thank you for your $' +
-                  (donationAmount / 100).toFixed(2) +
-                  ' donation!',
+                (donationAmount / 100).toFixed(2) +
+                ' donation!',
                 'success'
-              ).then(function() {
+              ).then(function () {
                 clearErrors();
                 card.clear();
                 // console.log('Clearing credit card and payment details from forms.');
@@ -545,12 +545,12 @@ var spinner =
               $('#donation-processing').text('');
             }
           },
-          error: function(err) {
+          error: function (err) {
             console.log('err', err);
             swal('Oops...', 'Something went wrong!', 'error');
 
             $('#donation-processing').text('Error occured: ' + error);
-            setTimeout(function() {
+            setTimeout(function () {
               $('#donation-processing').text('');
             }, 3000);
           }
@@ -561,8 +561,8 @@ var spinner =
 
   $.getJSON(
     'https://raw.githubusercontent.com/umpirsky/country-list/master/data/en_US/country.json',
-    function(data) {
-      $.each(data, function(key, val) {
+    function (data) {
+      $.each(data, function (key, val) {
         $('.donate__country').append(
           "<option value='" + key + "'>" + val + '</option>'
         );

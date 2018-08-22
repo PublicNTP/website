@@ -2,3 +2,4 @@ node_modules
 authConfig.js
 config
 /backups
+.DS_Store
