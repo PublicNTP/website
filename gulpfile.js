@@ -182,7 +182,13 @@ gulp.task('routes', function () {
         }
         console.log('routes', routes);
         let rpRoutes = routes.map(function (r) {
-            return rp('http://localhost:3020' + r);
+            return rp({
+                url: `http://localhost:3020${r}`,
+                headers: {
+                    Connection: 'keep-alive'
+                }
+            });
+            // return rp('http://localhost:3020' + r);
         });
 
         Promise.all(rpRoutes)
@@ -215,8 +221,7 @@ gulp.task('routes', function () {
             .catch(err => {
                 console.log('Routes Error: ', err);
             });
-    }, 10000);
-    // }, 6000);
+    }, 6000);
 });
 
 module.exports = argv.env;
@@ -233,8 +238,7 @@ gulp.task('gather', function () {
         gulp.start('minify:html');
         gulp.start('minify:core-js');
         gulp.start('copy:root-files');
-    }, 5000);
-    // }, 1000);
+    }, 1000);
 });
 
 var pushS3Env = function (s3env) {
