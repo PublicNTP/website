@@ -191,7 +191,7 @@ gulp.task('routes', function () {
             // return rp('http://localhost:3020' + r);
         });
 
-        Promise.all(rpRoutes)
+        Promise.all(rpRoutes.catch(err => err))
             .then(function (pages) {
                 console.log('pages', pages);
                 let tempPath = path.join(__dirname, 'dist');
