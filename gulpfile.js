@@ -182,13 +182,13 @@ gulp.task('routes', function () {
         }
         console.log('routes', routes);
         let rpRoutes = routes.map(function (r) {
-            return rp({
-                uri: `http://localhost:3020${r}`,
-                headers: {
-                    Connection: 'keep-alive'
-                }
-            });
-            // return rp('http://localhost:3020' + r);
+            // return rp({
+            //     url: `http://localhost:3020${r}`,
+            //     headers: {
+            //         Connection: 'keep-alive'
+            //     }
+            // });
+            return rp('http://localhost:3020' + r);
         });
 
         Promise.all(rpRoutes)
