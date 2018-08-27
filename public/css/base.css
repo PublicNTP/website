@@ -88,6 +88,44 @@
   max-width: 1440px;
   margin: 0 auto; }
 
+.privacy {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  left: 30px; }
+  .privacy__show {
+    display: flex;
+    justify-content: flex-end; }
+  .privacy__wrapper {
+    position: relative;
+    padding: 20px;
+    max-width: 600px;
+    background-color: white;
+    font-size: 14px;
+    border: 1px solid #dfdfdf;
+    box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.25); }
+  .privacy__title {
+    color: #444444;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px; }
+  .privacy__text {
+    line-height: 1.45em;
+    font-size: 14px; }
+  .privacy__link {
+    text-decoration: none;
+    color: #0077bf; }
+  .privacy__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-shadow: 0 1px 0 #fff;
+    color: #777;
+    cursor: pointer; }
+    .privacy__close::after {
+      content: "\2716"; }
+
 .about {
   width: 100%;
   float: left; }
