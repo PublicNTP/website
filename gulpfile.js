@@ -183,7 +183,7 @@ gulp.task('routes', function () {
         console.log('routes', routes);
         let rpRoutes = routes.map(function (r) {
             return rp({
-                url: `http://localhost:3020${r}`,
+                uri: `http://localhost:3020${r}`,
                 headers: {
                     Connection: 'keep-alive'
                 }
@@ -191,7 +191,7 @@ gulp.task('routes', function () {
             // return rp('http://localhost:3020' + r);
         });
 
-        Promise.all(rpRoutes.catch(err => err))
+        Promise.all(rpRoutes)
             .then(function (pages) {
                 console.log('pages', pages);
                 let tempPath = path.join(__dirname, 'dist');
@@ -218,7 +218,7 @@ gulp.task('routes', function () {
             .catch(err => {
                 console.log('Routes Error: ', err);
             });
-    }, 15000);
+    }, 6000);
 });
 
 module.exports = argv.env;
