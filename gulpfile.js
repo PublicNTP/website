@@ -186,8 +186,7 @@ gulp.task('routes', function () {
                 url: `http://localhost:3020${r}`,
                 headers: {
                     Connection: 'keep-alive'
-                },
-                simple: false
+                }
             });
             // return rp('http://localhost:3020' + r);
         });
@@ -200,9 +199,9 @@ gulp.task('routes', function () {
                 for (let i = 0; i < pages.length; i++) {
                     let route = routes[i];
                     console.log('route', route);
-                    if (route == '/' && argv.env == 'production') route = '/index.html';
-                    if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
-                    if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
+                    // if (route == '/' && argv.env == 'production') route = '/index.html';
+                    // if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
+                    // if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
 
 
                     var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
@@ -221,7 +220,6 @@ gulp.task('routes', function () {
             })
             .catch(err => {
                 console.log('Routes Error: ', err);
-                console.log('**** Routes Info Array ****: ', rpRoutes);
             });
     }, 6000);
 });
