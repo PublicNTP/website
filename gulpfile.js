@@ -212,11 +212,11 @@ gulp.task('routes', function () {
                     }
                 }
             })
-            .catch(function (err) {
-                console.log('err', err);
-                console.log('err with');
+            .catch(err => {
+                console.log('Routes Error: ', err);
             });
-    }, 6000);
+    }, 10000);
+    // }, 6000);
 });
 
 module.exports = argv.env;
@@ -233,7 +233,8 @@ gulp.task('gather', function () {
         gulp.start('minify:html');
         gulp.start('minify:core-js');
         gulp.start('copy:root-files');
-    }, 1000);
+    }, 5000);
+    // }, 1000);
 });
 
 var pushS3Env = function (s3env) {
