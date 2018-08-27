@@ -186,7 +186,8 @@ gulp.task('routes', function () {
                 url: `http://localhost:3020${r}`,
                 headers: {
                     Connection: 'keep-alive'
-                }
+                },
+                simple: false
             });
             // return rp('http://localhost:3020' + r);
         });
