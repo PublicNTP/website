@@ -221,6 +221,7 @@ gulp.task('routes', function () {
             })
             .catch(err => {
                 console.log('Routes Error: ', err);
+                console.log('**** Routes Info Array ****: ', rpRoutes);
             });
     }, 6000);
 });
