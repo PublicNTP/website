@@ -43,9 +43,11 @@ app.set('view engine', 'hbs');
 
 app.enable('trust proxy');
 
-app.use(bodyParser.json(req, res, function (err) {
-  callback(err, req.body);
-}));
+app.use((req, res, next) => {
+  bodyParser.json(req, res, function (err) {
+    callback(err, req.body);
+  })
+});
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
