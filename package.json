@@ -50,5 +50,7 @@
     "url": "https://github.com/PublicNTP/website/issues"
   },
   "homepage": "https://github.com/PublicNTP/website#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
