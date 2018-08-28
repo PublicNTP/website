@@ -264,6 +264,7 @@ gulp.task('pushs3', function () {
 gulp.task('ship', function () {
     // Gather
     gulp.start('clean:dist');
+
     setTimeout(function () {
         gulp.start('routes');
         gulp.start('minify:css');
@@ -274,22 +275,24 @@ gulp.task('ship', function () {
         gulp.start('minify:html');
         gulp.start('minify:core-js');
         gulp.start('copy:root-files');
-    }, 10000);
+    }, 1000);
 
     // pushs3
-    if (argv.env && argv.env == 'production') {
-        console.log('pushing to production s3');
-        pushS3Env(backupProduction);
-        pushS3Env(s3Prod);
-        pushS3Env(clearProduction);
-    } else if (argv.env && argv.env == 'staging') {
-        console.log('pushing to staging s3');
-        pushS3Env(s3Stage);
-        pushS3Env(clearStaging);
-    } else if (argv.env && argv.env == 'dev') {
-        console.log('pushing to dev s3');
-        pushS3Env(s3Dev);
-    } else {
-        console.error('must use --env production or --env staging');
-    }
+    setTimeout(function () {
+        if (argv.env && argv.env == 'production') {
+            console.log('pushing to production s3');
+            pushS3Env(backupProduction);
+            pushS3Env(s3Prod);
+            pushS3Env(clearProduction);
+        } else if (argv.env && argv.env == 'staging') {
+            console.log('pushing to staging s3');
+            pushS3Env(s3Stage);
+            pushS3Env(clearStaging);
+        } else if (argv.env && argv.env == 'dev') {
+            console.log('pushing to dev s3');
+            pushS3Env(s3Dev);
+        } else {
+            console.error('must use --env production or --env staging');
+        }
+    }, 10000)
 });
