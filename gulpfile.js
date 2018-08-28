@@ -294,5 +294,5 @@ gulp.task('ship', function () {
         } else {
             console.error('must use --env production or --env staging');
         }
-    }, 15000)
+    }, 30000)
 });
