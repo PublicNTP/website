@@ -277,14 +277,22 @@ gulp.task('pushs3', function () {
         pushS3Env(backupProduction);
         pushS3Env(s3Prod);
         pushS3Env(clearProduction);
+        setTimeout(function () {
+            pushS3Env(fixProdFonts);
+        }, 2000);
     } else if (argv.env && argv.env == 'staging') {
         console.log('pushing to staging s3');
         pushS3Env(s3Stage);
         pushS3Env(clearStaging);
+        setTimeout(function () {
+            pushS3Env(fixStagingFonts);
+        }, 2000);
     } else if (argv.env && argv.env == 'dev') {
         console.log('pushing to dev s3');
         pushS3Env(s3Dev);
-        pushS3Env(fixDevFonts);
+        setTimeout(function () {
+            pushS3Env(fixDevFonts);
+        }, 2000);
     } else {
         console.error('must use --env production or --env staging');
     }
