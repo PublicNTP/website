@@ -22,17 +22,45 @@ var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
 
 const exec = require('child_process').exec;
-const s3Stage =
-    'aws s3 sync ' +
-    __dirname +
-    '/dist' +
-    ' s3://website-staging.publicntp.org/ --delete';
+
 const s3Dev = `aws s3 sync ${__dirname}/dist s3://dev.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
+const s3Stage = `aws s3 sync ${__dirname}/dist s3://website-staging.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
 const s3Prod = `aws s3 sync ${__dirname}/dist s3://website-production.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
+
 const clearStaging = `aws cloudfront create-invalidation --distribution-id E27DRANRNP31GP --paths '/*'`;
 const clearProduction = `aws cloudfront create-invalidation --distribution-id E32DZUWHQTY5ZD --paths '/*'`;
-const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
+const backupProduction = `aws s3 sync s3://website-production.publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
     1}-${new Date().getDate()}`;
+
+const fixDevFonts = `aws s3 cp \
+       s3://dev.publicntp.org/ \
+       s3://dev.publicntp.org/ \
+       --exclude '*' \
+       --include '*.woff2' \
+       --no-guess-mime-type \
+       --content-type="font/woff2" \
+       --metadata-directive="REPLACE" \
+       --recursive`;
+
+const fixStagingFonts = `aws s3 cp \
+       s3://website-staging.publicntp.org/ \
+       s3://website-staging.publicntp.org/ \
+       --exclude '*' \
+       --include '*.woff2' \
+       --no-guess-mime-type \
+       --content-type="font/woff2" \
+       --metadata-directive="REPLACE" \
+       --recursive`;
+
+const fixProdFonts = `aws s3 cp \
+       s3://website-production.publicntp.org/ \
+       s3://website-production.publicntp.org/ \
+       --exclude '*' \
+       --include '*.woff2' \
+       --no-guess-mime-type \
+       --content-type="font/woff2" \
+       --metadata-directive="REPLACE" \
+       --recursive`;
 
 // Old PNTP Server Commands
 // const s3Stage =
@@ -249,13 +277,22 @@ gulp.task('pushs3', function () {
         pushS3Env(backupProduction);
         pushS3Env(s3Prod);
         pushS3Env(clearProduction);
+        setTimeout(function () {
+            pushS3Env(fixProdFonts);
+        }, 2000);
     } else if (argv.env && argv.env == 'staging') {
         console.log('pushing to staging s3');
         pushS3Env(s3Stage);
         pushS3Env(clearStaging);
+        setTimeout(function () {
+            pushS3Env(fixStagingFonts);
+        }, 2000);
     } else if (argv.env && argv.env == 'dev') {
         console.log('pushing to dev s3');
         pushS3Env(s3Dev);
+        setTimeout(function () {
+            pushS3Env(fixDevFonts);
+        }, 2000);
     } else {
         console.error('must use --env production or --env staging');
     }

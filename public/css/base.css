@@ -64,9 +64,14 @@
 .extra-padding {
   padding: 20px; }
 
-.flex__wrapper {
-  display: flex;
-  flex-direction: column; }
+.flex {
+  display: flex; }
+  .flex__wrapper {
+    display: flex;
+    flex-direction: column; }
+  .flex__end {
+    display: flex;
+    justify-content: flex-end; }
 
 * {
   margin: 0;
@@ -219,7 +224,6 @@
   .blog__bar {
     width: 2px;
     height: 100%;
-    background: black;
     position: absolute;
     top: 0;
     left: 250px;
@@ -2225,7 +2229,6 @@ strong {
     color: white; }
 
 .select-style {
-  border: 1px solid #ccc;
   overflow: hidden;
   border: 0;
   border-bottom: 1px solid #9b9b9b;
