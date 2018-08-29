@@ -284,6 +284,7 @@ gulp.task('pushs3', function () {
     } else if (argv.env && argv.env == 'dev') {
         console.log('pushing to dev s3');
         pushS3Env(s3Dev);
+        pushS3Env(fixDevFonts);
     } else {
         console.error('must use --env production or --env staging');
     }
