@@ -53,8 +53,8 @@ const fixStagingFonts = `aws s3 cp \
        --recursive`;
 
 const fixProdFonts = `aws s3 cp \
-       s3://publicntp.org/ \
-       s3://publicntp.org/ \
+       s3://website-production.publicntp.org/ \
+       s3://website-production.publicntp.org/ \
        --exclude '*' \
        --include '*.woff2' \
        --no-guess-mime-type \
