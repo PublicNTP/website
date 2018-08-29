@@ -49,7 +49,18 @@
   padding: 20px;
 }
 
-.flex__wrapper {
+.flex {
   display: flex;
-  flex-direction: column;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__end {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
+
+
