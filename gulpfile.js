@@ -29,7 +29,7 @@ const s3Prod = `aws s3 sync ${__dirname}/dist s3://website-production.publicntp.
 
 const clearStaging = `aws cloudfront create-invalidation --distribution-id E27DRANRNP31GP --paths '/*'`;
 const clearProduction = `aws cloudfront create-invalidation --distribution-id E32DZUWHQTY5ZD --paths '/*'`;
-const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
+const backupProduction = `aws s3 sync s3://website-production.publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
     1}-${new Date().getDate()}`;
 
 const fixDevFonts = `aws s3 cp \
