@@ -22,17 +22,45 @@ var posts = require('./data/posts.json');
 var argv = require('yargs').argv;
 
 const exec = require('child_process').exec;
-const s3Stage =
-    'aws s3 sync ' +
-    __dirname +
-    '/dist' +
-    ' s3://website-staging.publicntp.org/ --delete';
+
 const s3Dev = `aws s3 sync ${__dirname}/dist s3://dev.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
+const s3Stage = `aws s3 sync ${__dirname}/dist s3://website-staging.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
 const s3Prod = `aws s3 sync ${__dirname}/dist s3://website-production.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
+
 const clearStaging = `aws cloudfront create-invalidation --distribution-id E27DRANRNP31GP --paths '/*'`;
 const clearProduction = `aws cloudfront create-invalidation --distribution-id E32DZUWHQTY5ZD --paths '/*'`;
 const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
     1}-${new Date().getDate()}`;
+
+const fixDevFonts = `aws s3 cp \
+       s3://dev.publicntp.org/ \
+       s3://dev.publicntp.org/ \
+       --exclude '*' \
+       --include '*.woff2' \
+       --no-guess-mime-type \
+       --content-type="font/woff2" \
+       --metadata-directive="REPLACE" \
+       --recursive`;
+
+const fixStagingFonts = `aws s3 cp \
+       s3://website-staging.publicntp.org/ \
+       s3://website-staging.publicntp.org/ \
+       --exclude '*' \
+       --include '*.woff2' \
+       --no-guess-mime-type \
+       --content-type="font/woff2" \
+       --metadata-directive="REPLACE" \
+       --recursive`;
+
+const fixProdFonts = `aws s3 cp \
+       s3://publicntp.org/ \
+       s3://publicntp.org/ \
+       --exclude '*' \
+       --include '*.woff2' \
+       --no-guess-mime-type \
+       --content-type="font/woff2" \
+       --metadata-directive="REPLACE" \
+       --recursive`;
 
 // Old PNTP Server Commands
 // const s3Stage =
