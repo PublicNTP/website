@@ -11,12 +11,12 @@
     // height: 100px;
     // width: 100px;
     // height: 400px;
-    // width: 50% !important;
+    // width: 50%;
   }
 
   &__opened {
-    opacity: 1 !important;
-    pointer-events: auto !important;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   &__center {

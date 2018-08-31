@@ -27,7 +27,7 @@
   src: local("Roboto"), local("Roboto-Regular"), url("../fonts/roboto-v18-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v18-latin-regular.woff2") format("woff2"), url("../fonts/roboto-v18-latin-regular.woff") format("woff"), url("../fonts/roboto-v18-latin-regular.ttf") format("truetype"), url("../fonts/roboto-v18-latin-regular.svg#Roboto") format("svg"); }
 
 .opaque {
-  opacity: 0 !important; }
+  opacity: 0; }
 
 .restrict {
   max-width: 1300px; }
@@ -41,20 +41,20 @@
   clear: both; }
 
 .pull--left {
-  float: left !important; }
+  float: left; }
 
 .pull--right {
-  float: right !important; }
+  float: right; }
 
 .hide {
-  display: none !important; }
+  display: none; }
 
 .full-wrap {
   display: block;
   float: left; }
 
 .clear-margin {
-  margin: 0 !important; }
+  margin: 0; }
 
 .center-width {
   width: 100%;
@@ -330,8 +330,8 @@
     overflow: hidden; }
   .blog__search-input-hide {
     max-height: 0;
-    padding: 0 !important;
-    border: none !important; }
+    padding: 0;
+    border: none; }
   .blog__search-input {
     width: 100%;
     float: left;
@@ -508,7 +508,7 @@ strong {
   display: none;
   width: 100%;
   float: left;
-  margin-bottom: 30px !important; }
+  margin-bottom: 30px; }
   @media screen and (max-width: 767px) {
     .blog-detail__swiper {
       display: block; } }
@@ -598,7 +598,7 @@ strong {
   padding-right: 80px; }
   @media screen and (max-width: 991px) {
     .connect__form-section {
-      width: 100% !important;
+      width: 100%;
       border: none;
       padding: 0;
       margin-bottom: 30px; } }
@@ -620,7 +620,7 @@ strong {
       font-family: monospace; }
   @media screen and (max-width: 991px) {
     .connect__section {
-      width: 100% !important;
+      width: 100%;
       border: none;
       padding: 0;
       margin-bottom: 30px; } }
@@ -837,7 +837,7 @@ strong {
   top: 40px;
   z-index: 300; }
   .dropdown__arrow {
-    width: 11px !important; }
+    width: 11px; }
   .dropdown__close {
     position: absolute;
     top: 10px;
@@ -882,8 +882,7 @@ strong {
     float: left;
     font-size: 24px;
     cursor: pointer;
-    padding: 10px;
-    cursor: pointer; }
+    padding: 10px; }
     .dropdown__item:hover {
       border-bottom: 1px solid #9b9b9b; }
   .dropdown__show {
@@ -916,7 +915,7 @@ strong {
         width: 100%;
         padding: none; } }
   .donate__stripe {
-    width: 100% !important;
+    width: 100%;
     margin-bottom: 40px; }
   .donate__quarter {
     width: 25%;
@@ -1088,7 +1087,7 @@ strong {
   border-color: #fa755a; }
 
 .StripeElement--webkit-autofill {
-  background-color: #fefde5 !important; }
+  background-color: #fefde5; }
 
 #card-errors {
   margin-top: 15px; }
@@ -1198,14 +1197,14 @@ strong {
   padding: 33px 56px;
   position: relative; }
   .header__connect {
-    border: 1px solid #9b9b9b !important;
+    border: 1px solid #9b9b9b;
     border-radius: 2px;
     margin-left: 20px;
-    width: 90px !important;
-    text-align: center !important; }
+    width: 90px;
+    text-align: center; }
     @media screen and (max-width: 767px) {
       .header__connect {
-        padding: 8px 17px !important;
+        padding: 8px 17px;
         margin-top: 20px; } }
     .header__connect:hover {
       background: #9b9b9b;
@@ -1411,7 +1410,7 @@ strong {
         .home__blog--wrap {
           padding: 20px 20px 40px 20px; } }
   .home__blog-image__wrap {
-    margin-top: 75px !important;
+    margin-top: 75px;
     width: 480px;
     height: 480px;
     float: left; }
@@ -1552,7 +1551,7 @@ strong {
     position: relative; }
     @media screen and (max-width: 767px) {
       .home__section--clear {
-        padding: 40px 0 !important; } }
+        padding: 40px 0; } }
     @media screen and (max-width: 767px) {
       .home__section {
         padding: 40px 20px; } }
@@ -1889,7 +1888,7 @@ strong {
     align-items: center; }
 
 .report__bar-init {
-  height: 0 !important; }
+  height: 0; }
 
 .report__bar-green {
   background: #6eae7d;
@@ -1995,9 +1994,9 @@ strong {
   margin-top: 20px;
   float: left; }
   .time__closed {
-    margin-bottom: 0px !important;
-    max-height: 0px !important;
-    padding-bottom: 0 !important; }
+    margin-bottom: 0px;
+    max-height: 0px;
+    padding-bottom: 0; }
   .time__icon {
     width: 8px;
     height: 8px;
@@ -2260,8 +2259,8 @@ strong {
   margin: 0 auto;
   margin-top: 25px; }
   .logo-infinite__opened {
-    opacity: 1 !important;
-    pointer-events: auto !important; }
+    opacity: 1;
+    pointer-events: auto; }
   .logo-infinite__center {
     width: 60px;
     height: 60px;

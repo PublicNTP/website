@@ -27,7 +27,7 @@
   }
 
   &__stripe {
-    width: 100% !important;
+    width: 100%;
     margin-bottom: 40px;
   }
 
@@ -267,7 +267,7 @@
 }
 
 .StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+  background-color: #fefde5;
 }
 
 #card-errors {
