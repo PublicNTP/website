@@ -2,7 +2,8 @@
 
 <div class="home__section">
   <h1 class="home__title">Governance</h1>
-  <p class="home__sub-title">We operate with transparency. Feel free to browse our company's governing documents by clicking any item's title.</p>
+  <p class="home__sub-title">We operate with transparency. Feel free to browse our company's governing documents by clicking
+    any item's title.</p>
 </div>
 
 <div class="home__section">
@@ -130,34 +131,5 @@
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-
-<script>
-  var options = {
-    valueNames: ['date']
-  };
-
-  var userList = new List('documents', options);
-
-  var message1 = 'Order by ▲';
-  var message2 = 'Order by ▼';
-  var state = false;
-
-  $('.sort__btn').on('click', function (e) {
-    console.log('firing', e.target);
-    if (state === false) {
-      $('.sort__btn').text(message1);
-
-      state = true;
-      return;
-    }
-
-    if (state === true) {
-      $('.sort__btn').text(message2);
-
-      state = false;
-      return;
-    }
-  })
-</script> {{!--
-<script src="{{relative_path}}js/donate.js"></script> --}}
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script defer src="{{relative_path}}js/govern.js"></script>

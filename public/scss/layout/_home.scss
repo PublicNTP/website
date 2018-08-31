@@ -19,7 +19,7 @@
   }
 
   &__blog-image__wrap {
-    margin-top: 75px !important;
+    margin-top: 75px;
     width: 480px;
     height: 480px;
     float: left;
@@ -232,7 +232,7 @@
 
     &--clear {
       @media screen and (max-width: breakpoint(tablet)) {
-        padding: 40px 0 !important;
+        padding: 40px 0;
       }
     }
 

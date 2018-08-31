@@ -7,9 +7,9 @@
 				<div class="dropdown__close-right dropdown__arrow"></div>
 			</div>
 			<ul class="dropdown">
-			{{#each graphs}}
+				{{#each graphs}}
 				<li class="dropdown__item dropdown__place" value="{{this.prefix}}">{{this.city}}, {{this.country}}</li>
-			{{/each}}
+				{{/each}}
 			</ul>
 		</div>
 	</div>
@@ -37,4 +37,4 @@
 	</div>
 </div>
 <div class="home__section"></div>
-<script src="{{relative_path}}js/dropdown.js"></script>
+<script defer src="{{relative_path}}js/dropdown.js"></script>

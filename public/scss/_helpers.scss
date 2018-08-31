@@ -1,5 +1,5 @@
 .opaque {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
 .restrict {
@@ -18,15 +18,15 @@
 }
 
 .pull--left {
-  float: left !important;
+  float: left;
 }
 
 .pull--right {
-  float: right !important;
+  float: right;
 }
 
 .hide {
-  display: none !important;
+  display: none;
 }
 
 .full-wrap {
@@ -36,7 +36,7 @@
 }
 
 .clear-margin {
-  margin: 0 !important;
+  margin: 0;
 }
 
 .center-width {
