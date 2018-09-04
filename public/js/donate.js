@@ -512,7 +512,8 @@ var spinner =
               description: 'PublicNTP tax-deductible donation.',
               receipt_email: email,
               metadata: {
-                special: 'You are special'
+                'special': 'You are special',
+                'order_id': 'just a test here'
               }
             }
           };
