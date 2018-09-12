@@ -92,9 +92,6 @@ gulp.task('minify:core-js', function () {
         './public/js/connect.js',
         './public/js/dropdown.js',
         './public/js/donate.js',
-        // argv.env && argv.env == 'production'
-        //   ? './public/js/production/donate.js'
-        //   : './public/js/donate.js',
         './public/js/home.js',
         './public/js/main.js',
         './public/js/search.js',

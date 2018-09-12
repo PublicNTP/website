@@ -20,7 +20,7 @@
   <meta property="og:image" content="/images/publicNTPLogo.png">  
   <meta property="og:image:secure_url" content="/images/publicNTPLogo.png">    
   <meta property="og:image:alt" content="PublicNTP"> 
-  <meta property="og:url" content="//blog.html?page&#x3D;2"> 
+  <meta property="og:url" content="//blog.html?page&#x3D;5"> 
   <meta property="og:type" content="website">
   <meta name="msapplication-config" content="./images/browserconfig.xml">
 
@@ -336,7 +336,7 @@
 			</a>
 		</div>
 		<div class="blog__page-prev">
-			<a href=".//blog.html" class="blog__page">Newer Posts</a>
+			<a href=".//blog.html?page&#x3D;4" class="blog__page">Newer Posts</a>
 		</div>
 		<div class="blog__page-next">
 		</div>

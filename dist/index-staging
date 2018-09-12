@@ -36,7 +36,7 @@
   <!-- End Google Tag Manager -->
 
   <link rel="shortcut icon" type="image/png" href="./images/favicon.png">
-  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
@@ -49,7 +49,7 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="./css/base.css">
-  <script src="./js/jquery-2.1.4.min.js"></script>
+  <script defer src="./js/jquery-2.1.4.min.js"></script>
   <link rel="canonical" href="https://publicntp.org/">
 </head>
 
@@ -91,12 +91,12 @@
                 </div>
               </div>
             </div>
-            <h3 class="logo__title">PublicNTP</h3>
+            <h1 class="logo__title">PublicNTP</h1>
           </div>
         </a>
 
         <div class="flex__wrapper">
-          <div style="display: flex;justify-content: flex-end;">
+          <div class="flex__end">
             <a href="./donate.html" class="header__item header__connect" tabindex="0">Donate</a>
             <a href="./connect.html" class="header__item header__connect" tabindex="0">Connect</a>
             <a href="./learn.html" class="header__item header__connect" tabindex="0">Learn</a>
@@ -1001,25 +1001,25 @@
 <div class="home__blog--wrap">
 	<div class="home__blog">
 		<a href="./blog/posts/publicntp-partners-network-time-foundation.html">
-			<h4 class="home__blog-title">PublicNTP partners with Network Time Foundation</h4>
+			<h4 class="home__blog-title">A Tale of Two Meetings</h4>
 		</a>
 		<a href="./blog/posts/publicntp-partners-network-time-foundation.html">
 			<div class="swiper-container home__blog-image__wrap">
 				<div class="swiper-wrapper">
-					<img class="swiper-slide home__blog-image" src="images/guardian-of-time.jpg" alt="Blog Image"> 
+					<img class="swiper-slide home__blog-image" src="images/ice-meeting.jpg" alt="Blog Image"> 
 				</div>
 			</div>
 		</a>
-		<p class="home__blog-p">Network Time Protocol (NTP) remains one of the oldest and most fundamental internet protocols in use. It has provided a bedrock of reliable time for us since 1985. NTP started out rough, as all innovations do</p>
+		<p class="home__blog-p">A big part of keeping any company pointed in the right direction is making sure the leadership team is communicating regularly.</p>
 	</div>
 </div>
 <div class="home__section">
 </div>
 <div class="home__section">
 </div>
-<script src="./js/swiper.min.js"></script> 
+<script defer src="./js/swiper.min.js"></script> 
 <link rel="stylesheet" href="./css/swiper.min.css">
-<script src="./js/home.js"></script>
+<script defer src="./js/home.js"></script>
     </div>
     <footer class="footer">
       <div class="footer__wrap">
@@ -1046,7 +1046,7 @@
           <h3 class="footer__title">
             Learn how you can connect and help, or follow us on LinkedIn.
           </h3>
-          <div style="display: flex;">
+          <div class="flex">
             <a href="./connect.html" class="footer__connect" tabindex="0">Connect</a>
             <a href="https://linkedin.com/company/publicntp/" target="_blank" tabindex="0">
               <img class="footer__linkedin" src="./images/linkedin.png" alt="LinkedIn">
@@ -1079,7 +1079,7 @@
       <div class="privacy__close"></div>
     </div>
   </div>
-  <script src="./js/main.js"></script>
+  <script defer src="./js/main.js"></script>
 </body>
 
 </html>
