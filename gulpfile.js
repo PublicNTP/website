@@ -1,25 +1,25 @@
 'use strict';
 
-var path = require('path');
-var request = require('request');
-var mkdirp = require('mkdirp');
-var fs = require('fs');
-var del = require('del');
-var rp = require('request-promise');
+const path = require('path');
+const request = require('request');
+const mkdirp = require('mkdirp');
+const fs = require('fs');
+const del = require('del');
+const rp = require('request-promise');
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var nodemon = require('gulp-nodemon');
-var env = require('gulp-env');
-var sassGlob = require('gulp-sass-glob');
-var autoprefixer = require('gulp-autoprefixer');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const nodemon = require('gulp-nodemon');
+const env = require('gulp-env');
+const sassGlob = require('gulp-sass-glob');
+const autoprefixer = require('gulp-autoprefixer');
 
-var uglify = require('gulp-uglify');
-var stripDebug = require('gulp-strip-debug');
-var minifyHTML = require('gulp-htmlmin');
-var minifyCSS = require('gulp-clean-css');
-var posts = require('./data/posts.json');
-var argv = require('yargs').argv;
+const uglify = require('gulp-uglify');
+const stripDebug = require('gulp-strip-debug');
+const minifyHTML = require('gulp-htmlmin');
+const minifyCSS = require('gulp-clean-css');
+const posts = require('./data/posts.json');
+const argv = require('yargs').argv;
 
 const exec = require('child_process').exec;
 

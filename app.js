@@ -1,27 +1,27 @@
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var hbs = require('hbs');
-var compression = require('compression');
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const hbs = require('hbs');
+const compression = require('compression');
 
-var indexRoutes = require('./routes/index');
-var indexDevRoutes = require('./routes/index-dev');
-var indexStagingRoutes = require('./routes/index-staging');
-var blogRoutes = require('./routes/blog');
-var donateRoutes = require('./routes/donate');
-var thankYouRoutes = require('./routes/thankyou');
-var aboutRoutes = require('./routes/about');
-var learnRoutes = require('./routes/learn');
-var connectRoutes = require('./routes/connect');
-var historyRoutes = require('./routes/history');
-var statsRoutes = require('./routes/stats');
-var termsRoutes = require('./routes/terms');
-var governanceRoutes = require('./routes/governance');
-var port = 3020;
-var app = express();
+const indexRoutes = require('./routes/index');
+const indexDevRoutes = require('./routes/index-dev');
+const indexStagingRoutes = require('./routes/index-staging');
+const blogRoutes = require('./routes/blog');
+const donateRoutes = require('./routes/donate');
+const thankYouRoutes = require('./routes/thankyou');
+const aboutRoutes = require('./routes/about');
+const learnRoutes = require('./routes/learn');
+const connectRoutes = require('./routes/connect');
+const historyRoutes = require('./routes/history');
+// const statsRoutes = require('./routes/stats');
+const termsRoutes = require('./routes/terms');
+const governanceRoutes = require('./routes/governance');
+const port = 3020;
+const app = express();
 
-var ENV = process.env.NODE_ENV;
-var is_production = true;
+const ENV = process.env.NODE_ENV;
+let is_production = true;
 
 if (ENV === 'development') {
   is_production = false;
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 hbs.registerPartials(__dirname + '/views/partials');
 
-// // view engine setup
+// view engine setup
 app.set('view engine', 'hbs');
 
 app.enable('trust proxy');
