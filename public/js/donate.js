@@ -510,7 +510,11 @@ var spinner =
               currency: 'usd',
               source: result.token.id,
               description: 'PublicNTP tax-deductible donation.',
-              receipt_email: email
+              receipt_email: email,
+              metadata: {
+                'special': 'You are special',
+                'order_id': 'just a test here'
+              }
             }
           };
           stripeTokenHandler(result.token, dataToSend);

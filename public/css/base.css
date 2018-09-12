@@ -397,6 +397,10 @@
     height: 12px;
     -o-object-fit: contain;
        object-fit: contain; }
+  .blog__img img {
+    width: 100%; }
+  .blog__img-text {
+    font-size: 10px; }
 
 .section__puzzle p {
   position: relative;
@@ -1238,8 +1242,7 @@ strong {
     text-decoration: none;
     color: #9b9b9b;
     transition: .3s;
-    width: 100%;
-    text-align: right; }
+    text-align: center; }
     @media screen and (max-width: 767px) {
       .header__item {
         display: none; } }

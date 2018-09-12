@@ -239,6 +239,16 @@
     height: 12px;
     object-fit: contain;
   }
+
+  &__img {
+    img {
+      width: 100%;
+    }
+
+    &-text {
+      font-size: 10px;
+    }
+  }
 }
 
 .section {
