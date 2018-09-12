@@ -198,52 +198,50 @@ gulp.task('routes', function () {
         }
     });
     var routes = require('./staticRoutes');
-    setTimeout(function () {
-        var index = 2;
-        for (var i = 2; i < posts.length; i += 2) {
-            routes.push('/blog.html?page=' + index);
-            index++;
-        }
-        for (var i in posts) {
-            routes.push('/blog/posts/' + posts[i].permalink + '.html');
-        }
-        console.log('routes', routes);
-        let rpRoutes = routes.map(function (r) {
-            return rp('http://localhost:3020' + r);
-        });
+    var index = 2;
+    for (var i = 2; i < posts.length; i += 2) {
+        routes.push('/blog.html?page=' + index);
+        index++;
+    }
+    for (var i in posts) {
+        routes.push('/blog/posts/' + posts[i].permalink + '.html');
+    }
+    console.log('routes', routes);
+    let rpRoutes = routes.map(function (r) {
+        return rp('http://localhost:3020' + r);
+    });
 
-        Promise.all(rpRoutes)
-            .then(function (pages) {
-                console.log('pages', pages);
-                let tempPath = path.join(__dirname, 'dist');
+    Promise.all(rpRoutes)
+        .then(function (pages) {
+            console.log('pages', pages);
+            let tempPath = path.join(__dirname, 'dist');
 
-                for (let i = 0; i < pages.length; i++) {
-                    let route = routes[i];
-                    console.log('route', route);
-                    if (route == '/' && argv.env == 'production') route = '/index.html';
-                    if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
-                    if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
+            for (let i = 0; i < pages.length; i++) {
+                let route = routes[i];
+                console.log('route', route);
+                if (route == '/' && argv.env == 'production') route = '/index.html';
+                if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
+                if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
 
 
-                    var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
-                    if (fs.existsSync(routeDir)) {
-                        // if (route == '/index-dev' || route == '/index-staging') {
-                        //     return;
-                        // }
-                        createFile(route, pages[i]);
-                    } else {
-                        mkdirp(routeDir, function (mkdirErr) {
-                            if (mkdirErr) console.log('mkdirpErr', mkdirErr);
-                            else createFile(route, pages[i]);
-                        });
-                    }
+                var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
+                if (fs.existsSync(routeDir)) {
+                    // if (route == '/index-dev' || route == '/index-staging') {
+                    //     return;
+                    // }
+                    createFile(route, pages[i]);
+                } else {
+                    mkdirp(routeDir, function (mkdirErr) {
+                        if (mkdirErr) console.log('mkdirpErr', mkdirErr);
+                        else createFile(route, pages[i]);
+                    });
                 }
-            })
-            .catch(function (err) {
-                console.log('err', err);
-                console.log('err with');
-            });
-    }, 6000);
+            }
+        })
+        .catch(function (err) {
+            console.log('err', err);
+            console.log('err with');
+        });
 });
 
 module.exports = argv.env;
