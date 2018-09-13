@@ -31,13 +31,6 @@ locations.forEach(function (host, i) {
 });
 
 router.get('/', function (req, res) {
-  // let domain;
-  // // let domain = 'http://localhost:3020';
-
-  // if (process.argv[4] == 'dev') domain = 'http://dev.publicntp.org';
-  // if (process.argv[4] === 'staging') domain = 'https://staging.publicntp.org';
-  // if (process.argv[4] === 'production') domain = 'https://publicntp.org';
-
   var post = posts[0];
   res.render('home', {
     locations: locations,

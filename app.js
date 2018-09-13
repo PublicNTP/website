@@ -17,7 +17,7 @@ const historyRoutes = require('./routes/history');
 // const statsRoutes = require('./routes/stats');
 const termsRoutes = require('./routes/terms');
 const governanceRoutes = require('./routes/governance');
-const port = 3020;
+const port = 3000;
 const app = express();
 
 const ENV = process.env.NODE_ENV;

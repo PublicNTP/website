@@ -22,7 +22,6 @@ const posts = require('./data/posts.json');
 const argv = require('yargs').argv;
 
 const exec = require('child_process').exec;
-const runSequence = require('run-sequence');
 
 const s3Dev = `aws s3 sync ${__dirname}/dist s3://dev.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
 const s3Stage = `aws s3 sync ${__dirname}/dist s3://website-staging.publicntp.org/ --delete --expires "$(date -d '+3 months' --utc +'%Y-%m-%dT%H:%M:%SZ')"`;
@@ -77,7 +76,7 @@ const fixProdFonts = `aws s3 cp \
 //     1}-${new Date().getDate()}`;
 
 gulp.task('clean:dist', function (cb) {
-    del('./dist', cb);
+    del('./dist/*', cb);
 });
 
 gulp.task('minify:html', function () {
@@ -91,9 +90,8 @@ gulp.task('minify:core-js', function () {
     var jsList = [
         './public/js/blog.js',
         './public/js/connect.js',
-        './public/js/donate.js',
         './public/js/dropdown.js',
-        './public/js/govern.js',
+        './public/js/donate.js',
         './public/js/home.js',
         './public/js/main.js',
         './public/js/search.js',
@@ -198,73 +196,70 @@ gulp.task('routes', function () {
         }
     });
     var routes = require('./staticRoutes');
-    var index = 2;
-    for (var i = 2; i < posts.length; i += 2) {
-        routes.push('/blog.html?page=' + index);
-        index++;
-    }
-    for (var i in posts) {
-        routes.push('/blog/posts/' + posts[i].permalink + '.html');
-    }
-    console.log('routes', routes);
-    let rpRoutes = routes.map(function (r) {
-        return rp('http://localhost:3020' + r);
-    });
-
-    Promise.all(rpRoutes)
-        .then(function (pages) {
-            console.log('pages', pages);
-            let tempPath = path.join(__dirname, 'dist');
-
-            for (let i = 0; i < pages.length; i++) {
-                let route = routes[i];
-                console.log('route', route);
-                if (route == '/' && argv.env == 'production') route = '/index.html';
-                if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
-                if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
-
-
-                var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
-                if (fs.existsSync(routeDir)) {
-                    // if (route == '/index-dev' || route == '/index-staging') {
-                    //     return;
-                    // }
-                    createFile(route, pages[i]);
-                } else {
-                    mkdirp(routeDir, function (mkdirErr) {
-                        if (mkdirErr) console.log('mkdirpErr', mkdirErr);
-                        else createFile(route, pages[i]);
-                    });
-                }
-            }
-        })
-        .catch(function (err) {
-            console.log('err', err);
-            console.log('err with');
+    setTimeout(function () {
+        var index = 2;
+        for (var i = 2; i < posts.length; i += 2) {
+            routes.push('/blog.html?page=' + index);
+            index++;
+        }
+        for (var i in posts) {
+            routes.push('/blog/posts/' + posts[i].permalink + '.html');
+        }
+        console.log('routes', routes);
+        let rpRoutes = routes.map(function (r) {
+            return rp('http://localhost:3000' + r);
         });
+
+        Promise.all(rpRoutes)
+            .then(function (pages) {
+                console.log('pages', pages);
+                let tempPath = path.join(__dirname, 'dist');
+
+                for (let i = 0; i < pages.length; i++) {
+                    let route = routes[i];
+                    console.log('route', route);
+                    if (route == '/' && argv.env == 'production') route = '/index.html';
+                    if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
+                    if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
+
+
+                    var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
+                    if (fs.existsSync(routeDir)) {
+                        // if (route == '/index-dev' || route == '/index-staging') {
+                        //     return;
+                        // }
+                        createFile(route, pages[i]);
+                    } else {
+                        mkdirp(routeDir, function (mkdirErr) {
+                            if (mkdirErr) console.log('mkdirpErr', mkdirErr);
+                            else createFile(route, pages[i]);
+                        });
+                    }
+                }
+            })
+            .catch(function (err) {
+                console.log('err', err);
+                console.log('err with');
+            });
+    }, 6000);
 });
 
 module.exports = argv.env;
 
-gulp.task('gather', function (callback) {
-    runSequence('routes', 'minify:css', 'copy:uploads', 'copy:images', 'copy:fonts', 'copy:documents', 'minify:html', 'copy:root-files', 'minify:core-js', callback);
+gulp.task('gather', function () {
+    // gulp.start('clean:dist');
+    setTimeout(function () {
+        gulp.start('routes');
+        gulp.start('minify:css');
+        gulp.start('copy:uploads');
+        gulp.start('copy:images');
+        gulp.start('copy:fonts');
+        gulp.start('copy:documents');
+        gulp.start('minify:html');
+        gulp.start('minify:core-js');
+        gulp.start('copy:root-files');
+    }, 1000);
 });
-
-// Old
-// gulp.task('gather', function () {
-//     gulp.start('clean:dist');
-//     setTimeout(function () {
-//         gulp.start('routes');
-//         gulp.start('minify:css');
-//         gulp.start('copy:uploads');
-//         gulp.start('copy:images');
-//         gulp.start('copy:fonts');
-//         gulp.start('copy:documents');
-//         gulp.start('minify:html');
-//         gulp.start('copy:root-files');
-//         gulp.start('minify:core-js');
-//     }, 1000);
-// });
 
 var pushS3Env = function (s3env) {
     exec(s3env, function (err, stdout, stderr) {
@@ -314,7 +309,7 @@ gulp.task('ship', function () {
         gulp.start('minify:html');
         gulp.start('minify:core-js');
         gulp.start('copy:root-files');
-    }, 2000);
+    }, 1000);
 
     // pushs3
     setTimeout(function () {

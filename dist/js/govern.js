@@ -1,1 +1,0 @@
-!function(e){e(function(){new List("documents",{valueNames:["date"]});var n=!1;e(".sort__btn").on("click",function(t){return!1===n?(e(".sort__btn").text("Order by ▲"),void(n=!0)):!0===n?(e(".sort__btn").text("Order by ▼"),void(n=!1)):void 0})})}(jQuery);
