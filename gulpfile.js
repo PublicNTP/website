@@ -197,14 +197,20 @@ gulp.task('routes', function () {
     });
     var routes = require('./staticRoutes');
     setTimeout(function () {
-        var index = 2;
-        for (var i = 2; i < posts.length; i += 2) {
-            routes.push('/blog.html?page=' + index);
-            index++;
-        }
-        for (var i in posts) {
-            routes.push('/blog/posts/' + posts[i].permalink + '.html');
-        }
+        // Paging logic here
+        // var index = 2;
+        // for (var i = 2; i < posts.length; i += 2) {
+        //     routes.push('/blog.html?page=' + index);
+        //     index++;
+        // }
+
+        // for (var i in posts) {
+        //     routes.push('/blog/posts/' + posts[i].permalink + '.html');
+        // }
+        posts.map(post => {
+            routes.push('/blog/posts/' + post.permalink + '.html');
+        });
+
         console.log('routes', routes);
         let rpRoutes = routes.map(function (r) {
             return rp('http://localhost:3000' + r);
