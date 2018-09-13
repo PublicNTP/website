@@ -20,7 +20,7 @@ router.get('/', function (req, res) {
     post.time = moment(post.timestamp).format('<b>MMM</b> D, YYYY');
     return post;
   });
-  // var timeline = timelineHelpers.buildTimeline(posts);
+  var timeline = timelineHelpers.buildTimeline(posts);
   //timeline = timelineHelpers.denullifyTimeline(posts);
 
   res.render('blog', {
@@ -28,7 +28,7 @@ router.get('/', function (req, res) {
     deserializedPosts: JSON.stringify(posts),
     next: next,
     prev: prev,
-    // timeline: timeline,
+    timeline: timeline,
     the_title: 'Blog | PublicNTP',
     relative_path: './',
     url: req.originalUrl,
