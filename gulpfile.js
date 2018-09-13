@@ -180,11 +180,6 @@ var createFile = function (place, content) {
     });
 };
 
-var syncDir = function (route, cb) {
-    console.log('called1');
-};
-
-var relPath = path.join(__dirname, 'dist');
 gulp.task('routes', function () {
     nodemon({
         script: 'app.js',
