@@ -51,6 +51,7 @@
   },
   "homepage": "https://github.com/PublicNTP/website#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "run-sequence": "^2.2.1"
   }
 }

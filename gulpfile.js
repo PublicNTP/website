@@ -1,25 +1,25 @@
 'use strict';
 
-var path = require('path');
-var request = require('request');
-var mkdirp = require('mkdirp');
-var fs = require('fs');
-var del = require('del');
-var rp = require('request-promise');
+const path = require('path');
+const request = require('request');
+const mkdirp = require('mkdirp');
+const fs = require('fs');
+const del = require('del');
+const rp = require('request-promise');
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var nodemon = require('gulp-nodemon');
-var env = require('gulp-env');
-var sassGlob = require('gulp-sass-glob');
-var autoprefixer = require('gulp-autoprefixer');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const nodemon = require('gulp-nodemon');
+const env = require('gulp-env');
+const sassGlob = require('gulp-sass-glob');
+const autoprefixer = require('gulp-autoprefixer');
 
-var uglify = require('gulp-uglify');
-var stripDebug = require('gulp-strip-debug');
-var minifyHTML = require('gulp-htmlmin');
-var minifyCSS = require('gulp-clean-css');
-var posts = require('./data/posts.json');
-var argv = require('yargs').argv;
+const uglify = require('gulp-uglify');
+const stripDebug = require('gulp-strip-debug');
+const minifyHTML = require('gulp-htmlmin');
+const minifyCSS = require('gulp-clean-css');
+const posts = require('./data/posts.json');
+const argv = require('yargs').argv;
 
 const exec = require('child_process').exec;
 
@@ -180,15 +180,11 @@ var createFile = function (place, content) {
     });
 };
 
-var syncDir = function (route, cb) {
-    console.log('called1');
-};
-
-var relPath = path.join(__dirname, 'dist');
 gulp.task('routes', function () {
     nodemon({
         script: 'app.js',
-        ext: 'js html'
+        ext: 'js html',
+        delay: "2500"
     });
     env({
         vars: {
@@ -197,26 +193,30 @@ gulp.task('routes', function () {
     });
     var routes = require('./staticRoutes');
     setTimeout(function () {
-        var index = 2;
-        for (var i = 2; i < posts.length; i += 2) {
-            routes.push('/blog.html?page=' + index);
-            index++;
-        }
-        for (var i in posts) {
-            routes.push('/blog/posts/' + posts[i].permalink + '.html');
-        }
+        // Paging logic here
+        // var index = 2;
+        // for (var i = 2; i < posts.length; i += 2) {
+        //     routes.push('/blog.html?page=' + index);
+        //     index++;
+        // }
+
+        // for (var i in posts) {
+        //     routes.push('/blog/posts/' + posts[i].permalink + '.html');
+        // }
+        posts.map(post => {
+            routes.push('/blog/posts/' + post.permalink + '.html');
+        });
+
         console.log('routes', routes);
         let rpRoutes = routes.map(function (r) {
-            return rp('http://localhost:3020' + r);
+            return rp('http://localhost:3000' + r);
         });
 
         Promise.all(rpRoutes)
             .then(function (pages) {
                 console.log('pages', pages);
                 let tempPath = path.join(__dirname, 'dist');
-
-                for (let i = 0; i < pages.length; i++) {
-                    let route = routes[i];
+                routes.map((route, i) => {
                     console.log('route', route);
                     if (route == '/' && argv.env == 'production') route = '/index.html';
                     if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
@@ -225,9 +225,6 @@ gulp.task('routes', function () {
 
                     var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
                     if (fs.existsSync(routeDir)) {
-                        // if (route == '/index-dev' || route == '/index-staging') {
-                        //     return;
-                        // }
                         createFile(route, pages[i]);
                     } else {
                         mkdirp(routeDir, function (mkdirErr) {
@@ -235,8 +232,31 @@ gulp.task('routes', function () {
                             else createFile(route, pages[i]);
                         });
                     }
-                }
+                });
             })
+            // .then(function (pages) {
+            //     console.log('pages', pages);
+            //     let tempPath = path.join(__dirname, 'dist');
+
+            //     for (let i = 0; i < pages.length; i++) {
+            //         let route = routes[i];
+            //         console.log('route', route);
+            //         if (route == '/' && argv.env == 'production') route = '/index.html';
+            //         if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
+            //         if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
+
+
+            //         var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
+            //         if (fs.existsSync(routeDir)) {
+            //             createFile(route, pages[i]);
+            //         } else {
+            //             mkdirp(routeDir, function (mkdirErr) {
+            //                 if (mkdirErr) console.log('mkdirpErr', mkdirErr);
+            //                 else createFile(route, pages[i]);
+            //             });
+            //         }
+            //     }
+            // })
             .catch(function (err) {
                 console.log('err', err);
                 console.log('err with');
@@ -247,10 +267,11 @@ gulp.task('routes', function () {
 module.exports = argv.env;
 
 gulp.task('gather', function () {
-    gulp.start('clean:dist');
+    // gulp.start('clean:dist');
     setTimeout(function () {
         gulp.start('routes');
         gulp.start('minify:css');
+        gulp.start('sass');
         gulp.start('copy:uploads');
         gulp.start('copy:images');
         gulp.start('copy:fonts');
@@ -302,6 +323,7 @@ gulp.task('ship', function () {
     setTimeout(function () {
         gulp.start('routes');
         gulp.start('minify:css');
+        gulp.start('sass');
         gulp.start('copy:uploads');
         gulp.start('copy:images');
         gulp.start('copy:fonts');

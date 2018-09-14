@@ -35,7 +35,7 @@ router.get('/', function (req, res) {
     post: post,
     the_title: 'PublicNTP',
     relative_path: './',
-    domain: 'http://staging.publicntp.org'
+    domain: 'https://staging.publicntp.org'
   });
 });
 
