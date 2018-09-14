@@ -1,11 +1,10 @@
-{{!--
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script> --}} {{!-- Stripe Card magic --}}
 <script src="https://js.stripe.com/v3/"></script>
 
 <div class="home__section">
   <h1 class="home__title">Bring Time to the World</h1>
   <p class="home__sub-title">
-    Your donations help us to provide the public with unrestricted access to highly-accurate time sources around the globe.
+    Your donations help us to provide the public with unrestricted access to highly-accurate time sources around the
+    globe.
   </p>
 </div>
 <div class="home__section">
@@ -28,8 +27,10 @@
     <span class="donate__cash hide">$</span> --}}
     <span class="donate__underline hide"></span>
     <input type="text" class="donate__input" id="donateInput"> {{!--
-    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"> --}} {{!-- you'll be
-    providing people in San Paulo with 47 hours of server access. --}} you'll be providing people with hours of servers access.
+    <input type="text" class="donate__input" onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"> --}} {{!-- you'll
+    be
+    providing people in San Paulo with 47 hours of server access. --}} you'll be providing people with hours of servers
+    access.
   </p>
   <div class="donate">
     <h4 class="donate__title">Personal Info</h4>
@@ -78,13 +79,6 @@
     </div>
 
     <h4 class="donate__title">Credit Card Info</h4>
-
-    {{!--
-    <div class="connect__input-wrap donate__half">
-      <input name="card_number" id="ccInput" class="connect__input">
-      <label class="connect__label">Card Number</label>
-      <p class="donate__error" id="creditCardError"></p>
-    </div> --}}
 
     <div class="connect__input-wrap donate__half donate__stripe">
       <div id="card-element">
