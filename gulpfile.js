@@ -270,6 +270,7 @@ gulp.task('gather', function () {
     setTimeout(function () {
         gulp.start('routes');
         gulp.start('minify:css');
+        gulp.start('sass');
         gulp.start('copy:uploads');
         gulp.start('copy:images');
         gulp.start('copy:fonts');
@@ -321,6 +322,7 @@ gulp.task('ship', function () {
     setTimeout(function () {
         gulp.start('routes');
         gulp.start('minify:css');
+        gulp.start('sass');
         gulp.start('copy:uploads');
         gulp.start('copy:images');
         gulp.start('copy:fonts');

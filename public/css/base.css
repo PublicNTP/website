@@ -330,8 +330,8 @@
     overflow: hidden; }
   .blog__search-input-hide {
     max-height: 0;
-    padding: 0;
-    border: none; }
+    padding: 0 !important;
+    border: none !important; }
   .blog__search-input {
     width: 100%;
     float: left;
@@ -1997,9 +1997,9 @@ strong {
   margin-top: 20px;
   float: left; }
   .time__closed {
-    margin-bottom: 0px;
-    max-height: 0px;
-    padding-bottom: 0; }
+    margin-bottom: 0px !important;
+    max-height: 0px !important;
+    padding-bottom: 0 !important; }
   .time__icon {
     width: 8px;
     height: 8px;
