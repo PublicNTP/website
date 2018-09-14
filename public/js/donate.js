@@ -17,13 +17,11 @@ var spinner =
   '      </div>  ';
 
 (function ($) {
-  // $(function() {
-
   // Country Code Setter
   var country;
   $.ajax({
     dataType: 'jsonp',
-    url: 'https://freegeoip.net/json',
+    url: 'http://api.ipstack.com/check?access_key=5995788c53578af374f3f436b1563a48',
     success: function (data) {
       country = data.country_code;
       console.log('Country Code:', country);
