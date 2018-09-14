@@ -267,7 +267,7 @@ gulp.task('routes', function () {
 module.exports = argv.env;
 
 gulp.task('gather', function () {
-    // gulp.start('clean:dist');
+    gulp.start('clean:dist');
     setTimeout(function () {
         gulp.start('routes');
         gulp.start('minify:css');

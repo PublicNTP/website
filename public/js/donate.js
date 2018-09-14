@@ -20,11 +20,11 @@ var spinner =
   // Country Code Setter
   var country;
   $.ajax({
-    dataType: 'jsonp',
-    url: 'http://api.ipstack.com/check?access_key=5995788c53578af374f3f436b1563a48',
+    dataType: 'json',
+    url: 'https://ipapi.co/json/',
     success: function (data) {
-      country = data.country_code;
-      console.log('Country Code:', country);
+      country = data.country;
+      // console.log('Country Code:', country);
       setTimeout(function () {
         document.querySelector(
           '.donate__country option[value="' + country + '"]'
@@ -32,7 +32,7 @@ var spinner =
       }, 1000);
     },
     error: function (data) {
-      console.log('Not able to get country data');
+      console.log('Not able to get country data', data);
     }
   });
 
