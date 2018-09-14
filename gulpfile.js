@@ -183,7 +183,8 @@ var createFile = function (place, content) {
 gulp.task('routes', function () {
     nodemon({
         script: 'app.js',
-        ext: 'js html'
+        ext: 'js html',
+        delay: "2500"
     });
     env({
         vars: {
