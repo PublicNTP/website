@@ -59,6 +59,16 @@
 		}
   }
 
+  &__flickr {
+    display: block;
+    width: 32px;
+    margin-left: 10px;
+
+    img {
+      width: 100%;
+    }
+  }
+
   &__linkedin {
     display: block;
     // margin-bottom: 20px;

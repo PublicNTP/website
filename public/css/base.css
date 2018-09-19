@@ -176,6 +176,12 @@
       .about__person-wrap {
         width: 100%;
         padding: 0; } }
+  .about__flickr {
+    display: block;
+    width: 32px;
+    margin-left: 10px; }
+    .about__flickr img {
+      width: 100%; }
   .about__linkedin {
     display: block;
     float: left; }
