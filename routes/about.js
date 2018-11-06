@@ -7,7 +7,7 @@ router.get('/', function (req, res) {
 		relative_path: './',
 		description: 'Time to Meet the Team at PublicNTP.',
 		url: req.originalUrl,
-		image: 'images/terry.jpg',
+		image: 'images/people-terry.jpg',
 		image_alt: 'Terry Ott - Founder of PublicNTP'
 	})
 })
