@@ -1,7 +1,5 @@
 module.exports = [
   '/',
-  '/index-dev',
-  '/index-staging',
   '/people.html',
   '/blog.html',
   '/connect.html',
