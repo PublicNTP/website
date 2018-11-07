@@ -5,8 +5,8 @@ const hbs = require('hbs');
 const compression = require('compression');
 
 const indexRoutes = require('./routes/index');
-const indexDevRoutes = require('./routes/index-dev');
-const indexStagingRoutes = require('./routes/index-staging');
+// const indexDevRoutes = require('./routes/index-dev');
+// const indexStagingRoutes = require('./routes/index-staging');
 const blogRoutes = require('./routes/blog');
 const donateRoutes = require('./routes/donate');
 const thankYouRoutes = require('./routes/thankyou');

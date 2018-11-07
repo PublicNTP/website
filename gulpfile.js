@@ -219,9 +219,9 @@ gulp.task('routes', function () {
                 let tempPath = path.join(__dirname, 'dist');
                 routes.map((route, i) => {
                     console.log('route', route);
-                    if (route == '/' && argv.env == 'production') route = '/index.html';
-                    if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
-                    if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
+                    // if (route == '/' && argv.env == 'production') route = '/index.html';
+                    // if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
+                    // if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
 
 
                     var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));

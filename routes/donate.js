@@ -1,8 +1,6 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const env = process.env.NODE_ENV
-
-console.log('env here: ', env);
 
 switch (env) {
 	case 'dev':
@@ -16,6 +14,7 @@ switch (env) {
 		break;
 
 	default:
+		newEnv = 'https://publicntp.org'
 		break;
 }
 
@@ -28,7 +27,6 @@ router.get('/', function (req, res) {
 		image_alt: 'Donate to PublicNTP',
 		url: req.originalUrl,
 		domain: newEnv
-		// domain: 'https://publicntp.org'
 	})
 })
 
