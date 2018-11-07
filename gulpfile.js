@@ -75,12 +75,6 @@ const fixProdFonts = `aws s3 cp \
 // const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
 //     1}-${new Date().getDate()}`;
 
-const environment = argv.env;
-console.log('Gulp file env: ', environment);
-module.exports = {
-    env: environment
-}
-
 gulp.task('clean:dist', function (cb) {
     del('./dist/*', cb);
 });
@@ -188,7 +182,7 @@ var createFile = function (place, content) {
 
 gulp.task('routes', function () {
     nodemon({
-        script: `app.js --env ${argv.env}`,
+        script: 'app.js',
         ext: 'js html',
         delay: "2500"
     });

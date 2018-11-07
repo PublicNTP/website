@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var { env } = require('../gulpfile.js');
+const env = process.env.NODE_ENV
 
 console.log('env here: ', env);
-let newEnv;
 
 switch (env) {
 	case 'dev':

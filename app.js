@@ -20,7 +20,7 @@ const governanceRoutes = require('./routes/governance');
 const port = 3000;
 const app = express();
 
-const ENV = process.env.NODE_ENV;
+let ENV = process.env.NODE_ENV;
 let is_production = true;
 
 if (ENV === 'development') {
