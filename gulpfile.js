@@ -75,7 +75,6 @@ const fixProdFonts = `aws s3 cp \
 // const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
 //     1}-${new Date().getDate()}`;
 
-// const environment = 'heyoo';
 const environment = argv.env;
 console.log('Gulp file env: ', environment);
 module.exports = {
@@ -169,7 +168,7 @@ gulp.task('sass:watch', function () {
 
 gulp.task('dev', function () {
     nodemon({
-        script: 'app.js',
+        script: `app.js --env ${environment}`,
         ext: 'js html'
     });
     env({
