@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var moment = require('moment');
-var posts = require('../data/posts.json');
-var _ = require('lodash');
-var timelineHelpers = require('../helpers/timelineHelpers');
+const express = require('express');
+const router = express.Router();
+const moment = require('moment');
+const posts = require('../data/posts.json');
+const _ = require('lodash');
+const timelineHelpers = require('../helpers/timelineHelpers');
 const env = process.env.NODE_ENV
 
 switch (env) {

@@ -73,8 +73,8 @@ function onError(error) {
  */
 
 app.use('/', indexRoutes);
-app.use('/index-dev', indexDevRoutes);
-app.use('/index-staging', indexStagingRoutes);
+// app.use('/index-dev', indexDevRoutes);
+// app.use('/index-staging', indexStagingRoutes);
 
 app.use('/blog', blogRoutes);
 app.use('/blog.html', blogRoutes);
