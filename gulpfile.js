@@ -75,6 +75,13 @@ const fixProdFonts = `aws s3 cp \
 // const backupProduction = `aws s3 sync s3://publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
 //     1}-${new Date().getDate()}`;
 
+// const environment = 'heyoo';
+const environment = argv.env;
+console.log('Gulp file env: ', environment);
+module.exports = {
+    env: environment
+}
+
 gulp.task('clean:dist', function (cb) {
     del('./dist/*', cb);
 });
@@ -263,8 +270,6 @@ gulp.task('routes', function () {
             });
     }, 6000);
 });
-
-module.exports = argv.env;
 
 gulp.task('gather', function () {
     gulp.start('clean:dist');
