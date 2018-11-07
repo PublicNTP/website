@@ -188,13 +188,14 @@ var createFile = function (place, content) {
 
 gulp.task('routes', function () {
     nodemon({
-        script: 'app.js',
+        script: `app.js --env ${argv.env}`,
         ext: 'js html',
         delay: "2500"
     });
     env({
         vars: {
-            NODE_ENV: 'development'
+            NODE_ENV: 'dev'
+            // NODE_ENV: 'development'
         }
     });
     var routes = require('./staticRoutes');
