@@ -188,7 +188,7 @@ gulp.task('routes', function () {
     });
     env({
         vars: {
-            NODE_ENV: argv.env || 'development'
+            NODE_ENV: argv.env
             // NODE_ENV: 'development'
         }
     });
@@ -219,7 +219,7 @@ gulp.task('routes', function () {
                 let tempPath = path.join(__dirname, 'dist');
                 routes.map((route, i) => {
                     console.log('route', route);
-                    // if (route == '/' && argv.env == 'production') route = '/index.html';
+                    if (route == '/') route = '/index.html';
                     // if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
                     // if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
 
