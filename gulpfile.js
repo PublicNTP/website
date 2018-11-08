@@ -32,6 +32,10 @@ const clearProduction = `aws cloudfront create-invalidation --distribution-id E3
 const backupProduction = `aws s3 sync s3://website-production.publicntp.org backups/${new Date().getFullYear()}-${new Date().getMonth() +
     1}-${new Date().getDate()}`;
 
+const fixDevCharset = `aws s3 cp \ s3://dev.publicntp.org/ \ s3://dev.publicntp.org/ \ --exclude '*' \ --include '*.html' \ --no-guess-mime-type \ --content-type="text/html; charset=utf-8" \ --metadata-directive="REPLACE" \ --recursive`;
+const fixStagingCharset = `aws s3 cp \ s3://website-staging.publicntp.org/ \ s3://website-staging.publicntp.org/ \ --exclude '*' \ --include '*.html' \ --no-guess-mime-type \ --content-type="text/html; charset=utf-8" \ --metadata-directive="REPLACE" \ --recursive`;
+const fixProdCharset = `aws s3 cp \ s3://website-production.publicntp.org/ \ s3://website-production.publicntp.org/ \ --exclude '*' \ --include '*.html' \ --no-guess-mime-type \ --content-type="text/html; charset=utf-8" \ --metadata-directive="REPLACE" \ --recursive`;
+
 const fixDevFonts = `aws s3 cp \
        s3://dev.publicntp.org/ \
        s3://dev.publicntp.org/ \
@@ -273,6 +277,7 @@ gulp.task('pushs3', function () {
         pushS3Env(clearProduction);
         setTimeout(function () {
             pushS3Env(fixProdFonts);
+            pushS3Env(fixProdCharset);
         }, 2000);
     } else if (argv.env && argv.env == 'staging') {
         console.log('pushing to staging s3');
@@ -280,12 +285,14 @@ gulp.task('pushs3', function () {
         pushS3Env(clearStaging);
         setTimeout(function () {
             pushS3Env(fixStagingFonts);
+            pushS3Env(fixStagingCharset);
         }, 2000);
     } else if (argv.env && argv.env == 'dev') {
         console.log('pushing to dev s3');
         pushS3Env(s3Dev);
         setTimeout(function () {
             pushS3Env(fixDevFonts);
+            pushS3Env(fixDevCharset);
         }, 2000);
     } else {
         console.error('must use --env production or --env staging');
