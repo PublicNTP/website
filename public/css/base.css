@@ -478,6 +478,10 @@ strong {
   transition: 0.3s; }
   .blog-detail__back:hover {
     color: #2a2a2a; }
+  @media screen and (max-width: 767px) {
+    .blog-detail__back {
+      top: 40px;
+      left: 15px; } }
 
 .blog-detail__back-icon {
   display: block;
@@ -1215,10 +1219,14 @@ strong {
     @media screen and (max-width: 767px) {
       .header__connect {
         padding: 8px 17px;
-        margin-top: 20px; } }
+        margin-top: 20px;
+        border: 0; } }
     .header__connect:hover {
       background: #9b9b9b;
       color: white; }
+      @media screen and (max-width: 767px) {
+        .header__connect:hover {
+          background: unset; } }
   .header__wrapper {
     display: flex;
     flex-direction: column;
