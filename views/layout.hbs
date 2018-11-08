@@ -16,7 +16,8 @@
   <meta property="og:site_name" content="PublicNTP">
   <meta property="og:locale" content="en_US"> {{#if description}}
   <meta property="og:description" content="{{description}}"> {{else}}
-  <meta property="og:description" content="PublicNTP provides unrestricted access to no-cost, highly-accurate time sources for the public good.">  {{/if}}
+  <meta property="og:description" content="PublicNTP provides unrestricted access to no-cost, highly-accurate time sources for the public good.">
+  {{/if}}
   {{#if image}}
   <meta property="og:image" content="{{domain}}/{{image}}"> {{else}}
   <meta property="og:image" content="{{domain}}/images/publicNTPLogo.png"> {{/if}} {{#if image}}
@@ -27,7 +28,7 @@
   <meta property="og:image:height" content="262"> --}} {{#if image_alt}}
   <meta property="og:image:alt" content="{{image_alt}}"> {{else}}
   <meta property="og:image:alt" content="PublicNTP"> {{/if}}
-  <meta property="og:url" content="{{domain}}/{{url}}"> {{!--
+  <meta property="og:url" content="{{domain}}{{url}}"> {{!--
   <meta property="og:url" content="https://publicntp.org/"> --}}
   <meta property="og:type" content="website">
   <meta name="msapplication-config" content="{{relative_path}}images/browserconfig.xml">
@@ -60,7 +61,7 @@
 
   <link rel="stylesheet" href="{{relative_path}}css/base.css">
   <script defer src="{{relative_path}}js/jquery-2.1.4.min.js"></script>
-  <link rel="canonical" href="https://publicntp.org/">
+  <link rel="canonical" href="{{domain}}{{url}}">
 </head>
 
 <body>
@@ -136,7 +137,8 @@
           </h3>
           <a href="http://www.pool.ntp.org/en/" target="_blank" class="footer__other-link" tabindex="0">NTP Pool</a>
           <a href="http://www.ntp.org/" target="_blank" class="footer__other-link" tabindex="0">NTP</a>
-          <a href="https://networktimefoundation.org" target="_blank" class="footer__other-link" tabindex="0">Network Time
+          <a href="https://networktimefoundation.org" target="_blank" class="footer__other-link" tabindex="0">Network
+            Time
             Foundation
           </a>
         </div>
@@ -177,8 +179,10 @@
   <div class="privacy">
     <div class="privacy__wrapper">
       <h3 class="privacy__title">PublicNTP Consent Manager</h3>
-      <p class="privacy__text">Like many companies, PublicNTP uses cookies and other technologies, some of which are essential
-        to make our website work. Others help us improve services and the user experience or to advertise. In using our site,
+      <p class="privacy__text">Like many companies, PublicNTP uses cookies and other technologies, some of which are
+        essential
+        to make our website work. Others help us improve services and the user experience or to advertise. In using our
+        site,
         you consent to the use of these cookies and other technologies. <a href="/terms.html" class="privacy__link">Learn
           more
         </a> about cookies and other technologies we use.</p>

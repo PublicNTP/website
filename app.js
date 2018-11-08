@@ -5,8 +5,8 @@ const hbs = require('hbs');
 const compression = require('compression');
 
 const indexRoutes = require('./routes/index');
-const indexDevRoutes = require('./routes/index-dev');
-const indexStagingRoutes = require('./routes/index-staging');
+// const indexDevRoutes = require('./routes/index-dev');
+// const indexStagingRoutes = require('./routes/index-staging');
 const blogRoutes = require('./routes/blog');
 const donateRoutes = require('./routes/donate');
 const thankYouRoutes = require('./routes/thankyou');
@@ -19,8 +19,11 @@ const termsRoutes = require('./routes/terms');
 const governanceRoutes = require('./routes/governance');
 const port = 3000;
 const app = express();
+const argv = require('yargs').argv;
 
-const ENV = process.env.NODE_ENV;
+process.env.NODE_ENV = argv.env;
+
+let ENV = process.env.NODE_ENV;
 let is_production = true;
 
 if (ENV === 'development') {
@@ -73,8 +76,8 @@ function onError(error) {
  */
 
 app.use('/', indexRoutes);
-app.use('/index-dev', indexDevRoutes);
-app.use('/index-staging', indexStagingRoutes);
+// app.use('/index-dev', indexDevRoutes);
+// app.use('/index-staging', indexStagingRoutes);
 
 app.use('/blog', blogRoutes);
 app.use('/blog.html', blogRoutes);

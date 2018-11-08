@@ -162,7 +162,7 @@ gulp.task('sass:watch', function () {
 
 gulp.task('dev', function () {
     nodemon({
-        script: 'app.js',
+        script: `app.js --env ${environment}`,
         ext: 'js html'
     });
     env({
@@ -188,7 +188,8 @@ gulp.task('routes', function () {
     });
     env({
         vars: {
-            NODE_ENV: 'development'
+            NODE_ENV: argv.env
+            // NODE_ENV: 'development'
         }
     });
     var routes = require('./staticRoutes');
@@ -218,9 +219,9 @@ gulp.task('routes', function () {
                 let tempPath = path.join(__dirname, 'dist');
                 routes.map((route, i) => {
                     console.log('route', route);
-                    if (route == '/' && argv.env == 'production') route = '/index.html';
-                    if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
-                    if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
+                    // if (route == '/' && argv.env == 'production') route = '/index.html';
+                    // if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
+                    // if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
 
 
                     var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
@@ -234,37 +235,12 @@ gulp.task('routes', function () {
                     }
                 });
             })
-            // .then(function (pages) {
-            //     console.log('pages', pages);
-            //     let tempPath = path.join(__dirname, 'dist');
-
-            //     for (let i = 0; i < pages.length; i++) {
-            //         let route = routes[i];
-            //         console.log('route', route);
-            //         if (route == '/' && argv.env == 'production') route = '/index.html';
-            //         if (route == '/index-dev' && argv.env == 'dev') route = '/index.html';
-            //         if (route == '/index-staging' && argv.env == 'staging') route = '/index.html';
-
-
-            //         var routeDir = tempPath + route.substring(0, route.lastIndexOf('/'));
-            //         if (fs.existsSync(routeDir)) {
-            //             createFile(route, pages[i]);
-            //         } else {
-            //             mkdirp(routeDir, function (mkdirErr) {
-            //                 if (mkdirErr) console.log('mkdirpErr', mkdirErr);
-            //                 else createFile(route, pages[i]);
-            //             });
-            //         }
-            //     }
-            // })
             .catch(function (err) {
                 console.log('err', err);
                 console.log('err with');
             });
     }, 6000);
 });
-
-module.exports = argv.env;
 
 gulp.task('gather', function () {
     gulp.start('clean:dist');

@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var locations = require('../data/locations');
-var posts = require('../data/posts.json');
-var ping = require('ping');
-var now = require('performance-now');
-var argv = require('yargs').argv;
-var env = require('../gulpfile.js');
+const express = require('express');
+const router = express.Router();
+const locations = require('../data/locations');
+const posts = require('../data/posts.json');
+const ping = require('ping');
+const now = require('performance-now');
+const argv = require('yargs').argv;
+const env = process.env.NODE_ENV
 
 // Get Time to Servers
 locations.forEach(function (host, i) {
@@ -30,6 +30,23 @@ locations.forEach(function (host, i) {
   });
 });
 
+console.log('this is the env', env);
+switch (env) {
+  case 'dev':
+    newEnv = 'http://dev.publicntp.org'
+    break;
+  case 'staging':
+    newEnv = 'https://staging.publicntp.org'
+    break;
+  case 'production':
+    newEnv = 'https://publicntp.org'
+    break;
+
+  default:
+    newEnv = 'https://publicntp.org'
+    break;
+}
+
 router.get('/', function (req, res) {
   var post = posts[0];
   res.render('home', {
@@ -37,7 +54,7 @@ router.get('/', function (req, res) {
     post: post,
     the_title: 'PublicNTP',
     relative_path: './',
-    domain: 'https://publicntp.org'
+    domain: newEnv
   });
 });
 

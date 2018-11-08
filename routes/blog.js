@@ -1,9 +1,26 @@
-var express = require('express');
-var router = express.Router();
-var moment = require('moment');
-var posts = require('../data/posts.json');
-var _ = require('lodash');
-var timelineHelpers = require('../helpers/timelineHelpers');
+const express = require('express');
+const router = express.Router();
+const moment = require('moment');
+let posts = require('../data/posts.json');
+const _ = require('lodash');
+const timelineHelpers = require('../helpers/timelineHelpers');
+const env = process.env.NODE_ENV
+
+switch (env) {
+  case 'dev':
+    newEnv = 'http://dev.publicntp.org'
+    break;
+  case 'staging':
+    newEnv = 'https://staging.publicntp.org'
+    break;
+  case 'production':
+    newEnv = 'https://publicntp.org'
+    break;
+
+  default:
+    newEnv = 'https://publicntp.org'
+    break;
+}
 
 router.get('/', function (req, res) {
   var limit = 10;
@@ -32,7 +49,8 @@ router.get('/', function (req, res) {
     the_title: 'Blog | PublicNTP',
     relative_path: './',
     url: req.originalUrl,
-    description: 'Follow our journey to bring accurate time to the world.'
+    description: 'Follow our journey to bring accurate time to the world.',
+    domain: newEnv
   });
 });
 
@@ -46,7 +64,8 @@ router.get('/posts/:permalink.html', function (req, res) {
     description: post.excerpt,
     image: post.image_urls,
     image_alt: post.image_alt,
-    url: req.originalUrl
+    url: req.originalUrl,
+    domain: newEnv
   });
 });
 

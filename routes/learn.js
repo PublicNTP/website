@@ -1,6 +1,23 @@
-var express = require('express');
-var path = require('path');
-var router = express.Router();
+const express = require('express');
+const path = require('path');
+const router = express.Router();
+const env = process.env.NODE_ENV
+
+switch (env) {
+	case 'dev':
+		newEnv = 'http://dev.publicntp.org'
+		break;
+	case 'staging':
+		newEnv = 'https://staging.publicntp.org'
+		break;
+	case 'production':
+		newEnv = 'https://publicntp.org'
+		break;
+
+	default:
+		newEnv = 'https://publicntp.org'
+		break;
+}
 
 router.get('/', function (req, res) {
 	res.render('learn', {
@@ -16,7 +33,8 @@ router.get('/atomic-clock.html', function (req, res) {
 		the_title: 'How does an Atomic Clock Work? - Learn | PublicNTP',
 		relative_path: '../',
 		url: req.originalUrl,
-		description: 'How does an Atomic Clock Work?'
+		description: 'How does an Atomic Clock Work?',
+		domain: newEnv
 	})
 })
 
@@ -25,7 +43,8 @@ router.get('/amazing-atomic-clock.html', function (req, res) {
 		the_title: 'The Amazing Atomic Clock - Learn | PublicNTP',
 		relative_path: '../',
 		url: req.originalUrl,
-		description: 'The Amazing Atomic Clock'
+		description: 'The Amazing Atomic Clock',
+		domain: newEnv
 	})
 })
 
@@ -34,7 +53,8 @@ router.get('/time-scales.html', function (req, res) {
 		the_title: 'Time Scales - Learn | PublicNTP',
 		relative_path: '../',
 		url: req.originalUrl,
-		description: 'Time Scales'
+		description: 'Time Scales',
+		domain: newEnv
 	})
 })
 
@@ -43,7 +63,8 @@ router.get('/what-is-a-second.html', function (req, res) {
 		the_title: 'What Is A Second? - Learn | PublicNTP',
 		relative_path: '../',
 		url: req.originalUrl,
-		description: 'What Is A Second?'
+		description: 'What Is A Second?',
+		domain: newEnv
 	})
 })
 
@@ -52,7 +73,8 @@ router.get('/chrono-and-friends.html', function (req, res) {
 		the_title: '\“-ology-of-ologies\”: chrono and friends - learn | publicNTP',
 		relative_path: '../',
 		url: req.originalUrl,
-		description: '-ology-of-ologies'
+		description: '-ology-of-ologies',
+		domain: newEnv
 	})
 })
 
@@ -61,7 +83,8 @@ router.get('/leap-seconds.html', function (req, res) {
 		the_title: 'Leap Seconds - learn | publicntp',
 		relative_path: '../',
 		url: req.originalUrl,
-		description: 'Leap Seconds'
+		description: 'Leap Seconds',
+		domain: newEnv
 	})
 })
 
@@ -70,7 +93,8 @@ router.get('/time-zones.html', function (req, res) {
 		the_title: 'Time Zones - learn | publicntp',
 		relative_path: '../',
 		url: req.originalUrl,
-		description: 'Time Zones'
+		description: 'Time Zones',
+		domain: newEnv
 	})
 })
 
