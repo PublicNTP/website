@@ -162,7 +162,7 @@ gulp.task('sass:watch', function () {
 
 gulp.task('dev', function () {
     nodemon({
-        script: `app.js --env ${environment}`,
+        script: 'app.js',
         ext: 'js html'
     });
     env({
@@ -188,7 +188,7 @@ gulp.task('routes', function () {
     });
     env({
         vars: {
-            NODE_ENV: argv.env
+            NODE_ENV: argv.env || 'development'
             // NODE_ENV: 'development'
         }
     });

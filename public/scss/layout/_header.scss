@@ -14,11 +14,16 @@
 		@media screen and (max-width: breakpoint(tablet)) {
 			padding: 8px 17px;
 			margin-top: 20px;
+			border: 0;
 		}
 
 		&:hover {
 			background: color(textColor);
 			color: white;
+
+			@media screen and (max-width: breakpoint(tablet)) {
+				background: unset;
+			}
 		}
 	}
 
