@@ -41,6 +41,11 @@
     &:hover {
       color: color(footer);
     }
+
+    @media screen and (max-width: breakpoint(tablet)) {
+      top: 40px;
+      left: 15px;
+    }
   }
 
   &__back-icon {
