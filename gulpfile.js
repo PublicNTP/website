@@ -188,7 +188,7 @@ gulp.task('routes', function () {
     });
     env({
         vars: {
-            NODE_ENV: 'dev'
+            NODE_ENV: argv.env
             // NODE_ENV: 'development'
         }
     });

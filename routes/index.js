@@ -30,6 +30,7 @@ locations.forEach(function (host, i) {
   });
 });
 
+console.log('this is the env', env);
 switch (env) {
   case 'dev':
     newEnv = 'http://dev.publicntp.org'

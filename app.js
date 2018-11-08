@@ -19,6 +19,9 @@ const termsRoutes = require('./routes/terms');
 const governanceRoutes = require('./routes/governance');
 const port = 3000;
 const app = express();
+const argv = require('yargs').argv;
+
+process.env.NODE_ENV = argv.env;
 
 let ENV = process.env.NODE_ENV;
 let is_production = true;
