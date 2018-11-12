@@ -267,6 +267,7 @@
 
     @media screen and (max-width: breakpoint(tablet)) {
       font-size: 45px;
+      margin-top: 45px;
     }
   }
 
@@ -297,6 +298,10 @@
     border-radius: 20px;
     border: 1px solid color(textColor);
     animation: signal 1.5s infinite linear;
+
+    @media (max-width: 650px) {
+      top: 76.5px;
+    }
   }
 
   &__signal-bar {
@@ -306,6 +311,10 @@
     position: absolute;
     left: calc(50% - 1px);
     background: linear-gradient(black, white);
+
+    @media (max-width: 650px) {
+      height: 125px;
+    }
   }
 
   &__signal-ball {
@@ -316,6 +325,10 @@
     background: black;
     border-radius: 7.5px;
     top: 12.5px;
+
+    @media (max-width: 650px) {
+      top: 90px;
+    }
   }
 
   &__signal-wrap {

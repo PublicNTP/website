@@ -71,7 +71,6 @@
 
   &__linkedin {
     display: block;
-    // margin-bottom: 20px;
     float: left;
 
     &--right {
@@ -123,5 +122,25 @@
     width: 100%;
     float: left;
     margin-bottom: 80px;
+  }
+}
+
+.svg-linkedin {
+  fill: #808080;
+  cursor: pointer;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.svg-wrapper {
+  width: 40px;
+  overflow:hidden;
+
+  &:hover svg path {
+    fill: #3479B0;
+  }
+
+  svg {
+    width: 100%;
   }
 }
