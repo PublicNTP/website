@@ -221,6 +221,20 @@
     float: left;
     margin-bottom: 80px; }
 
+.svg-linkedin {
+  fill: #808080;
+  cursor: pointer;
+  transition: 200ms;
+  transition-timing-function: ease-in-out; }
+
+.svg-wrapper {
+  width: 40px;
+  overflow: hidden; }
+  .svg-wrapper:hover svg path {
+    fill: #3479B0; }
+  .svg-wrapper svg {
+    width: 100%; }
+
 .blog {
   width: 100%;
   float: left;
@@ -407,6 +421,21 @@
     width: 100%; }
   .blog__img-text {
     font-size: 10px; }
+  .blog__nav {
+    display: flex; }
+    .blog__nav-btn {
+      width: 25%;
+      display: flex;
+      align-items: center;
+      color: #383535 !important;
+      line-height: 1.5; }
+      .blog__nav-btn img {
+        width: 45px;
+        padding: 0 10px; }
+      .blog__nav-btn:nth-of-type(2) {
+        justify-content: flex-end; }
+    .blog__nav-spacer {
+      width: 50%; }
 
 .section__puzzle p {
   position: relative;
@@ -1592,7 +1621,8 @@ strong {
         font-size: 60px; } }
     @media screen and (max-width: 767px) {
       .home__sidebar-title {
-        font-size: 45px; } }
+        font-size: 45px;
+        margin-top: 45px; } }
   .home__sidebar-sub-title {
     width: 100%;
     float: left;
@@ -1615,6 +1645,9 @@ strong {
     border: 1px solid #9b9b9b;
     -webkit-animation: signal 1.5s infinite linear;
             animation: signal 1.5s infinite linear; }
+    @media (max-width: 650px) {
+      .home__signal {
+        top: 76.5px; } }
   .home__signal-bar {
     width: 2px;
     height: 200px;
@@ -1622,6 +1655,9 @@ strong {
     position: absolute;
     left: calc(50% - 1px);
     background: linear-gradient(black, white); }
+    @media (max-width: 650px) {
+      .home__signal-bar {
+        height: 125px; } }
   .home__signal-ball {
     width: 15px;
     height: 15px;
@@ -1630,6 +1666,9 @@ strong {
     background: black;
     border-radius: 7.5px;
     top: 12.5px; }
+    @media (max-width: 650px) {
+      .home__signal-ball {
+        top: 90px; } }
   .home__signal-wrap {
     width: 40px;
     height: 220px;
