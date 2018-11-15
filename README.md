@@ -1,4 +1,19 @@
-##Installing on local machine
+# PublicNTP website
+This is the official repo for the PublicNTP Website
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+```
+yarn - https://yarnpkg.com/lang/en/docs/install/
+npm - https://www.npmjs.com/get-npm
+```
+
+### Installing
+
 Run `npm install` or `yarn install`
 To start the local server run `npm start`
 
@@ -14,7 +29,7 @@ scss
 
 
 
-##Deployment and New content documentation
+## Deployment and New content documentation
 
 This project is divided into two parts. The static section, and the dynamic section.
 The dynamic section of the app only has one purpose, to build the static part.
