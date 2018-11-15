@@ -22,7 +22,7 @@ To start the local server run `npm start`
 > Partials are not registered with gulp so if any changes take place in a partial
 > The project will need to be manually restarted.
 
-#### Stack:
+### Stack:
 * [Node](https://nodejs.org/en/) + [express](https://expressjs.com),
 * [Handlebars](https://handlebarsjs.com/),
 * [gulp](https://gulpjs.com/),
@@ -59,3 +59,33 @@ After all of the content looks correct, it is time to start the build process.
 
 5. Add the contents of the dist folder to the correct s3 bucket to update the production and staging versions of the site.
   * Note: Commands to automate this are coming soon.
+
+
+### Push to dev:
+
+  - `cd /var/www/publicntp/dist`
+
+  - `gulp gather --env dev`
+
+  - `gulp pushs3 --env dev`
+
+###  Push to staging:
+
+  - `gulp gather --env staging`
+
+  - `gulp pushs3 --env staging`
+
+###  Push to production:
+  **MAKE A BACKUP FIRST**
+
+  - `gulp gather --env production`
+
+  - `gulp pushs3 --env production`
+
+  =================================
+
+  To gather/generate website files and also push them to the s3 bucket, do the following:
+
+  - `gulp ship --env dev/staging/production`
+
+  - The command take up to a 1 minute to run, so leave it and be patient :)
