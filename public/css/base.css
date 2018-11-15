@@ -233,7 +233,26 @@
   .svg-wrapper:hover svg path {
     fill: #3479B0; }
   .svg-wrapper svg {
-    width: 100%; }
+    width: 32px;
+    height: 32px; }
+
+.flickr svg {
+  width: 32px;
+  height: 32px; }
+
+.flickr-pink, .flickr-blue, .flickr-gray {
+  cursor: pointer;
+  transition: 200ms;
+  transition-timing-function: ease-in-out; }
+
+.flickr:hover svg .flickr-pink {
+  fill: #FF0083; }
+
+.flickr:hover svg .flickr-blue {
+  fill: #005FDF; }
+
+.flickr:hover svg .flickr-gray {
+  fill: #E8E8E8; }
 
 .blog {
   width: 100%;

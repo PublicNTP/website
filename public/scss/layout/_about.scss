@@ -141,6 +141,46 @@
   }
 
   svg {
-    width: 100%;
+    // width: 100%;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+// .flickr {
+
+//   &-pink {
+//     fill: #FF0083;
+//   }
+//   &-blue {
+//     fill: #005FDF;
+//   }
+// }
+
+.flickr {
+
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  &-pink, &-blue, &-gray {
+    cursor: pointer;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  &:hover svg {
+    .flickr {
+      &-pink {
+        fill: #FF0083;
+      }
+      &-blue {
+        fill: #005FDF;
+      }
+      &-gray {
+        fill: #E8E8E8;
+      }
+    }
   }
 }
