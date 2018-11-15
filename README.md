@@ -48,9 +48,8 @@ To add a blog post, DO NOT add the path to the `staticRoutes.js` file. To edit o
 
 After all of the content looks correct, it is time to start the build process.
 
-1. Make sure the app is not currently running through pm2 or any node process
-
-  (`pm2 status` will show all processes with pm2)
+Step 1. Make sure the app is not currently running through pm2 or any node process
+ * (`pm2 status` will show all processes with pm2)
 
 2. In the `/home/boblad/website` directory run `gulp gather`. This command will start an instance of the dynamic app and scrape each path of the site and dump its contents in the dist folder creating a static version of the site. It is imperative that there are no errors with this command. Check the logs for errors. You will then need to kill the app with control-c.
 
