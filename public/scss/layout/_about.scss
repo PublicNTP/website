@@ -147,6 +147,50 @@
   }
 }
 
+.waddell-icon-wrapper {
+  fill: #808080;
+  cursor: pointer;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  path{
+    fill: #808080;
+  }
+}
+
+.waddell-stroke{
+  fill: none;
+  stroke-miterlimit: 10;
+  stroke-width: 1.6813px;
+  stroke: #fff;
+  cursor: pointer;
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  &-rounded{
+    stroke-linejoin: round;
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 1.6813px;
+    stroke: #fff;
+    cursor: pointer;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.waddell-icon:hover{
+  .waddell-icon-wrapper path{
+    fill: #f1f3f4;
+  }
+  .waddell-stroke{
+    stroke: #000;
+    fill: none;
+    &-rounded{
+      stroke: #000;
+      fill: none;
+    }
+  }
+}
+
 // .flickr {
 
 //   &-pink {
