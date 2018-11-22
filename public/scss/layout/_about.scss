@@ -133,15 +133,21 @@
 }
 
 .svg-wrapper {
-  width: 40px;
-  overflow:hidden;
+  position: relative;
+  max-height: 32px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  transition: .3s all ease-in-out;
+
+  &:hover {
+    background-color: white;
+  }
 
   &:hover svg path {
     fill: #3479B0;
   }
 
   svg {
-    // width: 100%;
     width: 32px;
     height: 32px;
   }
@@ -158,6 +164,7 @@
 // }
 
 .flickr {
+  margin-left: 10px;
 
   svg {
     width: 32px;

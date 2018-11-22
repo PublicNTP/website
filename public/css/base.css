@@ -228,31 +228,34 @@
   transition-timing-function: ease-in-out; }
 
 .svg-wrapper {
-  width: 40px;
-  overflow: hidden; }
+  position: relative;
+  max-height: 32px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  transition: .3s all ease-in-out; }
+  .svg-wrapper:hover {
+    background-color: white; }
   .svg-wrapper:hover svg path {
     fill: #3479B0; }
   .svg-wrapper svg {
     width: 32px;
     height: 32px; }
 
-.flickr svg {
-  width: 32px;
-  height: 32px; }
-
-.flickr-pink, .flickr-blue, .flickr-gray {
-  cursor: pointer;
-  transition: 200ms;
-  transition-timing-function: ease-in-out; }
-
-.flickr:hover svg .flickr-pink {
-  fill: #FF0083; }
-
-.flickr:hover svg .flickr-blue {
-  fill: #005FDF; }
-
-.flickr:hover svg .flickr-gray {
-  fill: #E8E8E8; }
+.flickr {
+  margin-left: 10px; }
+  .flickr svg {
+    width: 32px;
+    height: 32px; }
+  .flickr-pink, .flickr-blue, .flickr-gray {
+    cursor: pointer;
+    transition: 200ms;
+    transition-timing-function: ease-in-out; }
+  .flickr:hover svg .flickr-pink {
+    fill: #FF0083; }
+  .flickr:hover svg .flickr-blue {
+    fill: #005FDF; }
+  .flickr:hover svg .flickr-gray {
+    fill: #E8E8E8; }
 
 .blog {
   width: 100%;
