@@ -241,6 +241,7 @@
     width: 32px;
     height: 32px; }
 
+<<<<<<< HEAD
 .flickr {
   margin-left: 10px; }
   .flickr svg {
@@ -256,6 +257,61 @@
     fill: #005FDF; }
   .flickr:hover svg .flickr-gray {
     fill: #E8E8E8; }
+=======
+.waddell-icon-wrapper {
+  fill: #808080;
+  cursor: pointer;
+  transition: 200ms;
+  transition-timing-function: ease-in-out; }
+  .waddell-icon-wrapper path {
+    fill: #808080; }
+
+.waddell-stroke {
+  fill: none;
+  stroke-miterlimit: 10;
+  stroke-width: 1.6813px;
+  stroke: #fff;
+  cursor: pointer;
+  transition: 200ms;
+  transition-timing-function: ease-in-out; }
+  .waddell-stroke-rounded {
+    stroke-linejoin: round;
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-width: 1.6813px;
+    stroke: #fff;
+    cursor: pointer;
+    transition: 200ms;
+    transition-timing-function: ease-in-out; }
+
+.waddell-icon:hover .waddell-icon-wrapper path {
+  fill: #f1f3f4; }
+
+.waddell-icon:hover .waddell-stroke {
+  stroke: #000;
+  fill: none; }
+  .waddell-icon:hover .waddell-stroke-rounded {
+    stroke: #000;
+    fill: none; }
+
+.flickr svg {
+  width: 32px;
+  height: 32px; }
+
+.flickr-pink, .flickr-blue, .flickr-gray {
+  cursor: pointer;
+  transition: 200ms;
+  transition-timing-function: ease-in-out; }
+
+.flickr:hover svg .flickr-pink {
+  fill: #FF0083; }
+
+.flickr:hover svg .flickr-blue {
+  fill: #005FDF; }
+
+.flickr:hover svg .flickr-gray {
+  fill: #E8E8E8; }
+>>>>>>> svgAltText
 
 .blog {
   width: 100%;

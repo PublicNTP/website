@@ -1,6 +1,6 @@
 (function($) {
   $(function() {
-    console.log('v1');
+    // console.log('v1');
 
     var getIndexFromId = function(tag) {
       return parseInt(
@@ -16,7 +16,7 @@
 
     var active = 0;
 
-    $('.home__location').hover(
+    $('.home__location').on('mouseenter',
       function() {
         var outer = $(this).find('.home__location--outer');
         var ball = $(this).find('.home__location-ball');
@@ -30,7 +30,9 @@
           $(this).addClass('active');
         }
         $(ball[0]).addClass('active');
-      },
+      });
+
+    $('.home__location').on('mouseleave',
       function() {
         var outer = $(this).find('.home__location--outer');
         var ball = $(this).find('.home__location-ball');
@@ -49,7 +51,7 @@
       }
     );
 
-    $('.home__location').click(function() {
+    $('.home__location').on('mouseup touchend',function() {
       active = getIndexFromId(this);
       var thisLocation = this;
       $('.home__sidebar-wrap').removeClass('show');
