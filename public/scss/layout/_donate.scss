@@ -273,3 +273,29 @@
 #card-errors {
   margin-top: 15px;
 }
+
+.donate__form{
+  max-width:700px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#amznCharityBanner{
+  display: inline-block;
+  vertical-align: middle;
+  width:calc(100% - 704px);
+  min-width:310px;
+
+  iframe{
+    margin:auto;
+  }
+  @media screen and (max-width: 1145px) {
+    margin-top:30px;
+    display: block;
+    margin-left:-8px;
+    width:100%;
+    iframe{
+      margin:0;
+    }
+  }
+}
