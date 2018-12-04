@@ -1252,7 +1252,7 @@ strong {
     @media screen and (max-width: 767px) {
       .footer__linkedin {
         float: left; } }
-  .footer .amazon {
+  .footer .github {
     margin: 0 10px; }
   .footer .Amazon_rect {
     fill: #818181;
