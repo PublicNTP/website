@@ -1196,6 +1196,27 @@ strong {
 #card-errors {
   margin-top: 15px; }
 
+.donate__form {
+  max-width: 700px;
+  display: inline-block;
+  vertical-align: middle; }
+
+#amznCharityBanner {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 704px);
+  min-width: 310px; }
+  #amznCharityBanner iframe {
+    margin: auto; }
+  @media screen and (max-width: 1145px) {
+    #amznCharityBanner {
+      margin-top: 30px;
+      display: block;
+      margin-left: -8px;
+      width: 100%; }
+      #amznCharityBanner iframe {
+        margin: 0; } }
+
 .footer {
   margin-top: 160px;
   width: 100%;
@@ -1231,6 +1252,32 @@ strong {
     @media screen and (max-width: 767px) {
       .footer__linkedin {
         float: left; } }
+  .footer .github {
+    margin: 0 10px; }
+  .footer .Amazon_rect {
+    fill: #818181;
+    transition: 200ms;
+    transition-timing-function: ease-in-out; }
+  .footer .Amazon_a {
+    fill: #2A2A2A;
+    transition: 200ms;
+    transition-timing-function: ease-in-out; }
+  .footer .github_path {
+    fill: #818181;
+    transition: 200ms;
+    transition-timing-function: ease-in-out; }
+  .footer .github_circle {
+    fill: #2A2A2A;
+    transition: 200ms;
+    transition-timing-function: ease-in-out; }
+  .footer .svg-wrapper:hover.github {
+    background-color: transparent; }
+  .footer .svg-wrapper:hover .github_path {
+    fill: #4078c0; }
+  .footer .svg-wrapper:hover .Amazon_rect {
+    fill: #FE9900; }
+  .footer .svg-wrapper:hover .Amazon_a, .footer .svg-wrapper:hover .github_circle {
+    fill: #fff; }
   .footer__other-link {
     display: inline-table;
     margin-bottom: 10px;
