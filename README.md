@@ -69,12 +69,28 @@ All builds should be done on dev.
   - The command take up to a 1 minute to run, so leave it and be patient :)
 
 ## Credit
-- [PublicNTP, Inc.](https://publicntp.org)
-- [PXP](https://pxp200.com)
-- [Rooster Glue, Inc.](https://roosterglue.com)
-- [GPSTest Project](https://github.com/barbeau/gpstest/wiki)
-- [Keltson Howell](https://keltsonhowell.com)
-- [Tod Robbins](https://github.com/todrobbins)
-- [Cody Deskins](https://github.com/cdeskins)
+
+### Individuals
 - [Alex Porter](https://github.com/TheAlexPorter)
+- [Brad Woodfin](https://github.com/woodfjo)
+- [Bryant Oblad](https://github.com/boblad)
+- [Cam Peterson](https://github.com/campeterson)
+- [Cody Deskins](https://github.com/cdeskins)
+- [Dan Noland](https://github.com/nolandda)
 - [Eric Evans](https://github.com/Zipbug)
+- [Keltson Howell](https://keltsonhowell.com/)
+- [Micah Brown](https://github.com/Brnin8r)
+- [Scott Waddell](https://github.com/swaddell)
+- [Terry Ott](https://github.com/TerryOtt)
+- [Tod Robbins](https://github.com/todrobbins)
+- [Wylie Thomas](https://github.com/wyliethomas)
+
+### Organizations
+- Kempt Design LLC
+- [Pony Express Productions, LLC](https://pxp200.com/)
+- [PublicNTP, Inc.](https://publicntp.org/)
+- [Rooster Glue, Inc.](https://roosterglue.com/)
+- [Sixbucks Solutions, LLC](https://github.com/SixbucksSolutions)
+
+### Project
+- [Knight Labs](http://timeline.knightlab.com/)
