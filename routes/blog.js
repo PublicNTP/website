@@ -63,7 +63,7 @@ router.get('/posts/:permalink.html', function (req, res) {
     relative_path: '../../',
     description: post.excerpt,
     image: post.image_urls,
-    image_alt: post.image_alt,
+    image_alt: post.image_urls,
     url: req.originalUrl,
     domain: newEnv
   });

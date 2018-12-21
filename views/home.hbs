@@ -95,7 +95,7 @@
 			<div class="swiper-container home__blog-image__wrap">
 				<div class="swiper-wrapper">
 					{{#each post.image_urls}}
-					<img class="swiper-slide home__blog-image" src="{{relative_path}}{{this}}" alt="Blog Image"> {{/each}}
+					<img class="swiper-slide home__blog-image" src="{{relative_path}}{{this.url}}" alt="{{this.alt}}"> {{/each}}
 				</div>
 			</div>
 			{{/if}}

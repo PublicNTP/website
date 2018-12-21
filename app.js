@@ -21,10 +21,6 @@ const port = 3000;
 const app = express();
 const argv = require('yargs').argv;
 
-hbs.registerHelper('getSiblingArray', function(array, id) {
-    return array[id];
-});
-
 process.env.NODE_ENV = argv.env;
 
 let ENV = process.env.NODE_ENV;

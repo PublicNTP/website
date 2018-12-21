@@ -52,7 +52,7 @@
 			</a>
 			<a href='{{../relative_path}}blog/posts/{{this.permalink}}.html'>
 				{{#if this.image_urls.[0]}}
-				<img class="blog__image" src="{{../relative_path}}{{this.image_urls.[0]}}" alt="Blog Image"> {{/if}}
+				<img class="blog__image" src="{{../relative_path}}{{this.image_urls.[0].url}}" alt="this.image_urls.[0].alt"> {{/if}}
 			</a>
 		</div>
 		{{/each}}
