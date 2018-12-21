@@ -13,7 +13,7 @@
 	</p>
 	<div class="blog-detail__side">
 		{{#each post.image_urls}}
-		<img class="blog-detail__image" src="{{../relative_path}}{{this}}">
+		<img class="blog-detail__image" src="{{../relative_path}}{{this}}"  alt="{{getSiblingArray ../post.image_alt_array @index}}">
 		<div class="node-clear"></div>
 		{{/each}}
 	</div>

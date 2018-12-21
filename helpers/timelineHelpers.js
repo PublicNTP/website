@@ -2,7 +2,7 @@ var moment = require('moment');
 
 //This is the data structure of the posts
 // [ {
-//     2017: [ 
+//     2017: [
 //     	 6: {
 //        month: 'June',
 //        posts: []
@@ -34,12 +34,12 @@ var pushPostToTimeline = function(timeline, year, month, monthNum, yearIndex, ti
 	} else if (timeline[yearIndex].months[monthNum] && timeline[yearIndex].months[monthNum]['posts']) {
 		timeline[yearIndex].months[monthNum]['posts'].push(timelinePost)
 	} else {
-		timeline[yearIndex].months[monthNum] = {}		
+		timeline[yearIndex].months[monthNum] = {}
 		timeline[yearIndex].months[monthNum]['month'] = month;
 		timeline[yearIndex].months[monthNum]['posts'] = [];
 		timeline[yearIndex].months[monthNum]['posts'].push(timelinePost)
   }
-  
+
   console.log('timeline', timeline)
 
 	return timeline;
@@ -53,7 +53,7 @@ module.exports = {
 			var year = moment(timelinePosts[i].timestamp).format('Y')
 			var month = moment(timelinePosts[i].timestamp).format('MMMM');
 			var monthNum = parseInt(moment(timelinePosts[i].timestamp).format('M'))
-      var yearIndex = getYearIndex(timeline, year);	
+      var yearIndex = getYearIndex(timeline, year);
 			timeline = pushPostToTimeline(timeline, year, month, monthNum, yearIndex, timelinePosts[i]);
 		}
 		return timeline;
