@@ -20,7 +20,7 @@
 	<div class="blog-detail__swiper swiper-container">
 		<div class="swiper-wrapper">
 			{{#each post.image_urls}}
-			<img class="blog-detail__simage swiper-slide" src="{{../relative_path}}{{this}}"> {{/each}}
+			<img class="blog-detail__simage swiper-slide" src="{{../relative_path}}{{this.url}}" alt="{{this.alt}}"> {{/each}}
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
