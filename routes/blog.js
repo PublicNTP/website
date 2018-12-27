@@ -62,8 +62,8 @@ router.get('/posts/:permalink.html', function (req, res) {
     the_title: post.title + ' - Blog | PublicNTP',
     relative_path: '../../',
     description: post.excerpt,
-    image: post.image_urls,
-    image_alt: post.image_urls,
+    image: post.image_urls[0].url,
+    image_alt: post.image_urls[0].alt,
     url: req.originalUrl,
     domain: newEnv
   });
