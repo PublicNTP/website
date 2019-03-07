@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>PublicNTP&#x27;s Paperwork Puzzle - Blog | PublicNTP</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="PublicNTP provides unrestricted access to no-cost, highly-accurate time sources for the public good.">
+  <meta name="keywords" content="Network, Time, Server, NTP, Network Time Server, public, publicntp, stratum, stratum 1, stratum 2, ntp.org, deployment, network time foundation, ntf,  reference, ntp reference implementation, unrestricted access, no-cost, highly-accurate, time sources, foundation, continent, global, wordwide, learn, connect, follow">
+  <meta name="robots" content="index, follow">
+  <meta name="referrer" content="always">
+  <meta name="web_author" content="Dan Noland, Terry Ott, Scott Waddell, Brad Woodfin">
+  <meta name="language" content="English">
+  <meta property="og:title" content="PublicNTP&#x27;s Paperwork Puzzle - Blog | PublicNTP">
+  <meta property="og:site_name" content="PublicNTP">
+  <meta property="og:locale" content="en_US"> 
+  <meta property="og:description" content="Part 4: Our 15 step checklist">   <meta property="og:image" content="http://dev.publicntp.org/images/blog-paperwork.jpg">  
+  <meta property="og:image:secure_url" content="http://dev.publicntp.org/images/blog-paperwork.jpg">    
+  <meta property="og:image:alt" content="paperwork"> 
+  <meta property="og:url" content="http://dev.publicntp.org/blog/posts/paperwork-puzzle.html"> 
+  <meta property="og:type" content="website">
+  <meta name="msapplication-config" content="../../images/browserconfig.xml">
+
+  <!-- Google Tag Manager OLD -->
+  <!-- <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PLGMHRG');</script> -->
+  <!-- End Google Tag Manager -->
+
+
+  <link rel="shortcut icon" type="image/png" href="../../images/favicon.png">
+  <link rel="icon" type="image/x-icon" href="../../images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="150x150" href="../../images/mstile-150x150.png">
+  <link rel="manifest" href="../../images/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../images/android-chrome-512x512.png">
+  <link rel="mask-icon" href="../../images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="../../css/base.css">
+  <script defer src="../../js/jquery-2.1.4.min.js"></script>
+  <link rel="canonical" href="http://dev.publicntp.org/blog/posts/paperwork-puzzle.html">
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe sandbox="allow-scripts" src="https://www.googletagmanager.com/ns.html?id=GTM-PLGMHRG" height="0" width="0" class="hide"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="wrap">
+    <div class="main">
+      <div class="header__mobile-wrap">
+        <img class="header__mobile-x" id="mobile-close" src="../../images/x-light.svg" alt="Close">
+        <a href="../../people.html" class="header__item-mobile">People</a>
+        <a href="../../blog.html" class="header__item-mobile">Blog</a>
+        <a href="../../history.html" class="header__item-mobile">History</a>
+        <a href="../../governance.html" class="header__item-mobile">Governance</a>
+        <a href="../../learn.html" class="header__item-mobile header__connect">Learn</a>
+        <div class="node-clear"></div>
+        <a href="../../connect.html" class="header__item-mobile header__connect">Connect</a>
+        <div class="node-clear"></div>
+        <a href="../../donate.html" class="header__item-mobile header__connect">Donate</a>
+        <div class="node-clear"></div>
+      </div>
+      <header class="header">
+        <a href="../../">
+          <div class="logo__wrap">
+            <div class="logo">
+              <div class="logo__inner">
+                <div class="logo__center">
+                  <div class="logo__minute logo__rotate">
+                    <div class="logo__minute-ball"></div>
+                  </div>
+                  <div class="logo__hour logo__rotate">
+                    <div class="logo__hour-orb">
+                      <div class="logo__hour-ball"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h1 class="logo__title">PublicNTP</h1>
+          </div>
+        </a>
+
+        <div class="flex__wrapper">
+          <div class="flex__end">
+            <a href="../../donate.html" class="header__item header__connect" tabindex="0">Donate</a>
+            <a href="../../connect.html" class="header__item header__connect" tabindex="0">Connect</a>
+            <a href="../../learn.html" class="header__item header__connect" tabindex="0">Learn</a>
+          </div>
+          <div class="header__wrapper">
+            <a href="../../blog.html" class="header__link">Blog</a>
+            <a href="../../people.html" class="header__link">People</a>
+            <a href="../../history.html" class="header__link">History</a>
+            <a href="../../governance.html" class="header__link">Governance</a>
+          </div>
+        </div>
+
+        <img class="header__mobile-icon" id="mobile-icon" src="../../images/list-menu.svg" alt="Menu">
+
+      </header>
+      <div class="home__section">
+	<a href="../../blog.html" class="blog-detail__back">
+		Back
+		<img class="blog-detail__back-icon" src="../../images/back.svg" alt="Back Arrow">
+	</a>
+</div>
+<div class="home__section">
+	<h1 class="home__title">PublicNTP&#x27;s Paperwork Puzzle</h1>
+</div>
+<div class="home__section">
+	<p class="blog-detail__time blog-detail__time-main">
+		<b>August</b> 21, 2017
+	</p>
+	<div class="blog-detail__side">
+		<img class="blog-detail__image" src="../../images/blog-paperwork.jpg"  alt="paperwork">
+		<div class="node-clear"></div>
+	</div>
+	<div class="blog-detail__swiper swiper-container">
+		<div class="swiper-wrapper">
+			<img class="blog-detail__simage swiper-slide" src="../../images/blog-paperwork.jpg" alt="paperwork"> 
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<div class="blog-detail__content">
+		<p class="blog-detail__time blog-detail__time-mobile">
+			<b>August</b> 21, 2017
+		</p>
+		<div class="blog-detail__article">
+			<section class='section__puzzle'><h4><a href='/people.html#terry-ott'>Terry D. Ott</a></h4><h4>Checklist</h4><ul class='table_contents'><li>Step 1: Hire a Law Firm That Specializes In Nonprofits (Optional)</li><li>Step 2: Determine the (Possibly Virtual) Company Address</li><li>Step 3: Select the Registered Agent</li><li>Step 4: Select Directors</li><li>Step 5: Select Officers</li><li>Step 6: Write Bylaws</li><li>Step 7: Write Policies/Procedures</li><li>Step 8: Write Articles of Incorporation</li><li>Step 9: Apply for State Incorporation</li><li>Step 10: Announce First Board of Directors Meeting</li><li>Step 11: Register for Charitable Solicitation with States</li><li>Step 12: Apply for IRS Employer Identification Number (EIN)</li><li>Step 13: Apply for Federal Tax Exempt Status (501(c)(3))</li><li>Step 14: Apply for State Tax Exempt Status</li><li>Step 15: Purchase Liability Insurance</li></ul><h4>Step 1: Hire a Law Firm That Specializes In Nonprofits (Optional)</h4><p>Considering neither Scott nor I had attempted to form a tax-exempt nonprofit corporation before, we retained the services of a legal firm specializing in nonprofit law to increase the odds of a smooth journey to successful incorporation and declaration of tax-exempt status for PublicNTP.</p><p>Scott and I feel strongly that hiring a legal team was a vital investment for PublicNTP, based on our particular situation/set of circumstances.</p><p>If you are reading this and wondering if your team should retain lawyers for the purpose of incorporating and applying for tax-exemption status, please do not ask our opinion. Exactly zero of the PublicNTP directors are lawyers; you will find us exceedingly reluctant to give any opinions on legal matters! :)</p><p>Your group should discuss the tradeoffs involved with retaining a legal team based on your combined levels of experience, confidence, and risk-tolerance.</p><p>The only opinion I will share on this topic is I personally feel any group considering undertaking this path would benefit from at least considering scheduling an “initial consultation” with a law firm.</p><p>Initial consultations are a set, fixed price -- regardless of how much time they take. Your team may find you are all very glad you made the very modest investment required for an initial consultation with a lawyer!</p><h4>Step 2: Determine the (Possibly Virtual) Company Address</h4><p>Remember that the address of the corporation will be part of the public record. If you’re comfortable publishing your address the entire world on the internet, then by all means go for it.</p><p>PublicNTP chose to use the services of Traveling Mailbox, a “virtual mail service”. Mail received at our virtual address is scanned and we receive an email about new mail. I can look at the image of the envelope, and click a button to indicate “shred,” “open and scan,” or forward to my actual address. Any checks that are received can be automatically deposited in the company’s checking account.</p><h4>Step 3: Select the Registered Agent</h4><p>While you can simply list the home address of one of your director or officers, remember that if they move, you may not receive notice of being served with legal paperwork -- like a lawsuit!</p><p>Legal services, such a LegalZoom, offer Registered Agent service for a yearly fee.</p><h4>Step 4: Select Directors</h4><p>Determine who you want to serve on your organization’s board. These individuals will be able to wield a tremendous amount of influence on the vision/mission of your organization, so pick carefully!</p><h4>Step 5: Select Officers</h4><p>Decide who will serve as the President, Secretary, and Treasurer of your organization.</p><p>It’s very common in very small nonprofits to have members of your Board of Directors serve two roles (for example: Director and Secretary).</p><p>You may want to consider ensuring that no officers have undue influence on the group. Many organizations use their bylaws to specifically prevent individuals from assuming more than one officer position at any time, or prevent certain combinations of roles to held by one person (such as preventing someone from being both the president and treasurer).</p><h4>Step 6: Write Bylaws</h4><p>At this point, it’s a very good time to <a href='/documents/bylaws.pdf'>write your bylaws</a>. There are tons of examples on the internet. While this document is terribly dry to write, invest the time this step needs.</p><p>Remember, the bylaws give you a chance to develop processes that are a good fit your organization, and set rules that help protect the organization and the indiduals that are involved with it.</p><p>If you hire a legal team, I’d recommend running your bylaws past your legal team before proceeding past this step. Make sure that they agree all the contents are appropriate, and that no key items are missing.</p><h4>Step 7: Write Policies/Procedures</h4><p>You’ll find you want to procrastinate on these.</p><p><span style='text-decoration: underline;'>Don’t.</span></p><p>Take the time up front and write them now.</p><p>No, they’re absolutely no fun. They’re probably worse than writing bylaws. Trust me, if you don’t write them now, you won’t write them until after your first painful learning lesson. Get them done, be glad they’re locked up and stored safely on a shelf.</p><h4>Step 8: Write Articles of Incorporation</h4><p>This is a very short document, usually less than two pages. Lots of templates exist on the web.</p><p>Again, if you have hired a legal team, have them review before you file for incorporation.</p><h4>Step 9: Apply for State Incorporation</h4><p>This is an easy step and just requires you to provide your Articles of Incorporation, provide contact info, and pay a filing fee. In Virginia, you can <a href='https://sccefile.scc.virginia.gov/'>apply online</a> and have a response within one to two days.</p><p>When approved, the state will send you a Certificate of Incorporation, which is the legal proof that your company is now a legal corporate entity within the state you filed in.</p><h4>Step 10: Announce First Board of Directors Meeting</h4><p>When the company’s Certificate of Incorporation is received from the state, adhering to the corporate bylaws, find a date/time (and, if meeting in person, place) that works for the majority of the board to have their first meeting, then properly post announcement of that meeting with enough notice.</p><p>The announcement should include the following agenda items:</p><ul><li>Articles of Incorporation<ul><li>Adopt, ratify, and affirm the Articles of Incorporation filed with Secretary of State</li><li>Authorize and direct the Secretary to insert a certified copy of the Articles of Incorporation in the Corporation’s minute book</li></ul></li><li>Bylaws<ul><li>Adopt the bylaws</li><li>Authorize and direct the Secretary to insert a certificate of the adoption of the Bylaws, and to insert a certified copy of the Bylaws, into the minute book</li></ul></li><li>Officers<ul><li>Elect (named) people to the three officer positions: President, Secretary, and Treasurer</li></ul></li><li>Corporate records and minute book<ul><li>Authorize and direct the officers to procure all corporate books and books of account that may be required by the laws of the state in connection with the business of the corporation</li><li>Authorize and direct the officers to maintain a minute book containing:<ul><li>Certified Articles of Incorporation</li><li>Bylaws and any amendments</li><li>Minutes of any and all meetings</li><li>All actions of the Board and Board committees</li></ul></li></ul></li><li>Annual Accounting Period<ul><li>Approve the date the fiscal year of the corporation ends</li></ul></li><li>Principal Executive Office<ul><li>Confirm the address of the company</li></ul></li><li>Open bank accounts for the company, apply for debit card</li><br></ul><h4>Step 11: Register for Charitable Solicitation with States</h4><p>It’s required by law to register with each state that your charity solicits donations in.</p><h4>Step 12: Apply for IRS Employer Identification Number</h4><p>Once your Certificate for Incorporation is issued, the next step is to apply with the IRS for an <a href='https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online'>Employer Identification Number</a> (EIN) for the company.  This should be done by an officer of the company. The applicant will need to provide their own personal Social Security Number (SSN) during the application.</p><p>You’ll receive an instant response, with the ability to download/print the paperwork with your company’s newly-assigned EIN.</p><h4>Step 13: Apply for Federal 501(c)(3) Tax-Exempt Status</h4><p>Now that you’ve formed your state nonprofit, it’s time to apply for your 501(c)(3) tax exempt status.</p><p>Small nonprofits <a href='https://www.irs.gov/uac/newsroom/new-1023-ez-form-makes-applying-for-501c3tax-exempt-status-easier-most-charities-qualify'>may be eligible</a> to file the much shorter/easier three-page <a href='https://www.irs.gov/pub/irs-pdf/f1023ez.pdf'>1023-EZ</a> form as opposed to the full <a href='https://www.irs.gov/pub/irs-pdf/f1023.pdf'>26-page 1023 form</a>.</p><p>The PublicNTP legal team was able to start, finish, and submit our 1023-EZ form -- all in under two hours of billed time. </p><p><a href='http://www.journalofaccountancy.com/issues/2016/mar/irs-form-1023-ez.html'>A March 2016 article in the Journal of Accountancy</a> indicates that processing times for the 1023-EZ form (13 days) are much faster than the 1023 (181 days), and 77% of the applications were approved for 501(c)(3) tax exemption status.</p><p>PublicNTP’s legal team submitted our online 1023-EZ application on August 1, 2017. We received our 501(c)(3) acceptance letter with a date stamp of August 8, 2017.</p><p>It only took the IRS five working days to approve our application (!!!).</p><h4>Step 14: Apply for State Tax Exemptions</h4><p>After you receive your 501(c)(3) acceptance letter for federal tax exemption, check to find out if you need to file any forms to receive exemption at the state level as well.</p><p style='font-style: italic;'>State Income Tax</p><p>After you receive your 501(c)(3) acceptance letter, check to find out if you need to file at the state level as well.</p><p>Some states (such as Virginia) automatically grant state income tax exemptions to organizations who have received IRS 501(c)(3) status without needing any paperwork to be filed.</p><p>Other states, however, do require paperwork to be filed which contain a copy of the 501(c)(3) letter before they grant state-level income tax exemption to the company.</p><p style='font-style: italic;'>State Sales/Use Tax</p><p>Virginia does not automatically grant 501(c)(3) organizations an exemption from state sales and use taxes. Companies are required to file paperwork with the state including copies of their most recent 990/990-EZ, articles of incorporation, etc. before being granted exemption from state sales/use tax.</p><p>Make sure you do all the homework necessary to ensure your corporation is compliant! Your legal team, if you have one, can be a huge help here.</p><h4>Step 15: Purchase Liability Insurance</h4><p>A lawsuit can really ruin your whole day -- not to mention bankrupt your nonprofit.</p><p>Each corporation’s board should do a cost/risk/benefit analysis to find out if any forms of liability insurance are a good fit for their needs.</p><p>While (yet again) it’s likely overkill, after consulting our legal team and doing our own research into best practices, PublicNTP decided to purchase the following insurance policies at the listed coverage levels:</p><p><ul><li><a href='https://en.wikipedia.org/wiki/Commercial_general_liability_insurance'>General liability</a>: $1 million</li><li><a href='https://en.wikipedia.org/wiki/Directors_and_officers_liability_insurance'>Directors & Officers liability</a>: $1 million <ul><li>Ensures that volunteers serve as an officer or director have a legal shield protecting their personal assets </li></ul></li></ul></p><p>Some steps are harder than others but those are the fourteen steps we needed to take. And, in fact, it was a process that I thought would take perhaps a year of time and planning panned out to only be a few months of work.</p><p>Now that we’re here, PublicNTP is ready to begin taking donations and deploying free, accurate digital clocks across the world.</p><div class='blog__nav'><a href='/blog/posts/financial-structure.html' class='blog__nav-btn'><img src='../../images/left-arrow.svg' />Financial Structure</a><div class='blog__nav-spacer'></div>
+		</div>
+	</div>
+</div>
+
+<div class="home__section"></div>
+<div class="home__section"></div>
+
+<script defer src="../../js/swiper.min.js"></script>
+<link rel="stylesheet" href="../../css/swiper.min.css">
+<script defer src="../../js/swipe.js" async></script>
+
+    </div>
+    <footer class="footer">
+      <div class="footer__wrap">
+        <div class="footer__sites">
+          <h3 class="footer__other-title">
+            Other Great NTP Sites
+          </h3>
+          <a href="http://www.pool.ntp.org/en/" target="_blank" class="footer__other-link" tabindex="0">NTP Pool</a>
+          <a href="http://www.ntp.org/" target="_blank" class="footer__other-link" tabindex="0">NTP</a>
+          <a href="https://networktimefoundation.org" target="_blank" class="footer__other-link" tabindex="0">Network
+            Time
+            Foundation
+          </a>
+        </div>
+        <div class="footer__sites">
+          <h3 class="footer__other-title">
+            Contact Info
+          </h3>
+          <span class="footer__other-link">PublicNTP, Inc.</span>
+          <span class="footer__other-link">1405 S Fern St #90372</span>
+          <span class="footer__other-link">Arlington VA 22202-2810</span>
+          <span class="footer__other-link">+1 (703) 651-2996</span>
+        </div>
+        <div class="footer__right">
+          <h3 class="footer__title">
+            Learn how you can connect and help, or follow us on LinkedIn.
+          </h3>
+          <div class="flex">
+            <a href="../../connect.html" class="footer__connect" tabindex="0">Connect</a>
+            <a href="https://linkedin.com/company/publicntp/" target="_blank" tabindex="0">
+              <div class="svg-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" alt="LinkedIn Logo" role="img">
+                  <title>LinkedIn</title>
+                  <g class="nc-icon-wrapper" fill="#818181">
+                    <path class="svg-linkedin" d="M46,0H2C0.9,0,0,0.9,0,2v44c0,1.1,0.9,2,2,2h44c1.1,0,2-0.9,2-2V2C48,0.9,47.1,0,46,0z M14.2,40.9H7.1V18 h7.1V40.9z M10.7,14.9c-2.3,0-4.1-1.8-4.1-4.1c0-2.3,1.8-4.1,4.1-4.1c2.3,0,4.1,1.8,4.1,4.1C14.8,13,13,14.9,10.7,14.9z M40.9,40.9 h-7.1V29.8c0-2.7,0-6.1-3.7-6.1c-3.7,0-4.3,2.9-4.3,5.9v11.3h-7.1V18h6.8v3.1h0.1c0.9-1.8,3.3-3.7,6.7-3.7c7.2,0,8.5,4.7,8.5,10.9 V40.9z" />
+                  </g>
+                </svg>
+              </div>
+            </a>
+            <a href="https://github.com/PublicNTP">
+              <div class="svg-wrapper github">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.78 117.79" alt="Github Logo">
+                  <title>Github</title>
+                  <circle class="github_circle" cx="61" cy="61" r="58"></circle>
+                  <path class="github_path" d="M60.39,0A60.39,60.39,0,0,0,41.3,117.69c3,.56,4.12-1.31,4.12-2.91,0-1.44-.05-6.19-.08-11.24C28.54,107.19,25,96.42,25,96.42c-2.75-7-6.71-8.84-6.71-8.84-5.48-3.75.41-3.67.41-3.67,6.07.43,9.26,6.22,9.26,6.22,5.39,9.23,14.13,6.57,17.57,5,.55-3.9,2.11-6.56,3.84-8.07C36,85.55,21.85,80.37,21.85,57.23A23.35,23.35,0,0,1,28.08,41c-.63-1.52-2.7-7.66.58-16,0,0,5.07-1.62,16.61,6.19a57.36,57.36,0,0,1,30.25,0C87,23.42,92.11,25,92.11,25c3.28,8.32,1.22,14.46.59,16a23.34,23.34,0,0,1,6.21,16.21c0,23.2-14.12,28.3-27.57,29.8,2.16,1.87,4.09,5.55,4.09,11.18,0,8.08-.06,14.59-.06,16.57,0,1.61,1.08,3.49,4.14,2.9A60.39,60.39,0,0,0,60.39,0Z"/>
+                </svg>
+              </div>
+            </a>
+            <a href="https://smile.amazon.com/ch/82-2301559">
+              <div class="svg-wrapper amazon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="2.675 1.337 512.693 512.412" alt="AmazonSmile Logo">
+                  <title>AmazonSmile</title>
+                  <g id="g4641" transform="matrix(1, 0, 0, 1, 2.966171, 1.708591)">
+                    <path class="Amazon_rect" d="M64,0h384c35.347,0,64,28.654,64,64v384c0,35.347-28.653,64-64,64H64 c-35.346,0-64-28.653-64-64V64C0,28.654,28.654,0,64,0z"/>
+                    <path class="Amazon_a" d="M292.578,183.824c-9.683,0.765-20.854,1.502-32.021,3.006 c-17.12,2.211-34.24,5.219-48.386,11.907c-27.544,11.208-46.163,35.053-46.163,70.114c0,44.018,28.298,66.354,64.026,66.354 c11.93,0,21.606-1.466,30.522-3.71c14.156-4.481,26.07-12.67,40.209-27.596c8.192,11.205,10.413,16.428,24.575,28.338 c3.725,1.502,7.448,1.502,10.413-0.742c8.932-7.458,24.561-20.873,32.773-28.33c3.71-3.012,2.955-7.463,0.739-11.204 c-8.198-10.435-16.381-19.401-16.381-39.506v-67.131c0-28.359,2.214-54.453-18.614-73.822 c-17.123-15.687-43.93-21.642-64.77-21.642c-2.99,0-5.949,0-8.947,0c-37.965,2.247-78.169,18.635-87.122,65.629 c-1.462,5.955,3.012,8.198,5.989,8.962l41.677,5.224c4.471-0.773,6.691-4.491,7.432-8.233c3.74-16.388,17.136-24.583,32.024-26.087 c0.754,0,1.504,0,2.998,0c8.905,0,18.586,3.743,23.813,11.168c5.932,8.965,5.21,20.904,5.21,31.339v5.961H292.578z M292.578,227.102c0,17.162,0.723,30.571-8.195,45.461c-5.208,10.437-14.141,17.154-23.827,19.4c-1.481,0-3.698,0.766-5.947,0.766 c-16.371,0-26.077-12.673-26.077-31.334c0-23.856,14.159-35.056,32.023-40.277c9.687-2.241,20.86-2.982,32.021-2.982v8.966H292.578 z M429.71,404.303c18.201-15.398,25.89-43.349,26.29-57.939v-2.44c0-3.255-0.803-5.661-1.6-6.88 c-3.646-4.445-30.369-8.523-53.402-1.627c-6.468,2.045-12.146,4.865-17.396,8.507c-4.051,2.854-3.238,6.464,0.802,6.08 c4.447-0.823,10.126-1.208,16.594-2.048c14.159-1.18,30.742-1.592,34.784,3.662c5.642,6.87-6.468,36.868-11.749,49.838 C422.44,405.521,426.063,407.152,429.71,404.303L429.71,404.303z M58.008,346.364c52.17,47.404,120.925,75.775,197.791,75.775 c47.725,0,102.727-13.381,145.199-38.899c5.676-3.27,11.316-6.912,16.565-10.952c7.286-5.25,0.817-13.38-6.463-10.147 c-3.229,1.215-6.873,2.857-10.103,4.066c-46.539,18.248-95.441,26.76-140.762,26.76c-72.008,0-141.56-19.87-197.786-52.684 C57.19,337.461,53.542,342.711,58.008,346.364L58.008,346.364z"/>
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a href="../../terms.html">
+              <p class="footer__right-link" tabindex="0">Terms & Conditions</p>
+            </a>
+            <p class="footer__right-link">Tax ID: 82-2301559</p>
+            <p class="footer__right-link">Copyright
+              <script>document.write(new Date().getFullYear())</script> PublicNTP, Inc.
+            </p>
+          </div>
+        </div>
+        <div class="node-clear"></div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="privacy">
+    <div class="privacy__wrapper">
+      <h3 class="privacy__title">PublicNTP Consent Manager</h3>
+      <p class="privacy__text">Like many companies, PublicNTP uses cookies and other technologies, some of which are
+        essential
+        to make our website work. Others help us improve services and the user experience or to advertise. In using our
+        site,
+        you consent to the use of these cookies and other technologies. <a href="/terms.html" class="privacy__link">Learn
+          more
+        </a> about cookies and other technologies we use.</p>
+
+      <div class="privacy__close"></div>
+    </div>
+  </div>
+  <script defer src="../../js/main.js"></script>
+</body>
+
+</html>
