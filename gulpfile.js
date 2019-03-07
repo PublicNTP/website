@@ -161,7 +161,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('sass:watch', function () {
-    gulp.watch('public/scss/**/*.scss', gulp.series('sass'));
+    gulp.watch('public/scss/**/*.scss', ['sass']);
 });
 
 gulp.task('dev', function () {
@@ -174,7 +174,7 @@ gulp.task('dev', function () {
             NODE_ENV: 'development'
         }
     });
-    gulp.watch('public/scss/**/*.scss', gulp.series('sass'));
+    gulp.watch('public/scss/**/*.scss', ['sass']);
 });
 
 var createFile = function (place, content) {
