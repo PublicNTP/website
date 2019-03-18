@@ -6,26 +6,25 @@
     "excerpt": "Since PublicNTP started in the summer of 2017, all but one of the servers we have deployed have been stratum two servers according to the Network Time Protocol.",
     "image_urls": [
       {
+        "url":"images/adventure-ancient-antique.jpg",
+        "alt": "Ancient Map"
+      },
+      {
         "url":"images/business-computer-connection.jpg",
         "alt": "Computer Connections"
       },
       {
         "url":"images/business-cabinet-data.jpg",
         "alt": "Server Racks"
-      },
-      {
-        "url":"images/adventure-ancient-antique.jpg",
-        "alt": "Ancient Map"
       }
     ],
     "content": "<h4><a href='/people.html#brad-woodfin'>Brad Woodfin</a></h4><p>Since PublicNTP started in the summer of 2017, all but one of the servers we have deployed have been stratum two servers according to the Network Time Protocol.</p><p>To understand what that means more fully, let’s start by explaining stratums.</p><p>A stratum, in layman’s terms, is the number of “wires” between your NTP server and a high quality source of time.</p><p><ul><li><strong>Stratum Zero</strong> refers to a direct source that accesses nanosecond or better timing data (a GPS receiver would qualify as a stratum zero source)</li><li><strong>Stratum One</strong> is a server that is directly and physically connected to a receiver of stratum zero time -- allowing them to deliver the highest precision time possible.</li><li><strong>Stratum Two</strong> receives its time estimates from a number of NTP servers, at least one of them being a stratum one.</li><li><strong>Stratum Three</strong> likewise receives its time from a web of servers but the most reliable reference is stratum two.</li></ul></p><p>And it goes on ad infinitum; your server’s stratum number is one higher than the lowest stratum server used as a reference.</p><p>This makes NTP incredibly resilient. If your stratum two server is connected to many highly reliable stratum two servers and a couple strong stratum ones, you can still come out with accurate time.</p><p>For PublicNTP, that means that stratum two cloud servers are, in highly concentrated cities, a dandy option. But as we got into lesser-developed regions of the world, such as our South America and Africa deployments, it’s not enough. In these underserved areas, the upstream time across cloud servers is inadequate for the level of accuracy we want to provide to people who use PublicNTP servers as their source of time. </p><p>In Nigeria, for example, the two upstream time sources it had access to were all in the United Kingdom or South Africa. The UK is about 5000km away and South Africa is about 4500km away. And we were seeing synchronization within 10 and 50 milliseconds of UTC. That’s a testament to how the NTP web can support global time -- but that’s approximately ten times less accurate than the rest of our servers.</p><p>So we needed a stratum one server with direct access to GPS synchronization. That way we could provide the source rather than go looking for it. But our first exploration into those logistics revealed a high price tag.</p><p>There are many commercially available stratum one rackmount servers. We found that much of the gear started at $5000. Which is totally understandable; it’s a niche market and that kind of price is what covers the overhead of storing a product that may not see many buyers. Combine that with precision gear like temperature-controlled crystal oscillators and it’s an expensive item right away.</p><p>PublicNTP started looking for ways to build our own stratum one server for less than we could buy them from commercial vendors. That way we could base it on an open architecture and save money at the same time!</p><p>After plenty of looking, we settled on a <a href='https://www.dell.com/en-us/work/shop/povw/poweredge-r240'>Dell PowerEdge R240</a> for the first part of our solution. Designed to be racked in a datacenter, with its small size and low power usage, it was a low-cost alternative to a heavier piece of equipment. </p><p>Thanks to its standard equipment and components, it would also be easy to get and ship replacement parts should they fail. With Linux installed, we can run any monitoring programs we wanted (unlike being locked to proprietary software).</p><p>And with Linux as our OS, we found that the <a href='https://www.meinbergglobal.com/english/products/pci-express-gps-clock.htm'>Meinberg GPS180PEX</a> was an excellent GPS receiver to parter it with. With a matched antenna and serial port output, the Meinberg solution ensures good GPS reception.</p><p>With our puzzle-pieced equipment, we save enough money to essentially double our deployments. PublicNTP continues to search for host locations into 2019 and we’re excited to begin with these stratum one servers!</p>",
     "tags": [
-      "ikenga",
-      "tonatiuh",
-      "deployments",
-      "checklist",
-      "travel",
-      "visas"
+      "NTP",
+      "IT Deployments",
+      "GPS",
+      "Servers",
+      "Open Architecture"
     ]
   },
   {
