@@ -1,5 +1,39 @@
 [
   {
+    "permalink": "open-stratum-one-server-part-2-rationale",
+    "timestamp": "2019-04-01T14:11:00-05:00",
+    "title": "PublicNTP Open Architecture Stratum One Server Part 2: Rationale",
+    "excerpt": "As posted in PublicNTP’s previous blog article, our team has spent many hours and meetings over the past months identifying the advantages and disadvantages of our own open architecture. We’ve looked hard at utilizing tried and true NTP servers in tandem with our own established network of stratum two and, more recently, stratum one servers.",
+    "image_urls": [
+      {
+        "url":"images/GPS180PEX.jpg",
+        "alt": "GPS180PEX"
+      },
+      {
+        "url":"images/analogue-antique.jpg",
+        "alt": "Ancient Map"
+      },
+      {
+        "url":"images/deep-diver01.jpg",
+        "alt": "Deep Sea Diver"
+      },
+      {
+        "url":"images/deep-diver02.jpg",
+        "alt": "Deep Sea Diver 2"
+      }
+    ],
+    "content": "<h4><a href='/people.html#brad-woodfin'>Brad Woodfin</a></h4><p>As posted in PublicNTP’s <a href='https://publicntp.org/blog/posts/open-stratum-one-the-meinberg-solution.html'>previous blog article</a>, our team has spent many hours and meetings over the past months identifying the advantages and disadvantages of our own open architecture. We’ve looked hard at utilizing tried and true NTP servers in tandem with our own established network of stratum two and, more recently, stratum one servers.</p><p>Several people have asked why PublicNTP built its own solution, considering that fully-packaged, ready-to-deploy appliances can be easily acquired from a number of vendors.</p><p>It’s an excellent question: why rebuild the wheel? We aim to answer that here.</p><p>In our case, there were multiple reasons we decided to buy and build our own stratum one. In no particular order:</p><p><i>Cost Savings</i></p><ul><p>After getting quotes for several entry-level NTP server appliances from many commercial companies, we became convinced that we could build our own solution for less money. Their products are impressive, but as our funding comes from donated dollars, PublicNTP must carefully ensure that each dollar goes as far as it can.</p></ul><p><i>Technical Challenge</i></p><ul><p>The members of our board and dev team had a funny reaction once we reported the results of the easier, buy-off-the-shelf research. It became a challenge to work lean and within a different set of constraints. Testing out the various options for optimal solutions was both educational and enjoyable for us!</p></ul><p><i>Integration Into Existing Fleet Monitoring</i></p><ul><p>The available appliances we looked at all came with their own closed architecture. While they did support things such as <a href='https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol'>Simple Network Management Protocol</a> (SNMP), our shop is primarily <a href='https://landscape.canonical.com/'>Ubuntu</a>-oriented. We needed to ensure they were compatible with our Linux/Ubuntu monitoring structure. Obviously, we can’t run <a href='https://landscape.canonical.com/'>Canonical Landscape</a> on an NTP appliance that isn’t running Ubuntu.</p></ul><p><i>Extensible, Open Architecture</i></p><ul><p>One of the most important goals of our project is to keep this open-source. We want to help the world help itself and needed to ensure we were free to publish our architecture.</p><p>Our vision is to see more and more of the community share ideas on how to improve upon PublicNTP’s work. One of the greatest examples and inspirations of community-made progress is the <a href='https://www.opencompute.org/'>OpenCompute Project</a>. The benefits of the open and free exchange of ideas are too great not to share our methodology.</p></ul><p><i>Dealing With Hardware Failure</i></p><ul><p>Despite the fidelity of hardware these days, things always break. If (and of course when) one of our stratum one deployments needs a replacement component, we want to be able to quickly source the part, ship it, and get things fixed. We’d rather not wait for a back order or pay an exorbitant amount to acquire a specific piece of hardware.</p><p>All of this is simplified when using widely-available, commercial equipment instead of a custom appliance.</p></ul><p>Based on these points, our <a href='https://publicntp.org/people.html'>Board of Directors</a> decided that investing the hours and money to design, build, and test our own open architecture was the best option.</p><p>Look forward to our next installment in this blog series. We’ll be tackling the technical overview of PublicNTP’s stratum one open architecture.</p>",
+    "tags": [
+      "NTP",
+      "Time",
+      "Stratum One",
+      "GPS",
+      "UTC",
+      "Dell",
+      "Server"
+    ]
+  },
+  {
     "permalink": "open-stratum-one-the-meinberg-solution",
     "timestamp": "2019-03-18T14:11:00-05:00",
     "title": "Open Stratum One - The Meinberg Solution",
