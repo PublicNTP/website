@@ -1,5 +1,15 @@
 module.exports = [
   {
+    continent: 'Africa',
+    country: 'South Africa',
+    city: 'Johannesburg',
+    className: 'coord--johannes01',
+    hostname: 'stratum2-01.jnb01.publicntp.org',
+    liveDate: '2019-05-14',
+    multiple: false,
+    IPv6: true
+  },
+  {
     continent: 'Asia',
     country: 'KR',
     city: 'Seoul',
@@ -11,7 +21,7 @@ module.exports = [
   },
   {
     continent: 'North America',
-    country: 'US',
+    country: 'United States',
     city: 'Miami, Florida',
     className: 'coord--miami01',
     hostname: 'stratum2-01.mia01.publicntp.org',
@@ -21,7 +31,7 @@ module.exports = [
   },
   {
     continent: 'North America',
-    country: 'US',
+    country: 'United States',
     city: 'Dallas / Ft. Worth',
     className: 'coord--dallas01',
     hostname: 'stratum2-01.dfw01.publicntp.org',
@@ -73,7 +83,7 @@ module.exports = [
   },
   {
     continent: 'North America',
-    country: 'US',
+    country: 'United States',
     city: 'San Francisco, California',
     className: 'coord--san01',
     hostname: 'stratum2-01.sfo01.publicntp.org',
@@ -83,7 +93,7 @@ module.exports = [
   },
   {
     continent: 'North America',
-    country: 'US',
+    country: 'United States',
     city: 'Salt Lake City, Utah',
     className: 'coord--slc01',
     hostname: 'stratum1.slc01.publicntp.org',
@@ -93,7 +103,7 @@ module.exports = [
   },
   {
     continent: 'North America',
-    country: 'US',
+    country: 'United States',
     city: 'Chicago, Illinois',
     className: 'coord--ord2',
     hostname: 'stratum2.ord2.publicntp.org',
@@ -103,7 +113,7 @@ module.exports = [
   },
   {
     continent: 'North America',
-    country: 'US',
+    country: 'United States',
     city: 'Ashburn, Virginia',
     className: 'coord--iad01',
     hostname: 'stratum2.iad01.publicntp.org',
