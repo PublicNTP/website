@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     continent: 'Asia',
-    country: 'KR',
+    country: 'South Korea',
     city: 'Seoul',
     className: 'coord--korea01',
     hostname: 'stratum2-01.icn01.publicntp.org',
