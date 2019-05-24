@@ -2,4 +2,5 @@ node_modules
 authConfig.js
 config
 /backups
+package-lock.json
 .DS_Store
