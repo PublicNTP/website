@@ -7,7 +7,8 @@ module.exports = [
     hostname: 'stratum2-01.jnb01.publicntp.org',
     liveDate: '2019-05-14',
     multiple: false,
-    IPv6: true
+    IPv6: true,
+    NTPsec:true
   },
   {
     continent: 'Asia',

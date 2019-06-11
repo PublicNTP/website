@@ -63,9 +63,14 @@
 					Software:
 				</p>
 				<p class="home__item">
-					<a href="http://nwtime.org/projects/ntp/">NTP Reference Implementation</a>,
-					<br/>
-					<a href="http://networktimefoundation.org/">Network Time Foundation</a>
+					{{#if this.NTPsec}}
+					<a href="https://www.ntpsec.org/">NTPsec</a>
+					{{else}}
+						<a href="http://nwtime.org/projects/ntp/">NTP Reference Implementation</a>,
+						<br/>
+						<a href="http://networktimefoundation.org/">Network Time Foundation</a>
+					{{/if}}
+
 				</p>
 
 				{{!--
