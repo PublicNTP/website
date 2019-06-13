@@ -63,7 +63,7 @@
     transition: 200ms;
     transition-timing-function: ease-in-out;
   }
-  
+
   .github_circle{
     fill: #2A2A2A;
     transition: 200ms;
@@ -84,7 +84,9 @@
       fill: #fff;
     }
   }
-
+  .rss{
+    margin-left:10px;
+  }
   &__other-link {
     // width: 100%;
     display: inline-table;
