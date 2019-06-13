@@ -26,13 +26,13 @@ def _generateRss(posts, args):
     headerContent = (
         '<?xml version="1.0" encoding="UTF-8" ?>\n'
         '\n'
-        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n' 
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
         '   <channel>\n'
         '       <title>PublicNTP Blog</title>\n'
         '       <link>https://publicntp.org/blog.html</link>\n'
-        '       <description>PublicNTP updates and initiatives</description>\n' 
+        '       <description>PublicNTP updates and initiatives</description>\n'
         '       <atom:link href="https://publicntp.org/blog/posts/rss.xml" rel="self" type="application/rss+xml" />\n'
-    ) 
+    )
 
     bodyContent = ''
 
@@ -52,10 +52,10 @@ def _generateRss(posts, args):
         '</rss>\n'
     )
 
-    fullContent =  headerContent + bodyContent + footerContent 
+    fullContent =  headerContent + bodyContent + footerContent
 
     #print( "Content:\n{0}".format(fullContent) )
-    return fullContent 
+    return fullContent
 
 
 def _writeRssToFile(rssContent, args):
@@ -63,7 +63,7 @@ def _writeRssToFile(rssContent, args):
         outputHandle.write(rssContent.encode('utf-8'))
 
     print( "Wrote RSS to {0}".format(args.output_rss) )
-    
+
 
 
 def main():

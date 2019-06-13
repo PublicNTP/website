@@ -9,7 +9,6 @@ const rp = require('request-promise');
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-
 const nodemon = require('gulp-nodemon');
 const env = require('gulp-env');
 const sassGlob = require('gulp-sass-glob');
@@ -186,12 +185,11 @@ var createFile = function (place, content) {
 };
 
 gulp.task("generateRSS", function(){
-    exec("python3 ./rss/generateRSS.py ./data/posts.json ./dist/blog/posts/rss.xml",function (err, stdout, stderr) {
+    exec("python3 ./rss/generateRSS.py ./data/posts.json dist/rss.xml",function (err, stdout, stderr) {
         console.log('out', stdout);
         if (err) console.log('err', err);
     });
 });
-
 gulp.task('routes', function () {
     nodemon({
         script: 'app.js',
@@ -267,7 +265,6 @@ gulp.task('gather', function () {
         gulp.start('minify:html');
         gulp.start('minify:core-js');
         gulp.start('copy:root-files');
-        gulp.start('generateRSS');
     }, 1000);
 });
 
