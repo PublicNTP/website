@@ -1278,6 +1278,8 @@ strong {
     fill: #FE9900; }
   .footer .svg-wrapper:hover .Amazon_a, .footer .svg-wrapper:hover .github_circle {
     fill: #fff; }
+  .footer .rss {
+    margin-left: 10px; }
   .footer__other-link {
     display: inline-table;
     margin-bottom: 10px;
