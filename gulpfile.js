@@ -185,11 +185,12 @@ var createFile = function (place, content) {
 };
 
 gulp.task("generateRSS", function(){
-    exec("python3 ./rss/generateRSS.py ./data/posts.json dist/rss.xml",function (err, stdout, stderr) {
+    exec("python3 ./rss/generateRSS.py ./data/posts.json dist/blog/posts/rss.xml",function (err, stdout, stderr) {
         console.log('out', stdout);
         if (err) console.log('err', err);
     });
 });
+
 gulp.task('routes', function () {
     nodemon({
         script: 'app.js',
