@@ -7,7 +7,7 @@
     "image_urls": [
       {
         "url":"images/2019_team_meeting.jpg",
-        "alt": "2019 Team Meeting. Wylie, Scott, Terry, Eric"
+        "alt": "2019 Team Meeting. Wylie, Scott, Terry, Eric."
       },
       {
         "url":"images/snowbird01.jpg",
@@ -15,14 +15,14 @@
       },
       {
         "url":"images/snowbird02.jpg",
-        "alt": "Scott and Terry at Snowbird contintued."
+        "alt": "Scott and Terry at Snowbird continued."
       },
       {
         "url":"images/butterfieldcanyon.jpg",
         "alt": "Scott and Terry at Butterfield Canyon."
       }
     ],
-    "content": "<h4><a href='/people.html#scott-waddell'>Scott Waddell</a></h4><p>PublicNTP, like many companies, is geographically distributed; the company’s four board members live in four different states.</p><p>In June, Terry was in Salt Lake City, Utah visiting family. Terry and I met in Salt Lake after his family moved here from Maine in 1994. Kind of startling to realize he and I have known each other for a quarter of a century!</p><p>Whenever Terry’s in town, he and I make a point to meet up and get some quality face-to-face time -- it’s amazing how much work can get knocked out in just a couple hours when you’re sitting at the same table.</p><p><a href='https://pxp200.com/team/'>Wylie Thomas</a>, the founder of <a href='https://pxp200.com/'>PXP</a>, a development contracting shop located just north of Salt Lake that PublicNTP has <a href='https://pxp200.com/portfolio/'>worked with extensively</a>, was kind enough to offer up the use of his office’s conference space for the meeting.</p><p>Terry, Wylie, Cody Deskins (who had to bail just before the picture was taken), Eric Evans, and I talked about the efforts we have going on the <a href='/'>PublicNTP website</a>, the <a href='https://timeserver.app/'>Time Server App</a>, and then did some brainstorming on some future projects that are in the pipeline.</p><p>Terry suggested that while he was in town, we take advantage of the mountains surrounding the Salt Lake Valley to put on some altitude, as he doesn’t get much of that in Virginia. One afternoon we headed up <a href='https://goo.gl/maps/K7d7C7qNJDTGSPzD9'>Little Cottonwood Canyon</a> and took the tram to the top of <a href='https://www.snowbird.com/'>Snowbird Ski Resort</a> to check out the Salt Lake valley from the east, perched up at 11,000 feet/3,353 meters above sea level. A few days later we did a short hike from the top of <a href='https://goo.gl/maps/2v3kfDW4C4EoBwrg6'>Butterfield Canyon</a> to examine the Salt Lake Valley from a west side vantage point at 7,915 feet/2,400 meters elevation. Pictures from both excursions are attached to this article</p>",
+    "content": "<h4><a href='/people.html#scott-waddell'>Scott Waddell</a></h4><p>PublicNTP, like many companies, is geographically distributed; the company’s four board members live in four different states.</p><p>In June, Terry was in Salt Lake City, Utah visiting family. Terry and I met in Salt Lake after his family moved here from Maine in 1994. Kind of startling to realize he and I have known each other for a quarter of a century!</p><p>Whenever Terry’s in town, he and I make a point to meet up and get some quality face-to-face time -- it’s amazing how much work can get knocked out in just a couple hours when you’re sitting at the same table.</p><p><a href='https://pxp200.com/team/'>Wylie Thomas</a>, the founder of <a href='https://pxp200.com/'>PXP</a>, a development contracting shop located just north of Salt Lake that PublicNTP has <a href='https://pxp200.com/portfolio/'>worked with extensively</a>, was kind enough to offer up the use of his office’s conference space for the meeting.</p><p>Terry, Wylie, Cody Deskins (who had to bail just before the picture was taken), Eric Evans, and I talked about the efforts we have going on the <a href='/'>PublicNTP website</a>, the <a href='https://timeserver.app/'>Time Server App</a>, and then did some brainstorming on some future projects that are in the pipeline.</p><p>Terry suggested that while he was in town, we take advantage of the mountains surrounding the Salt Lake Valley to put on some altitude, as he doesn’t get much of that in Virginia. One afternoon we headed up <a href='https://goo.gl/maps/K7d7C7qNJDTGSPzD9'>Little Cottonwood Canyon</a> and took the tram to the top of <a href='https://www.snowbird.com/'>Snowbird Ski Resort</a> to check out the Salt Lake valley from the east, perched up at 11,000 feet/3,353 meters above sea level. A few days later we did a short hike from the top of <a href='https://goo.gl/maps/2v3kfDW4C4EoBwrg6'>Butterfield Canyon</a> to examine the Salt Lake Valley from a west side vantage point at 7,915 feet/2,400 meters elevation. Pictures from both excursions are attached to this article.</p>",
     "tags": [
       "GPS",
       "NTP",
