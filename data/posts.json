@@ -1,5 +1,36 @@
 [
   {
+    "permalink": "gps-generation-three-has-launched",
+    "timestamp": "2019-07-29T14:11:00-05:00",
+    "title": "GPS Generation Three Has Launched!",
+    "excerpt": "November 26th, 2018 saw NASA land the Mars InSight rover—an achievement that required a thousand different, precise steps to all happen perfectly in order to succeed.",
+    "image_urls": [
+      {
+        "url":"images/gps-generation-three-1.jpg",
+        "alt": "Dish at dawn."
+      },
+      {
+        "url":"images/gps-generation-three-2.jpg",
+        "alt": "Satellite with view of Earth."
+      },
+      {
+        "url":"images/gps-generation-three-3.jpg",
+        "alt": "Rocket launch."
+      },
+      {
+        "url":"images/gps-generation-three-4.jpg",
+        "alt": "Rocket pre-launch."
+      }
+    ],
+    "content": "<h4><a href='/people.html#dan-noland'>Dan Noland</a></h4><p>November 26th, 2018 saw NASA land the Mars InSight rover—an achievement that required a thousand different, precise steps to all happen perfectly in order to succeed.</p><p>A month later, on December 23rd, SpaceX successfully launched the Air Force’s first third generation GPS satellite, also known as “GPS IIIA-01” on top of a Falcon 9 rocket. While unquestionably a remarkable feat of engineering, this mission succeeded against a different set of challenging hurdles—twenty years of bureaucracy.</p><p>While the first GPS satellite was launched in 1978, the current Global Position System (GPS) did not reach fully operational status until 1995. While the first two GPS satellite generations served their purpose superbly for the time (compared to the previous services available), the always-marching advance of technology had progressed far beyond their estimations even then.</p><p>And 1995 hasn’t even gotten us to when mass-market cell phones or high-speed internet became widely-available!</p><p>In 1998, the Clinton administration recognized that a new generation of GPS satellites would be needed to keep up with the new 90’s advances. The GPS III initiative has been enthusiastically supported by every administration since its approval.</p><p>Multi-billion dollar contracts were written to get the system built—from Lockheed Martin’s major contributions in building the satellites, to Raytheon building the ground control system.</p><p>And some contracts changed hands. United Launch Alliance (ULA) received the launch contracts in 2012 for a launch in 2014. But due to delays in build deliveries and hiccups with late tech, the launch was postponed until 2018. In that four year span, the Air Force had sold the remaining launch contracts to SpaceX, and a later rocket-swap in 2017 handed ULA’s initial launch contract to SpaceX as well.</p><p>This switcheroo, by all optimistic estimates, would not delay the launch further. After a spring scare with some technical issues, the Falcon 9 heavy rocket launched the first of ten GPS IIIA satellites—with twenty-two IIIF satellites being commissioned last September (“F” to indicate a “follow-on” series).</p><p>We’re hopeful that GPS III is finally hitting its “launch stride”. The second GPS III space vehicle, GPS IIIA-02, is <a href='https://spaceflightnow.com/launch-schedule/'>scheduled to launch in August, followed by GPS IIIA-03 in December</a>.</p><p>PublicNTP is extremely excited to see GPS III finally get off the ground—pun absolutely intended. The number of instruments each A2100 bus carries will be a remarkable improvement over our current system designed between 1960 and 1980.</p><p>GPS III introduces <a href='https://www.gps.gov/systems/gps/modernization/civilsignals/'>three new civil signals</a> as the IIIA and IIIF blocks are launched over the next couple decades:<ul><li><strong>L2C</strong> - A frequency designed for clear commercial use</li><li><strong>L5</strong> - A Safety of Life frequency designed to enhance the safety of aircrafts</li><li><strong>L1C</strong> - A secure frequency designed to facilitate interoperability between international satellites<li></ul></p><p>Each of these advancements reinforce the technology infrastructure that the entire world has been utilizing for over 20 years. For PublicNTP, it results in additional resources to help ensure that a world with fully-synchronized time can be a reality.</p>",
+    "tags": [
+      "GPS",
+      "NTP",
+      "Satellite",
+      "PNT"
+    ]
+  },
+  {
     "permalink": "f2f-in-mountain-time",
     "timestamp": "2019-07-12T14:11:00-05:00",
     "title": "F2F in Mountain Time!",
