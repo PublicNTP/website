@@ -1,5 +1,26 @@
 [
   {
+    "permalink": "publicntp-july-board-meeting",
+    "timestamp": "2019-07-13T14:11:00-05:00",
+    "title": "PublicNTP July Board Meeting",
+    "excerpt": "PublicNTP’s board members once again met up to talk about the company’s accomplishments since our meeting last November, and make sure we all agreed on the company’s vision for the future.",
+    "image_urls": [
+      {
+        "url":"images/PNTP_Board_Meeting_20190713_-_Dinner.jpg",
+        "alt": "Dinner Meeting."
+      }
+    ],
+    "content": "<h4><a href='/people.html#dan-noland'>Dan Noland</a></h4><p>PublicNTP’s board members once again met up to talk about the company’s accomplishments since our meeting last November, and make sure we all agreed on the company’s vision for the future.</p><p>For this meeting, we bravely took on the challenge of attempting a meeting in Georgetown (those who know the area will get that joke).</p><p>Happy to report that we’ve seen great strides in our hardware, software, and the community since our last meetup!</p><p>One of our major talking points was the Time Server App. Since its launch, we’ve been iterating on it, fixing bugs, and refining the quality of life aspects to better serve those who download it. The server aspect has been a riot of a puzzle considering how each model of a phone has separate protocols when it comes to serving up data — even something as simple as time. We look forward to continue cracking that code and getting the community in on the action with our open-source access.</p><img style='max-width:100%;' src='/images/PNTP_Board_Meeting_20190713.jpg' /><p>Yes, Scott and Dan came to the meeting wearing the exact same shirt. No, they didn’t plan that. Or so they claim.</p><p>Something Brad has been working on in the last several months is our growing concern with the costs of our physical deployments. He’s been aggressively looking at improving the cost efficiency of our Stratum 1 solution, mostly cheaper alternatives to our first iteration of the hardware. We discussed our Meinberg card and server setup, which is an excellent rig but if we’re wanting to deploy dozens of these, our server cost is going to jump to the hundreds of thousands of dollars.</p><p>For a fledgling non-profit, we aren’t in a position where that’s realistic for us, so that’s why we’re looking into smaller-scale hardware for larger-scale deployment. Our various options include other open source cards. One interesting vein of research is using a raspberry pi as a host for a time serving framework. It would have to be a homebrew system — which is why we’re looking to our community for help!</p><p>Terry updated the team on our stratum one deployment slated for this year in Miami.  We have received all the equipment we ordered for the deployment (a new server, and a bunch of spare coaxial cable), as well as identified the hosting provider we plan to use. At this point, we’re just working final logistics with the hosting provider.</p><p>After the meeting the team met up at <a href='http://www.filomena.com/'>Filomena</a>, a Georgetown institution, for a fantastic Italian dinner and a wonderful chance to catch up and get some good laughs.</p>",
+    "tags": [
+      "Board meeting",
+      "Time Server App",
+      "nonprofits",
+      "fundrasing",
+      "stratum one",
+      "NTP"
+    ]
+  },
+  {
     "permalink": "gps-generation-three-has-launched",
     "timestamp": "2019-07-29T14:11:00-05:00",
     "title": "GPS Generation Three Has Launched!",
