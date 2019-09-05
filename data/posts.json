@@ -1,5 +1,38 @@
 [
   {
+    "permalink": "groundbreaking-africa-and-the-middle-east",
+    "timestamp": "2019-09-09T14:11:00-05:00",
+    "title": "Groundbreaking: Africa and the Middle East!",
+    "excerpt": "We’ve mentioned a few times that our cloud servers hit a speedbump around Africa due to a lack of developed infrastructure. Project: Ikenga is one of our attempts to work around that with a physical deployment.",
+    "image_urls": [
+      {
+        "url":"images/abu-dhabi-architecture-buildings-1589237-min.jpg",
+        "alt": "Abu Dhabi Buildings."
+      },
+      {
+        "url":"images/abu-dhabi-bridge-buildings-1660603-min.jpg",
+        "alt": "Abu Dhabi Bridge Buildings."
+      },
+      {
+        "url":"images/adventure-africa-animals-861329-min.jpg",
+        "alt": "African Animals."
+      },
+      {
+        "url":"images/africa-animal-animals-417142-min.jpg",
+        "alt": "African Animals 2."
+      }
+    ],
+    "content": "<h4><a href='/people.html#dan-noland'>Scott Waddell</a></h4><p>We’ve mentioned a few times that our cloud servers hit a speedbump around Africa due to a lack of developed infrastructure. <a href='/blog/posts/Project-Ikenga.html'>Project: Ikenga</a> is one of our attempts to work around that with a physical deployment.</p><p>Microsoft, Amazon, and Oracle have all recently announced plans of cloud deployments and data centers across South Africa and the Middle East. PublicNTP is excited to see them succeed as it will provide a foothold for our own efforts in the future.</p><p><strong>South African Deployments</strong></p><p>Back in 2017, Microsoft Azure <a href='https://blogs.microsoft.com/blog/2017/05/18/microsoft-deliver-microsoft-cloud-datacenters-africa/'>announced two datacenters</a> for cloud hosting in Cape Town and Johannesburg to be open for business in 2018. Despite missing their date, it’s a credit to Azure that this is the first time in their history that they’ve missed a go-live date. Both regions went live in <a href='https://azure.microsoft.com/en-us/updates/azure-south-africa-regions-are-now-available/'>early March 2019.</a></p><p>Hot on Microsoft’s heels, Amazon has plans to establish a cloud region consisting of <a href='https://aws.amazon.com/blogs/aws/in-the-works-aws-region-in-south-africa/'>three Availability Zones</a> in 2020.</p><p>PublicNTP deployed to Azure in Johannesburg in May of 2019 and has been very pleased with our first NTP server deployment on Azure.</p><p><strong>Middle East Deployments</strong></p><p>Both Microsoft Azure and AWS have announced new cloud regions in the Middle East -- United Arab Emirates and Bahrain respectively. Azure was first to open in <a href='https://azure.microsoft.com/en-us/blog/first-microsoft-cloud-regions-in-middle-east-now-available/'>June of 2019</a>. AWS Bahrain became a <a href='https://aws.amazon.com/about-aws/whats-new/2019/07/announcing-the-new-aws-middle-east--bahrain--region-/'>month later</a>.</p><p>Sometimes digital development is a game of inches and other times, it leaps miles. PublicNTP is delighted watching the cloud competition heat up in some of the most underserved markets in the world!</p>",
+    "tags": [
+      "Board meeting",
+      "Time Server App",
+      "nonprofits",
+      "fundrasing",
+      "stratum one",
+      "NTP"
+    ]
+  },
+  {
     "permalink": "publicntp-july-board-meeting",
     "timestamp": "2019-08-29T14:11:00-05:00",
     "title": "PublicNTP July Board Meeting",
