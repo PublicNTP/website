@@ -1,5 +1,33 @@
 [
   {
+    "permalink": "publicntps-fleet-servers-and-maintenance",
+    "timestamp": "2019-10-14T14:11:00-05:00",
+    "title": "PublicNTP’s Fleet Servers and Maintenance",
+    "excerpt": "In the second half of 2017, a few months after PublicNTP officially became a company, we had anywhere from five to ten servers providing time. We found that our servers needed occasional maintenance but were reliable enough that we could “safely” ignore them most of the time. Our service, supported by many other surrounding stratum one/two providers, could be relied on while working and covered when down.",
+    "image_urls": [
+      {
+        "url":"images/bay-clouds-harbour-min.jpg",
+        "alt": "Boats in the bay at sunset."
+      },
+      {
+        "url":"images/aerial-view-bay-bird-s-eye-view-min.jpg",
+        "alt": "Arial view of cargo ships in a bay."
+      },
+      {
+        "url":"images/bay-beach-bird-s-eye-view-min.jpg",
+        "alt": "Arial view of boats in a line in a bay."
+      }
+    ],
+    "content": "<h4><a href='/people.html#terry-ott'>Terry Ott</a></h4><p>In the second half of 2017, a few months after PublicNTP officially became a company, we had anywhere from five to ten servers providing time. We found that our servers needed occasional maintenance but were reliable enough that we could “safely” ignore them most of the time. Our service, supported by many other surrounding stratum one/two providers, could be relied on while working and covered when down.</p><p>Our “maintenance process” looked something like this: “Hey, I guess it’s been a few weeks and I need something to do during my lunch break. I should log into all the servers to make sure they’re up.  While I’m there, I’ll apply the patches that have queued up.”</p><p>We were moving quickly enough that we spent more time planning future deployments than providing proper care and feeding to our small fleet of existing servers.</p><p>A Kurt Vonnegut quote unfortunately nails PublicNTP’s early philosophy towards server ops:</p><p><i>“Another flaw in the human character is that everybody wants to build and nobody wants to do maintenance.”</i></p><p>There was far more emotional payoff launching cloud servers in remote parts of the world and building relationships with other non-profits in our space. We knew maintenance was necessary, but the boring “ops” tasks always got put on the back burner -- until they suddenly became urgent (like when a friend reported a server of ours was completely offline).</p><p>Skip forward to the present, where PublicNTP has 30+ servers across the globe. That laissez-faire approach to server ops doesn’t stand up well. It no longer was “a couple minutes to patch the fleet” manually -- it was quickly starting to take the better part of an hour.</p><p>As we grew, like we hoped it would, the “when I am bored and need a distraction” approach to fleet ops wasn’t holding up.</p><p>Luckily there are plenty of software options out there for making sure our fleet of servers keep ticking. We knew we needed to prioritize immediate alerts with rapid response times for server fixes.</p><p>Since all our servers are Ubuntu-based, <a href='https://landscape.canonical.com/'>Landscape from Canonical</a> seemed our best bet. With ways of easily deploying our base cloud servers, monitors that track server resources utilization, alerts if something’s down, and the ability to apply all patches nightly is proving to be a fantastic solution for us.</p><p>With Landscape helping us manage our servers, not only are we able to provide our services more reliably, but we can use this data to do better capacity planning as the fleet continues to rapidly grow.</p>",
+    "tags": [
+      "devops",
+      "server",
+      "monitoring",
+      "patching",
+      "Ubuntu"
+    ]
+  },
+  {
     "permalink": "publicntp-jam",
     "timestamp": "2019-09-30T14:11:00-05:00",
     "title": "PublicNTP JAM",
