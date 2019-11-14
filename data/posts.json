@@ -1,5 +1,37 @@
 [
   {
+    "permalink": "global-ntp-server-monitoring",
+    "timestamp": "2019-11-18T14:11:00-05:00",
+    "title": "Global NTP Server Monitoring",
+    "excerpt": "PublicNTP has consistently grown its global deployment footprint since the day the company formed. While that’s excellent news for us, it comes with a number of unforeseen issues as a matter of scale. With 30+ servers across the globe, it’s not enough to just make sure the server and operating system are both up and running.",
+    "image_urls": [
+      {
+        "url":"images/black-and-white-black-and-white-monochrome-707676-min.jpg",
+        "alt": "Black and White wall of clocks"
+      },
+      {
+        "url":"images/black-and-white-chart-cost-241544-min.jpg",
+        "alt": "Black and white monitor with charts"
+      },
+      {
+        "url":"images/black-cameras-close-up-1135453-min.jpg",
+        "alt": "Close up of black cameras"
+      },
+      {
+        "url":"images/metronome-clock-music-music-production-162550.jpeg-min.jpg",
+        "alt": "Metronome"
+      }
+    ],
+    "content": "<h4><a href='/people.html#scott-waddell'>Scott Waddell</a></h4><p>PublicNTP has consistently grown its global deployment footprint since the day the company formed. While that’s excellent news for us, it comes with a number of unforeseen issues as a matter of scale. With 30+ servers across the globe, it’s not enough to just make sure the server and operating system are both up and running.</p><p>We need to get a feeling for the quality and availability of the time data.  It’s important to know how close each of our server estimates are to the UTC standard, and how quickly the servers are responding to requests for time (and if they ever fail to respond!).</p><p>This is a natural point in the article to highlight the amazing work done by the NTP Pool.</p><p>The <a href='https://www.ntppool.org/en/'>NTP Pool project</a> is an effort launched by <a href='https://groups.google.com/forum/#!topic/comp.protocols.time.ntp/cShrN7imCJ0'>Adrian von Bidder in 2003</a> that has consistently been the largest, most reliable cluster of network time servers in the world. The NTP Pool delivers time to hundreds of millions of digital clocks around the world.</p><p>It’s important to note that the Pool is 100% free. Period. Nobody pays to use it, and <a href='https://www.askask.com/'>Ask Bjørn Hansen</a>, the Pool’s maintainer since 2005, pays every dollar of all hosting costs out of his own pocket.</p><p>The NTP Pool includes a monitoring system to check on any submitted server. If that system indicates that a submitted server is delivering high quality time reliably, it will direct queries to the submitted server.  If a participating server drifts wildly from UTC standard or is not responding to queries reliably, the Pool will remove the submitted server from service until it becomes “safe” to use again.</p><p>PublicNTP proudly submits all servers we deploy for inclusion in the NTP Pool—adding the NTP Pool’s reliability data as another source of monitoring for our deployed servers.</p><p>PublicNTP quickly noticed that the Pool’s monitoring data often differed from what we collected through our own monitoring systems. We found the NTP Pool monitoring system often marked our servers as far less reliable than our own data indicated.</p><p>While the research effort is still very much ongoing, PublicNTP has started to be persuaded that NTP monitoring is often a function of where. By that, we mean where a server is monitored from matters—the more “wheres” you use, the better!</p><p>At the time we started looking harder at the NTP Pool’s data in 2017, the NTP Pool monitoring system consisted of a single server in Los Angeles, California.</p><p>It appeared that the further that a server was from Los Angeles (more a metric in terms of milliseconds of latency than physical miles—though the two are related), the more likely the Pool rated the NTP server as “low reliability”.</p><p>The PublicNTP team started digging into some of the more interesting cases. One such example was the PublicNTP server in São Paulo, Brazil. The Brazil server looked terribly unreliable from the NTP Pool monitor in Los Angeles, ~10,000km/6,000 mi away.</p><p>Our monitoring servers showed huge variation:</p><p><ul style='list-style-type: disc;'><li>New York, ~7,500km/4,800 mi away, showed the São Paulo server to be just as unreliable as the Pool did.</li><li>Frankfurt, Germany, 9,700 km/6,000 mi away, showed the Brazil server to be impressively accurate and reliable, though it did occasionally show a dropped response.</li><li>Singapore, <i><strong>16,000 km/10,000 mi away</strong></i>, showed the Brazil server to be both incredibly accurate and incredibly reliable, with well over 99% of requests getting responses.</li></ul></p><p>PublicNTP is coming to the opinion that “positive” responses (i.e. the server is both accurately tracking to the UTC standard and reliably responding to NTP queries) can be given a fair bit of weight/relied upon. The issue is the same <strong>cannot</strong> be said for “negative” responses.</p><p>There are a LOT of factors outside the control of an NTP server operator. One of the biggest is the networks along the path from a computer making an NTP request to the target NTP server. If NTP queries fail to even make it to the target server, it’s not accurate to “score” the NTP server as unreliable as it never got the <strong>chance</strong> to reply! And vice versa if a reply successfully sent by the NTP server fails to make it back to the NTP client.</p><p>As such, the PublicNTP’s monitoring system algorithm has started taking a healthy bias approach, to try and accurately represent the health of a monitored NTP server:</p><p><strong>Minority Positive:</strong> if 20-30% of our monitoring stations around the world are getting indications of good accuracy/reliability from a server, it’s safe to assume the server itself is functioning fine and thus give the server a score of “healthy.”</p><p><strong>Majority Negative:</strong> if 80% or more of the global monitoring locations report poor accuracy or a large percentage of requests being dropped, it’s safe to assume a server is performing poorly.</p><p>PublicNTP’s effort to improve our ability to ensure high-quality time data from our global fleet of servers is always ongoing, but we wanted to give readers a snapshot in time of where we are as of today. Tomorrow—who knows???  :)</p>",
+    "tags": [
+      "NTP",
+      "sysadmin",
+      "monitoring",
+      "distributed systems",
+      "clock synchronization"
+    ]
+  },
+  {
     "permalink": "network-time-community-and-you",
     "timestamp": "2019-10-28T14:11:00-05:00",
     "title": "The “Why” Question, the Network Time Community, and You!",
